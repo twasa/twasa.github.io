@@ -1,0 +1,36 @@
+[
+{
+	"uri": "http://twasa.github.io/post/hugo-how-to/",
+	"title": "Hugo How To",
+	"tags": [],
+	"description": "",
+	"content": " Hugo-Blog-How-To  Create a blog folder  hugo new site blog   go in to the folder and modify config.toml for your github url  vi config.toml baseURL = \u0026quot;http://\u0026lt;your-github-account\u0026gt;.github.io/\u0026quot;   create new page  hugo new about.md   create new post  hugo new post/first.md   install a theme  cd themes git clone https://github.com/xxx/xxx.git   localhost server preview  hugo server --buildDrafts --watch   references  https://gohugo.io/overview/introduction/  themes\n https://github.com/spf13/hugoThemes  deploy to github\n Create a blog git repository on GitHub Create a twasa.github.io GitHub repository run commands as below, in your blog folder   git init git remote add origin git@github.com:twasa/blog.git git rm -r public git submodule add git@github.com:twasa/twasa.github.io.git public git add . git commit -m \u0026quot;first commit\u0026quot; git push -u origin master hugo --buildDrafts cd public git add . git commit -m \u0026quot;Generate site\u0026quot; git push origin master  "
+},
+{
+	"uri": "http://twasa.github.io/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://twasa.github.io/post/",
+	"title": "Posts",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://twasa.github.io/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://twasa.github.io/",
+	"title": "William&#39;s Blog",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
