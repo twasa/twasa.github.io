@@ -1,10 +1,17 @@
 [
 {
+	"uri": "http://twasa.github.io/_header/",
+	"title": "_Header",
+	"tags": [],
+	"description": "",
+	"content": " William\u0026rsquo;s Blog "
+},
+{
 	"uri": "http://twasa.github.io/",
 	"title": "_Index",
 	"tags": [],
 	"description": "",
-	"content": "William\u0026rsquo;s Blog\n"
+	"content": "我叫william 個人自介如下：\n我本職並非資訊科系，但對程式設計感興趣 之前從事職業是資訊管理人員目前待業中，想轉換跑道成為程式設計人員 目前都是靠自學，基礎程式語言，使用過 Python 語言，基本HTML略懂 也知道如何建立環境運行與撰寫簡單的PHP 基本上只寫過小程式，還請多多指教\n"
 },
 {
 	"uri": "http://twasa.github.io/post/hugo-how-to/",
