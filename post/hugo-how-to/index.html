@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.26" />
 
-  <title>William&#39;s Blog</title>
+  <title>Hugo How To &middot; William&#39;s Blog</title>
 
   
   
@@ -36,8 +36,6 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="William&#39;s Blog" href="http://twasa.github.io/index.xml" />
   
 
   
@@ -108,10 +106,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="http://twasa.github.io/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -207,17 +201,12 @@
 
 
 <div class="header">
-  <h1>William&#39;s Blog</h1>
-  <h2>A Hugo Theme</h2>
+  <h1>Hugo How To</h1>
+  <h2></h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="http://twasa.github.io/post/hugo-how-to/">Hugo How To</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
@@ -232,22 +221,113 @@
 
 </div>
 
-  </header>
-
-  <p>
-  Hugo-Blog-How-To  Create a blog folder  hugo new site blog   go in to the folder and modify config.toml for your github url  vi config.toml baseURL = &quot;http://&lt;your-github-account&gt;.github.io/&quot;   create new page  hugo new about.md   create new post  hugo new post/first.md   install a theme  cd themes git clone https://github.com/xxx/xxx.git   localhost server preview  hugo server --buildDrafts --watch   references  https://gohugo.
-  </p>
-
-  
-  <footer>
-    <a href="/post/hugo-how-to/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
 
+<h2 id="hugo-blog-how-to">Hugo-Blog-How-To</h2>
+
+<ul>
+<li>Create a blog folder</li>
+</ul>
+
+<pre><code>hugo new site blog
+</code></pre>
+
+<ul>
+<li>go in to the folder and modify config.toml for your github url</li>
+</ul>
+
+<pre><code>vi config.toml
+baseURL = &quot;http://&lt;your-github-account&gt;.github.io/&quot;
+</code></pre>
+
+<ul>
+<li>create new page</li>
+</ul>
+
+<pre><code>hugo new about.md
+</code></pre>
+
+<ul>
+<li>create new post</li>
+</ul>
+
+<pre><code>hugo new post/first.md
+</code></pre>
+
+<ul>
+<li>install a theme</li>
+</ul>
+
+<pre><code>cd themes
+git clone https://github.com/xxx/xxx.git
+</code></pre>
+
+<ul>
+<li>localhost server preview</li>
+</ul>
+
+<pre><code>hugo server --buildDrafts --watch
+
+</code></pre>
+
+<ul>
+<li>references
+
+<ul>
+<li><a href="https://gohugo.io/overview/introduction/">https://gohugo.io/overview/introduction/</a></li>
+</ul></li>
+
+<li><p>themes</p>
+
+<ul>
+<li><a href="https://github.com/spf13/hugoThemes">https://github.com/spf13/hugoThemes</a></li>
+</ul></li>
+
+<li><p>deploy to github</p>
+
+<ul>
+<li>Create a blog git repository on GitHub</li>
+<li>Create a twasa.github.io GitHub repository</li>
+<li>run commands as below</li>
+</ul></li>
+</ul>
+
+<pre><code>git init
+git remote add origin git@github.com:twasa/blog.git
+git rm -r public
+git submodule add git@github.com:twasa/twasa.github.io.git public
+git add .
+git commit -m &quot;first commit&quot;
+git push -u origin master
+hugo --buildDrafts
+cd public
+git add .
+git commit -m &quot;Generate site&quot;
+git push origin master
+</code></pre>
+
+
   
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'Your Disqus shortname';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
 </div>
