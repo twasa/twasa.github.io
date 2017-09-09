@@ -330,6 +330,7 @@ git push origin master
 
 <pre><code>#!/bin/bash
 workdir=&quot;$( cd &quot;$( dirname &quot;${BASH_SOURCE[0]}&quot; )&quot; &amp;&amp; pwd )&quot;
+cd $workdir
 git add -A
 git commit -m &quot;Hugo content update `date`&quot;
 hugo --buildDrafts
