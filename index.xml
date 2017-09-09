@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>_Index on William&#39;s Blog</title>
-    <link>http://twasa.github.io/</link>
+    <link>https://twasa.github.io/</link>
     <description>Recent content in _Index on William&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 08 Sep 2017 19:41:27 +0800</lastBuildDate>
     
-	<atom:link href="http://twasa.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://twasa.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>_Header</title>
-      <link>http://twasa.github.io/_header/</link>
+      <link>https://twasa.github.io/_header/</link>
       <pubDate>Fri, 08 Sep 2017 19:45:43 +0800</pubDate>
       
-      <guid>http://twasa.github.io/_header/</guid>
+      <guid>https://twasa.github.io/_header/</guid>
       <description> William&amp;rsquo;s Blog </description>
     </item>
     
     <item>
       <title>Hugo A Fast and Flexible Website Generator</title>
-      <link>http://twasa.github.io/post/hugo-how-to/</link>
+      <link>https://twasa.github.io/post/hugo-how-to/</link>
       <pubDate>Fri, 08 Sep 2017 19:12:41 +0800</pubDate>
       
-      <guid>http://twasa.github.io/post/hugo-how-to/</guid>
+      <guid>https://twasa.github.io/post/hugo-how-to/</guid>
       <description>Quick Start Guide  Hugo download
  https://github.com/gohugoio/hugo/releases  Install Hugo
  https://gohugo.io/getting-started/installing/  Create a blog folder
