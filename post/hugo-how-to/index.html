@@ -296,13 +296,14 @@ git push origin master
 <li>In your blog folder, create a batch file for one click deploy.</li>
 </ul>
 
-<pre><code>git add .
-git commit -m &quot;first commit&quot;
+<pre><code>set current=%date:~0,4%-%date:~5,2%-%date:~8,2% %time:~0,2%:%time:~3,2%:%time:~6,2%
+git add .
+git commit -m %current%
 git push -u origin master
 hugo --buildDrafts
 cd public
 git add .
-git commit -m &quot;Generate site&quot;
+git commit -m &quot;current&quot;
 git push origin master
 </code></pre>
 
