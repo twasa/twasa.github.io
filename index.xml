@@ -29,14 +29,5 @@
       <description>Quick Start Guide  Create a blog folder  hugo new site blog   go in to the folder and modify config.toml for your github url  vi config.toml baseURL = &amp;quot;http://&amp;lt;your-github-account&amp;gt;.github.io/&amp;quot;   create new page  hugo new about.md   create new post  hugo new post/first.md   install a theme  cd themes git clone https://github.com/xxx/xxx.git   localhost server preview  hugo server --buildDrafts --watch   references  https://gohugo.</description>
     </item>
     
-    <item>
-      <title>Hugo How To</title>
-      <link>http://twasa.github.io/post/hugo--a-fast-and-flexible-website-generator/</link>
-      <pubDate>Fri, 08 Sep 2017 19:12:41 +0800</pubDate>
-      
-      <guid>http://twasa.github.io/post/hugo--a-fast-and-flexible-website-generator/</guid>
-      <description>Hugo | A Fast and Flexible Website Generator  Create a blog folder  hugo new site blog   go in to the folder and modify config.toml for your github url  vi config.toml baseURL = &amp;quot;http://&amp;lt;your-github-account&amp;gt;.github.io/&amp;quot;   create new page  hugo new about.md   create new post  hugo new post/first.md   install a theme  cd themes git clone https://github.com/xxx/xxx.git   localhost server preview  hugo server --buildDrafts --watch   references  https://gohugo.</description>
-    </item>
-    
   </channel>
 </rss>
