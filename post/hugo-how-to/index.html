@@ -234,8 +234,7 @@
 <li>go in to the folder and modify config.toml for your github url</li>
 </ul>
 
-<pre><code>vi config.toml
-baseURL = &quot;http://&lt;your-github-account&gt;.github.io/&quot;
+<pre><code>baseURL = &quot;http://&lt;your-github-account&gt;.github.io/&quot;
 </code></pre>
 
 <ul>
@@ -285,22 +284,22 @@ git clone https://github.com/xxx/xxx.git
 
 <ul>
 <li>Create a blog git repository on GitHub</li>
-<li>Create a twasa.github.io GitHub repository</li>
+<li>Create a <your-github-account>.github.io GitHub repository</li>
 <li>run commands as below, in your blog folder</li>
 </ul></li>
 </ul>
 
 <pre><code>git init
-git remote add origin git@github.com:&lt;youraccount&gt;/blog.git
+git remote add origin git@github.com:&lt;your-github-account&gt;/blog.git
 git rm -r public
-git submodule add git@github.com:&lt;youraccount&gt;/&lt;youraccount&gt;.github.io.git public
+git submodule add git@github.com:&lt;your-github-account&gt;/&lt;your-github-account&gt;.github.io.git public
 git add .
-git commit -m &quot;first commit&quot;
+git commit -m &quot;Hugo content update&quot;
 git push -u origin master
 hugo --buildDrafts
 cd public
 git add .
-git commit -m &quot;&quot;
+git commit -m &quot;Blog update&quot;
 git push origin master
 </code></pre>
 
@@ -310,12 +309,12 @@ git push origin master
 
 <pre><code>set current=%date:~0,4%-%date:~5,2%-%date:~8,2% %time:~0,2%:%time:~3,2%:%time:~6,2%
 git add .
-git commit -m %current%
+git commit -m &quot;Hugo content update %current%&quot;
 git push -u origin master
 hugo --buildDrafts
 cd public
 git add .
-git commit -m &quot;current&quot;
+git commit -m &quot;Blog update %current%&quot;
 git push origin master
 </code></pre>
 
