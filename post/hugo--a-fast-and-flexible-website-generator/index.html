@@ -7,7 +7,7 @@
     <meta name="description" content="">
 
 
-    <title>_Header :: William&#39;s Blog</title>
+    <title>Hugo How To :: William&#39;s Blog</title>
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -31,7 +31,7 @@
     
 
   </head>
-  <body class="" data-url="/_header/">
+  <body class="" data-url="/post/hugo--a-fast-and-flexible-website-generator/">
     <nav id="sidebar" class="">
 
 
@@ -82,7 +82,7 @@
   
     
     <li data-nav-id="/post/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -93,7 +93,7 @@
         
 
           
-            <i class="fa fa-angle-right fa-lg category-icon"></i>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
           
 
         
@@ -136,7 +136,7 @@
   
     
       <li data-nav-id="/post/hugo--a-fast-and-flexible-website-generator/" class="dd-item
-     
+     active
       ">
         <a href="/post/hugo--a-fast-and-flexible-website-generator/">
         <span>Hugo How To</span> 
@@ -188,7 +188,17 @@
                 <span class="links">
                 
 
- _Header
+
+
+
+
+
+
+ <a href='/'>_Index</a> > <a href='/post/'>Posts</a> > Hugo How To
+
+ 
+
+ 
 
    
                 </span>
@@ -199,10 +209,7 @@
 <ul>
 <li>
 <ul>
-<li>
-<ul>
-<li><a href="#william-s-blog">William&rsquo;s Blog</a></li>
-</ul></li>
+<li><a href="#hugo-a-fast-and-flexible-website-generator">Hugo | A Fast and Flexible Website Generator</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -214,7 +221,7 @@
         
         <div id="body-inner">
           
-            <h1>_Header</h1>
+            <h1>Hugo How To</h1>
           
 
 
@@ -222,7 +229,102 @@
 
 
 
-<h3 id="william-s-blog">William&rsquo;s Blog</h3>
+<h2 id="hugo-a-fast-and-flexible-website-generator">Hugo | A Fast and Flexible Website Generator</h2>
+
+<ul>
+<li>Create a blog folder</li>
+</ul>
+
+<pre><code>hugo new site blog
+</code></pre>
+
+<ul>
+<li>go in to the folder and modify config.toml for your github url</li>
+</ul>
+
+<pre><code>vi config.toml
+baseURL = &quot;http://&lt;your-github-account&gt;.github.io/&quot;
+</code></pre>
+
+<ul>
+<li>create new page</li>
+</ul>
+
+<pre><code>hugo new about.md
+</code></pre>
+
+<ul>
+<li>create new post</li>
+</ul>
+
+<pre><code>hugo new post/first.md
+</code></pre>
+
+<ul>
+<li>install a theme</li>
+</ul>
+
+<pre><code>cd themes
+git clone https://github.com/xxx/xxx.git
+</code></pre>
+
+<ul>
+<li>localhost server preview</li>
+</ul>
+
+<pre><code>hugo server --buildDrafts --watch
+
+</code></pre>
+
+<ul>
+<li>references
+
+<ul>
+<li><a href="https://gohugo.io/overview/introduction/">https://gohugo.io/overview/introduction/</a></li>
+</ul></li>
+
+<li><p>themes</p>
+
+<ul>
+<li><a href="https://github.com/spf13/hugoThemes">https://github.com/spf13/hugoThemes</a></li>
+</ul></li>
+
+<li><p>deploy to github</p>
+
+<ul>
+<li>Create a blog git repository on GitHub</li>
+<li>Create a twasa.github.io GitHub repository</li>
+<li>run commands as below, in your blog folder</li>
+</ul></li>
+</ul>
+
+<pre><code>git init
+git remote add origin git@github.com:&lt;youraccount&gt;/blog.git
+git rm -r public
+git submodule add git@github.com:&lt;youraccount&gt;/&lt;youraccount&gt;.github.io.git public
+git add .
+git commit -m &quot;first commit&quot;
+git push -u origin master
+hugo --buildDrafts
+cd public
+git add .
+git commit -m &quot;&quot;
+git push origin master
+</code></pre>
+
+<ul>
+<li>create a batch file for one click deploy, on your blog folder</li>
+</ul>
+
+<pre><code>git add .
+git commit -m &quot;first commit&quot;
+git push -u origin master
+hugo --buildDrafts
+cd public
+git add .
+git commit -m &quot;Generate site&quot;
+git push origin master
+</code></pre>
 
 
 <footer class=" footline" >
@@ -266,8 +368,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -282,6 +382,9 @@
             
                 
                     
+                        
+                        
+                    
                 
                 
 
@@ -298,6 +401,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -319,8 +423,10 @@
 
 
         
+            <a class="nav nav-prev" href="/post/hugo-how-to/" title="Hugo A Fast and Flexible Website Generator"> <i class="fa fa-chevron-left"></i></a>
         
-            <a class="nav nav-next" href="/post/" title="Posts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+            <a class="nav nav-next" href="/post/hugo-how-to/" title="Hugo A Fast and Flexible Website Generator" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
