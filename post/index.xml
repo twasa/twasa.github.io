@@ -2,22 +2,54 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on William&#39;s Blog</title>
-    <link>http://twasa.github.io/post/</link>
+    <link>https://twasa.github.io/post/</link>
     <description>Recent content in Posts on William&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 08 Sep 2017 19:12:41 +0800</lastBuildDate>
+    <copyright>Copyright (c) 2017, all rights reserved.</copyright>
+    <lastBuildDate>Sun, 10 Sep 2017 17:00:56 +0800</lastBuildDate>
     
-	<atom:link href="http://twasa.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://twasa.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hugo How To</title>
-      <link>http://twasa.github.io/post/hugo-how-to/</link>
+      <title>Python Virtualenv</title>
+      <link>https://twasa.github.io/post/python-virtualenv/</link>
+      <pubDate>Sun, 10 Sep 2017 17:00:56 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/post/python-virtualenv/</guid>
+      <description> Virtualenv的好處  可以隔離函數庫需求不同的專案，讓它們不會互相影響。在建立並啟動虛擬環境後，透過 pip 安裝的套件會被放在虛擬環境中，專案就可以擁有一個獨立的環境。 在沒有權限的情況下安裝新套件 不同專案可以使用不同版本的相同套件 套件版本升級時不會影響其他專案  安裝 pip install virtualenv  建立專案資料夾 mkdir myproject cd myproject  初始化 virtualenv 虛擬環境名稱  activate the corresponding environment #linux . 虛擬環境名稱/bin/activate #windows 虛擬環境名稱\scripts\activate  這時候再裝要使用的Python Package pip install XXXX  回到實際環境 deactivate  若因為專案資料夾搬移或更名,請重新locate cd /path/to/your_project_new_dir virtualenv --relocatable your_virtualenv_name  </description>
+    </item>
+    
+    <item>
+      <title>Python HTML Entity decode and encode</title>
+      <link>https://twasa.github.io/post/python-html-entity/</link>
+      <pubDate>Sun, 10 Sep 2017 16:14:36 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/post/python-html-entity/</guid>
+      <description>–– coding: utf-8 – #decode import HTMLParser h = HTMLParser.HTMLParser() print h.unescape(&#39;&amp;amp;#35377;&amp;amp;#21151;&amp;amp;#33995;&#39;) 許功蓋 #encode a = u&#39;許功蓋&#39; a.encode(&#39;ascii&#39;, &#39;xmlcharrefreplace&#39;) &#39;&amp;amp;#35377;&amp;amp;#21151;&amp;amp;#33995;&#39;  </description>
+    </item>
+    
+    <item>
+      <title>Flask Quick Start Guide</title>
+      <link>https://twasa.github.io/post/flask-quick-start-guide/</link>
+      <pubDate>Sun, 10 Sep 2017 15:47:02 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/post/flask-quick-start-guide/</guid>
+      <description>#Flask Quickstart
+Requirements  Python Pip virtualenv Flask : a web development framework Werkzeug：a toolkit for WSGI Jinja2：renders templates  virtualenv：multiple side-by-side installations of Python  安裝：pip install virtualenv 基本使用方式：  ### 先建立專案資料夾 mkdir myproject cd myproject ### 初始化 virtualenv env ### activate the corresponding environment . venv/bin/activate or venv\scripts\activate ### 這時候再裝Flask pip install Flask ### 回到實際環境 deactivate ### 若因為目錄搬移或更名 需重新locate cd /path/to/your_project_new_dir virtualenv --relocatable your_virtualenv_name  建立第一個app(記得啟動venv), save it as hello.</description>
+    </item>
+    
+    <item>
+      <title>Hugo A Fast and Flexible Website Generator</title>
+      <link>https://twasa.github.io/post/hugo-how-to/</link>
       <pubDate>Fri, 08 Sep 2017 19:12:41 +0800</pubDate>
       
-      <guid>http://twasa.github.io/post/hugo-how-to/</guid>
-      <description>Hugo-Blog-How-To  Create a blog folder  hugo new site blog   go in to the folder and modify config.toml for your github url  vi config.toml baseURL = &amp;quot;http://&amp;lt;your-github-account&amp;gt;.github.io/&amp;quot;   create new page  hugo new about.md   create new post  hugo new post/first.md   install a theme  cd themes git clone https://github.com/xxx/xxx.git   localhost server preview  hugo server --buildDrafts --watch   references  https://gohugo.</description>
+      <guid>https://twasa.github.io/post/hugo-how-to/</guid>
+      <description>Quick Start Guide  Hugo download
+ https://github.com/gohugoio/hugo/releases  Install Hugo
+ https://gohugo.io/getting-started/installing/  Create a blog folder
+  hugo new site blog   go in to the blog folder and modify config.toml for your github url  baseURL = &amp;quot;https://&amp;lt;your-github-account&amp;gt;.github.io/&amp;quot;   create new page  hugo new about.md   create new post  hugo new post/first.md   install a theme  cd themes git clone https://github.</description>
     </item>
     
   </channel>
