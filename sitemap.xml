@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://twasa.github.io/about/</loc>
+    <lastmod>2017-09-11T02:31:16+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://twasa.github.io/post/python-virtualenv/</loc>
     <lastmod>2017-09-10T17:00:56+08:00</lastmod>
   </url>
@@ -18,16 +23,6 @@
   </url>
   
   <url>
-    <loc>https://twasa.github.io/_header/</loc>
-    <lastmod>2017-09-08T19:45:43+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://twasa.github.io/</loc>
-    <lastmod>2017-09-08T19:41:27+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://twasa.github.io/post/hugo-how-to/</loc>
     <lastmod>2017-09-08T19:12:41+08:00</lastmod>
   </url>
@@ -38,13 +33,38 @@
   </url>
   
   <url>
+    <loc>https://twasa.github.io/categories/development/</loc>
+    <lastmod>2017-09-10T17:00:56+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://twasa.github.io/tags/development/</loc>
+    <lastmod>2017-09-10T17:00:56+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://twasa.github.io/post/</loc>
     <lastmod>2017-09-10T17:00:56+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://twasa.github.io/tags/python/</loc>
+    <lastmod>2017-09-10T17:00:56+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://twasa.github.io/tags/</loc>
+    <lastmod>2017-09-10T17:00:56+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://twasa.github.io/</loc>
+    <lastmod>2017-09-11T02:31:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   

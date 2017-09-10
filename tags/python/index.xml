@@ -1,29 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>William&#39;s Blog</title>
-    <link>https://twasa.github.io/</link>
-    <description>Recent content on William&#39;s Blog</description>
+    <title>Python on William&#39;s Blog</title>
+    <link>https://twasa.github.io/tags/python/</link>
+    <description>Recent content in Python on William&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2017, all rights reserved.</copyright>
-    <lastBuildDate>Mon, 11 Sep 2017 02:31:16 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 10 Sep 2017 17:00:56 +0800</lastBuildDate>
     
-	<atom:link href="https://twasa.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://twasa.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>About</title>
-      <link>https://twasa.github.io/about/</link>
-      <pubDate>Mon, 11 Sep 2017 02:31:16 +0800</pubDate>
-      
-      <guid>https://twasa.github.io/about/</guid>
-      <description>Hugo is a static site engine written in Go.
-It makes use of a variety of open source projects including:
- Cobra Viper J Walter Weatherman Cast  Learn more and contribute on GitHub.
-Setup Some fun facts about Hugo:
- Built in Go Loosely inspired by Jekyll Primarily developed by spf13 on the train while commuting to and from Manhattan. Coded in Vim using spf13-vim  Have questions or suggestions?</description>
-    </item>
     
     <item>
       <title>Python Virtualenv</title>
@@ -51,18 +38,6 @@ Setup Some fun facts about Hugo:
       <guid>https://twasa.github.io/post/flask-quick-start-guide/</guid>
       <description>#Flask Quickstart
 Requirements  Python Pip virtualenv Flask : a web development framework Werkzeug：a toolkit for WSGI Jinja2：renders templates  virtualenv：multiple side-by-side installations of Python  安裝：pip install virtualenv 基本使用方式：  ### 先建立專案資料夾 mkdir myproject cd myproject ### 初始化 virtualenv env ### activate the corresponding environment . venv/bin/activate or venv\scripts\activate ### 這時候再裝Flask pip install Flask ### 回到實際環境 deactivate ### 若因為目錄搬移或更名 需重新locate cd /path/to/your_project_new_dir virtualenv --relocatable your_virtualenv_name  建立第一個app(記得啟動venv), save it as hello.</description>
-    </item>
-    
-    <item>
-      <title>Hugo A Fast and Flexible Website Generator</title>
-      <link>https://twasa.github.io/post/hugo-how-to/</link>
-      <pubDate>Fri, 08 Sep 2017 19:12:41 +0800</pubDate>
-      
-      <guid>https://twasa.github.io/post/hugo-how-to/</guid>
-      <description>Quick Start Guide  Hugo download
- https://github.com/gohugoio/hugo/releases  Install Hugo
- https://gohugo.io/getting-started/installing/  Create a blog folder
-  hugo new site blog   go in to the blog folder and modify config.toml for your github url  baseURL = &amp;quot;https://&amp;lt;your-github-account&amp;gt;.github.io/&amp;quot;   create new page  hugo new about.md   create new post  hugo new post/first.md   install a theme  cd themes git clone https://github.</description>
     </item>
     
   </channel>
