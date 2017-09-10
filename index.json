@@ -1,10 +1,10 @@
 [
 {
 	"uri": "https://twasa.github.io/post/python-html-entity/",
-	"title": "Python HTML Entity",
+	"title": "Python HTML Entity decode and encode",
 	"tags": [],
 	"description": "",
-	"content": "–– coding: utf-8 – #decode import HTMLParser h = HTMLParser.HTMLParser() print h.unescape('\u0026amp;#35377;\u0026amp;#21151;\u0026amp;#33995;') 許功蓋 #encode a = u'許功蓋' a.encode('ascii', 'xmlcharrefreplace')  "
+	"content": "–– coding: utf-8 – #decode import HTMLParser h = HTMLParser.HTMLParser() print h.unescape('\u0026amp;#35377;\u0026amp;#21151;\u0026amp;#33995;') 許功蓋 #encode a = u'許功蓋' a.encode('ascii', 'xmlcharrefreplace') '\u0026amp;#35377;\u0026amp;#21151;\u0026amp;#33995;'  "
 },
 {
 	"uri": "https://twasa.github.io/post/flask-quick-start-guide/",

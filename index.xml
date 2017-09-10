@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Python HTML Entity</title>
+      <title>Python HTML Entity decode and encode</title>
       <link>https://twasa.github.io/post/python-html-entity/</link>
       <pubDate>Sun, 10 Sep 2017 16:14:36 +0800</pubDate>
       
       <guid>https://twasa.github.io/post/python-html-entity/</guid>
-      <description>–– coding: utf-8 – #decode import HTMLParser h = HTMLParser.HTMLParser() print h.unescape(&#39;&amp;amp;#35377;&amp;amp;#21151;&amp;amp;#33995;&#39;) 許功蓋 #encode a = u&#39;許功蓋&#39; a.encode(&#39;ascii&#39;, &#39;xmlcharrefreplace&#39;)  </description>
+      <description>–– coding: utf-8 – #decode import HTMLParser h = HTMLParser.HTMLParser() print h.unescape(&#39;&amp;amp;#35377;&amp;amp;#21151;&amp;amp;#33995;&#39;) 許功蓋 #encode a = u&#39;許功蓋&#39; a.encode(&#39;ascii&#39;, &#39;xmlcharrefreplace&#39;) &#39;&amp;amp;#35377;&amp;amp;#21151;&amp;amp;#33995;&#39;  </description>
     </item>
     
     <item>
