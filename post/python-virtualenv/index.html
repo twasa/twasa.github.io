@@ -7,7 +7,7 @@
     <meta name="description" content="">
 
 
-    <title>Python HTML Entity decode and encode :: William&#39;s Blog</title>
+    <title>Python Virtualenv :: William&#39;s Blog</title>
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -31,7 +31,7 @@
     
 
   </head>
-  <body class="" data-url="/post/python-html-entity/">
+  <body class="" data-url="/post/python-virtualenv/">
     <nav id="sidebar" class="">
 
 
@@ -116,7 +116,7 @@
   
     
       <li data-nav-id="/post/python-virtualenv/" class="dd-item
-     
+     active
       ">
         <a href="/post/python-virtualenv/">
         <span>Python Virtualenv</span> 
@@ -136,7 +136,7 @@
   
     
       <li data-nav-id="/post/python-html-entity/" class="dd-item
-     active
+     
       ">
         <a href="/post/python-html-entity/">
         <span>Python HTML Entity decode and encode</span> 
@@ -234,7 +234,7 @@
 
 
 
- <a href='/'>_Index</a> > <a href='/post/'>Posts</a> > Python HTML Entity decode and encode
+ <a href='/'>_Index</a> > <a href='/post/'>Posts</a> > Python Virtualenv
 
  
 
@@ -245,7 +245,22 @@
             </div>
             <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li><a href="#virtualenv">Virtualenv</a>
+<ul>
+<li><a href="#安裝">安裝</a>
+<ul>
+<li><a href="#建立專案資料夾">建立專案資料夾</a></li>
+<li><a href="#初始化">初始化</a></li>
+<li><a href="#activate-the-corresponding-environment">activate the corresponding environment</a></li>
+<li><a href="#這時候再裝要使用的python-package">這時候再裝要使用的Python Package</a></li>
+<li><a href="#回到實際環境">回到實際環境</a></li>
+<li><a href="#若因為專案資料夾搬移或更名-請重新locate">若因為專案資料夾搬移或更名,請重新locate</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -254,23 +269,61 @@
         
         <div id="body-inner">
           
-            <h1>Python HTML Entity decode and encode</h1>
+            <h1>Python Virtualenv</h1>
           
 
 
 
 
-<pre><code>–– coding: utf-8 –
-#decode
-import HTMLParser
-h = HTMLParser.HTMLParser()
-print h.unescape('&amp;#35377;&amp;#21151;&amp;#33995;')
-許功蓋
 
-#encode
-a = u'許功蓋'
-a.encode('ascii', 'xmlcharrefreplace')
-'&amp;#35377;&amp;#21151;&amp;#33995;'
+
+<h1 id="virtualenv">Virtualenv</h1>
+
+<ul>
+<li>可以隔離函數庫需求不同的專案，讓它們不會互相影響。在建立並啟動虛擬環境後，透過 pip 安裝的套件會被放在虛擬環境中，專案就可以擁有一個獨立的環境。</li>
+<li>在沒有權限的情況下安裝新套件</li>
+<li>不同專案可以使用不同版本的相同套件</li>
+<li>套件版本升級時不會影響其他專案</li>
+</ul>
+
+<h2 id="安裝">安裝</h2>
+
+<pre><code>pip install virtualenv
+</code></pre>
+
+<h3 id="建立專案資料夾">建立專案資料夾</h3>
+
+<pre><code>mkdir myproject
+cd myproject
+</code></pre>
+
+<h3 id="初始化">初始化</h3>
+
+<pre><code>virtualenv 虛擬環境名稱
+</code></pre>
+
+<h3 id="activate-the-corresponding-environment">activate the corresponding environment</h3>
+
+<pre><code>#linux
+. 虛擬環境名稱/bin/activate
+#windows
+虛擬環境名稱\scripts\activate
+</code></pre>
+
+<h3 id="這時候再裝要使用的python-package">這時候再裝要使用的Python Package</h3>
+
+<pre><code>pip install XXXX
+</code></pre>
+
+<h3 id="回到實際環境">回到實際環境</h3>
+
+<pre><code>deactivate
+</code></pre>
+
+<h3 id="若因為專案資料夾搬移或更名-請重新locate">若因為專案資料夾搬移或更名,請重新locate</h3>
+
+<pre><code>cd /path/to/your_project_new_dir
+virtualenv --relocatable your_virtualenv_name
 </code></pre>
 
 
@@ -329,25 +382,6 @@ a.encode('ascii', 'xmlcharrefreplace')
             
                 
                     
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -395,6 +429,22 @@ a.encode('ascii', 'xmlcharrefreplace')
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -405,10 +455,10 @@ a.encode('ascii', 'xmlcharrefreplace')
 
 
         
-            <a class="nav nav-prev" href="/post/python-virtualenv/" title="Python Virtualenv"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/post/" title="Posts"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/post/flask-quick-start-guide/" title="Flask Quick Start Guide" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/post/python-html-entity/" title="Python HTML Entity decode and encode" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

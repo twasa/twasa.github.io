@@ -115,6 +115,26 @@
  
   
     
+      <li data-nav-id="/post/python-virtualenv/" class="dd-item
+     
+      ">
+        <a href="/post/python-virtualenv/">
+        <span>Python Virtualenv</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/post/python-html-entity/" class="dd-item
      
       ">
@@ -240,6 +260,7 @@
 <li><a href="#unique-urls-redirection-behavior-有斜線跟沒斜線的差異">Unique URLs / Redirection Behavior 有斜線跟沒斜線的差異</a></li>
 <li><a href="#url-building">URL Building</a></li>
 <li><a href="#http-methods">HTTP Methods</a></li>
+<li><a href="#static-files">Static Files</a></li>
 <li><a href="#rendering-templates">Rendering Templates</a>
 <ul>
 <li><a href="#flask-will-look-for-templates-in-the-templates-folder-so-if-your-application-is-a-module-this-folder-is-next-to-that-module-if-it-s-a-package-it-s-actually-inside-your-package">Flask will look for templates in the templates folder. So if your application is a module, this folder is next to that module, if it’s a package it’s actually inside your package:</a></li>
@@ -459,8 +480,9 @@ def login():
 <li>OPTIONS: Provides a quick way for a client to figure out which methods are supported by this URL. Starting with Flask 0.6, this is implemented for you automatically.</li>
 </ul>
 
-<p>##Static Files
-To generate URLs for static files, use the special &lsquo;static&rsquo; endpoint name:
+<h2 id="static-files">Static Files</h2>
+
+<p>To generate URLs for static files, use the special &lsquo;static&rsquo; endpoint name:
 url_for(&lsquo;static&rsquo;, filename=&lsquo;style.css&rsquo;)
 The file has to be stored on the filesystem as static/style.css.</p>
 
@@ -792,6 +814,22 @@ app.wsgi_app = LighttpdCGIRootFix(app.wsgi_app)
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
