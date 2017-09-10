@@ -7,7 +7,7 @@
     <meta name="description" content="">
 
 
-    <title>_Index :: William&#39;s Blog</title>
+    <title>Python HTML Entity :: William&#39;s Blog</title>
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -31,7 +31,7 @@
     
 
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/post/python-html-entity/">
     <nav id="sidebar" class="">
 
 
@@ -82,7 +82,7 @@
   
     
     <li data-nav-id="/post/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -93,7 +93,7 @@
         
 
           
-            <i class="fa fa-angle-right fa-lg category-icon"></i>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
           
 
         
@@ -116,7 +116,7 @@
   
     
       <li data-nav-id="/post/python-html-entity/" class="dd-item
-     
+     active
       ">
         <a href="/post/python-html-entity/">
         <span>Python HTML Entity</span> 
@@ -195,27 +195,69 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
         
+          <div id="top-bar">
+            
+
+            <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <span id="sidebar-toggle-span">
+                  <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </span>
+                <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                <span class="links">
+                
+
+
+
+
+
+
+
+ <a href='/'>_Index</a> > <a href='/post/'>Posts</a> > Python HTML Entity
+
+ 
+
+ 
+
+   
+                </span>
+            </div>
+            <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+          </div>
+        
         
         <div id="body-inner">
+          
+            <h1>Python HTML Entity</h1>
           
 
 
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
 
- 
-<p>我叫william
-個人自介如下：</p>
+<pre><code>–– coding: utf-8 –
+#decode
+import HTMLParser
+h = HTMLParser.HTMLParser()
+print h.unescape('&amp;#35377;&amp;#21151;&amp;#33995;')
+許功蓋
 
-<p>我本職並非資訊科系，但對程式設計感興趣
-之前從事職業是資訊管理人員目前待業中，想轉換跑道成為程式設計人員
-目前都是靠自學，基礎程式語言，使用過 Python 語言，基本HTML略懂
-也知道如何建立環境運行與撰寫簡單的PHP
-基本上只寫過小程式，還請多多指教</p>
+#encode
+a = u'許功蓋'
+a.encode('ascii', 'xmlcharrefreplace')
+</code></pre>
+
+
+<footer class=" footline" >
 	
-  
+</footer>
+
+
 
 
         
@@ -252,8 +294,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -268,21 +308,6 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -300,6 +325,25 @@
             
                 
                     
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                 
                 
 
@@ -321,8 +365,10 @@
 
 
         
+            <a class="nav nav-prev" href="/post/" title="Posts"> <i class="fa fa-chevron-left"></i></a>
         
-            <a class="nav nav-next" href="/post/" title="Posts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+            <a class="nav nav-next" href="/post/flask-quick-start-guide/" title="Flask Quick Start Guide" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
