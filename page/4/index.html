@@ -19,7 +19,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-09-11T13:37:20&#43;08:00"/>
+<meta property="og:updated_time" content="2017-09-11T13:40:40&#43;08:00"/>
 
 
 
@@ -110,6 +110,39 @@
     <article class="post-preview">
 
   <header>
+    <h2 class="title"> <a href='https://twasa.github.io/post/python-web-automation-test/'> Python Web Automation Test</a> </h2>
+    <div class="meta">
+      Sep 11, 2017 - 1 minutes
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/development">#Development</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/python">#Python</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary">  Requirements  Python Selenium webdriver HTMLTestRunner  Sample code, test login to bugtracker and create html report from selenium import webdriver import unittest import time import HTMLTestRunner class test_class(unittest.TestCase): def setUp(self): self.verificationErrors=[] self.test=webdriver.Ie() self.url=&quot;http://your.bugtracker.com/bug/&quot; def test_login(self): pa=self.test pa.get(self.url) user=pa.find_element_by_id('username') user.send_keys('使用者帳號') passwd=pa.find_element_by_id('password') passwd.send_keys('密碼') pa.execute_script('loginsubmit()') time.sleep(10) def tearDown(self): pass if __name__==&quot;__main__&quot;: testsuite=unittest.TestSuite() testsuite.addTest(test_class(&quot;test_login&quot;)) filename=&quot;r:\\result.html&quot; fp=file(filename,'wb') runner=HTMLTestRunner.HTMLTestRunner(stream=fp,title='Result',description='Test_Report') runner.run(testsuite)   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='https://twasa.github.io/post/python-web-automation-test/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
     <h2 class="title"> <a href='https://twasa.github.io/post/python-soap-client-suds/'> Python Soap Client Suds</a> </h2>
     <div class="meta">
       Sep 11, 2017 - 1 minutes
@@ -181,39 +214,6 @@ c:\packagedemo\package\module01.py c:\packagedemo\package\module03.py c:\package
 </article>
 
 
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/cisco-ios-netwrok-cmmmands/'> Cisco Ios Netwrok Cmmmands</a> </h2>
-    <div class="meta">
-      Sep 11, 2017 - 2 minutes
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/networ">#Networ</a>
-      </div>
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/cisco">#Cisco</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> 狀態查看  show startup-config show running-config show version show vlan id show ip route show ip nhrp show crypto engine connection active sh run | inc ip route 查看連線的TCP session  show ip sockets detail  查IP流量  conf t interface xxx ip accounting end sh ip accounting 備註, 查完記得no掉, 否則會增加cpu的負擔! conf t interface xxx no ip accounting   基本操作  從User Mode進入Privileged Mode enable 從Privileged Mode進入Global Configuration Mode configure terminal 儲存設定  write or copy running-config startup-config   設定  介面IP設定 interface fastEthernet 0/0 ip address IP位置 子網路遮罩 no shutdown </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='https://twasa.github.io/post/cisco-ios-netwrok-cmmmands/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
 
 
 <div class="page-nav">
@@ -224,7 +224,7 @@ c:\packagedemo\package\module01.py c:\packagedemo\package\module03.py c:\package
   </div>
 
   <div class="page-num">
-    4/8
+    4/9
   </div>
 
   <div class="page-next">

@@ -19,7 +19,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-09-11T15:50:54&#43;08:00"/>
+<meta property="og:updated_time" content="2017-09-11T15:52:27&#43;08:00"/>
 
 
 
@@ -110,6 +110,35 @@
     <article class="post-preview">
 
   <header>
+    <h2 class="title"> <a href='https://twasa.github.io/post/aws-cli/'> Aws Cli</a> </h2>
+    <div class="meta">
+      Sep 11, 2017 - 5 minutes
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/aws">#AWS</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> AWS CLI referneces syntax aws [options] \&lt;command&gt; \&lt;subcommand&gt; [\&lt;subcommand&gt; ...] [parameters] options: --region --profile --filters &quot;Name=instance-state-name,Values=running&quot; --query  create or modify profile aws configure --profile PROFILE aws configure set default.s3.signature_version s3v4 aws configure set profile.your_profile_name.s3.signature_version s3v4  create key pairs aws --profile PROFILE --region REGION ec2 create-key-pair --key-name KEYNAME  create IAM users and permission aws --profile PROFILE iam create-user --user-name USERNAME aws --profile PROFILE iam create-access-key --user-name USERNAME aws --profile PROFILE iam put-user-policy --user-name USERNAME --policy-name POLICYNAME --policy-document file://POLICYDOCUMENT aws --profile PROFILE iam get-server-certificate --server-certificate-name CERTNAME[auto. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='https://twasa.github.io/post/aws-cli/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
     <h2 class="title"> <a href='https://twasa.github.io/post/apache-http-advanced/'> Apache Http Advanced</a> </h2>
     <div class="meta">
       Sep 11, 2017 - 3 minutes
@@ -173,39 +202,6 @@
 </article>
 
 
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/python-web-automation-test/'> Python Web Automation Test</a> </h2>
-    <div class="meta">
-      Sep 11, 2017 - 1 minutes
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/development">#Development</a>
-      </div>
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/python">#Python</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary">  Requirements  Python Selenium webdriver HTMLTestRunner  Sample code, test login to bugtracker and create html report from selenium import webdriver import unittest import time import HTMLTestRunner class test_class(unittest.TestCase): def setUp(self): self.verificationErrors=[] self.test=webdriver.Ie() self.url=&quot;http://your.bugtracker.com/bug/&quot; def test_login(self): pa=self.test pa.get(self.url) user=pa.find_element_by_id('username') user.send_keys('使用者帳號') passwd=pa.find_element_by_id('password') passwd.send_keys('密碼') pa.execute_script('loginsubmit()') time.sleep(10) def tearDown(self): pass if __name__==&quot;__main__&quot;: testsuite=unittest.TestSuite() testsuite.addTest(test_class(&quot;test_login&quot;)) filename=&quot;r:\\result.html&quot; fp=file(filename,'wb') runner=HTMLTestRunner.HTMLTestRunner(stream=fp,title='Result',description='Test_Report') runner.run(testsuite)   </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='https://twasa.github.io/post/python-web-automation-test/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
 
 
 <div class="page-nav">
@@ -216,7 +212,7 @@
   </div>
 
   <div class="page-num">
-    3/8
+    3/9
   </div>
 
   <div class="page-next">

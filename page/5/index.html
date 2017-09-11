@@ -19,7 +19,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-09-11T12:54:56&#43;08:00"/>
+<meta property="og:updated_time" content="2017-09-11T13:00:03&#43;08:00"/>
 
 
 
@@ -110,6 +110,39 @@
     <article class="post-preview">
 
   <header>
+    <h2 class="title"> <a href='https://twasa.github.io/post/cisco-ios-netwrok-cmmmands/'> Cisco Ios Netwrok Cmmmands</a> </h2>
+    <div class="meta">
+      Sep 11, 2017 - 2 minutes
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/networ">#Networ</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/cisco">#Cisco</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 狀態查看  show startup-config show running-config show version show vlan id show ip route show ip nhrp show crypto engine connection active sh run | inc ip route 查看連線的TCP session  show ip sockets detail  查IP流量  conf t interface xxx ip accounting end sh ip accounting 備註, 查完記得no掉, 否則會增加cpu的負擔! conf t interface xxx no ip accounting   基本操作  從User Mode進入Privileged Mode enable 從Privileged Mode進入Global Configuration Mode configure terminal 儲存設定  write or copy running-config startup-config   設定  介面IP設定 interface fastEthernet 0/0 ip address IP位置 子網路遮罩 no shutdown </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='https://twasa.github.io/post/cisco-ios-netwrok-cmmmands/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
     <h2 class="title"> <a href='https://twasa.github.io/post/sed/'> Sed</a> </h2>
     <div class="meta">
       Sep 11, 2017 - 1 minutes
@@ -177,44 +210,6 @@ CATALINA_OPTS=&quot;-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.managemen
 </article>
 
 
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/my-db/'> MySQL and MariaDB memo</a> </h2>
-    <div class="meta">
-      Sep 11, 2017 - 7 minutes
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/database">#Database</a>
-      </div>
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/mysql">#MySQL</a>
-      </div>
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/mariadb">#MariaDB</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> 第一次安裝完成，設定root的密碼 mysqladmin -u root -p &lsquo;密碼&rsquo; or mysql_secure_installation
-重設root密碼 /etc/init.d/mysql stop mysqld_safe --skip-grant-tables &amp; mysql -u root mysql&gt; use mysql; mysql&gt; UPDATE user SET Password=PASSWORD(&quot;密碼&quot;) WHERE User='root'; mysql&gt; flush privileges; mysql&gt; quit /etc/init.d/mysql stop /etc/init.d/mysql start  連線管理資料庫 mysqladmin -u root -p Enter password: 此時再輸入密碼(建議採用) 修改使用者密碼 方法一 使用有權限或要修改的使用者本身登入mysql mysql&gt; SET PASSWORD FOR '目標使用者'@'主機' = PASSWORD('密碼'); mysql&gt; flush privileges 方法二 使用有權限的使用者登入mysql 修改使用者密碼，只改 root 的密碼，如果沒有用 where ，則表示改全部 user 的密碼 mysql&gt; use mysql; mysql&gt; UPDATE user SET password=password('密碼') where user='root'; mysql&gt; FLUSH PRIVILEGES; 上面是不分主機位址的修改，若要像方法一區分主機的話再加上Host條件，例如 mysql&gt; UPDATE user SET Password=PASSWORD(&quot;密碼&quot;) WHERE User='root' AND Host = 'localhost'; mysql&gt; FLUSH PRIVILEGES; 方法三 同樣利用mysqladmin指令可以修改root或其他使用者密碼，但該使用者必須有SUPER權限 mysqladmin -u 使用者 -p'舊密碼' password '新密碼' 忘記密碼重設 /etc/init. </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='https://twasa.github.io/post/my-db/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
 
 
 <div class="page-nav">
@@ -225,7 +220,7 @@ CATALINA_OPTS=&quot;-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.managemen
   </div>
 
   <div class="page-num">
-    5/8
+    5/9
   </div>
 
   <div class="page-next">

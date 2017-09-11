@@ -19,7 +19,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-09-11T11:46:21&#43;08:00"/>
+<meta property="og:updated_time" content="2017-09-11T12:24:19&#43;08:00"/>
 
 
 
@@ -110,6 +110,44 @@
     <article class="post-preview">
 
   <header>
+    <h2 class="title"> <a href='https://twasa.github.io/post/my-db/'> MySQL and MariaDB memo</a> </h2>
+    <div class="meta">
+      Sep 11, 2017 - 7 minutes
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/database">#Database</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/mysql">#MySQL</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/mariadb">#MariaDB</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 第一次安裝完成，設定root的密碼 mysqladmin -u root -p &lsquo;密碼&rsquo; or mysql_secure_installation
+重設root密碼 /etc/init.d/mysql stop mysqld_safe --skip-grant-tables &amp; mysql -u root mysql&gt; use mysql; mysql&gt; UPDATE user SET Password=PASSWORD(&quot;密碼&quot;) WHERE User='root'; mysql&gt; flush privileges; mysql&gt; quit /etc/init.d/mysql stop /etc/init.d/mysql start  連線管理資料庫 mysqladmin -u root -p Enter password: 此時再輸入密碼(建議採用) 修改使用者密碼 方法一 使用有權限或要修改的使用者本身登入mysql mysql&gt; SET PASSWORD FOR '目標使用者'@'主機' = PASSWORD('密碼'); mysql&gt; flush privileges 方法二 使用有權限的使用者登入mysql 修改使用者密碼，只改 root 的密碼，如果沒有用 where ，則表示改全部 user 的密碼 mysql&gt; use mysql; mysql&gt; UPDATE user SET password=password('密碼') where user='root'; mysql&gt; FLUSH PRIVILEGES; 上面是不分主機位址的修改，若要像方法一區分主機的話再加上Host條件，例如 mysql&gt; UPDATE user SET Password=PASSWORD(&quot;密碼&quot;) WHERE User='root' AND Host = 'localhost'; mysql&gt; FLUSH PRIVILEGES; 方法三 同樣利用mysqladmin指令可以修改root或其他使用者密碼，但該使用者必須有SUPER權限 mysqladmin -u 使用者 -p'舊密碼' password '新密碼' 忘記密碼重設 /etc/init. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='https://twasa.github.io/post/my-db/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
     <h2 class="title"> <a href='https://twasa.github.io/post/regexp/'> Regexp</a> </h2>
     <div class="meta">
       Sep 11, 2017 - 3 minutes
@@ -161,35 +199,6 @@
 </article>
 
 
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/xargs/'> xargs</a> </h2>
-    <div class="meta">
-      Sep 11, 2017 - 1 minutes
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/linux">#Linux</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> xargs description  build and execute command lines from standard input  syntax and examples  Find all .log files in or below the current directory and process them  find . -name &quot;*.log&quot; -type f -print | xargs tar -cvf logs.tar find . -name &quot;*.log&quot; -type f -print | xargs -i -p cp -a {} /some/place find . -name &quot;*.log&quot; -type f -print | xargs -I [] cp -a [] /some/place -p Prompt the user about whether to run each command line and read a line from the terminal. </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='https://twasa.github.io/post/xargs/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
 
 
 <div class="page-nav">
@@ -200,7 +209,7 @@
   </div>
 
   <div class="page-num">
-    6/8
+    6/9
   </div>
 
   <div class="page-next">
