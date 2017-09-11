@@ -19,7 +19,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-09-11T13:00:03&#43;08:00"/>
+<meta property="og:updated_time" content="2017-09-11T15:48:07&#43;08:00"/>
 
 
 
@@ -110,30 +110,30 @@
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/cisco-ios-netwrok-cmmmands/'> Cisco Ios Netwrok Cmmmands</a> </h2>
+    <h2 class="title"> <a href='https://twasa.github.io/post/ansible/'> Ansible</a> </h2>
     <div class="meta">
-      Sep 11, 2017 - 2 minutes
+      Sep 11, 2017 - 5 minutes
     </div>
     
 <div class="tags">
     
       <div class="tag">
-        <a href="https://twasa.github.io/tags/networ">#Networ</a>
+        <a href="https://twasa.github.io/tags/automation">#Automation</a>
       </div>
     
       <div class="tag">
-        <a href="https://twasa.github.io/tags/cisco">#Cisco</a>
+        <a href="https://twasa.github.io/tags/devops">#Devops</a>
       </div>
     
 </div>
 
   </header>
 
-  <div class="summary"> 狀態查看  show startup-config show running-config show version show vlan id show ip route show ip nhrp show crypto engine connection active sh run | inc ip route 查看連線的TCP session  show ip sockets detail  查IP流量  conf t interface xxx ip accounting end sh ip accounting 備註, 查完記得no掉, 否則會增加cpu的負擔! conf t interface xxx no ip accounting   基本操作  從User Mode進入Privileged Mode enable 從Privileged Mode進入Global Configuration Mode configure terminal 儲存設定  write or copy running-config startup-config   設定  介面IP設定 interface fastEthernet 0/0 ip address IP位置 子網路遮罩 no shutdown </div>
+  <div class="summary"> Concept  功能：IT automation tool. It can configure systems, deploy software, and orchestrate more advanced IT tasks such as continuous deployments or zero downtime rolling updates. 管理方式：push-based Ansible manages machines in an agent-less manner. Ansible by default manages machines over the SSH protocol. Because OpenSSH is one of the most peer-reviewed open source components, security exposure is greatly reduced.  Requirement  Control Machine: SSH client and Linux system Managed Node: Python 2. </div>
 
   <footer>
   <div class="rmore">
-    <a href='https://twasa.github.io/post/cisco-ios-netwrok-cmmmands/'><nobr>Read more ...</nobr></a>
+    <a href='https://twasa.github.io/post/ansible/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
@@ -143,7 +143,7 @@
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/sed/'> Sed</a> </h2>
+    <h2 class="title"> <a href='https://twasa.github.io/post/python-web-automation-test/'> Python Web Automation Test</a> </h2>
     <div class="meta">
       Sep 11, 2017 - 1 minutes
     </div>
@@ -151,20 +151,22 @@
 <div class="tags">
     
       <div class="tag">
-        <a href="https://twasa.github.io/tags/linux">#Linux</a>
+        <a href="https://twasa.github.io/tags/development">#Development</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/python">#Python</a>
       </div>
     
 </div>
 
   </header>
 
-  <div class="summary">  reference  https://www.gnu.org/software/sed/manual/sed.html http://www.gnu.org/software/sed/manual/sed.html#Examples  syntax sed OPTIONS... [SCRIPT] [INPUTFILE...] STDOUT | sed OPTIONS... [SCRIPT]  OPTIONS -i edited in-place  SCRIPT format '起始行數,結束行數 指令/要被取代的字串/新字串/旗標'  指令： s 搜尋並取代
-旗標 g 取代全部 c 取代前詢問是否confirm I 忽略 pattern 大小寫
-example modify CentOS linux hostname sed -i 's/HOSTNAME\=.*/HOSTNAME\=NEWHOSTNAME/g' /etc/sysconfig/network  change default delimiter 改用 &ldquo;:&rdquo; sed 's:orig:NEW:'  改用 &ldquo;#&rdquo; 當delimiter sed -e 's#/#\\#g'   </div>
+  <div class="summary">  Requirements  Python Selenium webdriver HTMLTestRunner  Sample code, test login to bugtracker and create html report from selenium import webdriver import unittest import time import HTMLTestRunner class test_class(unittest.TestCase): def setUp(self): self.verificationErrors=[] self.test=webdriver.Ie() self.url=&quot;http://your.bugtracker.com/bug/&quot; def test_login(self): pa=self.test pa.get(self.url) user=pa.find_element_by_id('username') user.send_keys('使用者帳號') passwd=pa.find_element_by_id('password') passwd.send_keys('密碼') pa.execute_script('loginsubmit()') time.sleep(10) def tearDown(self): pass if __name__==&quot;__main__&quot;: testsuite=unittest.TestSuite() testsuite.addTest(test_class(&quot;test_login&quot;)) filename=&quot;r:\\result.html&quot; fp=file(filename,'wb') runner=HTMLTestRunner.HTMLTestRunner(stream=fp,title='Result',description='Test_Report') runner.run(testsuite)   </div>
 
   <footer>
   <div class="rmore">
-    <a href='https://twasa.github.io/post/sed/'><nobr>Read more ...</nobr></a>
+    <a href='https://twasa.github.io/post/python-web-automation-test/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
@@ -174,7 +176,7 @@ example modify CentOS linux hostname sed -i 's/HOSTNAME\=.*/HOSTNAME\=NEWHOSTNAM
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/apache-tomcat/'> Apache Tomcat</a> </h2>
+    <h2 class="title"> <a href='https://twasa.github.io/post/python-soap-client-suds/'> Python Soap Client Suds</a> </h2>
     <div class="meta">
       Sep 11, 2017 - 1 minutes
     </div>
@@ -182,28 +184,24 @@ example modify CentOS linux hostname sed -i 's/HOSTNAME\=.*/HOSTNAME\=NEWHOSTNAM
 <div class="tags">
     
       <div class="tag">
-        <a href="https://twasa.github.io/tags/webserver">#Webserver</a>
+        <a href="https://twasa.github.io/tags/development">#Development</a>
       </div>
     
       <div class="tag">
-        <a href="https://twasa.github.io/tags/apache">#Apache</a>
-      </div>
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/tomcat">#Tomcat</a>
+        <a href="https://twasa.github.io/tags/python">#Python</a>
       </div>
     
 </div>
 
   </header>
 
-  <div class="summary"> 參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  install java, check it running and version yum install java-1.8.0-openjdk java -version  create a nologin user for running tomcat useradd -s /sbin/nologin tomcat  download from apache tomcat cd /home/tomcat wget http://apache.stu.edu.tw/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz tar zxvf apache-tomcat-8.0.28.tar.gz  setenv.sh  設定運行參數如記憶體、垃圾回收機制等參數
-JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:+UseParallelGC&quot;  設定Tomcat JMX remote 監控
-CATALINA_OPTS=&quot;-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8888 -Dcom.sun.management.jmxremote.rmi.port=8889&quot;   catalina.properties  設定增加讓webapps可讀取property檔路徑  common. </div>
+  <div class="summary"> suds API
+ https://pypi.python.org/pypi/suds https://fedorahosted.org/suds/wiki/Documentation  example code
+  import logging logging.basicConfig(level=logging.INFO) logging.getLogger('suds.client').setLevel(logging.DEBUG) username = '' password = '' no = 20787 def b64enc(username, password): import base64 base64string = base64.encodestring('%s:%s' % (username, password)).replace('\n', '') authenticationHeader = {&quot;SOAPAction&quot; : &quot;ActionName&quot;, &quot;Authorization&quot; : &quot;Basic %s&quot; % base64string } return authenticationHeader def xmlout(xmlstr): filename = '%s.xml' % no f = open(filename, &quot;w&quot;) f.write(xmlstr.encode('utf8')) def main(): from suds.client import Client wsdl_url = 'http://example. </div>
 
   <footer>
   <div class="rmore">
-    <a href='https://twasa.github.io/post/apache-tomcat/'><nobr>Read more ...</nobr></a>
+    <a href='https://twasa.github.io/post/python-soap-client-suds/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
@@ -220,7 +218,7 @@ CATALINA_OPTS=&quot;-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.managemen
   </div>
 
   <div class="page-num">
-    2/6
+    2/7
   </div>
 
   <div class="page-next">

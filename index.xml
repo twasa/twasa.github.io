@@ -7,10 +7,47 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2017, all rights reserved.</copyright>
-    <lastBuildDate>Mon, 11 Sep 2017 13:40:40 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 11 Sep 2017 15:54:35 +0800</lastBuildDate>
     
 	<atom:link href="https://twasa.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mongodb</title>
+      <link>https://twasa.github.io/post/mongodb/</link>
+      <pubDate>Mon, 11 Sep 2017 15:54:35 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/post/mongodb/</guid>
+      <description>install  Create a /etc/yum.repos.d/mongodb-org-3.4.repo  [mongodb-org-3.4] name=MongoDB Repository baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.4/x86_64/ gpgcheck=1 enabled=1 gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc   yum  yum install -y mongodb-org  config  default path /etc/mongod.
+# security db.createUser( { user: &amp;quot;帳號&amp;quot;, pwd: &amp;quot;密碼&amp;quot;, roles: [ { role: &amp;quot;userAdminAnyDatabase&amp;quot;, db: &amp;quot;admin&amp;quot; } ] } ) security.authorization : enabled   selinux semanage port -a -t mongod_port_t -p tcp 27017  shell connection mongo --port 27017 -u &amp;quot;unitadmin&amp;quot; -p &amp;quot;xyz123&amp;quot; --authenticationDatabase &amp;quot;test&amp;quot;  list current using db db  列出資料庫清單 show dbs  切換資料庫 use 資料庫名稱  驗證 db.</description>
+    </item>
+    
+    <item>
+      <title>Aws Cli</title>
+      <link>https://twasa.github.io/post/aws-cli/</link>
+      <pubDate>Mon, 11 Sep 2017 15:52:27 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/post/aws-cli/</guid>
+      <description>AWS CLI referneces syntax aws [options] \&amp;lt;command&amp;gt; \&amp;lt;subcommand&amp;gt; [\&amp;lt;subcommand&amp;gt; ...] [parameters] options: --region --profile --filters &amp;quot;Name=instance-state-name,Values=running&amp;quot; --query  create or modify profile aws configure --profile PROFILE aws configure set default.s3.signature_version s3v4 aws configure set profile.your_profile_name.s3.signature_version s3v4  create key pairs aws --profile PROFILE --region REGION ec2 create-key-pair --key-name KEYNAME  create IAM users and permission aws --profile PROFILE iam create-user --user-name USERNAME aws --profile PROFILE iam create-access-key --user-name USERNAME aws --profile PROFILE iam put-user-policy --user-name USERNAME --policy-name POLICYNAME --policy-document file://POLICYDOCUMENT aws --profile PROFILE iam get-server-certificate --server-certificate-name CERTNAME[auto.</description>
+    </item>
+    
+    <item>
+      <title>Apache Http Advanced</title>
+      <link>https://twasa.github.io/post/apache-http-advanced/</link>
+      <pubDate>Mon, 11 Sep 2017 15:50:54 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/post/apache-http-advanced/</guid>
+      <description>http rewrite  syntax  &amp;lt;IfModule mod_rewrite.c&amp;gt; RewriteEngine On #啟用 RewriteBase /路徑 RewriteCond 變數 開關 RewriteCond 變數 條件 [選項] RewriteRule 規則 [選項] &amp;lt;/IfModule&amp;gt; # 開關 on, off # 選項 NC (no case) 不區分大小寫 F (force URL to be forbidden) 禁用URL,返回403HTTP狀態碼。 R[=code] (force redirect) 強制外部重定向 code 預設302, 最好使用301 G (force URL to be gone) 強制URL為GONE，返回410HTTP狀態碼 P (force proxy) 強制使用代理轉發。 N (next round) 重新從第一條規則開始運行重寫過程。 C (chained with next rule) 與下一條規則關聯 AND OR #if ( (A OR B) AND (C OR D) ) RewriteCond A [or] RewriteCond B [or] RewriteCond C RewriteCond D L (last rule) 表明當前規則是最後一條規則，停止分析以後規則的重寫 # 變數 - %{HTTP_HOST} !</description>
+    </item>
+    
+    <item>
+      <title>Ansible</title>
+      <link>https://twasa.github.io/post/ansible/</link>
+      <pubDate>Mon, 11 Sep 2017 15:48:07 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/post/ansible/</guid>
+      <description>Concept  功能：IT automation tool. It can configure systems, deploy software, and orchestrate more advanced IT tasks such as continuous deployments or zero downtime rolling updates. 管理方式：push-based Ansible manages machines in an agent-less manner. Ansible by default manages machines over the SSH protocol. Because OpenSSH is one of the most peer-reviewed open source components, security exposure is greatly reduced.  Requirement  Control Machine: SSH client and Linux system Managed Node: Python 2.</description>
+    </item>
     
     <item>
       <title>Python Web Automation Test</title>

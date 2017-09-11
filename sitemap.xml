@@ -3,6 +3,26 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://twasa.github.io/post/mongodb/</loc>
+    <lastmod>2017-09-11T15:54:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://twasa.github.io/post/aws-cli/</loc>
+    <lastmod>2017-09-11T15:52:27+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://twasa.github.io/post/apache-http-advanced/</loc>
+    <lastmod>2017-09-11T15:50:54+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://twasa.github.io/post/ansible/</loc>
+    <lastmod>2017-09-11T15:48:07+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://twasa.github.io/post/python-web-automation-test/</loc>
     <lastmod>2017-09-11T13:40:40+08:00</lastmod>
   </url>
@@ -89,7 +109,19 @@
   
   <url>
     <loc>https://twasa.github.io/tags/apache/</loc>
-    <lastmod>2017-09-11T12:34:25+08:00</lastmod>
+    <lastmod>2017-09-11T15:50:54+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://twasa.github.io/tags/automation/</loc>
+    <lastmod>2017-09-11T15:48:07+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://twasa.github.io/tags/aws/</loc>
+    <lastmod>2017-09-11T15:52:27+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -108,6 +140,12 @@
   <url>
     <loc>https://twasa.github.io/tags/development/</loc>
     <lastmod>2017-09-11T13:40:40+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://twasa.github.io/tags/devops/</loc>
+    <lastmod>2017-09-11T15:48:07+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -137,7 +175,7 @@
   
   <url>
     <loc>https://twasa.github.io/post/</loc>
-    <lastmod>2017-09-11T13:40:40+08:00</lastmod>
+    <lastmod>2017-09-11T15:54:35+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -149,7 +187,7 @@
   
   <url>
     <loc>https://twasa.github.io/tags/</loc>
-    <lastmod>2017-09-11T12:34:25+08:00</lastmod>
+    <lastmod>2017-09-11T15:50:54+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -161,13 +199,13 @@
   
   <url>
     <loc>https://twasa.github.io/tags/webserver/</loc>
-    <lastmod>2017-09-11T12:34:25+08:00</lastmod>
+    <lastmod>2017-09-11T15:50:54+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://twasa.github.io/</loc>
-    <lastmod>2017-09-11T13:40:40+08:00</lastmod>
+    <lastmod>2017-09-11T15:54:35+08:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2017, all rights reserved.</copyright>
-    <lastBuildDate>Mon, 11 Sep 2017 12:34:25 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 11 Sep 2017 15:50:54 +0800</lastBuildDate>
     
 	<atom:link href="https://twasa.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,9 +15,27 @@
     <item>
       <title>Apache</title>
       <link>https://twasa.github.io/tags/apache/</link>
-      <pubDate>Mon, 11 Sep 2017 12:34:25 +0800</pubDate>
+      <pubDate>Mon, 11 Sep 2017 15:50:54 +0800</pubDate>
       
       <guid>https://twasa.github.io/tags/apache/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Automation</title>
+      <link>https://twasa.github.io/tags/automation/</link>
+      <pubDate>Mon, 11 Sep 2017 15:48:07 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Aws</title>
+      <link>https://twasa.github.io/tags/aws/</link>
+      <pubDate>Mon, 11 Sep 2017 15:52:27 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/tags/aws/</guid>
       <description></description>
     </item>
     
@@ -45,6 +63,15 @@
       <pubDate>Mon, 11 Sep 2017 13:40:40 +0800</pubDate>
       
       <guid>https://twasa.github.io/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Devops</title>
+      <link>https://twasa.github.io/tags/devops/</link>
+      <pubDate>Mon, 11 Sep 2017 15:48:07 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/tags/devops/</guid>
       <description></description>
     </item>
     
@@ -105,7 +132,7 @@
     <item>
       <title>Webserver</title>
       <link>https://twasa.github.io/tags/webserver/</link>
-      <pubDate>Mon, 11 Sep 2017 12:34:25 +0800</pubDate>
+      <pubDate>Mon, 11 Sep 2017 15:50:54 +0800</pubDate>
       
       <guid>https://twasa.github.io/tags/webserver/</guid>
       <description></description>

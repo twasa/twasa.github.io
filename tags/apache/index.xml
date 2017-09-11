@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2017, all rights reserved.</copyright>
-    <lastBuildDate>Mon, 11 Sep 2017 12:34:25 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 11 Sep 2017 15:50:54 +0800</lastBuildDate>
     
 	<atom:link href="https://twasa.github.io/tags/apache/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Apache Http Advanced</title>
+      <link>https://twasa.github.io/post/apache-http-advanced/</link>
+      <pubDate>Mon, 11 Sep 2017 15:50:54 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/post/apache-http-advanced/</guid>
+      <description>http rewrite  syntax  &amp;lt;IfModule mod_rewrite.c&amp;gt; RewriteEngine On #啟用 RewriteBase /路徑 RewriteCond 變數 開關 RewriteCond 變數 條件 [選項] RewriteRule 規則 [選項] &amp;lt;/IfModule&amp;gt; # 開關 on, off # 選項 NC (no case) 不區分大小寫 F (force URL to be forbidden) 禁用URL,返回403HTTP狀態碼。 R[=code] (force redirect) 強制外部重定向 code 預設302, 最好使用301 G (force URL to be gone) 強制URL為GONE，返回410HTTP狀態碼 P (force proxy) 強制使用代理轉發。 N (next round) 重新從第一條規則開始運行重寫過程。 C (chained with next rule) 與下一條規則關聯 AND OR #if ( (A OR B) AND (C OR D) ) RewriteCond A [or] RewriteCond B [or] RewriteCond C RewriteCond D L (last rule) 表明當前規則是最後一條規則，停止分析以後規則的重寫 # 變數 - %{HTTP_HOST} !</description>
+    </item>
     
     <item>
       <title>Apache Tomcat</title>

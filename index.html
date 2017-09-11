@@ -19,7 +19,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-09-11T13:40:40&#43;08:00"/>
+<meta property="og:updated_time" content="2017-09-11T15:54:35&#43;08:00"/>
 
 
 
@@ -110,30 +110,23 @@
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/python-web-automation-test/'> Python Web Automation Test</a> </h2>
+    <h2 class="title"> <a href='https://twasa.github.io/post/mongodb/'> Mongodb</a> </h2>
     <div class="meta">
-      Sep 11, 2017 - 1 minutes
+      Sep 11, 2017 - 2 minutes
     </div>
     
 <div class="tags">
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/development">#Development</a>
-      </div>
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/python">#Python</a>
-      </div>
     
 </div>
 
   </header>
 
-  <div class="summary">  Requirements  Python Selenium webdriver HTMLTestRunner  Sample code, test login to bugtracker and create html report from selenium import webdriver import unittest import time import HTMLTestRunner class test_class(unittest.TestCase): def setUp(self): self.verificationErrors=[] self.test=webdriver.Ie() self.url=&quot;http://your.bugtracker.com/bug/&quot; def test_login(self): pa=self.test pa.get(self.url) user=pa.find_element_by_id('username') user.send_keys('使用者帳號') passwd=pa.find_element_by_id('password') passwd.send_keys('密碼') pa.execute_script('loginsubmit()') time.sleep(10) def tearDown(self): pass if __name__==&quot;__main__&quot;: testsuite=unittest.TestSuite() testsuite.addTest(test_class(&quot;test_login&quot;)) filename=&quot;r:\\result.html&quot; fp=file(filename,'wb') runner=HTMLTestRunner.HTMLTestRunner(stream=fp,title='Result',description='Test_Report') runner.run(testsuite)   </div>
+  <div class="summary"> install  Create a /etc/yum.repos.d/mongodb-org-3.4.repo  [mongodb-org-3.4] name=MongoDB Repository baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.4/x86_64/ gpgcheck=1 enabled=1 gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc   yum  yum install -y mongodb-org  config  default path /etc/mongod.
+# security db.createUser( { user: &quot;帳號&quot;, pwd: &quot;密碼&quot;, roles: [ { role: &quot;userAdminAnyDatabase&quot;, db: &quot;admin&quot; } ] } ) security.authorization : enabled   selinux semanage port -a -t mongod_port_t -p tcp 27017  shell connection mongo --port 27017 -u &quot;unitadmin&quot; -p &quot;xyz123&quot; --authenticationDatabase &quot;test&quot;  list current using db db  列出資料庫清單 show dbs  切換資料庫 use 資料庫名稱  驗證 db. </div>
 
   <footer>
   <div class="rmore">
-    <a href='https://twasa.github.io/post/python-web-automation-test/'><nobr>Read more ...</nobr></a>
+    <a href='https://twasa.github.io/post/mongodb/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
@@ -143,32 +136,26 @@
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/python-soap-client-suds/'> Python Soap Client Suds</a> </h2>
+    <h2 class="title"> <a href='https://twasa.github.io/post/aws-cli/'> Aws Cli</a> </h2>
     <div class="meta">
-      Sep 11, 2017 - 1 minutes
+      Sep 11, 2017 - 5 minutes
     </div>
     
 <div class="tags">
     
       <div class="tag">
-        <a href="https://twasa.github.io/tags/development">#Development</a>
-      </div>
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/python">#Python</a>
+        <a href="https://twasa.github.io/tags/aws">#AWS</a>
       </div>
     
 </div>
 
   </header>
 
-  <div class="summary"> suds API
- https://pypi.python.org/pypi/suds https://fedorahosted.org/suds/wiki/Documentation  example code
-  import logging logging.basicConfig(level=logging.INFO) logging.getLogger('suds.client').setLevel(logging.DEBUG) username = '' password = '' no = 20787 def b64enc(username, password): import base64 base64string = base64.encodestring('%s:%s' % (username, password)).replace('\n', '') authenticationHeader = {&quot;SOAPAction&quot; : &quot;ActionName&quot;, &quot;Authorization&quot; : &quot;Basic %s&quot; % base64string } return authenticationHeader def xmlout(xmlstr): filename = '%s.xml' % no f = open(filename, &quot;w&quot;) f.write(xmlstr.encode('utf8')) def main(): from suds.client import Client wsdl_url = 'http://example. </div>
+  <div class="summary"> AWS CLI referneces syntax aws [options] \&lt;command&gt; \&lt;subcommand&gt; [\&lt;subcommand&gt; ...] [parameters] options: --region --profile --filters &quot;Name=instance-state-name,Values=running&quot; --query  create or modify profile aws configure --profile PROFILE aws configure set default.s3.signature_version s3v4 aws configure set profile.your_profile_name.s3.signature_version s3v4  create key pairs aws --profile PROFILE --region REGION ec2 create-key-pair --key-name KEYNAME  create IAM users and permission aws --profile PROFILE iam create-user --user-name USERNAME aws --profile PROFILE iam create-access-key --user-name USERNAME aws --profile PROFILE iam put-user-policy --user-name USERNAME --policy-name POLICYNAME --policy-document file://POLICYDOCUMENT aws --profile PROFILE iam get-server-certificate --server-certificate-name CERTNAME[auto. </div>
 
   <footer>
   <div class="rmore">
-    <a href='https://twasa.github.io/post/python-soap-client-suds/'><nobr>Read more ...</nobr></a>
+    <a href='https://twasa.github.io/post/aws-cli/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
@@ -178,36 +165,30 @@
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/python-package/'> Python Package</a> </h2>
+    <h2 class="title"> <a href='https://twasa.github.io/post/apache-http-advanced/'> Apache Http Advanced</a> </h2>
     <div class="meta">
-      Sep 11, 2017 - 1 minutes
+      Sep 11, 2017 - 3 minutes
     </div>
     
 <div class="tags">
     
       <div class="tag">
-        <a href="https://twasa.github.io/tags/development">#Development</a>
+        <a href="https://twasa.github.io/tags/webserver">#Webserver</a>
       </div>
     
       <div class="tag">
-        <a href="https://twasa.github.io/tags/python">#Python</a>
+        <a href="https://twasa.github.io/tags/apache">#Apache</a>
       </div>
     
 </div>
 
   </header>
 
-  <div class="summary"> description  套件 (package) 是 Python 用資料夾組織模組 (module) 檔案的方式  例如我們寫了三個模組 module01.py module02.py module03.py
-三個模組檔案放在 package01資料夾中，package01就是套件名稱 這時package01資料夾需要有額外一個 init.py init.py 可以不需要有任何內容 因為需要這個檔案，直譯器才能辨識package01為套件
-另外寫一個 main.py 來利用 package01 中 module01.py 所定義的class(類別)或function(函數) 注意main.py 必須放在與 package 相同路徑下檔案結構如下
-c:\packagedemo\package\module01.py c:\packagedemo\package\module03.py c:\packagedemo\package\module04.py c:\packagedemo\main.py  在main.py引入套件的部份，XXX可以是module01裡面的class(類別)或function(函數) from package.module01 import XXX
-那麼 init.py 除了讓直譯器識別資料夾為套件之外有什麼作用呢？這裡，我們可以在 init.py 裡提供一個 all 變數，如下 all = [&ldquo;module01&rdquo;, &ldquo;module02&rdquo;, &ldquo;module03&rdquo;];
-當 all 被定義後，寫 from package import *
-才能保證 module01 、 module02 及 module03 三個模組都被引入。 </div>
+  <div class="summary"> http rewrite  syntax  &lt;IfModule mod_rewrite.c&gt; RewriteEngine On #啟用 RewriteBase /路徑 RewriteCond 變數 開關 RewriteCond 變數 條件 [選項] RewriteRule 規則 [選項] &lt;/IfModule&gt; # 開關 on, off # 選項 NC (no case) 不區分大小寫 F (force URL to be forbidden) 禁用URL,返回403HTTP狀態碼。 R[=code] (force redirect) 強制外部重定向 code 預設302, 最好使用301 G (force URL to be gone) 強制URL為GONE，返回410HTTP狀態碼 P (force proxy) 強制使用代理轉發。 N (next round) 重新從第一條規則開始運行重寫過程。 C (chained with next rule) 與下一條規則關聯 AND OR #if ( (A OR B) AND (C OR D) ) RewriteCond A [or] RewriteCond B [or] RewriteCond C RewriteCond D L (last rule) 表明當前規則是最後一條規則，停止分析以後規則的重寫 # 變數 - %{HTTP_HOST} ! </div>
 
   <footer>
   <div class="rmore">
-    <a href='https://twasa.github.io/post/python-package/'><nobr>Read more ...</nobr></a>
+    <a href='https://twasa.github.io/post/apache-http-advanced/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
@@ -222,7 +203,7 @@ c:\packagedemo\package\module01.py c:\packagedemo\package\module03.py c:\package
   </div>
 
   <div class="page-num">
-    1/6
+    1/7
   </div>
 
   <div class="page-next">
