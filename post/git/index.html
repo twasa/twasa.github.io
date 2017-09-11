@@ -189,14 +189,14 @@ log/*.log
 <h2 id="基本指令">基本指令</h2>
 
 <ul>
-<li><p>建立一個新的 Repository</p>
+<li>建立一個新的 Repository</li>
+</ul>
 
-<pre><code>git init
+<pre><code> git init
 </code></pre>
 
 <ul>
 <li>Clone(複製)別人的 Repository：</li>
-</ul></li>
 </ul>
 
 <pre><code> git clone https://xxx@github.com/xxx/xxx.git
@@ -212,17 +212,21 @@ log/*.log
 </code></pre>
 
 <ul>
-<li><p>加檔案</p>
+<li>加檔案</li>
+</ul>
 
-<pre><code>git add
-</code></pre></li>
+<pre><code> git add
+</code></pre>
 
-<li><p>移檔案:</p>
+<ul>
+<li>移檔案:</li>
+</ul>
 
-<pre><code>git revert
-</code></pre></li>
+<pre><code> git revert
+</code></pre>
 
-<li><p>提交檔案:</p></li>
+<ul>
+<li>提交檔案:</li>
 </ul>
 
 <pre><code> git commit
@@ -238,35 +242,43 @@ log/*.log
 </code></pre>
 
 <ul>
-<li><p>查看過去 commit 的紀錄</p>
+<li>查看過去 commit 的紀錄</li>
+</ul>
 
-<pre><code>git log
-or
-git log --stat
-or
-git log -p
-</code></pre></li>
+<pre><code> git log
+ or
+ git log --stat
+ or
+ git log -p
+</code></pre>
 
-<li><p>列出既有標籤:</p>
+<ul>
+<li>列出既有標籤:</li>
+</ul>
 
-<pre><code>git tag -l
-</code></pre></li>
+<pre><code> git tag -l
+</code></pre>
 
-<li><p>新增標籤 -a 就是標籤名稱，-m 代表該標籤說明</p>
+<ul>
+<li>新增標籤 -a 就是標籤名稱，-m 代表該標籤說明</li>
+</ul>
 
-<pre><code>git tag -a v1.4 -m 'my version 1.4'
-</code></pre></li>
+<pre><code> git tag -a v1.4 -m 'my version 1.4'
+</code></pre>
 
-<li><p>上傳標籤到遠端, git push並不會把標籤上傳到遠端，所以必須透過底下才行</p>
+<ul>
+<li>上傳標籤到遠端, git push並不會把標籤上傳到遠端，所以必須透過底下才行</li>
+</ul>
 
 <pre><code>git push origin v1.5
-</code></pre></li>
+</code></pre>
 
-<li><p>如果在本機端很多標籤，利用 –tags 一次上傳上去</p>
+<ul>
+<li>如果在本機端很多標籤，利用 –tags 一次上傳上去</li>
+</ul>
 
 <pre><code>git push origin --tags
-</code></pre></li>
-</ul>
+</code></pre>
  </div>
     <footer class="post-footer">
 
