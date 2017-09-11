@@ -28,7 +28,7 @@
       
       <guid>https://twasa.github.io/post/python-soap-client-suds/</guid>
       <description>suds API
- https://pypi.python.org/pypi/suds https://fedorahosted.org/suds/wiki/Documentation  example code: ``` import logging logging.basicConfig(level=logging.INFO) logging.getLogger(&amp;lsquo;suds.client&amp;rsquo;).setLevel(logging.DEBUG)
+ https://pypi.python.org/pypi/suds https://fedorahosted.org/suds/wiki/Documentation  example code ``` import logging logging.basicConfig(level=logging.INFO) logging.getLogger(&amp;lsquo;suds.client&amp;rsquo;).setLevel(logging.DEBUG)
   username = &amp;ldquo; password = &amp;ldquo; no = 20787
 def b64enc(username, password): import base64 base64string = base64.encodestring(&amp;lsquo;%s:%s&amp;rsquo; % (username, password)).replace(&amp;rsquo;\n&amp;rsquo;, &amp;ldquo;) authenticationHeader = {&amp;ldquo;SOAPAction&amp;rdquo; : &amp;ldquo;ActionName&amp;rdquo;, &amp;ldquo;Authorization&amp;rdquo; : &amp;ldquo;Basic %s&amp;rdquo; % base64string } return authenticationHeader
 def xmlout(xmlstr): filename = &amp;lsquo;%s.xml&amp;rsquo; % no f = open(filename, &amp;ldquo;w&amp;rdquo;) f.write(xmlstr.encode(&amp;lsquo;utf8&amp;rsquo;))
