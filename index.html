@@ -19,7 +19,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-09-11T13:00:03&#43;08:00"/>
+<meta property="og:updated_time" content="2017-09-11T13:21:51&#43;08:00"/>
 
 
 
@@ -110,6 +110,37 @@
     <article class="post-preview">
 
   <header>
+    <h2 class="title"> <a href='https://twasa.github.io/post/python-package/'> Python Package</a> </h2>
+    <div class="meta">
+      Sep 11, 2017 - 1 minutes
+    </div>
+    
+<div class="tags">
+    
+</div>
+
+  </header>
+
+  <div class="summary"> description  套件 (package) 是 Python 用資料夾組織模組 (module) 檔案的方式  例如我們寫了三個模組 module01.py module02.py module03.py
+三個模組檔案放在 package01資料夾中，package01就是套件名稱 這時package01資料夾需要有額外一個 init.py init.py 可以不需要有任何內容 因為需要這個檔案，直譯器才能辨識package01為套件
+另外寫一個 main.py 來利用 package01 中 module01.py 所定義的class(類別)或function(函數) 注意main.py 必須放在與 package 相同路徑下檔案結構如下
+c:\packagedemo\package\module01.py c:\packagedemo\package\module03.py c:\packagedemo\package\module04.py c:\packagedemo\main.py  在main.py引入套件的部份，XXX可以是module01裡面的class(類別)或function(函數) from package.module01 import XXX
+那麼 init.py 除了讓直譯器識別資料夾為套件之外有什麼作用呢？這裡，我們可以在 init.py 裡提供一個 all 變數，如下 all = [&ldquo;module01&rdquo;, &ldquo;module02&rdquo;, &ldquo;module03&rdquo;];
+當 all 被定義後，寫 from package import *
+才能保證 module01 、 module02 及 module03 三個模組都被引入。 </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='https://twasa.github.io/post/python-package/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
     <h2 class="title"> <a href='https://twasa.github.io/post/cisco-ios-netwrok-cmmmands/'> Cisco Ios Netwrok Cmmmands</a> </h2>
     <div class="meta">
       Sep 11, 2017 - 2 minutes
@@ -153,31 +184,6 @@ example modify CentOS linux hostname sed -i 's/HOSTNAME\=.*/HOSTNAME\=NEWHOSTNAM
   <footer>
   <div class="rmore">
     <a href='https://twasa.github.io/post/sed/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/apache-tomcat/'> Apache Tomcat</a> </h2>
-    <div class="meta">
-      Sep 11, 2017 - 1 minutes
-    </div>
-    
-<div class="tags">
-    
-</div>
-
-  </header>
-
-  <div class="summary"> 參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  install java, check it running and version yum install java-1.8.0-openjdk java -version  create a nologin user for running tomcat useradd -s /sbin/nologin tomcat  download from apache tomcat cd /home/tomcat wget http://apache.stu.edu.tw/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz tar zxvf apache-tomcat-8.0.28.tar.gz  setenv.sh  設定運行參數如記憶體、垃圾回收機制等參數  JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:+UseParallelGC&quot;  設定Tomcat JMX remote 監控  CATALINA_OPTS=&quot;-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8888 -Dcom.sun.management.jmxremote.rmi.port=8889&quot;   catalina.properties  設定增加讓webapps可讀取property檔路徑  common. </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='https://twasa.github.io/post/apache-tomcat/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 

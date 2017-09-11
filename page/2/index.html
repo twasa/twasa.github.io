@@ -19,7 +19,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-09-11T12:24:19&#43;08:00"/>
+<meta property="og:updated_time" content="2017-09-11T12:34:25&#43;08:00"/>
 
 
 
@@ -110,6 +110,31 @@
     <article class="post-preview">
 
   <header>
+    <h2 class="title"> <a href='https://twasa.github.io/post/apache-tomcat/'> Apache Tomcat</a> </h2>
+    <div class="meta">
+      Sep 11, 2017 - 1 minutes
+    </div>
+    
+<div class="tags">
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  install java, check it running and version yum install java-1.8.0-openjdk java -version  create a nologin user for running tomcat useradd -s /sbin/nologin tomcat  download from apache tomcat cd /home/tomcat wget http://apache.stu.edu.tw/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz tar zxvf apache-tomcat-8.0.28.tar.gz  setenv.sh  設定運行參數如記憶體、垃圾回收機制等參數  JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:+UseParallelGC&quot;  設定Tomcat JMX remote 監控  CATALINA_OPTS=&quot;-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8888 -Dcom.sun.management.jmxremote.rmi.port=8889&quot;   catalina.properties  設定增加讓webapps可讀取property檔路徑  common. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='https://twasa.github.io/post/apache-tomcat/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
     <h2 class="title"> <a href='https://twasa.github.io/post/my-db/'> My Db</a> </h2>
     <div class="meta">
       Sep 11, 2017 - 7 minutes
@@ -152,31 +177,6 @@
   <footer>
   <div class="rmore">
     <a href='https://twasa.github.io/post/regexp/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/find/'> find</a> </h2>
-    <div class="meta">
-      Sep 11, 2017 - 1 minutes
-    </div>
-    
-<div class="tags">
-    
-</div>
-
-  </header>
-
-  <div class="summary"> find description  search for files in a directory hierarchy  syntax find [options] [path...] [expression] --newerXY Compares the timestamp of the current file with reference. The reference argument is normally the name of a file (and one of its timestamps is used for the comparison) but it may also be a string describing an absolute time. X and Y are placeholders for other letters, and these letters select which time belonging to how reference is used for the comparison find file modified newer than some daytimes find /var/log -newermt '2016-06-01T00:00:00' -name pattern Base of file name (the path with the leading directories removed) matches shell pattern pattern. </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='https://twasa.github.io/post/find/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 

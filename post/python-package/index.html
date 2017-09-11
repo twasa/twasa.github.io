@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="" />
+<meta name="description" content="William&#39;s blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.26" />
+
+<link rel="canonical" href="https://twasa.github.io/post/python-package/">
+<base href="https://twasa.github.io/" />
+<meta property="og:title" content="Python Package" />
+<meta property="og:description" content="description  套件 (package) 是 Python 用資料夾組織模組 (module) 檔案的方式  例如我們寫了三個模組 module01.py module02.py module03.py
+三個模組檔案放在 package01資料夾中，package01就是套件名稱 這時package01資料夾需要有額外一個 init.py init.py 可以不需要有任何內容 因為需要這個檔案，直譯器才能辨識package01為套件
+另外寫一個 main.py 來利用 package01 中 module01.py 所定義的class(類別)或function(函數) 注意main.py 必須放在與 package 相同路徑下檔案結構如下
+c:\packagedemo\package\module01.py c:\packagedemo\package\module03.py c:\packagedemo\package\module04.py c:\packagedemo\main.py  在main.py引入套件的部份，XXX可以是module01裡面的class(類別)或function(函數) from package.module01 import XXX
+那麼 init.py 除了讓直譯器識別資料夾為套件之外有什麼作用呢？這裡，我們可以在 init.py 裡提供一個 all 變數，如下 all = [&ldquo;module01&rdquo;, &ldquo;module02&rdquo;, &ldquo;module03&rdquo;];
+當 all 被定義後，寫 from package import *
+才能保證 module01 、 module02 及 module03 三個模組都被引入。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://twasa.github.io/post/python-package/" />
+
+
+
+<meta property="article:published_time" content="2017-09-11T13:21:51&#43;08:00"/>
+<meta property="article:modified_time" content="2017-09-11T13:21:51&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Python Package"/>
+<meta name="twitter:description" content="description  套件 (package) 是 Python 用資料夾組織模組 (module) 檔案的方式  例如我們寫了三個模組 module01.py module02.py module03.py
+三個模組檔案放在 package01資料夾中，package01就是套件名稱 這時package01資料夾需要有額外一個 init.py init.py 可以不需要有任何內容 因為需要這個檔案，直譯器才能辨識package01為套件
+另外寫一個 main.py 來利用 package01 中 module01.py 所定義的class(類別)或function(函數) 注意main.py 必須放在與 package 相同路徑下檔案結構如下
+c:\packagedemo\package\module01.py c:\packagedemo\package\module03.py c:\packagedemo\package\module04.py c:\packagedemo\main.py  在main.py引入套件的部份，XXX可以是module01裡面的class(類別)或function(函數) from package.module01 import XXX
+那麼 init.py 除了讓直譯器識別資料夾為套件之外有什麼作用呢？這裡，我們可以在 init.py 裡提供一個 all 變數，如下 all = [&ldquo;module01&rdquo;, &ldquo;module02&rdquo;, &ldquo;module03&rdquo;];
+當 all 被定義後，寫 from package import *
+才能保證 module01 、 module02 及 module03 三個模組都被引入。"/>
+
+
+
+<meta itemprop="name" content="Python Package">
+<meta itemprop="description" content="description  套件 (package) 是 Python 用資料夾組織模組 (module) 檔案的方式  例如我們寫了三個模組 module01.py module02.py module03.py
+三個模組檔案放在 package01資料夾中，package01就是套件名稱 這時package01資料夾需要有額外一個 init.py init.py 可以不需要有任何內容 因為需要這個檔案，直譯器才能辨識package01為套件
+另外寫一個 main.py 來利用 package01 中 module01.py 所定義的class(類別)或function(函數) 注意main.py 必須放在與 package 相同路徑下檔案結構如下
+c:\packagedemo\package\module01.py c:\packagedemo\package\module03.py c:\packagedemo\package\module04.py c:\packagedemo\main.py  在main.py引入套件的部份，XXX可以是module01裡面的class(類別)或function(函數) from package.module01 import XXX
+那麼 init.py 除了讓直譯器識別資料夾為套件之外有什麼作用呢？這裡，我們可以在 init.py 裡提供一個 all 變數，如下 all = [&ldquo;module01&rdquo;, &ldquo;module02&rdquo;, &ldquo;module03&rdquo;];
+當 all 被定義後，寫 from package import *
+才能保證 module01 、 module02 及 module03 三個模組都被引入。">
+
+
+<meta itemprop="dateModified" content="2017-09-11T13:21:51&#43;08:00" />
+<meta itemprop="wordCount" content="65">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/color-dark.css" />
+
+
+
+<title>
+
+
+     Python Package 
+
+</title>
+
+<script src="js/highlight.min.js"></script>
+<link rel="stylesheet" href="css/tomorrow-night.min.css" />
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://twasa.github.io/">William&#39;s Blog</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://twasa.github.io/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://twasa.github.io/about/"><div class="nav-item-title">About</div></a>
+    
+    <a class="nav-item" href="https://twasa.github.io/tags/"><div class="nav-item-title">Tags</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/twasa" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Python Package </h1>
+    <div class="content"> 
+
+<h1 id="description">description</h1>
+
+<ul>
+<li>套件 (package) 是 Python 用資料夾組織模組 (module) 檔案的方式</li>
+</ul>
+
+<p>例如我們寫了三個模組
+module01.py
+module02.py
+module03.py</p>
+
+<p>三個模組檔案放在 package01資料夾中，package01就是套件名稱
+這時package01資料夾需要有額外一個 <strong>init</strong>.py
+<strong>init</strong>.py 可以不需要有任何內容
+因為需要這個檔案，直譯器才能辨識package01為套件</p>
+
+<p>另外寫一個 main.py 來利用 package01 中 module01.py 所定義的class(類別)或function(函數)
+注意main.py 必須放在與 package 相同路徑下檔案結構如下</p>
+
+<pre><code>c:\packagedemo\package\module01.py
+c:\packagedemo\package\module03.py
+c:\packagedemo\package\module04.py
+c:\packagedemo\main.py
+</code></pre>
+
+<p>在main.py引入套件的部份，XXX可以是module01裡面的class(類別)或function(函數)
+from package.module01 import XXX</p>
+
+<p>那麼 <strong>init.py</strong> 除了讓直譯器識別資料夾為套件之外有什麼作用呢？這裡，我們可以在 <strong>init.py</strong> 裡提供一個 all 變數，如下
+all = [&ldquo;module01&rdquo;, &ldquo;module02&rdquo;, &ldquo;module03&rdquo;];</p>
+
+<p>當 all 被定義後，寫
+from package import *</p>
+
+<p>才能保證 module01 、 module02 及 module03 三個模組都被引入。</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> Sep 11, 2017 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/twasa" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="https://twasa.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2017, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</body>
+</html>
+
