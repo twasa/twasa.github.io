@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="" />
+<meta name="description" content="William&#39;s blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.26" />
+
+<link rel="canonical" href="https://twasa.github.io/post/python-soap-client-suds/">
+<base href="https://twasa.github.io/" />
+<meta property="og:title" content="Python Soap Client Suds" />
+<meta property="og:description" content="suds API
+ https://pypi.python.org/pypi/suds https://fedorahosted.org/suds/wiki/Documentation  example code: ``` import logging logging.basicConfig(level=logging.INFO) logging.getLogger(&lsquo;suds.client&rsquo;).setLevel(logging.DEBUG)
+  username = &lsquo;帳號&rsquo; password = &lsquo;密碼&rsquo; no = 20787
+def b64enc(username, password): import base64 base64string = base64.encodestring(&lsquo;%s:%s&rsquo; % (username, password)).replace(&rsquo;\n&rsquo;, &ldquo;) authenticationHeader = {&ldquo;SOAPAction&rdquo; : &ldquo;ActionName&rdquo;, &ldquo;Authorization&rdquo; : &ldquo;Basic %s&rdquo; % base64string } return authenticationHeader
+def xmlout(xmlstr): filename = &lsquo;%s.xml&rsquo; % no f = open(filename, &ldquo;w&rdquo;) f.write(xmlstr.encode(&lsquo;utf8&rsquo;))
+def main(): from suds.client import Client wsdl_url = &lsquo;http://example." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://twasa.github.io/post/python-soap-client-suds/" />
+
+
+
+<meta property="article:published_time" content="2017-09-11T13:37:20&#43;08:00"/>
+<meta property="article:modified_time" content="2017-09-11T13:37:20&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Python Soap Client Suds"/>
+<meta name="twitter:description" content="suds API
+ https://pypi.python.org/pypi/suds https://fedorahosted.org/suds/wiki/Documentation  example code: ``` import logging logging.basicConfig(level=logging.INFO) logging.getLogger(&lsquo;suds.client&rsquo;).setLevel(logging.DEBUG)
+  username = &lsquo;帳號&rsquo; password = &lsquo;密碼&rsquo; no = 20787
+def b64enc(username, password): import base64 base64string = base64.encodestring(&lsquo;%s:%s&rsquo; % (username, password)).replace(&rsquo;\n&rsquo;, &ldquo;) authenticationHeader = {&ldquo;SOAPAction&rdquo; : &ldquo;ActionName&rdquo;, &ldquo;Authorization&rdquo; : &ldquo;Basic %s&rdquo; % base64string } return authenticationHeader
+def xmlout(xmlstr): filename = &lsquo;%s.xml&rsquo; % no f = open(filename, &ldquo;w&rdquo;) f.write(xmlstr.encode(&lsquo;utf8&rsquo;))
+def main(): from suds.client import Client wsdl_url = &lsquo;http://example."/>
+
+
+
+<meta itemprop="name" content="Python Soap Client Suds">
+<meta itemprop="description" content="suds API
+ https://pypi.python.org/pypi/suds https://fedorahosted.org/suds/wiki/Documentation  example code: ``` import logging logging.basicConfig(level=logging.INFO) logging.getLogger(&lsquo;suds.client&rsquo;).setLevel(logging.DEBUG)
+  username = &lsquo;帳號&rsquo; password = &lsquo;密碼&rsquo; no = 20787
+def b64enc(username, password): import base64 base64string = base64.encodestring(&lsquo;%s:%s&rsquo; % (username, password)).replace(&rsquo;\n&rsquo;, &ldquo;) authenticationHeader = {&ldquo;SOAPAction&rdquo; : &ldquo;ActionName&rdquo;, &ldquo;Authorization&rdquo; : &ldquo;Basic %s&rdquo; % base64string } return authenticationHeader
+def xmlout(xmlstr): filename = &lsquo;%s.xml&rsquo; % no f = open(filename, &ldquo;w&rdquo;) f.write(xmlstr.encode(&lsquo;utf8&rsquo;))
+def main(): from suds.client import Client wsdl_url = &lsquo;http://example.">
+
+
+<meta itemprop="dateModified" content="2017-09-11T13:37:20&#43;08:00" />
+<meta itemprop="wordCount" content="98">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/color-dark.css" />
+
+
+
+<title>
+
+
+     Python Soap Client Suds 
+
+</title>
+
+<script src="js/highlight.min.js"></script>
+<link rel="stylesheet" href="css/tomorrow-night.min.css" />
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://twasa.github.io/">William&#39;s Blog</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://twasa.github.io/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://twasa.github.io/about/"><div class="nav-item-title">About</div></a>
+    
+    <a class="nav-item" href="https://twasa.github.io/tags/"><div class="nav-item-title">Tags</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/twasa" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Python Soap Client Suds </h1>
+    <div class="content"> <ul>
+<li><p>suds API</p>
+
+<ul>
+<li><a href="https://pypi.python.org/pypi/suds">https://pypi.python.org/pypi/suds</a></li>
+<li><a href="https://fedorahosted.org/suds/wiki/Documentation">https://fedorahosted.org/suds/wiki/Documentation</a></li>
+</ul></li>
+
+<li><p>example code:
+```
+import logging
+logging.basicConfig(level=logging.INFO)
+logging.getLogger(&lsquo;suds.client&rsquo;).setLevel(logging.DEBUG)</p></li>
+</ul>
+
+<p>username = &lsquo;帳號&rsquo;
+password = &lsquo;密碼&rsquo;
+no = 20787</p>
+
+<p>def b64enc(username, password):
+    import base64
+    base64string = base64.encodestring(&lsquo;%s:%s&rsquo; % (username, password)).replace(&rsquo;\n&rsquo;, &ldquo;)
+    authenticationHeader = {&ldquo;SOAPAction&rdquo; : &ldquo;ActionName&rdquo;, &ldquo;Authorization&rdquo; : &ldquo;Basic %s&rdquo; % base64string }
+    return authenticationHeader</p>
+
+<p>def xmlout(xmlstr):
+    filename = &lsquo;%s.xml&rsquo; % no
+    f = open(filename, &ldquo;w&rdquo;)
+    f.write(xmlstr.encode(&lsquo;utf8&rsquo;))</p>
+
+<p>def main():
+    from suds.client import Client
+    wsdl_url = &lsquo;<a href="http://example.com:6666/portal-ws/ws/PersonalService?wsdl'">http://example.com:6666/portal-ws/ws/PersonalService?wsdl'</a>
+    authenticationHeader = b64enc(username, password)
+    client = Client(url=wsdl_url, headers=authenticationHeader, retxml=True)
+    #list_of_methods = [method for method in client.wsdl.services[0].ports[0].methods]
+    response = client.service.findByNo(no)
+    xml = response.decode(&lsquo;utf8&rsquo;)
+    print xml
+    xmlout(xml)</p>
+
+<p>if <strong>name</strong> == &lsquo;<strong>main</strong>&lsquo;:
+    main()
+```</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> Sep 11, 2017 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/twasa" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="https://twasa.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2017, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</body>
+</html>
+

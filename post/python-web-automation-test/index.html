@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="" />
+<meta name="description" content="William&#39;s blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.26" />
+
+<link rel="canonical" href="https://twasa.github.io/post/python-web-automation-test/">
+<base href="https://twasa.github.io/" />
+<meta property="og:title" content="Python Web Automation Test" />
+<meta property="og:description" content=" Requirements  Python Selenium HTMLTestRunner  Sample code, test login to bugtracker and create html report from selenium import webdriver import unittest import time import HTMLTestRunner class test_class(unittest.TestCase): def setUp(self): self.verificationErrors=[] self.test=webdriver.Ie() self.url=&quot;http://your.bugtracker.com/bug/&quot; def test_login(self): pa=self.test pa.get(self.url) user=pa.find_element_by_id(&#39;username&#39;) user.send_keys(&#39;使用者帳號&#39;) passwd=pa.find_element_by_id(&#39;password&#39;) passwd.send_keys(&#39;密碼&#39;) pa.execute_script(&#39;loginsubmit()&#39;) time.sleep(10) def tearDown(self): pass if __name__==&quot;__main__&quot;: testsuite=unittest.TestSuite() testsuite.addTest(test_class(&quot;test_login&quot;)) filename=&quot;r:\\result.html&quot; fp=file(filename,&#39;wb&#39;) runner=HTMLTestRunner.HTMLTestRunner(stream=fp,title=&#39;Result&#39;,description=&#39;Test_Report&#39;) runner.run(testsuite)  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://twasa.github.io/post/python-web-automation-test/" />
+
+
+
+<meta property="article:published_time" content="2017-09-11T13:40:40&#43;08:00"/>
+<meta property="article:modified_time" content="2017-09-11T13:40:40&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Python Web Automation Test"/>
+<meta name="twitter:description" content=" Requirements  Python Selenium HTMLTestRunner  Sample code, test login to bugtracker and create html report from selenium import webdriver import unittest import time import HTMLTestRunner class test_class(unittest.TestCase): def setUp(self): self.verificationErrors=[] self.test=webdriver.Ie() self.url=&quot;http://your.bugtracker.com/bug/&quot; def test_login(self): pa=self.test pa.get(self.url) user=pa.find_element_by_id(&#39;username&#39;) user.send_keys(&#39;使用者帳號&#39;) passwd=pa.find_element_by_id(&#39;password&#39;) passwd.send_keys(&#39;密碼&#39;) pa.execute_script(&#39;loginsubmit()&#39;) time.sleep(10) def tearDown(self): pass if __name__==&quot;__main__&quot;: testsuite=unittest.TestSuite() testsuite.addTest(test_class(&quot;test_login&quot;)) filename=&quot;r:\\result.html&quot; fp=file(filename,&#39;wb&#39;) runner=HTMLTestRunner.HTMLTestRunner(stream=fp,title=&#39;Result&#39;,description=&#39;Test_Report&#39;) runner.run(testsuite)  "/>
+
+
+
+<meta itemprop="name" content="Python Web Automation Test">
+<meta itemprop="description" content=" Requirements  Python Selenium HTMLTestRunner  Sample code, test login to bugtracker and create html report from selenium import webdriver import unittest import time import HTMLTestRunner class test_class(unittest.TestCase): def setUp(self): self.verificationErrors=[] self.test=webdriver.Ie() self.url=&quot;http://your.bugtracker.com/bug/&quot; def test_login(self): pa=self.test pa.get(self.url) user=pa.find_element_by_id(&#39;username&#39;) user.send_keys(&#39;使用者帳號&#39;) passwd=pa.find_element_by_id(&#39;password&#39;) passwd.send_keys(&#39;密碼&#39;) pa.execute_script(&#39;loginsubmit()&#39;) time.sleep(10) def tearDown(self): pass if __name__==&quot;__main__&quot;: testsuite=unittest.TestSuite() testsuite.addTest(test_class(&quot;test_login&quot;)) filename=&quot;r:\\result.html&quot; fp=file(filename,&#39;wb&#39;) runner=HTMLTestRunner.HTMLTestRunner(stream=fp,title=&#39;Result&#39;,description=&#39;Test_Report&#39;) runner.run(testsuite)  ">
+
+
+<meta itemprop="dateModified" content="2017-09-11T13:40:40&#43;08:00" />
+<meta itemprop="wordCount" content="52">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/color-dark.css" />
+
+
+
+<title>
+
+
+     Python Web Automation Test 
+
+</title>
+
+<script src="js/highlight.min.js"></script>
+<link rel="stylesheet" href="css/tomorrow-night.min.css" />
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://twasa.github.io/">William&#39;s Blog</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://twasa.github.io/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://twasa.github.io/about/"><div class="nav-item-title">About</div></a>
+    
+    <a class="nav-item" href="https://twasa.github.io/tags/"><div class="nav-item-title">Tags</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/twasa" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Python Web Automation Test </h1>
+    <div class="content"> 
+
+<h2 id="requirements">Requirements</h2>
+
+<ul>
+<li>Python</li>
+<li>Selenium</li>
+<li>HTMLTestRunner</li>
+</ul>
+
+<h2 id="sample-code-test-login-to-bugtracker-and-create-html-report">Sample code, test login to bugtracker and create html report</h2>
+
+<pre><code>from selenium import webdriver
+import unittest
+import time
+import HTMLTestRunner
+class test_class(unittest.TestCase):
+def setUp(self):
+self.verificationErrors=[]
+self.test=webdriver.Ie()
+self.url=&quot;http://your.bugtracker.com/bug/&quot;
+def test_login(self):
+pa=self.test
+pa.get(self.url)
+user=pa.find_element_by_id('username')
+user.send_keys('使用者帳號')
+passwd=pa.find_element_by_id('password')
+passwd.send_keys('密碼')
+pa.execute_script('loginsubmit()')
+time.sleep(10)
+def tearDown(self):
+pass
+if __name__==&quot;__main__&quot;:
+testsuite=unittest.TestSuite()
+testsuite.addTest(test_class(&quot;test_login&quot;))
+
+filename=&quot;r:\\result.html&quot;
+fp=file(filename,'wb')
+runner=HTMLTestRunner.HTMLTestRunner(stream=fp,title='Result',description='Test_Report')
+runner.run(testsuite)
+</code></pre>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> Sep 11, 2017 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/twasa" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="https://twasa.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2017, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</body>
+</html>
+
