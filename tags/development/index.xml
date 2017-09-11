@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2017, all rights reserved.</copyright>
-    <lastBuildDate>Mon, 11 Sep 2017 16:46:58 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 11 Sep 2017 17:05:01 +0800</lastBuildDate>
     
 	<atom:link href="https://twasa.github.io/tags/development/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jupyterhub</title>
+      <link>https://twasa.github.io/post/jupyterhub/</link>
+      <pubDate>Mon, 11 Sep 2017 17:05:01 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/post/jupyterhub/</guid>
+      <description>JupyterHub on CentOS 7 requirement  a Linux/Unix based system Python 3.4 or greater wget pip npm  install  yum search python3 yum -y install python3X yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel npm npm install -g configurable-http-proxy wget https://bootstrap.pypa.io/get-pip.py python3.X get-pip.py yum -y install python-devel python3X-devel pip3 install jupyterhub ipython[notebook]  startup  jupyterhub &amp;ndash;ip 0.0.0.0 &amp;ndash;port 8443 &amp;ndash;ssl-key my_ssl.key &amp;ndash;ssl-cert my_ssl.</description>
+    </item>
     
     <item>
       <title>Git</title>

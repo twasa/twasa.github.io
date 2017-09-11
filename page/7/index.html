@@ -19,7 +19,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-09-10T16:14:36&#43;08:00"/>
+<meta property="og:updated_time" content="2017-09-11T10:52:53&#43;08:00"/>
 
 
 
@@ -110,7 +110,61 @@
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/python-html-entity/'> Python HTML Entity decode and encode</a> </h2>
+    <h2 class="title"> <a href='https://twasa.github.io/post/grep/'> Grep</a> </h2>
+    <div class="meta">
+      Sep 11, 2017 - 1 minutes
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/linux">#Linux</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> description  prints lines that contain a match for a pattern reference  https://www.gnu.org/software/grep/manual/grep.html   syntax grep [OPTIONS] PATTERN [FILE...] grep multiple patterns OR grep 'pattern1\|pattern2\|pattern3' AND grep -E 'pattern1.*pattern2.*pattern3' filename -v, --invert-match Invert the sense of matching, to select non-matching lines. (-v is specified by POSIX .) grep -v 'unwanted_word' -i, --ignore-case Ignore case distinctions in both the PATTERN and the input files. (-i is specified by POSIX . </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='https://twasa.github.io/post/grep/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://twasa.github.io/post/lnmp/'> CentOS7 Linux Nginx MariaDB PHP</a> </h2>
+    <div class="meta">
+      Sep 11, 2017 - 0 minutes
+    </div>
+    
+<div class="tags">
+    
+</div>
+
+  </header>
+
+  <div class="summary">  </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='https://twasa.github.io/post/lnmp/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://twasa.github.io/post/python-virtualenv/'> Python Virtualenv</a> </h2>
     <div class="meta">
       Sep 10, 2017 - 1 minutes
     </div>
@@ -129,73 +183,11 @@
 
   </header>
 
-  <div class="summary"> –– coding: utf-8 – #decode import HTMLParser h = HTMLParser.HTMLParser() print h.unescape('&amp;#35377;&amp;#21151;&amp;#33995;') 許功蓋 #encode a = u'許功蓋' a.encode('ascii', 'xmlcharrefreplace') '&amp;#35377;&amp;#21151;&amp;#33995;'   </div>
+  <div class="summary">  Virtualenv的好處  可以隔離函數庫需求不同的專案，讓它們不會互相影響。在建立並啟動虛擬環境後，透過 pip 安裝的套件會被放在虛擬環境中，專案就可以擁有一個獨立的環境。 在沒有權限的情況下安裝新套件 不同專案可以使用不同版本的相同套件 套件版本升級時不會影響其他專案  安裝 pip install virtualenv  建立專案資料夾 mkdir myproject cd myproject  初始化 virtualenv 虛擬環境名稱  activate the corresponding environment #linux . 虛擬環境名稱/bin/activate #windows 虛擬環境名稱\scripts\activate  這時候再裝要使用的Python Package pip install XXXX  回到實際環境 deactivate  若因為專案資料夾搬移或更名,請重新locate cd /path/to/your_project_new_dir virtualenv --relocatable your_virtualenv_name   </div>
 
   <footer>
   <div class="rmore">
-    <a href='https://twasa.github.io/post/python-html-entity/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/flask-quick-start-guide/'> Flask Quick Start Guide</a> </h2>
-    <div class="meta">
-      Sep 10, 2017 - 8 minutes
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/development">#Development</a>
-      </div>
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/python">#Python</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> #Flask Quickstart
-Requirements  Python Pip virtualenv Flask : a web development framework Werkzeug：a toolkit for WSGI Jinja2：renders templates  virtualenv：multiple side-by-side installations of Python  安裝：pip install virtualenv 基本使用方式：  ### 先建立專案資料夾 mkdir myproject cd myproject ### 初始化 virtualenv env ### activate the corresponding environment . venv/bin/activate or venv\scripts\activate ### 這時候再裝Flask pip install Flask ### 回到實際環境 deactivate ### 若因為目錄搬移或更名 需重新locate cd /path/to/your_project_new_dir virtualenv --relocatable your_virtualenv_name  建立第一個app(記得啟動venv), save it as hello. </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='https://twasa.github.io/post/flask-quick-start-guide/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/hugo-how-to/'> Hugo A Fast and Flexible Website Generator</a> </h2>
-    <div class="meta">
-      Sep 8, 2017 - 2 minutes
-    </div>
-    
-<div class="tags">
-    
-</div>
-
-  </header>
-
-  <div class="summary"> Quick Start Guide  Hugo download
- https://github.com/gohugoio/hugo/releases  Install Hugo
- https://gohugo.io/getting-started/installing/  Create a blog folder
-  hugo new site blog   go in to the blog folder and modify config.toml for your github url  baseURL = &quot;https://&lt;your-github-account&gt;.github.io/&quot;   create new page  hugo new about.md   create new post  hugo new post/first.md   install a theme  cd themes git clone https://github. </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='https://twasa.github.io/post/hugo-how-to/'><nobr>Read more ...</nobr></a>
+    <a href='https://twasa.github.io/post/python-virtualenv/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
@@ -212,10 +204,12 @@ Requirements  Python Pip virtualenv Flask : a web development framework Werkzeug
   </div>
 
   <div class="page-num">
-    7/7
+    7/8
   </div>
 
   <div class="page-next">
+    
+    <a href="https://twasa.github.io/page/8/" title="Next page"> >> </a>
     
   </div>
 </div> 

@@ -19,7 +19,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-09-11T10:52:53&#43;08:00"/>
+<meta property="og:updated_time" content="2017-09-11T11:46:21&#43;08:00"/>
 
 
 
@@ -110,7 +110,32 @@
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/grep/'> Grep</a> </h2>
+    <h2 class="title"> <a href='https://twasa.github.io/post/regexp/'> Regexp</a> </h2>
+    <div class="meta">
+      Sep 11, 2017 - 3 minutes
+    </div>
+    
+<div class="tags">
+    
+</div>
+
+  </header>
+
+  <div class="summary"> Regula Express  reference :     說明及範例 比對不成立之字串     /a/ 含字母 “a” 的字串，例如 “ab”, “bac”, “cba” “xyz”   /a./ 含字母 “a” 以及其後任一個字元的字串，例如 “ab”, “bac”（若要比對.，請使用 .） “a”, “ba”   /^xy/ 以 “xy” 開始的字串，例如 “xyz”, “xyab”（若要比對 ^，請使用 \^） “axy”, “bxy”   /xy$/ 以 “xy” 結尾的字串，例如 “axy”, “abxy”以 “xy” 結尾的字串，例如 “axy”, “abxy” （若要比對 $，請使用 \$） “xya”, “xyb”   [13579] 包含 “1” 或 “3” 或 “5” 或 “7” 或 “9” 的字串，例如：”a3b”, “1xy” “y2k”   [0-9] 含數字之字串 不含數字之字串   [a-z0-9] 含數字或小寫字母之字串 不含數字及小寫字母之字串   [a-zA-Z0-9] 含數字或字母之字串 不含數字及字母之字串   b[aeiou]t “bat”, “bet”, “bit”, “bot”, “but” “bxt”, “bzt”   [^0-9] 不含數字之字串（若要比對 ^，請使用 \^） 含數字之字串   [^aeiouAEIOU] 不含母音之字串（若要比對 ^，請使用 \^） 含母音之字串   [^\^] 不含 “^” 之字串，例如 “xyz”, “abc” “xy^”, “a^bc”       正規表示式的特定字元 說明 等效的正規表示式     \d 數字 [0-9]   \D 非數字 [^0-9]   \w 數字、字母、底線 [a-zA-Z0-9_]   \W 非 \w [^a-zA-Z0-9_]   \s 空白字元 [ \r\t\n\f]   \S 非空白字元 [^ \r\t\n\f]       正規表示式 說明     /a? </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='https://twasa.github.io/post/regexp/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://twasa.github.io/post/find/'> find</a> </h2>
     <div class="meta">
       Sep 11, 2017 - 1 minutes
     </div>
@@ -125,11 +150,11 @@
 
   </header>
 
-  <div class="summary"> description  prints lines that contain a match for a pattern reference  https://www.gnu.org/software/grep/manual/grep.html   syntax grep [OPTIONS] PATTERN [FILE...] grep multiple patterns OR grep 'pattern1\|pattern2\|pattern3' AND grep -E 'pattern1.*pattern2.*pattern3' filename -v, --invert-match Invert the sense of matching, to select non-matching lines. (-v is specified by POSIX .) grep -v 'unwanted_word' -i, --ignore-case Ignore case distinctions in both the PATTERN and the input files. (-i is specified by POSIX . </div>
+  <div class="summary"> find description  search for files in a directory hierarchy  syntax find [options] [path...] [expression] --newerXY Compares the timestamp of the current file with reference. The reference argument is normally the name of a file (and one of its timestamps is used for the comparison) but it may also be a string describing an absolute time. X and Y are placeholders for other letters, and these letters select which time belonging to how reference is used for the comparison find file modified newer than some daytimes find /var/log -newermt '2016-06-01T00:00:00' -name pattern Base of file name (the path with the leading directories removed) matches shell pattern pattern. </div>
 
   <footer>
   <div class="rmore">
-    <a href='https://twasa.github.io/post/grep/'><nobr>Read more ...</nobr></a>
+    <a href='https://twasa.github.io/post/find/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
@@ -139,55 +164,26 @@
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/lnmp/'> CentOS7 Linux Nginx MariaDB PHP</a> </h2>
+    <h2 class="title"> <a href='https://twasa.github.io/post/xargs/'> xargs</a> </h2>
     <div class="meta">
-      Sep 11, 2017 - 0 minutes
-    </div>
-    
-<div class="tags">
-    
-</div>
-
-  </header>
-
-  <div class="summary">  </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='https://twasa.github.io/post/lnmp/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/python-virtualenv/'> Python Virtualenv</a> </h2>
-    <div class="meta">
-      Sep 10, 2017 - 1 minutes
+      Sep 11, 2017 - 1 minutes
     </div>
     
 <div class="tags">
     
       <div class="tag">
-        <a href="https://twasa.github.io/tags/development">#Development</a>
-      </div>
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/python">#Python</a>
+        <a href="https://twasa.github.io/tags/linux">#Linux</a>
       </div>
     
 </div>
 
   </header>
 
-  <div class="summary">  Virtualenv的好處  可以隔離函數庫需求不同的專案，讓它們不會互相影響。在建立並啟動虛擬環境後，透過 pip 安裝的套件會被放在虛擬環境中，專案就可以擁有一個獨立的環境。 在沒有權限的情況下安裝新套件 不同專案可以使用不同版本的相同套件 套件版本升級時不會影響其他專案  安裝 pip install virtualenv  建立專案資料夾 mkdir myproject cd myproject  初始化 virtualenv 虛擬環境名稱  activate the corresponding environment #linux . 虛擬環境名稱/bin/activate #windows 虛擬環境名稱\scripts\activate  這時候再裝要使用的Python Package pip install XXXX  回到實際環境 deactivate  若因為專案資料夾搬移或更名,請重新locate cd /path/to/your_project_new_dir virtualenv --relocatable your_virtualenv_name   </div>
+  <div class="summary"> xargs description  build and execute command lines from standard input  syntax and examples  Find all .log files in or below the current directory and process them  find . -name &quot;*.log&quot; -type f -print | xargs tar -cvf logs.tar find . -name &quot;*.log&quot; -type f -print | xargs -i -p cp -a {} /some/place find . -name &quot;*.log&quot; -type f -print | xargs -I [] cp -a [] /some/place -p Prompt the user about whether to run each command line and read a line from the terminal. </div>
 
   <footer>
   <div class="rmore">
-    <a href='https://twasa.github.io/post/python-virtualenv/'><nobr>Read more ...</nobr></a>
+    <a href='https://twasa.github.io/post/xargs/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
@@ -204,7 +200,7 @@
   </div>
 
   <div class="page-num">
-    6/7
+    6/8
   </div>
 
   <div class="page-next">

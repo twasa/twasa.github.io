@@ -19,7 +19,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-09-11T17:12:29&#43;08:00"/>
+<meta property="og:updated_time" content="2017-09-10T16:14:36&#43;08:00"/>
 
 
 
@@ -110,68 +110,9 @@
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/linux-openssl/'> Linux openssl</a> </h2>
+    <h2 class="title"> <a href='https://twasa.github.io/post/python-html-entity/'> Python HTML Entity decode and encode</a> </h2>
     <div class="meta">
-      Sep 11, 2017 - 1 minutes
-    </div>
-    
-<div class="tags">
-    
-</div>
-
-  </header>
-
-  <div class="summary">  create private key openssl genrsa -out server.key 2048  create Certificate Signing Request openssl req -sha512 -new -key server.key -out server.csr -subj &quot;/C=TW/ST=Taipei/L=Taipei/O=example/OU=Personal/CN=www.example.com&quot;  check csr info openssl req -in server.csr -noout -text  Self-Sign Certificate openssl x509 -sha512 -req -days 3650 -in server.csr -signkey server.key -out server.crt  encrypt private key -a 表示檔案使用 base64 編碼 -salt 加雜湊值，增加安全性 openssl aes-256-cbc -a -salt -in server.key -out server.encrypt.key   </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='https://twasa.github.io/post/linux-openssl/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/linux-logrotation/'> Linux Logrotation</a> </h2>
-    <div class="meta">
-      Sep 11, 2017 - 1 minutes
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/linux">#Linux</a>
-      </div>
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/log">#Log</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary">  config options rotate count  rotate n  permission  create 0664 USER GROUP  by interval  daily weekly monthly yearly  by size  size 100k size 100M size 100G  archive  compress nocompress  Postrotate postrotate /usr/sbin/apachectl restart &gt; /dev/null endscript
-script  prerotate：executed before the log file is rotated postrotate：在做完 logrotate 之後啟動的指令，例如重新啟動 (kill -1 或 kill -HUP) 某個服務;  postrotate /bin/kill -HUP `cat /var/run/syslogd.pid 2&gt; /dev/null` 2&gt; /dev/null || true endscript }   others  missingok：If the log file is missing, go on to the next one without issu-ing an error message   </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='https://twasa.github.io/post/linux-logrotation/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/jupyterhub/'> Jupyterhub</a> </h2>
-    <div class="meta">
-      Sep 11, 2017 - 1 minutes
+      Sep 10, 2017 - 1 minutes
     </div>
     
 <div class="tags">
@@ -180,15 +121,81 @@ script  prerotate：executed before the log file is rotated postrotate：在做�
         <a href="https://twasa.github.io/tags/development">#Development</a>
       </div>
     
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/python">#Python</a>
+      </div>
+    
 </div>
 
   </header>
 
-  <div class="summary"> JupyterHub on CentOS 7 requirement  a Linux/Unix based system Python 3.4 or greater wget pip npm  install  yum search python3 yum -y install python3X yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel npm npm install -g configurable-http-proxy wget https://bootstrap.pypa.io/get-pip.py python3.X get-pip.py yum -y install python-devel python3X-devel pip3 install jupyterhub ipython[notebook]  startup  jupyterhub &ndash;ip 0.0.0.0 &ndash;port 8443 &ndash;ssl-key my_ssl.key &ndash;ssl-cert my_ssl. </div>
+  <div class="summary"> –– coding: utf-8 – #decode import HTMLParser h = HTMLParser.HTMLParser() print h.unescape('&amp;#35377;&amp;#21151;&amp;#33995;') 許功蓋 #encode a = u'許功蓋' a.encode('ascii', 'xmlcharrefreplace') '&amp;#35377;&amp;#21151;&amp;#33995;'   </div>
 
   <footer>
   <div class="rmore">
-    <a href='https://twasa.github.io/post/jupyterhub/'><nobr>Read more ...</nobr></a>
+    <a href='https://twasa.github.io/post/python-html-entity/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://twasa.github.io/post/flask-quick-start-guide/'> Flask Quick Start Guide</a> </h2>
+    <div class="meta">
+      Sep 10, 2017 - 8 minutes
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/development">#Development</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/python">#Python</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> #Flask Quickstart
+Requirements  Python Pip virtualenv Flask : a web development framework Werkzeug：a toolkit for WSGI Jinja2：renders templates  virtualenv：multiple side-by-side installations of Python  安裝：pip install virtualenv 基本使用方式：  ### 先建立專案資料夾 mkdir myproject cd myproject ### 初始化 virtualenv env ### activate the corresponding environment . venv/bin/activate or venv\scripts\activate ### 這時候再裝Flask pip install Flask ### 回到實際環境 deactivate ### 若因為目錄搬移或更名 需重新locate cd /path/to/your_project_new_dir virtualenv --relocatable your_virtualenv_name  建立第一個app(記得啟動venv), save it as hello. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='https://twasa.github.io/post/flask-quick-start-guide/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://twasa.github.io/post/hugo-how-to/'> Hugo A Fast and Flexible Website Generator</a> </h2>
+    <div class="meta">
+      Sep 8, 2017 - 2 minutes
+    </div>
+    
+<div class="tags">
+    
+</div>
+
+  </header>
+
+  <div class="summary"> Quick Start Guide  Hugo download
+ https://github.com/gohugoio/hugo/releases  Install Hugo
+ https://gohugo.io/getting-started/installing/  Create a blog folder
+  hugo new site blog   go in to the blog folder and modify config.toml for your github url  baseURL = &quot;https://&lt;your-github-account&gt;.github.io/&quot;   create new page  hugo new about.md   create new post  hugo new post/first.md   install a theme  cd themes git clone https://github. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='https://twasa.github.io/post/hugo-how-to/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
@@ -200,15 +207,15 @@ script  prerotate：executed before the log file is rotated postrotate：在做�
 <div class="page-nav">
   <div class="page-prev">
     
+        <a href="https://twasa.github.io/page/7/" title="Previous page" > &lt;&lt; </a>
+    
   </div>
 
   <div class="page-num">
-    1/8
+    8/8
   </div>
 
   <div class="page-next">
-    
-    <a href="https://twasa.github.io/page/2/" title="Next page"> >> </a>
     
   </div>
 </div> 
