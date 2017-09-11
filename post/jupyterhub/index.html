@@ -41,7 +41,7 @@
 
 
 <meta itemprop="dateModified" content="2017-09-11T17:05:01&#43;08:00" />
-<meta itemprop="wordCount" content="115">
+<meta itemprop="wordCount" content="113">
 
 
 
@@ -117,7 +117,7 @@
 
 <h1 id="jupyterhub-on-centos-7">JupyterHub on CentOS 7</h1>
 
-<h1 id="requirement">requirement</h1>
+<h2 id="requirement">requirement</h2>
 
 <ul>
 <li>a Linux/Unix based system</li>
@@ -127,7 +127,7 @@
 <li>npm</li>
 </ul>
 
-<h1 id="install">install</h1>
+<h2 id="install">install</h2>
 
 <ul>
 <li>yum search python3</li>
@@ -140,14 +140,14 @@
 <li>pip3 install jupyterhub ipython[notebook]</li>
 </ul>
 
-<h1 id="startup">startup</h1>
+<h2 id="startup">startup</h2>
 
 <ul>
 <li>jupyterhub &ndash;ip 0.0.0.0 &ndash;port 8443 &ndash;ssl-key my_ssl.key &ndash;ssl-cert my_ssl.cert</li>
 <li>jupyterhub -f /path/to/jupyterhub_config.py</li>
 </ul>
 
-<h1 id="config">config</h1>
+<h2 id="config">config</h2>
 
 <ul>
 <li>jupyterhub &ndash;generate-config</li>
@@ -161,7 +161,7 @@ c.Spawner.notebook_dir= '~/'
 </code></li>
 </ul>
 
-<h1 id="systemd">systemd</h1>
+<h2 id="systemd">systemd</h2>
 
 <ul>
 <li>vi /usr/lib/systemd/system/jupyterhub.service</li>
@@ -185,9 +185,8 @@ WantedBy=multi-user.target
 </code></pre>
 
 <ul>
-<li>systemctl daemon-reload</li>
+<li>systemctl reload jupyterhub</li>
 <li>systemctl enable jupyterhub</li>
-<li>systemctl start jupyterhub</li>
 </ul>
  </div>
     <footer class="post-footer">
