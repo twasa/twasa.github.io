@@ -112,8 +112,7 @@ CATALINA_OPTS=&amp;quot;-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.manag
       <pubDate>Mon, 11 Sep 2017 11:32:12 +0800</pubDate>
       
       <guid>https://twasa.github.io/post/xargs/</guid>
-      <description>xargs description  build and execute command lines from standard input  syntax and examples  Find all .log files in or below the current directory and process them. ``` find . -name &amp;ldquo;*.log&amp;rdquo; -type f -print | xargs tar -cvf logs.tar  find . -name &amp;ldquo;*.log&amp;rdquo; -type f -print | xargs -i -p cp -a {} /some/place
-find . -name &amp;ldquo;*.log&amp;rdquo; -type f -print | xargs -I [] cp -a [] /some/place</description>
+      <description>xargs description  build and execute command lines from standard input  syntax and examples  Find all .log files in or below the current directory and process them  find . -name &amp;quot;*.log&amp;quot; -type f -print | xargs tar -cvf logs.tar find . -name &amp;quot;*.log&amp;quot; -type f -print | xargs -i -p cp -a {} /some/place find . -name &amp;quot;*.log&amp;quot; -type f -print | xargs -I [] cp -a [] /some/place -p Prompt the user about whether to run each command line and read a line from the terminal.</description>
     </item>
     
     <item>
@@ -122,7 +121,7 @@ find . -name &amp;ldquo;*.log&amp;rdquo; -type f -print | xargs -I [] cp -a [] /
       <pubDate>Mon, 11 Sep 2017 10:52:53 +0800</pubDate>
       
       <guid>https://twasa.github.io/post/grep/</guid>
-      <description>grep description  prints lines that contain a match for a pattern. reference https://www.gnu.org/software/grep/manual/grep.html  syntax grep [OPTIONS] PATTERN [FILE...] grep multiple patterns OR grep &#39;pattern1\|pattern2\|pattern3&#39; AND grep -E &#39;pattern1.*pattern2.*pattern3&#39; filename -v, --invert-match Invert the sense of matching, to select non-matching lines. (-v is specified by POSIX .) grep -v &#39;unwanted_word&#39; -i, --ignore-case Ignore case distinctions in both the PATTERN and the input files. (-i is specified by POSIX .</description>
+      <description>description  prints lines that contain a match for a pattern reference  https://www.gnu.org/software/grep/manual/grep.html   syntax grep [OPTIONS] PATTERN [FILE...] grep multiple patterns OR grep &#39;pattern1\|pattern2\|pattern3&#39; AND grep -E &#39;pattern1.*pattern2.*pattern3&#39; filename -v, --invert-match Invert the sense of matching, to select non-matching lines. (-v is specified by POSIX .) grep -v &#39;unwanted_word&#39; -i, --ignore-case Ignore case distinctions in both the PATTERN and the input files. (-i is specified by POSIX .</description>
     </item>
     
     <item>
