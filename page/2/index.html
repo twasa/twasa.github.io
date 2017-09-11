@@ -19,7 +19,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-09-08T19:12:41&#43;08:00"/>
+<meta property="og:updated_time" content="2017-09-11T12:24:19&#43;08:00"/>
 
 
 
@@ -110,9 +110,9 @@
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/hugo-how-to/'> Hugo A Fast and Flexible Website Generator</a> </h2>
+    <h2 class="title"> <a href='https://twasa.github.io/post/my-db/'> My Db</a> </h2>
     <div class="meta">
-      Sep 8, 2017 - 2 minutes
+      Sep 11, 2017 - 7 minutes
     </div>
     
 <div class="tags">
@@ -121,14 +121,62 @@
 
   </header>
 
-  <div class="summary"> Quick Start Guide  Hugo download
- https://github.com/gohugoio/hugo/releases  Install Hugo
- https://gohugo.io/getting-started/installing/  Create a blog folder
-  hugo new site blog   go in to the blog folder and modify config.toml for your github url  baseURL = &quot;https://&lt;your-github-account&gt;.github.io/&quot;   create new page  hugo new about.md   create new post  hugo new post/first.md   install a theme  cd themes git clone https://github. </div>
+  <div class="summary"> 第一次安裝完成，設定root的密碼 mysqladmin -u root -p &lsquo;密碼&rsquo; or mysql_secure_installation
+重設root密碼 /etc/init.d/mysql stop mysqld_safe --skip-grant-tables &amp; mysql -u root mysql&gt; use mysql; mysql&gt; UPDATE user SET Password=PASSWORD(&quot;密碼&quot;) WHERE User='root'; mysql&gt; flush privileges; mysql&gt; quit /etc/init.d/mysql stop /etc/init.d/mysql start  連線管理資料庫 mysqladmin -u root -p Enter password: 此時再輸入密碼(建議採用) 修改使用者密碼 方法一 使用有權限或要修改的使用者本身登入mysql mysql&gt; SET PASSWORD FOR '目標使用者'@'主機' = PASSWORD('密碼'); mysql&gt; flush privileges 方法二 使用有權限的使用者登入mysql 修改使用者密碼，只改 root 的密碼，如果沒有用 where ，則表示改全部 user 的密碼 mysql&gt; use mysql; mysql&gt; UPDATE user SET password=password('密碼') where user='root'; mysql&gt; FLUSH PRIVILEGES; 上面是不分主機位址的修改，若要像方法一區分主機的話再加上Host條件，例如 mysql&gt; UPDATE user SET Password=PASSWORD(&quot;密碼&quot;) WHERE User='root' AND Host = 'localhost'; mysql&gt; FLUSH PRIVILEGES; 方法三 同樣利用mysqladmin指令可以修改root或其他使用者密碼，但該使用者必須有SUPER權限 mysqladmin -u 使用者 -p'舊密碼' password '新密碼' 忘記密碼重設 /etc/init. </div>
 
   <footer>
   <div class="rmore">
-    <a href='https://twasa.github.io/post/hugo-how-to/'><nobr>Read more ...</nobr></a>
+    <a href='https://twasa.github.io/post/my-db/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://twasa.github.io/post/regexp/'> Regexp</a> </h2>
+    <div class="meta">
+      Sep 11, 2017 - 4 minutes
+    </div>
+    
+<div class="tags">
+    
+</div>
+
+  </header>
+
+  <div class="summary"> Regula Express  reference :     說明及範例 比對不成立之字串     /a/ 含字母 “a” 的字串，例如 “ab”, “bac”, “cba” “xyz”   /a./ 含字母 “a” 以及其後任一個字元的字串，例如 “ab”, “bac”（若要比對.，請使用 .） “a”, “ba”   /^xy/ 以 “xy” 開始的字串，例如 “xyz”, “xyab”（若要比對 ^，請使用 \^） “axy”, “bxy”   /xy$/ 以 “xy” 結尾的字串，例如 “axy”, “abxy”以 “xy” 結尾的字串，例如 “axy”, “abxy” （若要比對 $，請使用 \$） “xya”, “xyb”   [13579] 包含 “1” 或 “3” 或 “5” 或 “7” 或 “9” 的字串，例如：”a3b”, “1xy” “y2k”   [0-9] 含數字之字串 不含數字之字串   [a-z0-9] 含數字或小寫字母之字串 不含數字及小寫字母之字串   [a-zA-Z0-9] 含數字或字母之字串 不含數字及字母之字串   b[aeiou]t “bat”, “bet”, “bit”, “bot”, “but” “bxt”, “bzt”   [^0-9] 不含數字之字串（若要比對 ^，請使用 \^） 含數字之字串   [^aeiouAEIOU] 不含母音之字串（若要比對 ^，請使用 \^） 含母音之字串   [^\^] 不含 “^” 之字串，例如 “xyz”, “abc” “xy^”, “a^bc”    . </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='https://twasa.github.io/post/regexp/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://twasa.github.io/post/find/'> find</a> </h2>
+    <div class="meta">
+      Sep 11, 2017 - 1 minutes
+    </div>
+    
+<div class="tags">
+    
+</div>
+
+  </header>
+
+  <div class="summary"> find description  search for files in a directory hierarchy  syntax find [options] [path...] [expression] --newerXY Compares the timestamp of the current file with reference. The reference argument is normally the name of a file (and one of its timestamps is used for the comparison) but it may also be a string describing an absolute time. X and Y are placeholders for other letters, and these letters select which time belonging to how reference is used for the comparison find file modified newer than some daytimes find /var/log -newermt '2016-06-01T00:00:00' -name pattern Base of file name (the path with the leading directories removed) matches shell pattern pattern. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='https://twasa.github.io/post/find/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
@@ -145,10 +193,12 @@
   </div>
 
   <div class="page-num">
-    2/2
+    2/5
   </div>
 
   <div class="page-next">
+    
+    <a href="https://twasa.github.io/page/3/" title="Next page"> >> </a>
     
   </div>
 </div> 

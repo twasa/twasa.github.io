@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="" />
+<meta name="description" content="William&#39;s blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.26" />
+
+<link rel="canonical" href="https://twasa.github.io/">
+<base href="https://twasa.github.io/" />
+<meta property="og:title" content="William&#39;s Blog" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://twasa.github.io/" />
+
+
+
+<meta property="og:updated_time" content="2017-09-10T17:00:56&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="William&#39;s Blog"/>
+<meta name="twitter:description" content=""/>
+
+
+
+<meta itemprop="name" content="William&#39;s Blog">
+<meta itemprop="description" content="">
+
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/color-dark.css" />
+
+
+
+<title>
+
+
+     William&#39;s Blog 
+
+</title>
+
+<script src="js/highlight.min.js"></script>
+<link rel="stylesheet" href="css/tomorrow-night.min.css" />
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://twasa.github.io/">William&#39;s Blog</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://twasa.github.io/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://twasa.github.io/about/"><div class="nav-item-title">About</div></a>
+    
+    <a class="nav-item" href="https://twasa.github.io/tags/"><div class="nav-item-title">Tags</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/twasa" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</header>
+
+
+<main>
+
+
+  
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://twasa.github.io/post/python-virtualenv/'> Python Virtualenv</a> </h2>
+    <div class="meta">
+      Sep 10, 2017 - 1 minutes
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/development">#Development</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/python">#Python</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary">  Virtualenv的好處  可以隔離函數庫需求不同的專案，讓它們不會互相影響。在建立並啟動虛擬環境後，透過 pip 安裝的套件會被放在虛擬環境中，專案就可以擁有一個獨立的環境。 在沒有權限的情況下安裝新套件 不同專案可以使用不同版本的相同套件 套件版本升級時不會影響其他專案  安裝 pip install virtualenv  建立專案資料夾 mkdir myproject cd myproject  初始化 virtualenv 虛擬環境名稱  activate the corresponding environment #linux . 虛擬環境名稱/bin/activate #windows 虛擬環境名稱\scripts\activate  這時候再裝要使用的Python Package pip install XXXX  回到實際環境 deactivate  若因為專案資料夾搬移或更名,請重新locate cd /path/to/your_project_new_dir virtualenv --relocatable your_virtualenv_name   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='https://twasa.github.io/post/python-virtualenv/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://twasa.github.io/post/python-html-entity/'> Python HTML Entity decode and encode</a> </h2>
+    <div class="meta">
+      Sep 10, 2017 - 1 minutes
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/development">#Development</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/python">#Python</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> –– coding: utf-8 – #decode import HTMLParser h = HTMLParser.HTMLParser() print h.unescape('&amp;#35377;&amp;#21151;&amp;#33995;') 許功蓋 #encode a = u'許功蓋' a.encode('ascii', 'xmlcharrefreplace') '&amp;#35377;&amp;#21151;&amp;#33995;'   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='https://twasa.github.io/post/python-html-entity/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://twasa.github.io/post/flask-quick-start-guide/'> Flask Quick Start Guide</a> </h2>
+    <div class="meta">
+      Sep 10, 2017 - 8 minutes
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/development">#Development</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/python">#Python</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> #Flask Quickstart
+Requirements  Python Pip virtualenv Flask : a web development framework Werkzeug：a toolkit for WSGI Jinja2：renders templates  virtualenv：multiple side-by-side installations of Python  安裝：pip install virtualenv 基本使用方式：  ### 先建立專案資料夾 mkdir myproject cd myproject ### 初始化 virtualenv env ### activate the corresponding environment . venv/bin/activate or venv\scripts\activate ### 這時候再裝Flask pip install Flask ### 回到實際環境 deactivate ### 若因為目錄搬移或更名 需重新locate cd /path/to/your_project_new_dir virtualenv --relocatable your_virtualenv_name  建立第一個app(記得啟動venv), save it as hello. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='https://twasa.github.io/post/flask-quick-start-guide/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+
+
+<div class="page-nav">
+  <div class="page-prev">
+    
+        <a href="https://twasa.github.io/page/3/" title="Previous page" > &lt;&lt; </a>
+    
+  </div>
+
+  <div class="page-num">
+    4/5
+  </div>
+
+  <div class="page-next">
+    
+    <a href="https://twasa.github.io/page/5/" title="Next page"> >> </a>
+    
+  </div>
+</div> 
+
+
+</main>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/twasa" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="https://twasa.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2017, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</body>
+</html>
+

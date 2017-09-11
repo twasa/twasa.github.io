@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="" />
+<meta name="description" content="William&#39;s blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.26" />
+
+<link rel="canonical" href="https://twasa.github.io/post/sed/">
+<base href="https://twasa.github.io/" />
+<meta property="og:title" content="Sed" />
+<meta property="og:description" content=" reference  https://www.gnu.org/software/sed/manual/sed.html http://www.gnu.org/software/sed/manual/sed.html#Examples  syntax sed OPTIONS... [SCRIPT] [INPUTFILE...] STDOUT | sed OPTIONS... [SCRIPT]  OPTIONS -i edited in-place  SCRIPT format &#39;起始行數,結束行數 指令/要被取代的字串/新字串/旗標&#39;  指令： s 搜尋並取代
+旗標 g 取代全部 c 取代前詢問是否confirm I 忽略 pattern 大小寫
+example modify CentOS linux hostname sed -i &#39;s/HOSTNAME\=.*/HOSTNAME\=NEWHOSTNAME/g&#39; /etc/sysconfig/network  change default delimiter 改用 &ldquo;:&rdquo; sed &#39;s:orig:NEW:&#39;  改用 &ldquo;#&rdquo; 當delimiter sed -e &#39;s#/#\\#g&#39;  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://twasa.github.io/post/sed/" />
+
+
+
+<meta property="article:published_time" content="2017-09-11T12:54:56&#43;08:00"/>
+<meta property="article:modified_time" content="2017-09-11T12:54:56&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Sed"/>
+<meta name="twitter:description" content=" reference  https://www.gnu.org/software/sed/manual/sed.html http://www.gnu.org/software/sed/manual/sed.html#Examples  syntax sed OPTIONS... [SCRIPT] [INPUTFILE...] STDOUT | sed OPTIONS... [SCRIPT]  OPTIONS -i edited in-place  SCRIPT format &#39;起始行數,結束行數 指令/要被取代的字串/新字串/旗標&#39;  指令： s 搜尋並取代
+旗標 g 取代全部 c 取代前詢問是否confirm I 忽略 pattern 大小寫
+example modify CentOS linux hostname sed -i &#39;s/HOSTNAME\=.*/HOSTNAME\=NEWHOSTNAME/g&#39; /etc/sysconfig/network  change default delimiter 改用 &ldquo;:&rdquo; sed &#39;s:orig:NEW:&#39;  改用 &ldquo;#&rdquo; 當delimiter sed -e &#39;s#/#\\#g&#39;  "/>
+
+
+
+<meta itemprop="name" content="Sed">
+<meta itemprop="description" content=" reference  https://www.gnu.org/software/sed/manual/sed.html http://www.gnu.org/software/sed/manual/sed.html#Examples  syntax sed OPTIONS... [SCRIPT] [INPUTFILE...] STDOUT | sed OPTIONS... [SCRIPT]  OPTIONS -i edited in-place  SCRIPT format &#39;起始行數,結束行數 指令/要被取代的字串/新字串/旗標&#39;  指令： s 搜尋並取代
+旗標 g 取代全部 c 取代前詢問是否confirm I 忽略 pattern 大小寫
+example modify CentOS linux hostname sed -i &#39;s/HOSTNAME\=.*/HOSTNAME\=NEWHOSTNAME/g&#39; /etc/sysconfig/network  change default delimiter 改用 &ldquo;:&rdquo; sed &#39;s:orig:NEW:&#39;  改用 &ldquo;#&rdquo; 當delimiter sed -e &#39;s#/#\\#g&#39;  ">
+
+
+<meta itemprop="dateModified" content="2017-09-11T12:54:56&#43;08:00" />
+<meta itemprop="wordCount" content="55">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/color-dark.css" />
+
+
+
+<title>
+
+
+     Sed 
+
+</title>
+
+<script src="js/highlight.min.js"></script>
+<link rel="stylesheet" href="css/tomorrow-night.min.css" />
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://twasa.github.io/">William&#39;s Blog</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://twasa.github.io/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://twasa.github.io/about/"><div class="nav-item-title">About</div></a>
+    
+    <a class="nav-item" href="https://twasa.github.io/tags/"><div class="nav-item-title">Tags</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/twasa" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Sed </h1>
+    <div class="content"> 
+
+<h1 id="reference">reference</h1>
+
+<ul>
+<li><a href="https://www.gnu.org/software/sed/manual/sed.html">https://www.gnu.org/software/sed/manual/sed.html</a></li>
+<li><a href="http://www.gnu.org/software/sed/manual/sed.html#Examples">http://www.gnu.org/software/sed/manual/sed.html#Examples</a></li>
+</ul>
+
+<h1 id="syntax">syntax</h1>
+
+<pre><code>sed OPTIONS... [SCRIPT] [INPUTFILE...]
+STDOUT | sed OPTIONS... [SCRIPT]
+</code></pre>
+
+<h1 id="options">OPTIONS</h1>
+
+<pre><code>-i    edited in-place
+</code></pre>
+
+<h1 id="script-format">SCRIPT format</h1>
+
+<pre><code>'起始行數,結束行數 指令/要被取代的字串/新字串/旗標'
+</code></pre>
+
+<h2 id="指令">指令：</h2>
+
+<p>s 搜尋並取代</p>
+
+<h2 id="旗標">旗標</h2>
+
+<p>g 取代全部
+c 取代前詢問是否confirm
+I 忽略 pattern 大小寫</p>
+
+<h1 id="example">example</h1>
+
+<h2 id="modify-centos-linux-hostname">modify CentOS linux hostname</h2>
+
+<pre><code>sed -i 's/HOSTNAME\=.*/HOSTNAME\=NEWHOSTNAME/g' /etc/sysconfig/network
+</code></pre>
+
+<h2 id="change-default-delimiter">change default delimiter</h2>
+
+<h3 id="改用">改用 &ldquo;:&rdquo;</h3>
+
+<pre><code>sed 's:orig:NEW:'
+</code></pre>
+
+<h3 id="改用-當delimiter">改用 &ldquo;#&rdquo; 當delimiter</h3>
+
+<pre><code>sed -e 's#/#\\#g'
+</code></pre>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> Sep 11, 2017 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/twasa" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="https://twasa.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2017, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</body>
+</html>
+
