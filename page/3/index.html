@@ -19,7 +19,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-09-11T13:21:51&#43;08:00"/>
+<meta property="og:updated_time" content="2017-09-11T13:37:20&#43;08:00"/>
 
 
 
@@ -110,6 +110,41 @@
     <article class="post-preview">
 
   <header>
+    <h2 class="title"> <a href='https://twasa.github.io/post/python-soap-client-suds/'> Python Soap Client Suds</a> </h2>
+    <div class="meta">
+      Sep 11, 2017 - 1 minutes
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/development">#Development</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/python">#Python</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> suds API
+ https://pypi.python.org/pypi/suds https://fedorahosted.org/suds/wiki/Documentation  example code
+  import logging logging.basicConfig(level=logging.INFO) logging.getLogger('suds.client').setLevel(logging.DEBUG) username = '' password = '' no = 20787 def b64enc(username, password): import base64 base64string = base64.encodestring('%s:%s' % (username, password)).replace('\n', '') authenticationHeader = {&quot;SOAPAction&quot; : &quot;ActionName&quot;, &quot;Authorization&quot; : &quot;Basic %s&quot; % base64string } return authenticationHeader def xmlout(xmlstr): filename = '%s.xml' % no f = open(filename, &quot;w&quot;) f.write(xmlstr.encode('utf8')) def main(): from suds.client import Client wsdl_url = 'http://example. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='https://twasa.github.io/post/python-soap-client-suds/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
     <h2 class="title"> <a href='https://twasa.github.io/post/python-package/'> Python Package</a> </h2>
     <div class="meta">
       Sep 11, 2017 - 1 minutes
@@ -173,37 +208,6 @@ c:\packagedemo\package\module01.py c:\packagedemo\package\module03.py c:\package
   <footer>
   <div class="rmore">
     <a href='https://twasa.github.io/post/cisco-ios-netwrok-cmmmands/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/sed/'> Sed</a> </h2>
-    <div class="meta">
-      Sep 11, 2017 - 1 minutes
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/linux">#Linux</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary">  reference  https://www.gnu.org/software/sed/manual/sed.html http://www.gnu.org/software/sed/manual/sed.html#Examples  syntax sed OPTIONS... [SCRIPT] [INPUTFILE...] STDOUT | sed OPTIONS... [SCRIPT]  OPTIONS -i edited in-place  SCRIPT format '起始行數,結束行數 指令/要被取代的字串/新字串/旗標'  指令： s 搜尋並取代
-旗標 g 取代全部 c 取代前詢問是否confirm I 忽略 pattern 大小寫
-example modify CentOS linux hostname sed -i 's/HOSTNAME\=.*/HOSTNAME\=NEWHOSTNAME/g' /etc/sysconfig/network  change default delimiter 改用 &ldquo;:&rdquo; sed 's:orig:NEW:'  改用 &ldquo;#&rdquo; 當delimiter sed -e 's#/#\\#g'   </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='https://twasa.github.io/post/sed/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 

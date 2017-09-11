@@ -19,7 +19,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-09-11T15:54:35&#43;08:00"/>
+<meta property="og:updated_time" content="2017-09-11T16:46:58&#43;08:00"/>
 
 
 
@@ -110,6 +110,42 @@
     <article class="post-preview">
 
   <header>
+    <h2 class="title"> <a href='https://twasa.github.io/post/git/'> Git</a> </h2>
+    <div class="meta">
+      Sep 11, 2017 - 1 minutes
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/development">#Development</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/version-control">#Version Control</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> Git的基本使用 Config  在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：  git config --global user.name &quot;你的姓名&quot; git config --global user.email &quot;你的@email位址&quot;   加上 &ndash;global 表示是全域的設定。你可以使用 git config &ndash;list 這個指令來看你的 Git 設定內容 Git 也有提供 alias 的功能，例如你可以將 git status 縮寫為 git st，git checkout 縮寫為 git co 等，你只要這樣設定，這樣一來只要打 git st 就等同於打 git status
+git config --global alias.st status  忽略空白
+git config --global apply.whitespace nowarn  Git 預設輸出是沒有顏色的，我們可以讓他在輸出時加上顏色讓我們更容易閱讀
+git config --global color. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='https://twasa.github.io/post/git/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
     <h2 class="title"> <a href='https://twasa.github.io/post/mongodb/'> Mongodb</a> </h2>
     <div class="meta">
       Sep 11, 2017 - 2 minutes
@@ -164,39 +200,6 @@
   <footer>
   <div class="rmore">
     <a href='https://twasa.github.io/post/aws-cli/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/apache-http-advanced/'> Apache Http Advanced</a> </h2>
-    <div class="meta">
-      Sep 11, 2017 - 3 minutes
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/webserver">#Webserver</a>
-      </div>
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/apache">#Apache</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> http rewrite  syntax  &lt;IfModule mod_rewrite.c&gt; RewriteEngine On #啟用 RewriteBase /路徑 RewriteCond 變數 開關 RewriteCond 變數 條件 [選項] RewriteRule 規則 [選項] &lt;/IfModule&gt; # 開關 on, off # 選項 NC (no case) 不區分大小寫 F (force URL to be forbidden) 禁用URL,返回403HTTP狀態碼。 R[=code] (force redirect) 強制外部重定向 code 預設302, 最好使用301 G (force URL to be gone) 強制URL為GONE，返回410HTTP狀態碼 P (force proxy) 強制使用代理轉發。 N (next round) 重新從第一條規則開始運行重寫過程。 C (chained with next rule) 與下一條規則關聯 AND OR #if ( (A OR B) AND (C OR D) ) RewriteCond A [or] RewriteCond B [or] RewriteCond C RewriteCond D L (last rule) 表明當前規則是最後一條規則，停止分析以後規則的重寫 # 變數 - %{HTTP_HOST} ! </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='https://twasa.github.io/post/apache-http-advanced/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 

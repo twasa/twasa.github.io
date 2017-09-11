@@ -19,7 +19,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-09-11T15:48:07&#43;08:00"/>
+<meta property="og:updated_time" content="2017-09-11T15:50:54&#43;08:00"/>
 
 
 
@@ -110,6 +110,39 @@
     <article class="post-preview">
 
   <header>
+    <h2 class="title"> <a href='https://twasa.github.io/post/apache-http-advanced/'> Apache Http Advanced</a> </h2>
+    <div class="meta">
+      Sep 11, 2017 - 3 minutes
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/webserver">#Webserver</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/apache">#Apache</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> http rewrite  syntax  &lt;IfModule mod_rewrite.c&gt; RewriteEngine On #啟用 RewriteBase /路徑 RewriteCond 變數 開關 RewriteCond 變數 條件 [選項] RewriteRule 規則 [選項] &lt;/IfModule&gt; # 開關 on, off # 選項 NC (no case) 不區分大小寫 F (force URL to be forbidden) 禁用URL,返回403HTTP狀態碼。 R[=code] (force redirect) 強制外部重定向 code 預設302, 最好使用301 G (force URL to be gone) 強制URL為GONE，返回410HTTP狀態碼 P (force proxy) 強制使用代理轉發。 N (next round) 重新從第一條規則開始運行重寫過程。 C (chained with next rule) 與下一條規則關聯 AND OR #if ( (A OR B) AND (C OR D) ) RewriteCond A [or] RewriteCond B [or] RewriteCond C RewriteCond D L (last rule) 表明當前規則是最後一條規則，停止分析以後規則的重寫 # 變數 - %{HTTP_HOST} ! </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='https://twasa.github.io/post/apache-http-advanced/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
     <h2 class="title"> <a href='https://twasa.github.io/post/ansible/'> Ansible</a> </h2>
     <div class="meta">
       Sep 11, 2017 - 5 minutes
@@ -167,41 +200,6 @@
   <footer>
   <div class="rmore">
     <a href='https://twasa.github.io/post/python-web-automation-test/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/python-soap-client-suds/'> Python Soap Client Suds</a> </h2>
-    <div class="meta">
-      Sep 11, 2017 - 1 minutes
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/development">#Development</a>
-      </div>
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/python">#Python</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> suds API
- https://pypi.python.org/pypi/suds https://fedorahosted.org/suds/wiki/Documentation  example code
-  import logging logging.basicConfig(level=logging.INFO) logging.getLogger('suds.client').setLevel(logging.DEBUG) username = '' password = '' no = 20787 def b64enc(username, password): import base64 base64string = base64.encodestring('%s:%s' % (username, password)).replace('\n', '') authenticationHeader = {&quot;SOAPAction&quot; : &quot;ActionName&quot;, &quot;Authorization&quot; : &quot;Basic %s&quot; % base64string } return authenticationHeader def xmlout(xmlstr): filename = '%s.xml' % no f = open(filename, &quot;w&quot;) f.write(xmlstr.encode('utf8')) def main(): from suds.client import Client wsdl_url = 'http://example. </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='https://twasa.github.io/post/python-soap-client-suds/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
