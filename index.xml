@@ -73,7 +73,9 @@ example modify CentOS linux hostname sed -i &#39;s/HOSTNAME\=.*/HOSTNAME\=NEWHOS
       <pubDate>Mon, 11 Sep 2017 12:34:25 +0800</pubDate>
       
       <guid>https://twasa.github.io/post/apache-tomcat/</guid>
-      <description>參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  install java, check it running and version yum install java-1.8.0-openjdk java -version  create a nologin user for running tomcat useradd -s /sbin/nologin tomcat  download from apache tomcat cd /home/tomcat wget http://apache.stu.edu.tw/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz tar zxvf apache-tomcat-8.0.28.tar.gz  setenv.sh  設定運行參數如記憶體、垃圾回收機制等參數  JAVA_OPTS=&amp;quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:+UseParallelGC&amp;quot;  設定Tomcat JMX remote 監控  CATALINA_OPTS=&amp;quot;-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8888 -Dcom.sun.management.jmxremote.rmi.port=8889&amp;quot;   catalina.properties  設定增加讓webapps可讀取property檔路徑  common.</description>
+      <description>參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  install java, check it running and version yum install java-1.8.0-openjdk java -version  create a nologin user for running tomcat useradd -s /sbin/nologin tomcat  download from apache tomcat cd /home/tomcat wget http://apache.stu.edu.tw/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz tar zxvf apache-tomcat-8.0.28.tar.gz  setenv.sh  設定運行參數如記憶體、垃圾回收機制等參數
+JAVA_OPTS=&amp;quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:+UseParallelGC&amp;quot;  設定Tomcat JMX remote 監控
+CATALINA_OPTS=&amp;quot;-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8888 -Dcom.sun.management.jmxremote.rmi.port=8889&amp;quot;   catalina.properties  設定增加讓webapps可讀取property檔路徑  common.</description>
     </item>
     
     <item>
@@ -92,7 +94,7 @@ example modify CentOS linux hostname sed -i &#39;s/HOSTNAME\=.*/HOSTNAME\=NEWHOS
       <pubDate>Mon, 11 Sep 2017 11:46:21 +0800</pubDate>
       
       <guid>https://twasa.github.io/post/regexp/</guid>
-      <description>Regula Express  reference :     說明及範例 比對不成立之字串     /a/ 含字母 “a” 的字串，例如 “ab”, “bac”, “cba” “xyz”   /a./ 含字母 “a” 以及其後任一個字元的字串，例如 “ab”, “bac”（若要比對.，請使用 .） “a”, “ba”   /^xy/ 以 “xy” 開始的字串，例如 “xyz”, “xyab”（若要比對 ^，請使用 \^） “axy”, “bxy”   /xy$/ 以 “xy” 結尾的字串，例如 “axy”, “abxy”以 “xy” 結尾的字串，例如 “axy”, “abxy” （若要比對 $，請使用 \$） “xya”, “xyb”   [13579] 包含 “1” 或 “3” 或 “5” 或 “7” 或 “9” 的字串，例如：”a3b”, “1xy” “y2k”   [0-9] 含數字之字串 不含數字之字串   [a-z0-9] 含數字或小寫字母之字串 不含數字及小寫字母之字串   [a-zA-Z0-9] 含數字或字母之字串 不含數字及字母之字串   b[aeiou]t “bat”, “bet”, “bit”, “bot”, “but” “bxt”, “bzt”   [^0-9] 不含數字之字串（若要比對 ^，請使用 \^） 含數字之字串   [^aeiouAEIOU] 不含母音之字串（若要比對 ^，請使用 \^） 含母音之字串   [^\^] 不含 “^” 之字串，例如 “xyz”, “abc” “xy^”, “a^bc”    .</description>
+      <description>Regula Express  reference :     說明及範例 比對不成立之字串     /a/ 含字母 “a” 的字串，例如 “ab”, “bac”, “cba” “xyz”   /a./ 含字母 “a” 以及其後任一個字元的字串，例如 “ab”, “bac”（若要比對.，請使用 .） “a”, “ba”   /^xy/ 以 “xy” 開始的字串，例如 “xyz”, “xyab”（若要比對 ^，請使用 \^） “axy”, “bxy”   /xy$/ 以 “xy” 結尾的字串，例如 “axy”, “abxy”以 “xy” 結尾的字串，例如 “axy”, “abxy” （若要比對 $，請使用 \$） “xya”, “xyb”   [13579] 包含 “1” 或 “3” 或 “5” 或 “7” 或 “9” 的字串，例如：”a3b”, “1xy” “y2k”   [0-9] 含數字之字串 不含數字之字串   [a-z0-9] 含數字或小寫字母之字串 不含數字及小寫字母之字串   [a-zA-Z0-9] 含數字或字母之字串 不含數字及字母之字串   b[aeiou]t “bat”, “bet”, “bit”, “bot”, “but” “bxt”, “bzt”   [^0-9] 不含數字之字串（若要比對 ^，請使用 \^） 含數字之字串   [^aeiouAEIOU] 不含母音之字串（若要比對 ^，請使用 \^） 含母音之字串   [^\^] 不含 “^” 之字串，例如 “xyz”, “abc” “xy^”, “a^bc”       正規表示式的特定字元 說明 等效的正規表示式     \d 數字 [0-9]   \D 非數字 [^0-9]   \w 數字、字母、底線 [a-zA-Z0-9_]   \W 非 \w [^a-zA-Z0-9_]   \s 空白字元 [ \r\t\n\f]   \S 非空白字元 [^ \r\t\n\f]       正規表示式 說明     /a?</description>
     </item>
     
     <item>
@@ -120,7 +122,7 @@ find . -name &amp;ldquo;*.log&amp;rdquo; -type f -print | xargs -I [] cp -a [] /
       <pubDate>Mon, 11 Sep 2017 10:52:53 +0800</pubDate>
       
       <guid>https://twasa.github.io/post/grep/</guid>
-      <description> grep description  prints lines that contain a match for a pattern. reference：https://www.gnu.org/software/grep/manual/grep.html  syntax grep [OPTIONS] PATTERN [FILE...] grep multiple patterns OR grep &#39;pattern1\|pattern2\|pattern3&#39; AND grep -E &#39;pattern1.*pattern2.*pattern3&#39; filename -v, --invert-match Invert the sense of matching, to select non-matching lines. (-v is specified by POSIX .) grep -v &#39;unwanted_word&#39; -i, --ignore-case Ignore case distinctions in both the PATTERN and the input files. (-i is specified by POSIX .)  </description>
+      <description>grep description  prints lines that contain a match for a pattern. reference https://www.gnu.org/software/grep/manual/grep.html  syntax grep [OPTIONS] PATTERN [FILE...] grep multiple patterns OR grep &#39;pattern1\|pattern2\|pattern3&#39; AND grep -E &#39;pattern1.*pattern2.*pattern3&#39; filename -v, --invert-match Invert the sense of matching, to select non-matching lines. (-v is specified by POSIX .) grep -v &#39;unwanted_word&#39; -i, --ignore-case Ignore case distinctions in both the PATTERN and the input files. (-i is specified by POSIX .</description>
     </item>
     
     <item>

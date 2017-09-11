@@ -12,7 +12,9 @@
 <link rel="canonical" href="https://twasa.github.io/post/apache-tomcat/">
 <base href="https://twasa.github.io/" />
 <meta property="og:title" content="Apache Tomcat" />
-<meta property="og:description" content="參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  install java, check it running and version yum install java-1.8.0-openjdk java -version  create a nologin user for running tomcat useradd -s /sbin/nologin tomcat  download from apache tomcat cd /home/tomcat wget http://apache.stu.edu.tw/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz tar zxvf apache-tomcat-8.0.28.tar.gz  setenv.sh  設定運行參數如記憶體、垃圾回收機制等參數  JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:&#43;UseParallelGC&quot;  設定Tomcat JMX remote 監控  CATALINA_OPTS=&quot;-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8888 -Dcom.sun.management.jmxremote.rmi.port=8889&quot;   catalina.properties  設定增加讓webapps可讀取property檔路徑  common." />
+<meta property="og:description" content="參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  install java, check it running and version yum install java-1.8.0-openjdk java -version  create a nologin user for running tomcat useradd -s /sbin/nologin tomcat  download from apache tomcat cd /home/tomcat wget http://apache.stu.edu.tw/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz tar zxvf apache-tomcat-8.0.28.tar.gz  setenv.sh  設定運行參數如記憶體、垃圾回收機制等參數
+JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:&#43;UseParallelGC&quot;  設定Tomcat JMX remote 監控
+CATALINA_OPTS=&quot;-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8888 -Dcom.sun.management.jmxremote.rmi.port=8889&quot;   catalina.properties  設定增加讓webapps可讀取property檔路徑  common." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://twasa.github.io/post/apache-tomcat/" />
 
@@ -32,16 +34,20 @@
 
 
 <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Apache Tomcat"/>
-<meta name="twitter:description" content="參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  install java, check it running and version yum install java-1.8.0-openjdk java -version  create a nologin user for running tomcat useradd -s /sbin/nologin tomcat  download from apache tomcat cd /home/tomcat wget http://apache.stu.edu.tw/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz tar zxvf apache-tomcat-8.0.28.tar.gz  setenv.sh  設定運行參數如記憶體、垃圾回收機制等參數  JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:&#43;UseParallelGC&quot;  設定Tomcat JMX remote 監控  CATALINA_OPTS=&quot;-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8888 -Dcom.sun.management.jmxremote.rmi.port=8889&quot;   catalina.properties  設定增加讓webapps可讀取property檔路徑  common."/>
+<meta name="twitter:description" content="參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  install java, check it running and version yum install java-1.8.0-openjdk java -version  create a nologin user for running tomcat useradd -s /sbin/nologin tomcat  download from apache tomcat cd /home/tomcat wget http://apache.stu.edu.tw/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz tar zxvf apache-tomcat-8.0.28.tar.gz  setenv.sh  設定運行參數如記憶體、垃圾回收機制等參數
+JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:&#43;UseParallelGC&quot;  設定Tomcat JMX remote 監控
+CATALINA_OPTS=&quot;-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8888 -Dcom.sun.management.jmxremote.rmi.port=8889&quot;   catalina.properties  設定增加讓webapps可讀取property檔路徑  common."/>
 
 
 
 <meta itemprop="name" content="Apache Tomcat">
-<meta itemprop="description" content="參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  install java, check it running and version yum install java-1.8.0-openjdk java -version  create a nologin user for running tomcat useradd -s /sbin/nologin tomcat  download from apache tomcat cd /home/tomcat wget http://apache.stu.edu.tw/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz tar zxvf apache-tomcat-8.0.28.tar.gz  setenv.sh  設定運行參數如記憶體、垃圾回收機制等參數  JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:&#43;UseParallelGC&quot;  設定Tomcat JMX remote 監控  CATALINA_OPTS=&quot;-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8888 -Dcom.sun.management.jmxremote.rmi.port=8889&quot;   catalina.properties  設定增加讓webapps可讀取property檔路徑  common.">
+<meta itemprop="description" content="參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  install java, check it running and version yum install java-1.8.0-openjdk java -version  create a nologin user for running tomcat useradd -s /sbin/nologin tomcat  download from apache tomcat cd /home/tomcat wget http://apache.stu.edu.tw/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz tar zxvf apache-tomcat-8.0.28.tar.gz  setenv.sh  設定運行參數如記憶體、垃圾回收機制等參數
+JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:&#43;UseParallelGC&quot;  設定Tomcat JMX remote 監控
+CATALINA_OPTS=&quot;-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8888 -Dcom.sun.management.jmxremote.rmi.port=8889&quot;   catalina.properties  設定增加讓webapps可讀取property檔路徑  common.">
 
 
 <meta itemprop="dateModified" content="2017-09-11T12:34:25&#43;08:00" />
-<meta itemprop="wordCount" content="163">
+<meta itemprop="wordCount" content="198">
 
 
 
@@ -143,92 +149,91 @@ tar zxvf apache-tomcat-8.0.28.tar.gz
 <h2 id="setenv-sh">setenv.sh</h2>
 
 <ul>
-<li>設定運行參數如記憶體、垃圾回收機制等參數
-<code>
-JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:+UseParallelGC&quot;
-</code></li>
-<li>設定Tomcat JMX remote 監控
-<code>
-CATALINA_OPTS=&quot;-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8888 -Dcom.sun.management.jmxremote.rmi.port=8889&quot;
-</code></li>
+<li><p>設定運行參數如記憶體、垃圾回收機制等參數</p>
+
+<pre><code>JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:+UseParallelGC&quot;
+</code></pre></li>
+
+<li><p>設定Tomcat JMX remote 監控</p>
+
+<pre><code>CATALINA_OPTS=&quot;-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8888 -Dcom.sun.management.jmxremote.rmi.port=8889&quot;
+</code></pre></li>
 </ul>
 
 <h2 id="catalina-properties">catalina.properties</h2>
 
 <ul>
-<li>設定增加讓webapps可讀取property檔路徑
-<code>
-common.loader=&quot;${catalina.base}/lib&quot;,&quot;${catalina.base}/lib/*.jar&quot;,&quot;${catalina.home}/lib&quot;,&quot;${catalina.home}/lib/*.jar&quot;,&quot;${catalina.home}/路徑&quot;
-</code></li>
+<li>設定增加讓webapps可讀取property檔路徑</li>
 </ul>
+
+<pre><code>common.loader=&quot;${catalina.base}/lib&quot;,&quot;${catalina.base}/lib/*.jar&quot;,&quot;${catalina.home}/lib&quot;,&quot;${catalina.home}/lib/*.jar&quot;,&quot;${catalina.home}/路徑&quot;
+</code></pre>
 
 <h2 id="server-xml">server.xml</h2>
 
 <ul>
 <li>設定webapp可存取系統目錄</li>
-<li>設定SSL
-<code>
-&lt;Connector port=&quot;4433&quot; maxThreads=&quot;200&quot; scheme=&quot;https&quot; secure=&quot;true&quot; SSLEnabled=&quot;true&quot;
-keystoreFile=&quot;/path/to/your/keyfile&quot; keystorePass=&quot;密碼&quot; clientAuth=&quot;false&quot; sslProtocol=&quot;TLS&quot;/&gt;
-</code></li>
+<li>設定SSL</li>
 </ul>
+
+<pre><code>    &lt;Connector port=&quot;4433&quot; maxThreads=&quot;200&quot; scheme=&quot;https&quot; secure=&quot;true&quot; SSLEnabled=&quot;true&quot;
+    keystoreFile=&quot;/path/to/your/keyfile&quot; keystorePass=&quot;密碼&quot; clientAuth=&quot;false&quot; sslProtocol=&quot;TLS&quot;/&gt;
+</code></pre>
 
 <h2 id="tomcat-users-xml">tomcat-users.xml</h2>
 
 <ul>
-<li>設定使用者或manager-script(deploy server using like jenkins)可存取Manager頁面
-```
-<role rolename="manager-gui" />
-<role rolename="manager-script" />
-<role rolename="manager-jmx" />
-<user username="帳號" password="密碼" roles="manager-gui" />
-<user username="帳號" password="密碼" roles="standard,manager-script,manager-jmx" /></li>
+<li>設定使用者或manager-script(deploy server using like jenkins)可存取Manager頁面</li>
 </ul>
 
-<p>roles 說明
+<pre><code>  &lt;role rolename=&quot;manager-gui&quot; /&gt;
+  &lt;role rolename=&quot;manager-script&quot; /&gt;
+  &lt;role rolename=&quot;manager-jmx&quot; /&gt;
+  &lt;user username=&quot;帳號&quot; password=&quot;密碼&quot; roles=&quot;manager-gui&quot; /&gt;
+  &lt;user username=&quot;帳號&quot; password=&quot;密碼&quot; roles=&quot;standard,manager-script,manager-jmx&quot; /&gt;
+
+roles 說明
 manager-gui - allows access to the HTML GUI and the status pages
 manager-script - allows access to the text interface and the status
 manager-jmx - allows access to the JMX proxy and the status
-manager-status - allows access to the status pages only</p>
-
-<pre><code>
-## context.xml
-- 設定資料庫連線位址、Port、帳號、密碼.....
+manager-status - allows access to the status pages only
 </code></pre>
 
-<pre><code>&lt;Resource name=&quot;jdbc/shacomBid&quot; auth=&quot;Container&quot; type=&quot;javax.sql.DataSource&quot; maxActive=&quot;10&quot; maxIdle=&quot;5&quot; maxWait=&quot;10000&quot; username=&quot;帳號&quot; password=&quot;密碼&quot; driverClassName=&quot;com.mysql.jdbc.Driver&quot; url=&quot;jdbc:mysql://DBFQDN:3306/bid?characterEncoding=UTF-8&amp;allowMultiQueries=true&amp;useUnicode=true&quot;/&gt;
+<h2 id="context-xml">context.xml</h2>
+
+<ul>
+<li>設定資料庫連線位址、Port、帳號、密碼&hellip;..</li>
+</ul>
+
+<pre><code>    &lt;Resource name=&quot;jdbc/shacomBid&quot; auth=&quot;Container&quot; type=&quot;javax.sql.DataSource&quot; maxActive=&quot;10&quot; maxIdle=&quot;5&quot; maxWait=&quot;10000&quot; username=&quot;帳號&quot; password=&quot;密碼&quot; driverClassName=&quot;com.mysql.jdbc.Driver&quot; url=&quot;jdbc:mysql://DBFQDN:3306/bid?characterEncoding=UTF-8&amp;allowMultiQueries=true&amp;useUnicode=true&quot;/&gt;
 </code></pre>
 
-<pre><code>
-## 設定Manager頁面IPv4網段存取限制
-</code></pre>
+<h2 id="設定manager頁面ipv4網段存取限制">設定Manager頁面IPv4網段存取限制</h2>
 
-<p>cp -p /home/apache-tomcat-X.X.XX/webapps/host-manager/manager.xml /home/apache-tomcat-X.X.XX/conf/Catalina/localhost/
+<pre><code>cp -p /home/apache-tomcat-X.X.XX/webapps/host-manager/manager.xml /home/apache-tomcat-X.X.XX/conf/Catalina/localhost/
 vi /home/apache-tomcat-X.X.XX/conf/Catalina/localhost/manager.xml
-<Context docBase="${catalina.home}/webapps/manager"
-privileged="true" antiResourceLocking="false" antiJARLocking="false">
-<Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="A\.B\.C\.\d+|127\.\d+\.\d+\.\d+" denyStatus="404" /></p>
+&lt;Context docBase=&quot;${catalina.home}/webapps/manager&quot;
+privileged=&quot;true&quot; antiResourceLocking=&quot;false&quot; antiJARLocking=&quot;false&quot;&gt;
+&lt;Valve className=&quot;org.apache.catalina.valves.RemoteAddrValve&quot; allow=&quot;A\.B\.C\.\d+|127\.\d+\.\d+\.\d+&quot; denyStatus=&quot;404&quot; /&gt;
 
-<p>cp -p /home/apache-tomcat-X.X.XX/webapps/host-manager/manager.xml /home//apache-tomcat-X.X.XX/conf/Catalina/localhost/ROOT.xml
+cp -p /home/apache-tomcat-X.X.XX/webapps/host-manager/manager.xml /home//apache-tomcat-X.X.XX/conf/Catalina/localhost/ROOT.xml
 vi /home/apache-tomcat-X.X.XX/conf/Catalina/localhost/ROOT.xml
-<Context docBase="${catalina.home}/webapps/ROOT"
-privileged="true" antiResourceLocking="false" antiJARLocking="false">
-<Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="A\.B\.C\.\d+|127\.\d+\.\d+\.\d+" denyStatus="404" /></p>
-
-<pre><code>
-## 設定manager deploy war檔案大小
+&lt;Context docBase=&quot;${catalina.home}/webapps/ROOT&quot;
+privileged=&quot;true&quot; antiResourceLocking=&quot;false&quot; antiJARLocking=&quot;false&quot;&gt;
+&lt;Valve className=&quot;org.apache.catalina.valves.RemoteAddrValve&quot; allow=&quot;A\.B\.C\.\d+|127\.\d+\.\d+\.\d+&quot; denyStatus=&quot;404&quot; /&gt;
 </code></pre>
 
-<pre><code>vi /home/apache-tomcat-X.X.XX/webapps/manager/WEB-INF/web.xml
+<h2 id="設定manager-deploy-war檔案大小">設定manager deploy war檔案大小</h2>
+
+<pre><code>    vi /home/apache-tomcat-X.X.XX/webapps/manager/WEB-INF/web.xml
+
+　　　　    &lt;multipart-config&gt;
+　　　　      &lt;max-file-size&gt;152428800&lt;/max-file-size&gt;
+　　　　      &lt;max-request-size&gt;152428800&lt;/max-request-size&gt;
+　　　　      &lt;file-size-threshold&gt;0&lt;/file-size-threshold&gt;
+　　　　    &lt;/multipart-config&gt;
+
 </code></pre>
-
-<p>　　　　    <multipart-config>
-　　　　      <max-file-size>152428800</max-file-size>
-　　　　      <max-request-size>152428800</max-request-size>
-　　　　      <file-size-threshold>0</file-size-threshold>
-　　　　    </multipart-config></p>
-
-<p>```</p>
  </div>
     <footer class="post-footer">
 
