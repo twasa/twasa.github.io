@@ -11,7 +11,7 @@
 
 <link rel="canonical" href="https://twasa.github.io/post/my-db/">
 <base href="https://twasa.github.io/" />
-<meta property="og:title" content="My Db" />
+<meta property="og:title" content="MySQL and MariaDB memo" />
 <meta property="og:description" content="第一次安裝完成，設定root的密碼 mysqladmin -u root -p &lsquo;密碼&rsquo; or mysql_secure_installation
 重設root密碼 /etc/init.d/mysql stop mysqld_safe --skip-grant-tables &amp; mysql -u root mysql&gt; use mysql; mysql&gt; UPDATE user SET Password=PASSWORD(&quot;密碼&quot;) WHERE User=&#39;root&#39;; mysql&gt; flush privileges; mysql&gt; quit /etc/init.d/mysql stop /etc/init.d/mysql start  連線管理資料庫 mysqladmin -u root -p Enter password: 此時再輸入密碼(建議採用) 修改使用者密碼 方法一 使用有權限或要修改的使用者本身登入mysql mysql&gt; SET PASSWORD FOR &#39;目標使用者&#39;@&#39;主機&#39; = PASSWORD(&#39;密碼&#39;); mysql&gt; flush privileges 方法二 使用有權限的使用者登入mysql 修改使用者密碼，只改 root 的密碼，如果沒有用 where ，則表示改全部 user 的密碼 mysql&gt; use mysql; mysql&gt; UPDATE user SET password=password(&#39;密碼&#39;) where user=&#39;root&#39;; mysql&gt; FLUSH PRIVILEGES; 上面是不分主機位址的修改，若要像方法一區分主機的話再加上Host條件，例如 mysql&gt; UPDATE user SET Password=PASSWORD(&quot;密碼&quot;) WHERE User=&#39;root&#39; AND Host = &#39;localhost&#39;; mysql&gt; FLUSH PRIVILEGES; 方法三 同樣利用mysqladmin指令可以修改root或其他使用者密碼，但該使用者必須有SUPER權限 mysqladmin -u 使用者 -p&#39;舊密碼&#39; password &#39;新密碼&#39; 忘記密碼重設 /etc/init." />
 <meta property="og:type" content="article" />
@@ -32,13 +32,13 @@
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="My Db"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="MySQL and MariaDB memo"/>
 <meta name="twitter:description" content="第一次安裝完成，設定root的密碼 mysqladmin -u root -p &lsquo;密碼&rsquo; or mysql_secure_installation
 重設root密碼 /etc/init.d/mysql stop mysqld_safe --skip-grant-tables &amp; mysql -u root mysql&gt; use mysql; mysql&gt; UPDATE user SET Password=PASSWORD(&quot;密碼&quot;) WHERE User=&#39;root&#39;; mysql&gt; flush privileges; mysql&gt; quit /etc/init.d/mysql stop /etc/init.d/mysql start  連線管理資料庫 mysqladmin -u root -p Enter password: 此時再輸入密碼(建議採用) 修改使用者密碼 方法一 使用有權限或要修改的使用者本身登入mysql mysql&gt; SET PASSWORD FOR &#39;目標使用者&#39;@&#39;主機&#39; = PASSWORD(&#39;密碼&#39;); mysql&gt; flush privileges 方法二 使用有權限的使用者登入mysql 修改使用者密碼，只改 root 的密碼，如果沒有用 where ，則表示改全部 user 的密碼 mysql&gt; use mysql; mysql&gt; UPDATE user SET password=password(&#39;密碼&#39;) where user=&#39;root&#39;; mysql&gt; FLUSH PRIVILEGES; 上面是不分主機位址的修改，若要像方法一區分主機的話再加上Host條件，例如 mysql&gt; UPDATE user SET Password=PASSWORD(&quot;密碼&quot;) WHERE User=&#39;root&#39; AND Host = &#39;localhost&#39;; mysql&gt; FLUSH PRIVILEGES; 方法三 同樣利用mysqladmin指令可以修改root或其他使用者密碼，但該使用者必須有SUPER權限 mysqladmin -u 使用者 -p&#39;舊密碼&#39; password &#39;新密碼&#39; 忘記密碼重設 /etc/init."/>
 
 
 
-<meta itemprop="name" content="My Db">
+<meta itemprop="name" content="MySQL and MariaDB memo">
 <meta itemprop="description" content="第一次安裝完成，設定root的密碼 mysqladmin -u root -p &lsquo;密碼&rsquo; or mysql_secure_installation
 重設root密碼 /etc/init.d/mysql stop mysqld_safe --skip-grant-tables &amp; mysql -u root mysql&gt; use mysql; mysql&gt; UPDATE user SET Password=PASSWORD(&quot;密碼&quot;) WHERE User=&#39;root&#39;; mysql&gt; flush privileges; mysql&gt; quit /etc/init.d/mysql stop /etc/init.d/mysql start  連線管理資料庫 mysqladmin -u root -p Enter password: 此時再輸入密碼(建議採用) 修改使用者密碼 方法一 使用有權限或要修改的使用者本身登入mysql mysql&gt; SET PASSWORD FOR &#39;目標使用者&#39;@&#39;主機&#39; = PASSWORD(&#39;密碼&#39;); mysql&gt; flush privileges 方法二 使用有權限的使用者登入mysql 修改使用者密碼，只改 root 的密碼，如果沒有用 where ，則表示改全部 user 的密碼 mysql&gt; use mysql; mysql&gt; UPDATE user SET password=password(&#39;密碼&#39;) where user=&#39;root&#39;; mysql&gt; FLUSH PRIVILEGES; 上面是不分主機位址的修改，若要像方法一區分主機的話再加上Host條件，例如 mysql&gt; UPDATE user SET Password=PASSWORD(&quot;密碼&quot;) WHERE User=&#39;root&#39; AND Host = &#39;localhost&#39;; mysql&gt; FLUSH PRIVILEGES; 方法三 同樣利用mysqladmin指令可以修改root或其他使用者密碼，但該使用者必須有SUPER權限 mysqladmin -u 使用者 -p&#39;舊密碼&#39; password &#39;新密碼&#39; 忘記密碼重設 /etc/init.">
 
@@ -59,7 +59,7 @@
 <title>
 
 
-     My Db 
+     MySQL and MariaDB memo 
 
 </title>
 
@@ -115,7 +115,7 @@
 
 
 <article class="post">
-    <h1 class="title"> My Db </h1>
+    <h1 class="title"> MySQL and MariaDB memo </h1>
     <div class="content"> 
 
 <h2 id="第一次安裝完成-設定root的密碼">第一次安裝完成，設定root的密碼</h2>

@@ -80,7 +80,7 @@ example modify CentOS linux hostname sed -i &#39;s/HOSTNAME\=.*/HOSTNAME\=NEWHOS
     </item>
     
     <item>
-      <title>My Db</title>
+      <title>MySQL and MariaDB memo</title>
       <link>https://twasa.github.io/post/my-db/</link>
       <pubDate>Mon, 11 Sep 2017 12:24:19 +0800</pubDate>
       
