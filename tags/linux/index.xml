@@ -60,5 +60,14 @@ example modify CentOS linux hostname sed -i &#39;s/HOSTNAME\=.*/HOSTNAME\=NEWHOS
       <description>description  prints lines that contain a match for a pattern reference  https://www.gnu.org/software/grep/manual/grep.html   syntax grep [OPTIONS] PATTERN [FILE...] grep multiple patterns OR grep &#39;pattern1\|pattern2\|pattern3&#39; AND grep -E &#39;pattern1.*pattern2.*pattern3&#39; filename -v, --invert-match Invert the sense of matching, to select non-matching lines. (-v is specified by POSIX .) grep -v &#39;unwanted_word&#39; -i, --ignore-case Ignore case distinctions in both the PATTERN and the input files. (-i is specified by POSIX .</description>
     </item>
     
+    <item>
+      <title>CentOS7 Linux Nginx MariaDB PHP</title>
+      <link>https://twasa.github.io/post/lnmp/</link>
+      <pubDate>Mon, 11 Sep 2017 10:14:51 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/post/lnmp/</guid>
+      <description>Build a Linux, Nginx, MariaDB, PHP environment in CentOS 7 install rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm yum install nginx php php-fpm mariadb mariadb-server  firewalld for http, https access only firewall-cmd --zone=public --list-all firewall-cmd --permanent --zone=public --add-service=http firewall-cmd --permanent --zone=public --add-service=https firewall-cmd --reload firewall-cmd --zone=public --list-all  Nginx config basic config, edit /etc/nginx/nginx.conf user nginx; worker_processes 2; #by your cpu error_log /var/log/nginx/error.log warn; pid /var/run/nginx.pid; events { worker_connections 1024; } http { include /etc/nginx/mime.</description>
+    </item>
+    
   </channel>
 </rss>

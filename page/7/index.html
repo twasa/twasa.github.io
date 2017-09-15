@@ -170,16 +170,24 @@
   <header>
     <h2 class="title"> <a href='https://twasa.github.io/post/lnmp/'> CentOS7 Linux Nginx MariaDB PHP</a> </h2>
     <div class="meta">
-      Sep 11, 2017 - 0 minutes
+      Sep 11, 2017 - 2 minutes
     </div>
     
 <div class="tags">
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/linux">#Linux</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://twasa.github.io/tags/webserver">#Webserver</a>
+      </div>
     
 </div>
 
   </header>
 
-  <div class="summary">  </div>
+  <div class="summary"> Build a Linux, Nginx, MariaDB, PHP environment in CentOS 7 install rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm yum install nginx php php-fpm mariadb mariadb-server  firewalld for http, https access only firewall-cmd --zone=public --list-all firewall-cmd --permanent --zone=public --add-service=http firewall-cmd --permanent --zone=public --add-service=https firewall-cmd --reload firewall-cmd --zone=public --list-all  Nginx config basic config, edit /etc/nginx/nginx.conf user nginx; worker_processes 2; #by your cpu error_log /var/log/nginx/error.log warn; pid /var/run/nginx.pid; events { worker_connections 1024; } http { include /etc/nginx/mime. </div>
 
   <footer>
   <div class="rmore">
