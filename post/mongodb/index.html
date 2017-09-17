@@ -266,9 +266,9 @@ db.createUser({
   user: &quot;帳號&quot;,
   pwd: &quot;密碼&quot;,
   roles: [
-    { role: &quot;userAdmin&quot;, db: &quot;bet_collection&quot; },
-    { role: &quot;readWrite&quot;, db: &quot;bet_collection&quot; },
-    { role: &quot;dbAdmin&quot;, db: &quot;bet_collection&quot; }
+    { role: &quot;userAdmin&quot;, db: &quot;資料庫名稱&quot; },
+    { role: &quot;readWrite&quot;, db: &quot;資料庫名稱&quot; },
+    { role: &quot;dbAdmin&quot;, db: &quot;資料庫名稱&quot; }
   ]
 });
 
@@ -276,7 +276,7 @@ db.createUser({
   user: &quot;帳號&quot;,
   pwd: &quot;密碼&quot;,
   roles: [
-    { role: &quot;readWrite&quot;, db: &quot;bet_collection&quot; },
+    { role: &quot;readWrite&quot;, db: &quot;資料庫名稱&quot; },
   ]
 });
 
@@ -284,9 +284,9 @@ db.updateUser(
    &quot;betadmin&quot;,
    {
      roles : [
-     { role: &quot;userAdmin&quot;, db: &quot;bet_collection&quot; },
-     { role: &quot;readWrite&quot;, db: &quot;bet_collection&quot; },
-     { role: &quot;dbAdmin&quot;, db: &quot;bet_collection&quot; }
+     { role: &quot;userAdmin&quot;, db: &quot;資料庫名稱&quot; },
+     { role: &quot;readWrite&quot;, db: &quot;資料庫名稱&quot; },
+     { role: &quot;dbAdmin&quot;, db: &quot;資料庫名稱&quot; }
              ],
      pwd: &quot;密碼&quot;
     }
@@ -332,7 +332,7 @@ db.removeUser(帳號)
 </ul>
 
 <pre><code>mongodump --gzip --archive=backup-file-name --db db-name --collection collection-name -q &quot;&quot;
-mongodump -d bet_collection -c egame -q '{&quot;createDateTime&quot;:{$gte:ISODate(&quot;2017-06-11T00:00:00.000Z&quot;)}}' --gzip --archive=/tmp/backup.tgz
+mongodump -d 資料庫名稱 -c egame -q '{&quot;createDateTime&quot;:{$gte:ISODate(&quot;2017-06-11T00:00:00.000Z&quot;)}}' --gzip --archive=/tmp/backup.tgz
 
 --out filename
 
