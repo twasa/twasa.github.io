@@ -12,9 +12,8 @@
 <link rel="canonical" href="https://twasa.github.io/post/apache-tomcat/">
 <base href="https://twasa.github.io/" />
 <meta property="og:title" content="Apache Tomcat" />
-<meta property="og:description" content="參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  install java, check it running and version yum install java-1.8.0-openjdk java -version  create a nologin user for running tomcat useradd -s /sbin/nologin tomcat  download from apache tomcat cd /home/tomcat wget http://apache.stu.edu.tw/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz tar zxvf apache-tomcat-8.0.28.tar.gz  setenv.sh  設定運行參數如記憶體、垃圾回收機制等參數
-JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:&#43;UseParallelGC&quot;  設定Tomcat JMX remote 監控
-CATALINA_OPTS=&quot;-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8888 -Dcom.sun.management.jmxremote.rmi.port=8889&quot;   catalina.properties  設定增加讓webapps可讀取property檔路徑  common." />
+<meta property="og:description" content="參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  install java, check it running and version yum install java-1.8.0-openjdk or curl -v -j -k -L -H &quot;Cookie: oraclelicense=accept-securebackup-cookie&quot; http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm &gt; jdk-8u112-linux-x64.rpm &amp;&amp; rpm -Uvh jdk-8u112-linux-x64.rpm java -version  create a nologin user for running tomcat useradd -s /sbin/nologin tomcat  download from apache tomcat cd /home/tomcat wget http://apache.stu.edu.tw/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz tar zxvf apache-tomcat-8.0.28.tar.gz  setenv.sh  設定運行參數如記憶體、垃圾回收機制等參數
+JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:&#43;UseParallelGC&quot;  設定Tomcat JMX remote 監控" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://twasa.github.io/post/apache-tomcat/" />
 
@@ -34,20 +33,18 @@ CATALINA_OPTS=&quot;-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.managemen
 
 
 <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Apache Tomcat"/>
-<meta name="twitter:description" content="參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  install java, check it running and version yum install java-1.8.0-openjdk java -version  create a nologin user for running tomcat useradd -s /sbin/nologin tomcat  download from apache tomcat cd /home/tomcat wget http://apache.stu.edu.tw/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz tar zxvf apache-tomcat-8.0.28.tar.gz  setenv.sh  設定運行參數如記憶體、垃圾回收機制等參數
-JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:&#43;UseParallelGC&quot;  設定Tomcat JMX remote 監控
-CATALINA_OPTS=&quot;-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8888 -Dcom.sun.management.jmxremote.rmi.port=8889&quot;   catalina.properties  設定增加讓webapps可讀取property檔路徑  common."/>
+<meta name="twitter:description" content="參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  install java, check it running and version yum install java-1.8.0-openjdk or curl -v -j -k -L -H &quot;Cookie: oraclelicense=accept-securebackup-cookie&quot; http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm &gt; jdk-8u112-linux-x64.rpm &amp;&amp; rpm -Uvh jdk-8u112-linux-x64.rpm java -version  create a nologin user for running tomcat useradd -s /sbin/nologin tomcat  download from apache tomcat cd /home/tomcat wget http://apache.stu.edu.tw/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz tar zxvf apache-tomcat-8.0.28.tar.gz  setenv.sh  設定運行參數如記憶體、垃圾回收機制等參數
+JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:&#43;UseParallelGC&quot;  設定Tomcat JMX remote 監控"/>
 
 
 
 <meta itemprop="name" content="Apache Tomcat">
-<meta itemprop="description" content="參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  install java, check it running and version yum install java-1.8.0-openjdk java -version  create a nologin user for running tomcat useradd -s /sbin/nologin tomcat  download from apache tomcat cd /home/tomcat wget http://apache.stu.edu.tw/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz tar zxvf apache-tomcat-8.0.28.tar.gz  setenv.sh  設定運行參數如記憶體、垃圾回收機制等參數
-JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:&#43;UseParallelGC&quot;  設定Tomcat JMX remote 監控
-CATALINA_OPTS=&quot;-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8888 -Dcom.sun.management.jmxremote.rmi.port=8889&quot;   catalina.properties  設定增加讓webapps可讀取property檔路徑  common.">
+<meta itemprop="description" content="參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  install java, check it running and version yum install java-1.8.0-openjdk or curl -v -j -k -L -H &quot;Cookie: oraclelicense=accept-securebackup-cookie&quot; http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm &gt; jdk-8u112-linux-x64.rpm &amp;&amp; rpm -Uvh jdk-8u112-linux-x64.rpm java -version  create a nologin user for running tomcat useradd -s /sbin/nologin tomcat  download from apache tomcat cd /home/tomcat wget http://apache.stu.edu.tw/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz tar zxvf apache-tomcat-8.0.28.tar.gz  setenv.sh  設定運行參數如記憶體、垃圾回收機制等參數
+JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:&#43;UseParallelGC&quot;  設定Tomcat JMX remote 監控">
 
 
 <meta itemprop="dateModified" content="2017-09-11T12:34:25&#43;08:00" />
-<meta itemprop="wordCount" content="198">
+<meta itemprop="wordCount" content="214">
 
 
 
@@ -131,6 +128,8 @@ CATALINA_OPTS=&quot;-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.managemen
 <h2 id="install-java-check-it-running-and-version">install java, check it running and version</h2>
 
 <pre><code>yum install java-1.8.0-openjdk
+or
+ curl -v -j -k -L -H &quot;Cookie: oraclelicense=accept-securebackup-cookie&quot; http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm &gt; jdk-8u112-linux-x64.rpm &amp;&amp; rpm -Uvh jdk-8u112-linux-x64.rpm
 java -version
 </code></pre>
 
