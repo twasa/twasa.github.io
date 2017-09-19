@@ -174,173 +174,156 @@
 <li>ControlPersist: 即持久化socket一次驗證，多次通信，只需要修改SSH client也就是Ansible Control Machine本身的SSH 設定
 
 <ul>
-<li>~/.ssh/config
-```
-Host *
+<li>~/.ssh/config</li>
+</ul></li>
+</ul>
+
+<pre><code>Host *
 Compression yes
 TCPKeepAlive yes
 ServerAliveInterval 120
 ServerAliveCountMax 5
 ControlMaster auto
 ControlPath ~/.ssh/sockets/%r@%h-%p
-ControlPersist 1200</li>
-</ul></li>
-</ul>
+ControlPersist 1200
 
-<pre><code>
-
-# module
-## module_name   module arguments
 </code></pre>
 
-<p>ping            無參數
-comand          -a &lsquo;ifconfig&rsquo;
-user            -a &lsquo;name= state={present(創建)|absent(刪除)} force=(是否強制操作刪除傢目錄) system= uid= shell= home=&rsquo;
-group           -a &lsquo;name= state={present|absent} gid= system=(系統組)&rsquo;
-cron            -a &lsquo;name= state= minute= hour= day= month= weekday= job=&rsquo;
-file            -a &lsquo;path= mode= owner= group= state={file|directory|link|hard|touch|absent} src=(link，鏈接至何處)&rsquo;
-copy            -a &lsquo;dest=(遠程主機上路徑) src=(本地主機路徑) content=(直接指明內容) owner= group= mode=&rsquo;
-yum             -a &lsquo;name= state={present(已安裝)|latest(最新版)|absent(未安裝)}&rsquo;
-service         -a &lsquo;name= state=started|restarted|stopped|reloaded&rsquo;
-unarchive       -a &lsquo;src= dest= remote_src={True|False}&rsquo;
-lineinfile      -a &ldquo;
-setup           無參數</p>
+<h1 id="module">module</h1>
 
-<pre><code>
-## inventory for all hosts ssh settings
+<h2 id="module-name-module-arguments">module_name   module arguments</h2>
+
+<pre><code>ping            無參數
+comand          -a 'ifconfig'
+user            -a 'name= state={present(創建)|absent(刪除)} force=(是否強制操作刪除傢目錄) system= uid= shell= home='
+group           -a 'name= state={present|absent} gid= system=(系統組)'
+cron            -a 'name= state= minute= hour= day= month= weekday= job='
+file            -a 'path= mode= owner= group= state={file|directory|link|hard|touch|absent} src=(link，鏈接至何處)'
+copy            -a 'dest=(遠程主機上路徑) src=(本地主機路徑) content=(直接指明內容) owner= group= mode='
+yum             -a 'name= state={present(已安裝)|latest(最新版)|absent(未安裝)}'
+service         -a 'name= state=started|restarted|stopped|reloaded'
+unarchive       -a 'src= dest= remote_src={True|False}'
+lineinfile      -a ''
+setup           無參數
 </code></pre>
 
-<p>[all:vars]
+<h2 id="inventory-for-all-hosts-ssh-settings">inventory for all hosts ssh settings</h2>
+
+<pre><code>[all:vars]
 ansible_connection=ssh
-ansible_ssh_user=&lsquo;{{ user }}&rsquo;
-ansible_ssh_pass=&lsquo;{{ password }}&rsquo;
-ansible_become_pass=&lsquo;{{ password }}&rsquo;</p>
-
-<pre><code>
-## inventory for Differentiate Staging vs Production
+ansible_ssh_user='{{ user }}'
+ansible_ssh_pass='{{ password }}'
+ansible_become_pass='{{ password }}'
 </code></pre>
 
-<h1 id="file-production">file: production</h1>
+<h2 id="inventory-for-differentiate-staging-vs-production">inventory for Differentiate Staging vs Production</h2>
 
-<p>[atlanta-webservers]
+<pre><code># file: production
+
+[atlanta-webservers]
 www-atl-1.example.com
-www-atl-2.example.com</p>
+www-atl-2.example.com
 
-<p>[boston-webservers]
+[boston-webservers]
 www-bos-1.example.com
-www-bos-2.example.com</p>
+www-bos-2.example.com
 
-<p>[atlanta-dbservers]
+[atlanta-dbservers]
 db-atl-1.example.com
-db-atl-2.example.com</p>
+db-atl-2.example.com
 
-<p>[boston-dbservers]
-db-bos-1.example.com</p>
+[boston-dbservers]
+db-bos-1.example.com
 
-<h1 id="webservers-in-all-geos">webservers in all geos</h1>
-
-<p>[webservers:children]
+# webservers in all geos
+[webservers:children]
 atlanta-webservers
-boston-webservers</p>
-
-<h1 id="dbservers-in-all-geos">dbservers in all geos</h1>
-
-<p>[dbservers:children]
-atlanta-dbservers
-boston-dbservers</p>
-
-<h1 id="everything-in-the-atlanta-geo">everything in the atlanta geo</h1>
-
-<p>[atlanta:children]
-atlanta-webservers
-atlanta-dbservers</p>
-
-<h1 id="everything-in-the-boston-geo">everything in the boston geo</h1>
-
-<p>[boston:children]
 boston-webservers
-boston-dbservers</p>
 
-<pre><code>
+# dbservers in all geos
+[dbservers:children]
+atlanta-dbservers
+boston-dbservers
 
-# syntax
-## ansible syntax
+# everything in the atlanta geo
+[atlanta:children]
+atlanta-webservers
+atlanta-dbservers
+
+# everything in the boston geo
+[boston:children]
+boston-webservers
+boston-dbservers
 </code></pre>
 
-<p>ansible <Patterns> -m <module_name> -a <arguments> <Options></p>
+<h1 id="syntax">syntax</h1>
 
-<p>Options:
-&ndash;list-hosts        outputs a list of matching hosts
-&ndash;module-name       module name to execute (default=command)
-&ndash;args              module arguments
-&ndash;user              connect as this user
-&ndash;ask-pass          Prompt for the connection password
-&ndash;become            Use privilege escalation
-&ndash;ask-become-pass   Ask for privilege escalation password
-&ndash;inventory         The PATH to the inventory, which defaults to /etc/ansible/hosts
-&ndash;limit             further limit selected hosts to an additional pattern or comma separated host list.
-&ndash;check             Check mode is just a simulation it will not make any changes on remote systems
-&ndash;verbose           verbose mode (-vvv for more, -vvvv to enable connection debugging)
-&ndash;background=       run asynchronously, failing after X seconds(default=N/A)
-&ndash;poll              set the poll interval if using -B (default=15)
-&ndash;forks             specify number of parallel processes to use(default=5)
-&ndash;extra-vars        Extra variables to inject into a playbook, in key=value key=value format or as quoted YAML/JSON (hashes and arrays). To load variables from a file, specify the file preceded by @ (e.g. @vars.yml).</p>
+<h2 id="ansible-syntax">ansible syntax</h2>
 
-<pre><code>
-## example
+<pre><code>ansible &lt;Patterns&gt; -m &lt;module_name&gt; -a &lt;arguments&gt; &lt;Options&gt;
+
+Options:
+--list-hosts        outputs a list of matching hosts
+--module-name       module name to execute (default=command)
+--args              module arguments
+--user              connect as this user
+--ask-pass          Prompt for the connection password
+--become            Use privilege escalation
+--ask-become-pass   Ask for privilege escalation password
+--inventory         The PATH to the inventory, which defaults to /etc/ansible/hosts
+--limit             further limit selected hosts to an additional pattern or comma separated host list.
+--check             Check mode is just a simulation it will not make any changes on remote systems
+--verbose           verbose mode (-vvv for more, -vvvv to enable connection debugging)
+--background=       run asynchronously, failing after X seconds(default=N/A)
+--poll              set the poll interval if using -B (default=15)
+--forks             specify number of parallel processes to use(default=5)
+--extra-vars        Extra variables to inject into a playbook, in key=value key=value format or as quoted YAML/JSON (hashes and arrays). To load variables from a file, specify the file preceded by @ (e.g. @vars.yml).
 </code></pre>
 
-<p>ansible localhost -m ping #連本機自己,無須驗證
-ansible localhost -m ping -i &ldquo;localhost,&rdquo; -u 帳號 -k 密碼 &ndash;key-file=私鑰檔案</p>
+<h2 id="example">example</h2>
 
-<pre><code>
-## ansible-playbook syntax
+<pre><code>ansible localhost -m ping #連本機自己,無須驗證
+ansible localhost -m ping -i &quot;localhost,&quot; -u 帳號 -k 密碼 --key-file=私鑰檔案
 </code></pre>
 
-<p>ansible-playbook playbook.yml <Options></p>
+<h2 id="ansible-playbook-syntax">ansible-playbook syntax</h2>
 
-<p>Options:
-&ndash;check             Check mode is just a simulation it will not make any changes on remote systems
-&ndash;inventory         The PATH to the inventory, which defaults to /etc/ansible/hosts
-&ndash;limit             further limit selected hosts to an additional pattern
-&ndash;list-hosts        outputs a list of matching hosts
-&ndash;syntax-check      perform a syntax check on the playbook, but do not execute it
-&ndash;tags=TAGS         only run plays and tasks tagged with these values
-&ndash;flush-cache       clear the fact cache</p>
+<pre><code>ansible-playbook playbook.yml &lt;Options&gt;
 
-<pre><code>
-
-## ansible-vault syntax
+Options:
+--check             Check mode is just a simulation it will not make any changes on remote systems
+--inventory         The PATH to the inventory, which defaults to /etc/ansible/hosts
+--limit             further limit selected hosts to an additional pattern
+--list-hosts        outputs a list of matching hosts
+--syntax-check      perform a syntax check on the playbook, but do not execute it
+--tags=TAGS         only run plays and tasks tagged with these values
+--flush-cache       clear the fact cache
 </code></pre>
 
-<p>ansible-vault [create|decrypt|edit|encrypt|rekey|view] [&ndash;help] [options] vaultfile.yml</p>
+<h2 id="ansible-vault-syntax">ansible-vault syntax</h2>
 
-<p>Options:
+<pre><code>ansible-vault [create|decrypt|edit|encrypt|rekey|view] [--help] [options] vaultfile.yml
+
+Options:
 create foo.yml      建立加密 (Encrypted) 檔案。
 edit foo.yml        編輯加密檔案內容。
 rekey foo.yml       更換加密金鑰 (密碼)。
 encrypt foo.yml     對已存在的明文檔案進行加密
 decrypt foo.yml     解開 (Decrypt) 已加密檔案。
-view foo.yml        檢視已加密的檔案內容。</p>
-
-<pre><code>
-## ansible playboox examples
-### service
+view foo.yml        檢視已加密的檔案內容。
 </code></pre>
 
-<hr />
+<h2 id="ansible-playboox-examples">ansible playboox examples</h2>
 
-<ul>
-<li>hosts: all
-gather_facts: no
-tasks:
+<h3 id="service">service</h3>
 
-<ul>
-<li>name: ensure enable_twrd is running
-service: name=enable_twrd state=started
-```</li>
-</ul></li>
-</ul>
+<pre><code>---
+- hosts: all
+  gather_facts: no
+  tasks:
+  - name: ensure enable_twrd is running
+    service: name=enable_twrd state=started
+</code></pre>
 
 <h3 id="shell">shell</h3>
 
@@ -461,7 +444,7 @@ ansible_become_pass='{{ ansible_become_pass }}'
 
 <li><p>yml</p>
 
-<h2 id="toc_14">```</h2>
+<h2 id="toc_20">```</h2>
 
 <ul>
 <li>hosts: all
