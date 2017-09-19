@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us">
-
 <head>
-<meta charset="utf-8" />
-<meta name="author" content="" />
-<meta name="description" content="William&#39;s blog." />
-<meta name="keywords" content="blog, tech" />
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.26" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+  <title>Apache Tomcat &middot; William&#39;s Blog -  William&#39;s Blog </title>
+  <meta name="generator" content="Hugo 0.26" />
+  <meta name="description" content="William&#39;s Blog"> 
 
-<link rel="canonical" href="https://twasa.github.io/post/apache-tomcat/">
-<base href="https://twasa.github.io/" />
-<meta property="og:title" content="Apache Tomcat" />
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Apache Tomcat"/>
+<meta name="twitter:description" content="參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  install java, check it running and version yum install java-1.8.0-openjdk or curl -v -j -k -L -H &quot;Cookie: oraclelicense=accept-securebackup-cookie&quot; http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm &gt; jdk-8u112-linux-x64.rpm &amp;&amp; rpm -Uvh jdk-8u112-linux-x64.rpm java -version  create a nologin user for running tomcat useradd -s /sbin/nologin tomcat  download from apache tomcat cd /home/tomcat wget http://apache.stu.edu.tw/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz tar zxvf apache-tomcat-8.0.28.tar.gz  setenv.sh  設定運行參數如記憶體、垃圾回收機制等參數
+JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:&#43;UseParallelGC&quot;  設定Tomcat JMX remote 監控"/>
+
+  <meta property="og:title" content="Apache Tomcat" />
 <meta property="og:description" content="參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  install java, check it running and version yum install java-1.8.0-openjdk or curl -v -j -k -L -H &quot;Cookie: oraclelicense=accept-securebackup-cookie&quot; http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm &gt; jdk-8u112-linux-x64.rpm &amp;&amp; rpm -Uvh jdk-8u112-linux-x64.rpm java -version  create a nologin user for running tomcat useradd -s /sbin/nologin tomcat  download from apache tomcat cd /home/tomcat wget http://apache.stu.edu.tw/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz tar zxvf apache-tomcat-8.0.28.tar.gz  setenv.sh  設定運行參數如記憶體、垃圾回收機制等參數
 JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:&#43;UseParallelGC&quot;  設定Tomcat JMX remote 監控" />
 <meta property="og:type" content="article" />
@@ -32,12 +33,10 @@ JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -ser
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Apache Tomcat"/>
-<meta name="twitter:description" content="參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  install java, check it running and version yum install java-1.8.0-openjdk or curl -v -j -k -L -H &quot;Cookie: oraclelicense=accept-securebackup-cookie&quot; http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm &gt; jdk-8u112-linux-x64.rpm &amp;&amp; rpm -Uvh jdk-8u112-linux-x64.rpm java -version  create a nologin user for running tomcat useradd -s /sbin/nologin tomcat  download from apache tomcat cd /home/tomcat wget http://apache.stu.edu.tw/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz tar zxvf apache-tomcat-8.0.28.tar.gz  setenv.sh  設定運行參數如記憶體、垃圾回收機制等參數
-JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:&#43;UseParallelGC&quot;  設定Tomcat JMX remote 監控"/>
 
+  <!-- RSS autodiscovery --> 
 
-
+  
 <meta itemprop="name" content="Apache Tomcat">
 <meta itemprop="description" content="參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  install java, check it running and version yum install java-1.8.0-openjdk or curl -v -j -k -L -H &quot;Cookie: oraclelicense=accept-securebackup-cookie&quot; http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm &gt; jdk-8u112-linux-x64.rpm &amp;&amp; rpm -Uvh jdk-8u112-linux-x64.rpm java -version  create a nologin user for running tomcat useradd -s /sbin/nologin tomcat  download from apache tomcat cd /home/tomcat wget http://apache.stu.edu.tw/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz tar zxvf apache-tomcat-8.0.28.tar.gz  setenv.sh  設定運行參數如記憶體、垃圾回收機制等參數
 JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:&#43;UseParallelGC&quot;  設定Tomcat JMX remote 監控">
@@ -50,73 +49,81 @@ JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -ser
 
 <meta itemprop="keywords" content="Webserver,Apache,Tomcat," />
 
-
-<link rel="stylesheet" href="css/layout.css" />
-<link rel="stylesheet" href="css/color-dark.css" />
-
-
-
-<title>
-
-
-     Apache Tomcat 
-
-</title>
-
-<script src="js/highlight.min.js"></script>
-<link rel="stylesheet" href="css/tomorrow-night.min.css" />
-<script>hljs.initHighlightingOnLoad();</script>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet">
+  <link rel="stylesheet" href="https://twasa.github.io/css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "name": "William&#39;s Blog",
+  "url": "https://twasa.github.io/post/apache-tomcat/"
+}
+</script>
 
 </head>
 
-
 <body>
-<div class="main">
-<header>
+  <header class="gheader">
+  <div class="container">
+    <nav class="navbar ">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://twasa.github.io/">
+          <h1 class="brand">William&#39;s Blog</h1>
+        </a>
 
-<div class="header-bar">
+        <div class="navbar-burger burger" data-target="navMenubd-example">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
 
-  <nav>
-    <div class="siteTitle">
-      <a href="https://twasa.github.io/">William&#39;s Blog</a>
-    </div> 
-
-    
-    
-    <a class="nav-item" href="https://twasa.github.io/post/"><div class="nav-item-title">Posts</div></a>
-    
-    <a class="nav-item" href="https://twasa.github.io/about/"><div class="nav-item-title">About Hugo</div></a>
-    
-    <a class="nav-item" href="https://twasa.github.io/tags/"><div class="nav-item-title">Tags</div></a>
-    
-
-  </nav>
-</div>
-
-  
-<div class="social-links-header">
-
-  
-
-  
-  <a href="https://github.com/twasa" target="_blank"><div class="social-link">GitHub</div></a>
-  
-
-  
-
-  
-
-  
-
-</div>
-
-
+      <div id="navMenubd-example" class="navbar-menu">
+        <div class="navbar-start">
+          
+          <a class="navbar-item" href="https://twasa.github.io/categories/">
+            Categories
+          </a>
+          
+          <a class="navbar-item" href="https://twasa.github.io/tags/">
+            Tags
+          </a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
 </header>
 
 
-<article class="post">
-    <h1 class="title"> Apache Tomcat </h1>
-    <div class="content"> 
+  <div class="main-content">
+    <div class="container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="title">Apache Tomcat</h1>
+      <div class="meta">
+        <time class="pub-time"  datetime="2017-09-11T12:34:25&#43;08:00">
+          2017.09.11
+        </time>
+        <div class="terms">
+          
+          
+          <div class="tag">
+            
+              <a class="tag-item" href="https://twasa.github.io/tags/webserver">Webserver</a>
+            
+              <a class="tag-item" href="https://twasa.github.io/tags/apache">Apache</a>
+            
+              <a class="tag-item" href="https://twasa.github.io/tags/tomcat">Tomcat</a>
+            
+          </div>
+          
+        </div>
+      </div>
+    </header>
+    <div class="post-body">
+      
 
 <h2 id="參考文件">參考文件</h2>
 
@@ -233,70 +240,106 @@ privileged=&quot;true&quot; antiResourceLocking=&quot;false&quot; antiJARLocking
 　　　　    &lt;/multipart-config&gt;
 
 </code></pre>
- </div>
+
+    </div>
     <footer class="post-footer">
+      
+      <div class="share">
+        
+      </div>
 
-  <div class="post-footer-data">
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/webserver">#Webserver</a>
+      <div class="pagenation">
+        <ul class="pagenation-list">
+          
+          <li class="pager previous">
+            <a href="https://twasa.github.io/post/my-db/" data-toggle="tooltip" data-placement="top" title="MySQL and MariaDB memo">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="pager next">
+            <a href="https://twasa.github.io/post/sed/" data-toggle="tooltip" data-placement="top" title="Sed">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
       </div>
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/apache">#Apache</a>
-      </div>
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/tomcat">#Tomcat</a>
-      </div>
-    
-</div>
+    </footer>
+  </article>
 
-    <div class="date"> Sep 11, 2017 </div>
+  
+  <article class="related"></article>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": {
+    "@type": "NewsArticle",
+    "@id": "https://twasa.github.io/post/apache-tomcat/",
+    "headline": " 參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  i",
+    "author": "William Wang",
+    "publisher": {
+      "@type": "Organization",
+      "name": "William Wang",
+      "logo": ""
+    },
+    "image": "",
+    "datePublished": "2017-09-11"
+  },
+  "headline": " 參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  i",
+  "alternativeHeadline": "William&#39;s Blog",
+  "datePublished": "2017-09-11",
+  "dateModified": "2017-09-11",
+  "url": "https://twasa.github.io/post/apache-tomcat/",
+  "wordCount": "214",
+  "author": {
+    "@type": "Person",
+    "name": "William Wang"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "William Wang"
+  },
+  "image": "",
+  
+  "keywords": "WebserverApacheTomcat",
+  "description": ""
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "@id": "https://twasa.github.io/post/apache-tomcat/",
+  "name": "William Wang"
+}
+</script>
+
+
+    </div>
   </div>
 
+  <footer class="gfooter">
+  <div class="inner">
+    <div class="container">
+      <p class="copy"><small>Copyright (c) 2017, all rights reserved.</small></p>
+
+      <nav class="footer-nav">
+        <div class="inner">
+          
+        </div>
+      </nav>
+    </div>
+  </div>
 </footer>
 
 
-  
 
-
-
-</article>
-
-  <footer>
-
-  <div class="social-links-footer">
-
-  
-
-  
-  <a href="https://github.com/twasa" target="_blank"><div class="social-link">GitHub</div></a>
-  
-
-  
-
-  
-
-  
-
-  <div class="social-link">
-  <a href="https://twasa.github.io/index.xml" target="_blank">RSS</a>
-  </div>
-
-</div>
-
-
-  <div class="copyright"> Copyright (c) 2017, all rights reserved. </div>
-
-  <div class="poweredby">
-    Powered by <a href="https://gohugo.io/">Hugo</a>.
-  </div>
-
-  </footer>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://twasa.github.io/js/script.js"></script>
 
 </body>
 </html>
-

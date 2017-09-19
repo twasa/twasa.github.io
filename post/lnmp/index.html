@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us">
-
 <head>
-<meta charset="utf-8" />
-<meta name="author" content="" />
-<meta name="description" content="William&#39;s blog." />
-<meta name="keywords" content="blog, tech" />
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.26" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+  <title>CentOS7 Linux Nginx MariaDB PHP &middot; William&#39;s Blog -  William&#39;s Blog </title>
+  <meta name="generator" content="Hugo 0.26" />
+  <meta name="description" content="William&#39;s Blog"> 
 
-<link rel="canonical" href="https://twasa.github.io/post/lnmp/">
-<base href="https://twasa.github.io/" />
-<meta property="og:title" content="CentOS7 Linux Nginx MariaDB PHP" />
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="CentOS7 Linux Nginx MariaDB PHP"/>
+<meta name="twitter:description" content="Build a Linux, Nginx, MariaDB, PHP environment in CentOS 7 install rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm yum install nginx php php-fpm mariadb mariadb-server  firewalld for http, https access only firewall-cmd --zone=public --list-all firewall-cmd --permanent --zone=public --add-service=http firewall-cmd --permanent --zone=public --add-service=https firewall-cmd --reload firewall-cmd --zone=public --list-all  Nginx config basic config, edit /etc/nginx/nginx.conf user nginx; worker_processes 2; #by your cpu error_log /var/log/nginx/error.log warn; pid /var/run/nginx.pid; events { worker_connections 1024; } http { include /etc/nginx/mime."/>
+
+  <meta property="og:title" content="CentOS7 Linux Nginx MariaDB PHP" />
 <meta property="og:description" content="Build a Linux, Nginx, MariaDB, PHP environment in CentOS 7 install rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm yum install nginx php php-fpm mariadb mariadb-server  firewalld for http, https access only firewall-cmd --zone=public --list-all firewall-cmd --permanent --zone=public --add-service=http firewall-cmd --permanent --zone=public --add-service=https firewall-cmd --reload firewall-cmd --zone=public --list-all  Nginx config basic config, edit /etc/nginx/nginx.conf user nginx; worker_processes 2; #by your cpu error_log /var/log/nginx/error.log warn; pid /var/run/nginx.pid; events { worker_connections 1024; } http { include /etc/nginx/mime." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://twasa.github.io/post/lnmp/" />
@@ -31,11 +31,10 @@
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="CentOS7 Linux Nginx MariaDB PHP"/>
-<meta name="twitter:description" content="Build a Linux, Nginx, MariaDB, PHP environment in CentOS 7 install rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm yum install nginx php php-fpm mariadb mariadb-server  firewalld for http, https access only firewall-cmd --zone=public --list-all firewall-cmd --permanent --zone=public --add-service=http firewall-cmd --permanent --zone=public --add-service=https firewall-cmd --reload firewall-cmd --zone=public --list-all  Nginx config basic config, edit /etc/nginx/nginx.conf user nginx; worker_processes 2; #by your cpu error_log /var/log/nginx/error.log warn; pid /var/run/nginx.pid; events { worker_connections 1024; } http { include /etc/nginx/mime."/>
 
+  <!-- RSS autodiscovery --> 
 
-
+  
 <meta itemprop="name" content="CentOS7 Linux Nginx MariaDB PHP">
 <meta itemprop="description" content="Build a Linux, Nginx, MariaDB, PHP environment in CentOS 7 install rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm yum install nginx php php-fpm mariadb mariadb-server  firewalld for http, https access only firewall-cmd --zone=public --list-all firewall-cmd --permanent --zone=public --add-service=http firewall-cmd --permanent --zone=public --add-service=https firewall-cmd --reload firewall-cmd --zone=public --list-all  Nginx config basic config, edit /etc/nginx/nginx.conf user nginx; worker_processes 2; #by your cpu error_log /var/log/nginx/error.log warn; pid /var/run/nginx.pid; events { worker_connections 1024; } http { include /etc/nginx/mime.">
 
@@ -47,73 +46,79 @@
 
 <meta itemprop="keywords" content="Linux,Webserver," />
 
-
-<link rel="stylesheet" href="css/layout.css" />
-<link rel="stylesheet" href="css/color-dark.css" />
-
-
-
-<title>
-
-
-     CentOS7 Linux Nginx MariaDB PHP 
-
-</title>
-
-<script src="js/highlight.min.js"></script>
-<link rel="stylesheet" href="css/tomorrow-night.min.css" />
-<script>hljs.initHighlightingOnLoad();</script>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet">
+  <link rel="stylesheet" href="https://twasa.github.io/css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "name": "William&#39;s Blog",
+  "url": "https://twasa.github.io/post/lnmp/"
+}
+</script>
 
 </head>
 
-
 <body>
-<div class="main">
-<header>
+  <header class="gheader">
+  <div class="container">
+    <nav class="navbar ">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://twasa.github.io/">
+          <h1 class="brand">William&#39;s Blog</h1>
+        </a>
 
-<div class="header-bar">
+        <div class="navbar-burger burger" data-target="navMenubd-example">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
 
-  <nav>
-    <div class="siteTitle">
-      <a href="https://twasa.github.io/">William&#39;s Blog</a>
-    </div> 
-
-    
-    
-    <a class="nav-item" href="https://twasa.github.io/post/"><div class="nav-item-title">Posts</div></a>
-    
-    <a class="nav-item" href="https://twasa.github.io/about/"><div class="nav-item-title">About Hugo</div></a>
-    
-    <a class="nav-item" href="https://twasa.github.io/tags/"><div class="nav-item-title">Tags</div></a>
-    
-
-  </nav>
-</div>
-
-  
-<div class="social-links-header">
-
-  
-
-  
-  <a href="https://github.com/twasa" target="_blank"><div class="social-link">GitHub</div></a>
-  
-
-  
-
-  
-
-  
-
-</div>
-
-
+      <div id="navMenubd-example" class="navbar-menu">
+        <div class="navbar-start">
+          
+          <a class="navbar-item" href="https://twasa.github.io/categories/">
+            Categories
+          </a>
+          
+          <a class="navbar-item" href="https://twasa.github.io/tags/">
+            Tags
+          </a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
 </header>
 
 
-<article class="post">
-    <h1 class="title"> CentOS7 Linux Nginx MariaDB PHP </h1>
-    <div class="content"> 
+  <div class="main-content">
+    <div class="container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="title">CentOS7 Linux Nginx MariaDB PHP</h1>
+      <div class="meta">
+        <time class="pub-time"  datetime="2017-09-11T10:14:51&#43;08:00">
+          2017.09.11
+        </time>
+        <div class="terms">
+          
+          
+          <div class="tag">
+            
+              <a class="tag-item" href="https://twasa.github.io/tags/linux">Linux</a>
+            
+              <a class="tag-item" href="https://twasa.github.io/tags/webserver">Webserver</a>
+            
+          </div>
+          
+        </div>
+      </div>
+    </header>
+    <div class="post-body">
+      
 
 <h1 id="build-a-linux-nginx-mariadb-php-environment-in-centos-7">Build a Linux, Nginx, MariaDB, PHP environment in CentOS 7</h1>
 
@@ -195,7 +200,7 @@ http {
 
 # session path
 # for mod_php, see /etc/httpd/conf.d/php.conf
-# for php-fpm, see /etc/php-fpm.d/*conf
+# for php-fpm, see /etc/php-fpm.d/www.conf
 </code></pre>
 
 <h2 id="php-config-in-etc-php-ini">PHP config in /etc/php.ini</h2>
@@ -235,67 +240,107 @@ phpinfo();
 <pre><code>chcon --reference=/usr/share/nginx/html/index.html /usr/share/nginx/html/*
 </code></pre>
 
-<h3 id="visit-http-server-info-php-to-verify">visit <a href="http://server/info.php">http://server/info.php</a> to Verify</h3>
- </div>
+<h3 id="visit-http-伺服器ip-or-fqdn-info-php-to-verify">visit http://伺服器IP_or_FQDN/info.php to Verify</h3>
+
+    </div>
     <footer class="post-footer">
-
-  <div class="post-footer-data">
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/linux">#Linux</a>
+      
+      <div class="share">
+        
       </div>
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/webserver">#Webserver</a>
-      </div>
-    
-</div>
 
-    <div class="date"> Sep 11, 2017 </div>
+      <div class="pagenation">
+        <ul class="pagenation-list">
+          
+          <li class="pager previous">
+            <a href="https://twasa.github.io/post/python-virtualenv/" data-toggle="tooltip" data-placement="top" title="Python Virtualenv">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="pager next">
+            <a href="https://twasa.github.io/post/grep/" data-toggle="tooltip" data-placement="top" title="Grep">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+      </div>
+    </footer>
+  </article>
+
+  
+  <article class="related"></article>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": {
+    "@type": "NewsArticle",
+    "@id": "https://twasa.github.io/post/lnmp/",
+    "headline": " Build a Linux, Nginx, MariaDB, PHP environment in CentOS 7 install rpm -Uvh http://nginx.org/packages/centos/",
+    "author": "William Wang",
+    "publisher": {
+      "@type": "Organization",
+      "name": "William Wang",
+      "logo": ""
+    },
+    "image": "",
+    "datePublished": "2017-09-11"
+  },
+  "headline": " Build a Linux, Nginx, MariaDB, PHP environment in CentOS 7 install rpm -Uvh http://nginx.org/packages/centos/",
+  "alternativeHeadline": "William&#39;s Blog",
+  "datePublished": "2017-09-11",
+  "dateModified": "2017-09-11",
+  "url": "https://twasa.github.io/post/lnmp/",
+  "wordCount": "230",
+  "author": {
+    "@type": "Person",
+    "name": "William Wang"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "William Wang"
+  },
+  "image": "",
+  
+  "keywords": "LinuxWebserver",
+  "description": ""
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "@id": "https://twasa.github.io/post/lnmp/",
+  "name": "William Wang"
+}
+</script>
+
+
+    </div>
   </div>
 
+  <footer class="gfooter">
+  <div class="inner">
+    <div class="container">
+      <p class="copy"><small>Copyright (c) 2017, all rights reserved.</small></p>
+
+      <nav class="footer-nav">
+        <div class="inner">
+          
+        </div>
+      </nav>
+    </div>
+  </div>
 </footer>
 
 
-  
 
-
-
-</article>
-
-  <footer>
-
-  <div class="social-links-footer">
-
-  
-
-  
-  <a href="https://github.com/twasa" target="_blank"><div class="social-link">GitHub</div></a>
-  
-
-  
-
-  
-
-  
-
-  <div class="social-link">
-  <a href="https://twasa.github.io/index.xml" target="_blank">RSS</a>
-  </div>
-
-</div>
-
-
-  <div class="copyright"> Copyright (c) 2017, all rights reserved. </div>
-
-  <div class="poweredby">
-    Powered by <a href="https://gohugo.io/">Hugo</a>.
-  </div>
-
-  </footer>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://twasa.github.io/js/script.js"></script>
 
 </body>
 </html>
-

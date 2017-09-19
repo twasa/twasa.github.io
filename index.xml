@@ -13,12 +13,12 @@
     
     
     <item>
-      <title>Python Timezone Convert</title>
+      <title>Python Timezone Convert example code</title>
       <link>https://twasa.github.io/post/python-timezone-convert/</link>
       <pubDate>Mon, 11 Sep 2017 17:49:51 +0800</pubDate>
       
       <guid>https://twasa.github.io/post/python-timezone-convert/</guid>
-      <description>Requirement  Python python-dateutil  example code from datetime import datetime from dateutil import tz # METHOD 1: Hardcode zones: from_zone = tz.gettz(&#39;UTC-7&#39;) to_zone = tz.gettz(&#39;Asia/Taipei&#39;) # METHOD 2: Auto-detect zones: #from_zone = tz.tzutc() #to_zone = tz.tzlocal() def datainput(): # utc = datetime.utcnow() year = raw_input(&amp;quot;Year (A.D.): &amp;quot;) month = raw_input(&amp;quot;Month: &amp;quot;) day = raw_input(&amp;quot;day: &amp;quot;) hour = raw_input(&amp;quot;hour: &amp;quot;) minute = raw_input(&amp;quot;minute: &amp;quot;) datetimestring = year + &#39;-&#39; + month + &#39;-&#39; + day + &#39; &#39; + hour + &#39;:&#39; + minute + &#39;:00&#39; return datetimestring dtstr = datainput() utc = datetime.</description>
+      <description>Requirement  Python python-dateutil  example code from datetime import datetime from dateutil import tz # METHOD Auto-detect zones: #from_zone = tz.tzutc() #to_zone = tz.tzlocal() from_zone = raw_input(&amp;quot;From Timezone: &amp;quot;) to_zone = raw_input(&amp;quot;To Timezone: &amp;quot;) from_zone = tz.gettz(from_zone) to_zone = tz.gettz(to_zone) def datainput(): # utc = datetime.utcnow() year = raw_input(&amp;quot;Year (A.D.): &amp;quot;) month = raw_input(&amp;quot;Month: &amp;quot;) day = raw_input(&amp;quot;day: &amp;quot;) hour = raw_input(&amp;quot;hour: &amp;quot;) minute = raw_input(&amp;quot;minute: &amp;quot;) datetimestring = year + &#39;-&#39; + month + &#39;-&#39; + day + &#39; &#39; + hour + &#39;:&#39; + minute + &#39;:00&#39; return datetimestring dtstr = datainput() utc = datetime.</description>
     </item>
     
     <item>

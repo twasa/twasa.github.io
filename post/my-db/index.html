@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us">
-
 <head>
-<meta charset="utf-8" />
-<meta name="author" content="" />
-<meta name="description" content="William&#39;s blog." />
-<meta name="keywords" content="blog, tech" />
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.26" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+  <title>MySQL and MariaDB memo &middot; William&#39;s Blog -  William&#39;s Blog </title>
+  <meta name="generator" content="Hugo 0.26" />
+  <meta name="description" content="William&#39;s Blog"> 
 
-<link rel="canonical" href="https://twasa.github.io/post/my-db/">
-<base href="https://twasa.github.io/" />
-<meta property="og:title" content="MySQL and MariaDB memo" />
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="MySQL and MariaDB memo"/>
+<meta name="twitter:description" content="第一次安裝完成，設定root的密碼 mysqladmin -u root -p &lsquo;密碼&rsquo; or mysql_secure_installation
+重設root密碼 /etc/init.d/mysql stop mysqld_safe --skip-grant-tables &amp; mysql -u root mysql&gt; use mysql; mysql&gt; UPDATE user SET Password=PASSWORD(&quot;密碼&quot;) WHERE User=&#39;root&#39;; mysql&gt; flush privileges; mysql&gt; quit /etc/init.d/mysql stop /etc/init.d/mysql start  連線管理資料庫 mysqladmin -u root -p Enter password: 此時再輸入密碼(建議採用) 修改使用者密碼 方法一 使用有權限或要修改的使用者本身登入mysql mysql&gt; SET PASSWORD FOR &#39;目標使用者&#39;@&#39;主機&#39; = PASSWORD(&#39;密碼&#39;); mysql&gt; flush privileges 方法二 使用有權限的使用者登入mysql 修改使用者密碼，只改 root 的密碼，如果沒有用 where ，則表示改全部 user 的密碼 mysql&gt; use mysql; mysql&gt; UPDATE user SET password=password(&#39;密碼&#39;) where user=&#39;root&#39;; mysql&gt; FLUSH PRIVILEGES; 上面是不分主機位址的修改，若要像方法一區分主機的話再加上Host條件，例如 mysql&gt; UPDATE user SET Password=PASSWORD(&quot;密碼&quot;) WHERE User=&#39;root&#39; AND Host = &#39;localhost&#39;; mysql&gt; FLUSH PRIVILEGES; 方法三 同樣利用mysqladmin指令可以修改root或其他使用者密碼，但該使用者必須有SUPER權限 mysqladmin -u 使用者 -p&#39;舊密碼&#39; password &#39;新密碼&#39; 忘記密碼重設 /etc/init."/>
+
+  <meta property="og:title" content="MySQL and MariaDB memo" />
 <meta property="og:description" content="第一次安裝完成，設定root的密碼 mysqladmin -u root -p &lsquo;密碼&rsquo; or mysql_secure_installation
 重設root密碼 /etc/init.d/mysql stop mysqld_safe --skip-grant-tables &amp; mysql -u root mysql&gt; use mysql; mysql&gt; UPDATE user SET Password=PASSWORD(&quot;密碼&quot;) WHERE User=&#39;root&#39;; mysql&gt; flush privileges; mysql&gt; quit /etc/init.d/mysql stop /etc/init.d/mysql start  連線管理資料庫 mysqladmin -u root -p Enter password: 此時再輸入密碼(建議採用) 修改使用者密碼 方法一 使用有權限或要修改的使用者本身登入mysql mysql&gt; SET PASSWORD FOR &#39;目標使用者&#39;@&#39;主機&#39; = PASSWORD(&#39;密碼&#39;); mysql&gt; flush privileges 方法二 使用有權限的使用者登入mysql 修改使用者密碼，只改 root 的密碼，如果沒有用 where ，則表示改全部 user 的密碼 mysql&gt; use mysql; mysql&gt; UPDATE user SET password=password(&#39;密碼&#39;) where user=&#39;root&#39;; mysql&gt; FLUSH PRIVILEGES; 上面是不分主機位址的修改，若要像方法一區分主機的話再加上Host條件，例如 mysql&gt; UPDATE user SET Password=PASSWORD(&quot;密碼&quot;) WHERE User=&#39;root&#39; AND Host = &#39;localhost&#39;; mysql&gt; FLUSH PRIVILEGES; 方法三 同樣利用mysqladmin指令可以修改root或其他使用者密碼，但該使用者必須有SUPER權限 mysqladmin -u 使用者 -p&#39;舊密碼&#39; password &#39;新密碼&#39; 忘記密碼重設 /etc/init." />
 <meta property="og:type" content="article" />
@@ -32,12 +33,10 @@
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="MySQL and MariaDB memo"/>
-<meta name="twitter:description" content="第一次安裝完成，設定root的密碼 mysqladmin -u root -p &lsquo;密碼&rsquo; or mysql_secure_installation
-重設root密碼 /etc/init.d/mysql stop mysqld_safe --skip-grant-tables &amp; mysql -u root mysql&gt; use mysql; mysql&gt; UPDATE user SET Password=PASSWORD(&quot;密碼&quot;) WHERE User=&#39;root&#39;; mysql&gt; flush privileges; mysql&gt; quit /etc/init.d/mysql stop /etc/init.d/mysql start  連線管理資料庫 mysqladmin -u root -p Enter password: 此時再輸入密碼(建議採用) 修改使用者密碼 方法一 使用有權限或要修改的使用者本身登入mysql mysql&gt; SET PASSWORD FOR &#39;目標使用者&#39;@&#39;主機&#39; = PASSWORD(&#39;密碼&#39;); mysql&gt; flush privileges 方法二 使用有權限的使用者登入mysql 修改使用者密碼，只改 root 的密碼，如果沒有用 where ，則表示改全部 user 的密碼 mysql&gt; use mysql; mysql&gt; UPDATE user SET password=password(&#39;密碼&#39;) where user=&#39;root&#39;; mysql&gt; FLUSH PRIVILEGES; 上面是不分主機位址的修改，若要像方法一區分主機的話再加上Host條件，例如 mysql&gt; UPDATE user SET Password=PASSWORD(&quot;密碼&quot;) WHERE User=&#39;root&#39; AND Host = &#39;localhost&#39;; mysql&gt; FLUSH PRIVILEGES; 方法三 同樣利用mysqladmin指令可以修改root或其他使用者密碼，但該使用者必須有SUPER權限 mysqladmin -u 使用者 -p&#39;舊密碼&#39; password &#39;新密碼&#39; 忘記密碼重設 /etc/init."/>
 
+  <!-- RSS autodiscovery --> 
 
-
+  
 <meta itemprop="name" content="MySQL and MariaDB memo">
 <meta itemprop="description" content="第一次安裝完成，設定root的密碼 mysqladmin -u root -p &lsquo;密碼&rsquo; or mysql_secure_installation
 重設root密碼 /etc/init.d/mysql stop mysqld_safe --skip-grant-tables &amp; mysql -u root mysql&gt; use mysql; mysql&gt; UPDATE user SET Password=PASSWORD(&quot;密碼&quot;) WHERE User=&#39;root&#39;; mysql&gt; flush privileges; mysql&gt; quit /etc/init.d/mysql stop /etc/init.d/mysql start  連線管理資料庫 mysqladmin -u root -p Enter password: 此時再輸入密碼(建議採用) 修改使用者密碼 方法一 使用有權限或要修改的使用者本身登入mysql mysql&gt; SET PASSWORD FOR &#39;目標使用者&#39;@&#39;主機&#39; = PASSWORD(&#39;密碼&#39;); mysql&gt; flush privileges 方法二 使用有權限的使用者登入mysql 修改使用者密碼，只改 root 的密碼，如果沒有用 where ，則表示改全部 user 的密碼 mysql&gt; use mysql; mysql&gt; UPDATE user SET password=password(&#39;密碼&#39;) where user=&#39;root&#39;; mysql&gt; FLUSH PRIVILEGES; 上面是不分主機位址的修改，若要像方法一區分主機的話再加上Host條件，例如 mysql&gt; UPDATE user SET Password=PASSWORD(&quot;密碼&quot;) WHERE User=&#39;root&#39; AND Host = &#39;localhost&#39;; mysql&gt; FLUSH PRIVILEGES; 方法三 同樣利用mysqladmin指令可以修改root或其他使用者密碼，但該使用者必須有SUPER權限 mysqladmin -u 使用者 -p&#39;舊密碼&#39; password &#39;新密碼&#39; 忘記密碼重設 /etc/init.">
@@ -50,73 +49,81 @@
 
 <meta itemprop="keywords" content="Database,MySQL,MariaDB," />
 
-
-<link rel="stylesheet" href="css/layout.css" />
-<link rel="stylesheet" href="css/color-dark.css" />
-
-
-
-<title>
-
-
-     MySQL and MariaDB memo 
-
-</title>
-
-<script src="js/highlight.min.js"></script>
-<link rel="stylesheet" href="css/tomorrow-night.min.css" />
-<script>hljs.initHighlightingOnLoad();</script>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet">
+  <link rel="stylesheet" href="https://twasa.github.io/css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "name": "William&#39;s Blog",
+  "url": "https://twasa.github.io/post/my-db/"
+}
+</script>
 
 </head>
 
-
 <body>
-<div class="main">
-<header>
+  <header class="gheader">
+  <div class="container">
+    <nav class="navbar ">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://twasa.github.io/">
+          <h1 class="brand">William&#39;s Blog</h1>
+        </a>
 
-<div class="header-bar">
+        <div class="navbar-burger burger" data-target="navMenubd-example">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
 
-  <nav>
-    <div class="siteTitle">
-      <a href="https://twasa.github.io/">William&#39;s Blog</a>
-    </div> 
-
-    
-    
-    <a class="nav-item" href="https://twasa.github.io/post/"><div class="nav-item-title">Posts</div></a>
-    
-    <a class="nav-item" href="https://twasa.github.io/about/"><div class="nav-item-title">About Hugo</div></a>
-    
-    <a class="nav-item" href="https://twasa.github.io/tags/"><div class="nav-item-title">Tags</div></a>
-    
-
-  </nav>
-</div>
-
-  
-<div class="social-links-header">
-
-  
-
-  
-  <a href="https://github.com/twasa" target="_blank"><div class="social-link">GitHub</div></a>
-  
-
-  
-
-  
-
-  
-
-</div>
-
-
+      <div id="navMenubd-example" class="navbar-menu">
+        <div class="navbar-start">
+          
+          <a class="navbar-item" href="https://twasa.github.io/categories/">
+            Categories
+          </a>
+          
+          <a class="navbar-item" href="https://twasa.github.io/tags/">
+            Tags
+          </a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
 </header>
 
 
-<article class="post">
-    <h1 class="title"> MySQL and MariaDB memo </h1>
-    <div class="content"> 
+  <div class="main-content">
+    <div class="container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="title">MySQL and MariaDB memo</h1>
+      <div class="meta">
+        <time class="pub-time"  datetime="2017-09-11T12:24:19&#43;08:00">
+          2017.09.11
+        </time>
+        <div class="terms">
+          
+          
+          <div class="tag">
+            
+              <a class="tag-item" href="https://twasa.github.io/tags/database">Database</a>
+            
+              <a class="tag-item" href="https://twasa.github.io/tags/mysql">MySQL</a>
+            
+              <a class="tag-item" href="https://twasa.github.io/tags/mariadb">MariaDB</a>
+            
+          </div>
+          
+        </div>
+      </div>
+    </header>
+    <div class="post-body">
+      
 
 <h2 id="第一次安裝完成-設定root的密碼">第一次安裝完成，設定root的密碼</h2>
 
@@ -537,70 +544,106 @@ select sleep(2);
 
 然後再去看slow query log
 </code></pre>
- </div>
+
+    </div>
     <footer class="post-footer">
+      
+      <div class="share">
+        
+      </div>
 
-  <div class="post-footer-data">
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/database">#Database</a>
+      <div class="pagenation">
+        <ul class="pagenation-list">
+          
+          <li class="pager previous">
+            <a href="https://twasa.github.io/post/regexp/" data-toggle="tooltip" data-placement="top" title="Regexp">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="pager next">
+            <a href="https://twasa.github.io/post/apache-tomcat/" data-toggle="tooltip" data-placement="top" title="Apache Tomcat">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
       </div>
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/mysql">#MySQL</a>
-      </div>
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/mariadb">#MariaDB</a>
-      </div>
-    
-</div>
+    </footer>
+  </article>
 
-    <div class="date"> Sep 11, 2017 </div>
+  
+  <article class="related"></article>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": {
+    "@type": "NewsArticle",
+    "@id": "https://twasa.github.io/post/my-db/",
+    "headline": " 第一次安裝完成，設定root的密碼 mysqladmin -u root -p &amp;lsquo;密碼&amp;rsquo; or mysql_secure_installation重設root密碼 /etc/init.d/mys",
+    "author": "William Wang",
+    "publisher": {
+      "@type": "Organization",
+      "name": "William Wang",
+      "logo": ""
+    },
+    "image": "",
+    "datePublished": "2017-09-11"
+  },
+  "headline": " 第一次安裝完成，設定root的密碼 mysqladmin -u root -p &amp;lsquo;密碼&amp;rsquo; or mysql_secure_installation重設root密碼 /etc/init.d/mys",
+  "alternativeHeadline": "William&#39;s Blog",
+  "datePublished": "2017-09-11",
+  "dateModified": "2017-09-11",
+  "url": "https://twasa.github.io/post/my-db/",
+  "wordCount": "1341",
+  "author": {
+    "@type": "Person",
+    "name": "William Wang"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "William Wang"
+  },
+  "image": "",
+  
+  "keywords": "DatabaseMySQLMariaDB",
+  "description": ""
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "@id": "https://twasa.github.io/post/my-db/",
+  "name": "William Wang"
+}
+</script>
+
+
+    </div>
   </div>
 
+  <footer class="gfooter">
+  <div class="inner">
+    <div class="container">
+      <p class="copy"><small>Copyright (c) 2017, all rights reserved.</small></p>
+
+      <nav class="footer-nav">
+        <div class="inner">
+          
+        </div>
+      </nav>
+    </div>
+  </div>
 </footer>
 
 
-  
 
-
-
-</article>
-
-  <footer>
-
-  <div class="social-links-footer">
-
-  
-
-  
-  <a href="https://github.com/twasa" target="_blank"><div class="social-link">GitHub</div></a>
-  
-
-  
-
-  
-
-  
-
-  <div class="social-link">
-  <a href="https://twasa.github.io/index.xml" target="_blank">RSS</a>
-  </div>
-
-</div>
-
-
-  <div class="copyright"> Copyright (c) 2017, all rights reserved. </div>
-
-  <div class="poweredby">
-    Powered by <a href="https://gohugo.io/">Hugo</a>.
-  </div>
-
-  </footer>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://twasa.github.io/js/script.js"></script>
 
 </body>
 </html>
-
