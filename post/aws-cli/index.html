@@ -9,10 +9,10 @@
   <meta name="description" content="William&#39;s Blog"> 
 
   <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Aws Cli"/>
-<meta name="twitter:description" content="AWS CLI referneces syntax aws [options] \&lt;command&gt; \&lt;subcommand&gt; [\&lt;subcommand&gt; ...] [parameters] options: --region --profile --filters &quot;Name=instance-state-name,Values=running&quot; --query  create or modify profile aws configure --profile PROFILE aws configure set default.s3.signature_version s3v4 aws configure set profile.your_profile_name.s3.signature_version s3v4  create key pairs aws --profile PROFILE --region REGION ec2 create-key-pair --key-name KEYNAME  create IAM users and permission aws --profile PROFILE iam create-user --user-name USERNAME aws --profile PROFILE iam create-access-key --user-name USERNAME aws --profile PROFILE iam put-user-policy --user-name USERNAME --policy-name POLICYNAME --policy-document file://POLICYDOCUMENT aws --profile PROFILE iam get-server-certificate --server-certificate-name CERTNAME[auto."/>
+<meta name="twitter:description" content="AWS CLI referneces syntax aws [options] \&lt;command&gt; \&lt;subcommand&gt; [\&lt;subcommand&gt; ...] [parameters] options: --region --profile --filters &quot;Name=instance-state-name,Values=running&quot; --query  create or modify profile aws configure --profile PROFILE aws configure set default.s3.signature_version s3v4 aws configure set profile.your_profile_name.s3.signature_version s3v4  create key pairs aws --profile PROFILE --region REGION ec2 create-key-pair --key-name KEYNAME  create IAM users and permission aws --profile PROFILE iam create-user --user-name USERNAME aws --profile PROFILE iam create-access-key --user-name USERNAME aws --profile PROFILE iam put-user-policy --user-name USERNAME --policy-name POLICYNAME --policy-document file://POLICYDOCUMENT aws --profile PROFILE iam get-server-certificate --server-certificate-name CERTNAME XXXX  SES, SNS - aws --profile PROFILE --region REGION ses verify-email-identity --email-address YOUR@MAIL."/>
 
   <meta property="og:title" content="Aws Cli" />
-<meta property="og:description" content="AWS CLI referneces syntax aws [options] \&lt;command&gt; \&lt;subcommand&gt; [\&lt;subcommand&gt; ...] [parameters] options: --region --profile --filters &quot;Name=instance-state-name,Values=running&quot; --query  create or modify profile aws configure --profile PROFILE aws configure set default.s3.signature_version s3v4 aws configure set profile.your_profile_name.s3.signature_version s3v4  create key pairs aws --profile PROFILE --region REGION ec2 create-key-pair --key-name KEYNAME  create IAM users and permission aws --profile PROFILE iam create-user --user-name USERNAME aws --profile PROFILE iam create-access-key --user-name USERNAME aws --profile PROFILE iam put-user-policy --user-name USERNAME --policy-name POLICYNAME --policy-document file://POLICYDOCUMENT aws --profile PROFILE iam get-server-certificate --server-certificate-name CERTNAME[auto." />
+<meta property="og:description" content="AWS CLI referneces syntax aws [options] \&lt;command&gt; \&lt;subcommand&gt; [\&lt;subcommand&gt; ...] [parameters] options: --region --profile --filters &quot;Name=instance-state-name,Values=running&quot; --query  create or modify profile aws configure --profile PROFILE aws configure set default.s3.signature_version s3v4 aws configure set profile.your_profile_name.s3.signature_version s3v4  create key pairs aws --profile PROFILE --region REGION ec2 create-key-pair --key-name KEYNAME  create IAM users and permission aws --profile PROFILE iam create-user --user-name USERNAME aws --profile PROFILE iam create-access-key --user-name USERNAME aws --profile PROFILE iam put-user-policy --user-name USERNAME --policy-name POLICYNAME --policy-document file://POLICYDOCUMENT aws --profile PROFILE iam get-server-certificate --server-certificate-name CERTNAME XXXX  SES, SNS - aws --profile PROFILE --region REGION ses verify-email-identity --email-address YOUR@MAIL." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://twasa.github.io/post/aws-cli/" />
 
@@ -36,11 +36,11 @@
 
   
 <meta itemprop="name" content="Aws Cli">
-<meta itemprop="description" content="AWS CLI referneces syntax aws [options] \&lt;command&gt; \&lt;subcommand&gt; [\&lt;subcommand&gt; ...] [parameters] options: --region --profile --filters &quot;Name=instance-state-name,Values=running&quot; --query  create or modify profile aws configure --profile PROFILE aws configure set default.s3.signature_version s3v4 aws configure set profile.your_profile_name.s3.signature_version s3v4  create key pairs aws --profile PROFILE --region REGION ec2 create-key-pair --key-name KEYNAME  create IAM users and permission aws --profile PROFILE iam create-user --user-name USERNAME aws --profile PROFILE iam create-access-key --user-name USERNAME aws --profile PROFILE iam put-user-policy --user-name USERNAME --policy-name POLICYNAME --policy-document file://POLICYDOCUMENT aws --profile PROFILE iam get-server-certificate --server-certificate-name CERTNAME[auto.">
+<meta itemprop="description" content="AWS CLI referneces syntax aws [options] \&lt;command&gt; \&lt;subcommand&gt; [\&lt;subcommand&gt; ...] [parameters] options: --region --profile --filters &quot;Name=instance-state-name,Values=running&quot; --query  create or modify profile aws configure --profile PROFILE aws configure set default.s3.signature_version s3v4 aws configure set profile.your_profile_name.s3.signature_version s3v4  create key pairs aws --profile PROFILE --region REGION ec2 create-key-pair --key-name KEYNAME  create IAM users and permission aws --profile PROFILE iam create-user --user-name USERNAME aws --profile PROFILE iam create-access-key --user-name USERNAME aws --profile PROFILE iam put-user-policy --user-name USERNAME --policy-name POLICYNAME --policy-document file://POLICYDOCUMENT aws --profile PROFILE iam get-server-certificate --server-certificate-name CERTNAME XXXX  SES, SNS - aws --profile PROFILE --region REGION ses verify-email-identity --email-address YOUR@MAIL.">
 
 
 <meta itemprop="dateModified" content="2017-09-11T15:52:27&#43;08:00" />
-<meta itemprop="wordCount" content="893">
+<meta itemprop="wordCount" content="892">
 
 
 
@@ -105,6 +105,12 @@
         </time>
         <div class="terms">
           
+          <div class="categories">
+            
+              <a class="categories-item" href="https://twasa.github.io/categories/aws">AWS</a>
+            
+          </div>
+          
           
           <div class="tag">
             
@@ -147,7 +153,7 @@ aws configure set profile.your_profile_name.s3.signature_version s3v4
 <pre><code>aws --profile PROFILE iam create-user --user-name USERNAME
 aws --profile PROFILE iam create-access-key --user-name USERNAME
 aws --profile PROFILE iam put-user-policy --user-name USERNAME --policy-name POLICYNAME --policy-document  file://POLICYDOCUMENT
-aws --profile PROFILE iam get-server-certificate --server-certificate-name CERTNAME[auto.mydlink.com, mydlink.com, mydlink.net.cn]
+aws --profile PROFILE iam get-server-certificate --server-certificate-name CERTNAME XXXX
 </code></pre>
 
 <h2 id="ses-sns">SES, SNS</h2>
@@ -199,17 +205,17 @@ aws --profile PROFILE iam get-server-certificate --server-certificate-name CERTN
 
 <h3 id="set-bucket-acl">set bucket acl</h3>
 
-<pre><code>aws --profile PROFILE --region REGION s3api put-bucket-acl --bucket qa-fw-ead98f12 --access-control-policy file://D:\workspace\Mydlink_V3\jsons\cnvr_ead98f12_acl.json
+<pre><code>aws --profile PROFILE --region REGION s3api put-bucket-acl --bucket qa-fw-ead98f12 --access-control-policy file://D:\workspace\Your\jsons\file.json
 </code></pre>
 
 <h3 id="enable-bucket-log">enable bucket log</h3>
 
-<pre><code>aws --profile PROFILE --region REGION s3api put-bucket-logging --bucket qa-fw-ead98f12 --bucket-logging-status file://D:\workspace\Mydlink_V3\jsons\cnvr_ead98f12_logging.json
+<pre><code>aws --profile PROFILE --region REGION s3api put-bucket-logging --bucket qa-fw-ead98f12 --bucket-logging-status file://D:\workspace\Your\jsons\file.json
 </code></pre>
 
 <h3 id="set-bucket-lifecycle">set bucket lifecycle</h3>
 
-<pre><code>aws --profile PROFILE --region REGION s3api put-bucket-lifecycle-configuration --bucket qa-fw-ead98f12 --lifecycle-configuration  file://D:\workspace\Mydlink_V3\jsons\cnvr_ead98f12_lifecycle.json
+<pre><code>aws --profile PROFILE --region REGION s3api put-bucket-lifecycle-configuration --bucket qa-fw-ead98f12 --lifecycle-configuration  file://D:\workspace\Your\jsons\file.json
 </code></pre>
 
 <h3 id="create-folders">create folders</h3>
@@ -423,7 +429,7 @@ http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-namespaces.htm
           
           
           <li class="pager next">
-            <a href="https://twasa.github.io/post/mongodb/" data-toggle="tooltip" data-placement="top" title="Mongodb">Next Post &rarr;</a>
+            <a href="https://twasa.github.io/post/mongodb/" data-toggle="tooltip" data-placement="top" title="Mongodb basic">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -456,7 +462,7 @@ http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-namespaces.htm
   "datePublished": "2017-09-11",
   "dateModified": "2017-09-11",
   "url": "https://twasa.github.io/post/aws-cli/",
-  "wordCount": "893",
+  "wordCount": "892",
   "author": {
     "@type": "Person",
     "name": "William Wang"
@@ -466,7 +472,7 @@ http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-namespaces.htm
     "name": "William Wang"
   },
   "image": "",
-  
+  "genre": "AWS",
   "keywords": "AWS",
   "description": ""
 }

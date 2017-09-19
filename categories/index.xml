@@ -7,16 +7,107 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2017, all rights reserved.</copyright>
+    <lastBuildDate>Mon, 11 Sep 2017 15:52:27 +0800</lastBuildDate>
     
 	<atom:link href="https://twasa.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Development</title>
-      <link>https://twasa.github.io/categories/development/</link>
-      <pubDate>Sun, 10 Sep 2017 17:00:56 +0800</pubDate>
+      <title>Aws</title>
+      <link>https://twasa.github.io/categories/aws/</link>
+      <pubDate>Mon, 11 Sep 2017 15:52:27 +0800</pubDate>
       
-      <guid>https://twasa.github.io/categories/development/</guid>
+      <guid>https://twasa.github.io/categories/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Database</title>
+      <link>https://twasa.github.io/categories/database/</link>
+      <pubDate>Mon, 11 Sep 2017 15:54:35 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/categories/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Devops</title>
+      <link>https://twasa.github.io/categories/devops/</link>
+      <pubDate>Mon, 11 Sep 2017 15:48:07 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/categories/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://twasa.github.io/categories/linux/</link>
+      <pubDate>Mon, 11 Sep 2017 17:12:29 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>https://twasa.github.io/categories/network/</link>
+      <pubDate>Mon, 11 Sep 2017 13:00:03 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/categories/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nosql</title>
+      <link>https://twasa.github.io/categories/nosql/</link>
+      <pubDate>Mon, 11 Sep 2017 15:54:35 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/categories/nosql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://twasa.github.io/categories/python/</link>
+      <pubDate>Mon, 11 Sep 2017 17:49:51 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Regular Expression</title>
+      <link>https://twasa.github.io/categories/regular-expression/</link>
+      <pubDate>Mon, 11 Sep 2017 11:46:21 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/categories/regular-expression/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sql</title>
+      <link>https://twasa.github.io/categories/sql/</link>
+      <pubDate>Mon, 11 Sep 2017 12:24:19 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/categories/sql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Version Control</title>
+      <link>https://twasa.github.io/categories/version-control/</link>
+      <pubDate>Mon, 11 Sep 2017 16:46:58 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/categories/version-control/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Webserver</title>
+      <link>https://twasa.github.io/categories/webserver/</link>
+      <pubDate>Mon, 11 Sep 2017 15:50:54 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/categories/webserver/</guid>
       <description></description>
     </item>
     

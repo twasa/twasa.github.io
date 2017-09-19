@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
-  <title>Linux openssl &middot; William&#39;s Blog -  William&#39;s Blog </title>
+  <title>openssl &middot; William&#39;s Blog -  William&#39;s Blog </title>
   <meta name="generator" content="Hugo 0.26" />
   <meta name="description" content="William&#39;s Blog"> 
 
-  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Linux openssl"/>
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="openssl"/>
 <meta name="twitter:description" content=" create private key openssl genrsa -out server.key 2048  create Certificate Signing Request openssl req -sha512 -new -key server.key -out server.csr -subj &quot;/C=TW/ST=Taipei/L=Taipei/O=example/OU=Personal/CN=www.example.com&quot;  check csr info openssl req -in server.csr -noout -text  Self-Sign Certificate openssl x509 -sha512 -req -days 3650 -in server.csr -signkey server.key -out server.crt  encrypt private key -a 表示檔案使用 base64 編碼 -salt 加雜湊值，增加安全性 openssl aes-256-cbc -a -salt -in server.key -out server.encrypt.key  "/>
 
-  <meta property="og:title" content="Linux openssl" />
+  <meta property="og:title" content="openssl" />
 <meta property="og:description" content=" create private key openssl genrsa -out server.key 2048  create Certificate Signing Request openssl req -sha512 -new -key server.key -out server.csr -subj &quot;/C=TW/ST=Taipei/L=Taipei/O=example/OU=Personal/CN=www.example.com&quot;  check csr info openssl req -in server.csr -noout -text  Self-Sign Certificate openssl x509 -sha512 -req -days 3650 -in server.csr -signkey server.key -out server.crt  encrypt private key -a 表示檔案使用 base64 編碼 -salt 加雜湊值，增加安全性 openssl aes-256-cbc -a -salt -in server.key -out server.encrypt.key  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://twasa.github.io/post/linux-openssl/" />
@@ -35,7 +35,7 @@
   <!-- RSS autodiscovery --> 
 
   
-<meta itemprop="name" content="Linux openssl">
+<meta itemprop="name" content="openssl">
 <meta itemprop="description" content=" create private key openssl genrsa -out server.key 2048  create Certificate Signing Request openssl req -sha512 -new -key server.key -out server.csr -subj &quot;/C=TW/ST=Taipei/L=Taipei/O=example/OU=Personal/CN=www.example.com&quot;  check csr info openssl req -in server.csr -noout -text  Self-Sign Certificate openssl x509 -sha512 -req -days 3650 -in server.csr -signkey server.key -out server.crt  encrypt private key -a 表示檔案使用 base64 編碼 -salt 加雜湊值，增加安全性 openssl aes-256-cbc -a -salt -in server.key -out server.encrypt.key  ">
 
 
@@ -44,7 +44,7 @@
 
 
 
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="commands," />
 
   <link href="https://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet">
   <link rel="stylesheet" href="https://twasa.github.io/css/style.css">
@@ -98,13 +98,25 @@
       
   <article class="post">
     <header class="post-header">
-      <h1 class="title">Linux openssl</h1>
+      <h1 class="title">openssl</h1>
       <div class="meta">
         <time class="pub-time"  datetime="2017-09-11T17:12:29&#43;08:00">
           2017.09.11
         </time>
         <div class="terms">
           
+          <div class="categories">
+            
+              <a class="categories-item" href="https://twasa.github.io/categories/linux">Linux</a>
+            
+          </div>
+          
+          
+          <div class="tag">
+            
+              <a class="tag-item" href="https://twasa.github.io/tags/commands">commands</a>
+            
+          </div>
           
         </div>
       </div>
@@ -200,8 +212,8 @@
     "name": "William Wang"
   },
   "image": "",
-  
-  
+  "genre": "Linux",
+  "keywords": "commands",
   "description": ""
 }
 </script>

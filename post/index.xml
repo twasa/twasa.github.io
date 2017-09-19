@@ -22,7 +22,7 @@
     </item>
     
     <item>
-      <title>Linux openssl</title>
+      <title>openssl</title>
       <link>https://twasa.github.io/post/linux-openssl/</link>
       <pubDate>Mon, 11 Sep 2017 17:12:29 +0800</pubDate>
       
@@ -62,7 +62,7 @@ git config --global color.</description>
     </item>
     
     <item>
-      <title>Mongodb</title>
+      <title>Mongodb basic</title>
       <link>https://twasa.github.io/post/mongodb/</link>
       <pubDate>Mon, 11 Sep 2017 15:54:35 +0800</pubDate>
       
@@ -77,7 +77,7 @@ git config --global color.</description>
       <pubDate>Mon, 11 Sep 2017 15:52:27 +0800</pubDate>
       
       <guid>https://twasa.github.io/post/aws-cli/</guid>
-      <description>AWS CLI referneces syntax aws [options] \&amp;lt;command&amp;gt; \&amp;lt;subcommand&amp;gt; [\&amp;lt;subcommand&amp;gt; ...] [parameters] options: --region --profile --filters &amp;quot;Name=instance-state-name,Values=running&amp;quot; --query  create or modify profile aws configure --profile PROFILE aws configure set default.s3.signature_version s3v4 aws configure set profile.your_profile_name.s3.signature_version s3v4  create key pairs aws --profile PROFILE --region REGION ec2 create-key-pair --key-name KEYNAME  create IAM users and permission aws --profile PROFILE iam create-user --user-name USERNAME aws --profile PROFILE iam create-access-key --user-name USERNAME aws --profile PROFILE iam put-user-policy --user-name USERNAME --policy-name POLICYNAME --policy-document file://POLICYDOCUMENT aws --profile PROFILE iam get-server-certificate --server-certificate-name CERTNAME[auto.</description>
+      <description>AWS CLI referneces syntax aws [options] \&amp;lt;command&amp;gt; \&amp;lt;subcommand&amp;gt; [\&amp;lt;subcommand&amp;gt; ...] [parameters] options: --region --profile --filters &amp;quot;Name=instance-state-name,Values=running&amp;quot; --query  create or modify profile aws configure --profile PROFILE aws configure set default.s3.signature_version s3v4 aws configure set profile.your_profile_name.s3.signature_version s3v4  create key pairs aws --profile PROFILE --region REGION ec2 create-key-pair --key-name KEYNAME  create IAM users and permission aws --profile PROFILE iam create-user --user-name USERNAME aws --profile PROFILE iam create-access-key --user-name USERNAME aws --profile PROFILE iam put-user-policy --user-name USERNAME --policy-name POLICYNAME --policy-document file://POLICYDOCUMENT aws --profile PROFILE iam get-server-certificate --server-certificate-name CERTNAME XXXX  SES, SNS - aws --profile PROFILE --region REGION ses verify-email-identity --email-address YOUR@MAIL.</description>
     </item>
     
     <item>
@@ -108,12 +108,12 @@ git config --global color.</description>
     </item>
     
     <item>
-      <title>Python Soap Client Suds</title>
+      <title>A Python SOAP client sample code</title>
       <link>https://twasa.github.io/post/python-soap-client-suds/</link>
       <pubDate>Mon, 11 Sep 2017 13:37:20 +0800</pubDate>
       
       <guid>https://twasa.github.io/post/python-soap-client-suds/</guid>
-      <description>suds API
+      <description>suds API references
  https://pypi.python.org/pypi/suds https://fedorahosted.org/suds/wiki/Documentation  example code
   import logging logging.basicConfig(level=logging.INFO) logging.getLogger(&#39;suds.client&#39;).setLevel(logging.DEBUG) username = &#39;&#39; password = &#39;&#39; no = 20787 def b64enc(username, password): import base64 base64string = base64.encodestring(&#39;%s:%s&#39; % (username, password)).replace(&#39;\n&#39;, &#39;&#39;) authenticationHeader = {&amp;quot;SOAPAction&amp;quot; : &amp;quot;ActionName&amp;quot;, &amp;quot;Authorization&amp;quot; : &amp;quot;Basic %s&amp;quot; % base64string } return authenticationHeader def xmlout(xmlstr): filename = &#39;%s.xml&#39; % no f = open(filename, &amp;quot;w&amp;quot;) f.write(xmlstr.encode(&#39;utf8&#39;)) def main(): from suds.client import Client wsdl_url = &#39;http://example.</description>
     </item>
@@ -174,7 +174,7 @@ JAVA_OPTS=&amp;quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true 
     </item>
     
     <item>
-      <title>Regexp</title>
+      <title>Regular Expression</title>
       <link>https://twasa.github.io/post/regexp/</link>
       <pubDate>Mon, 11 Sep 2017 11:46:21 +0800</pubDate>
       
@@ -210,7 +210,7 @@ JAVA_OPTS=&amp;quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true 
     </item>
     
     <item>
-      <title>CentOS7 Linux Nginx MariaDB PHP</title>
+      <title>CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP</title>
       <link>https://twasa.github.io/post/lnmp/</link>
       <pubDate>Mon, 11 Sep 2017 10:14:51 +0800</pubDate>
       

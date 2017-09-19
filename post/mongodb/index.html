@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
-  <title>Mongodb &middot; William&#39;s Blog -  William&#39;s Blog </title>
+  <title>Mongodb basic &middot; William&#39;s Blog -  William&#39;s Blog </title>
   <meta name="generator" content="Hugo 0.26" />
   <meta name="description" content="William&#39;s Blog"> 
 
-  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Mongodb"/>
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Mongodb basic"/>
 <meta name="twitter:description" content="install  Create a /etc/yum.repos.d/mongodb-org-3.4.repo  [mongodb-org-3.4] name=MongoDB Repository baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.4/x86_64/ gpgcheck=1 enabled=1 gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc   yum  yum install -y mongodb-org  config  default path /etc/mongod.
 # security db.createUser( { user: &quot;帳號&quot;, pwd: &quot;密碼&quot;, roles: [ { role: &quot;userAdminAnyDatabase&quot;, db: &quot;admin&quot; } ] } ) security.authorization : enabled   selinux semanage port -a -t mongod_port_t -p tcp 27017  shell connection mongo --port 27017 -u &quot;unitadmin&quot; -p &quot;xyz123&quot; --authenticationDatabase &quot;test&quot;  list current using db db  列出資料庫清單 show dbs  切換資料庫 use 資料庫名稱  驗證 db."/>
 
-  <meta property="og:title" content="Mongodb" />
+  <meta property="og:title" content="Mongodb basic" />
 <meta property="og:description" content="install  Create a /etc/yum.repos.d/mongodb-org-3.4.repo  [mongodb-org-3.4] name=MongoDB Repository baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.4/x86_64/ gpgcheck=1 enabled=1 gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc   yum  yum install -y mongodb-org  config  default path /etc/mongod.
 # security db.createUser( { user: &quot;帳號&quot;, pwd: &quot;密碼&quot;, roles: [ { role: &quot;userAdminAnyDatabase&quot;, db: &quot;admin&quot; } ] } ) security.authorization : enabled   selinux semanage port -a -t mongod_port_t -p tcp 27017  shell connection mongo --port 27017 -u &quot;unitadmin&quot; -p &quot;xyz123&quot; --authenticationDatabase &quot;test&quot;  list current using db db  列出資料庫清單 show dbs  切換資料庫 use 資料庫名稱  驗證 db." />
 <meta property="og:type" content="article" />
@@ -37,7 +37,7 @@
   <!-- RSS autodiscovery --> 
 
   
-<meta itemprop="name" content="Mongodb">
+<meta itemprop="name" content="Mongodb basic">
 <meta itemprop="description" content="install  Create a /etc/yum.repos.d/mongodb-org-3.4.repo  [mongodb-org-3.4] name=MongoDB Repository baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.4/x86_64/ gpgcheck=1 enabled=1 gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc   yum  yum install -y mongodb-org  config  default path /etc/mongod.
 # security db.createUser( { user: &quot;帳號&quot;, pwd: &quot;密碼&quot;, roles: [ { role: &quot;userAdminAnyDatabase&quot;, db: &quot;admin&quot; } ] } ) security.authorization : enabled   selinux semanage port -a -t mongod_port_t -p tcp 27017  shell connection mongo --port 27017 -u &quot;unitadmin&quot; -p &quot;xyz123&quot; --authenticationDatabase &quot;test&quot;  list current using db db  列出資料庫清單 show dbs  切換資料庫 use 資料庫名稱  驗證 db.">
 
@@ -47,7 +47,7 @@
 
 
 
-<meta itemprop="keywords" content="Database,NoSQL," />
+<meta itemprop="keywords" content="Mongodb," />
 
   <link href="https://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet">
   <link rel="stylesheet" href="https://twasa.github.io/css/style.css">
@@ -101,19 +101,25 @@
       
   <article class="post">
     <header class="post-header">
-      <h1 class="title">Mongodb</h1>
+      <h1 class="title">Mongodb basic</h1>
       <div class="meta">
         <time class="pub-time"  datetime="2017-09-11T15:54:35&#43;08:00">
           2017.09.11
         </time>
         <div class="terms">
           
+          <div class="categories">
+            
+              <a class="categories-item" href="https://twasa.github.io/categories/database">Database</a>
+            
+              <a class="categories-item" href="https://twasa.github.io/categories/nosql">NoSQL</a>
+            
+          </div>
+          
           
           <div class="tag">
             
-              <a class="tag-item" href="https://twasa.github.io/tags/database">Database</a>
-            
-              <a class="tag-item" href="https://twasa.github.io/tags/nosql">NoSQL</a>
+              <a class="tag-item" href="https://twasa.github.io/tags/mongodb">Mongodb</a>
             
           </div>
           
@@ -443,8 +449,8 @@ rm -r /var/lib/mongo
     "name": "William Wang"
   },
   "image": "",
-  
-  "keywords": "DatabaseNoSQL",
+  "genre": "DatabaseNoSQL",
+  "keywords": "Mongodb",
   "description": ""
 }
 </script>

@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
-  <title>Python Soap Client Suds &middot; William&#39;s Blog -  William&#39;s Blog </title>
+  <title>A Python SOAP client sample code &middot; William&#39;s Blog -  William&#39;s Blog </title>
   <meta name="generator" content="Hugo 0.26" />
   <meta name="description" content="William&#39;s Blog"> 
 
-  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Python Soap Client Suds"/>
-<meta name="twitter:description" content="suds API
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="A Python SOAP client sample code"/>
+<meta name="twitter:description" content="suds API references
  https://pypi.python.org/pypi/suds https://fedorahosted.org/suds/wiki/Documentation  example code
   import logging logging.basicConfig(level=logging.INFO) logging.getLogger(&#39;suds.client&#39;).setLevel(logging.DEBUG) username = &#39;&#39; password = &#39;&#39; no = 20787 def b64enc(username, password): import base64 base64string = base64.encodestring(&#39;%s:%s&#39; % (username, password)).replace(&#39;\n&#39;, &#39;&#39;) authenticationHeader = {&quot;SOAPAction&quot; : &quot;ActionName&quot;, &quot;Authorization&quot; : &quot;Basic %s&quot; % base64string } return authenticationHeader def xmlout(xmlstr): filename = &#39;%s.xml&#39; % no f = open(filename, &quot;w&quot;) f.write(xmlstr.encode(&#39;utf8&#39;)) def main(): from suds.client import Client wsdl_url = &#39;http://example."/>
 
-  <meta property="og:title" content="Python Soap Client Suds" />
-<meta property="og:description" content="suds API
+  <meta property="og:title" content="A Python SOAP client sample code" />
+<meta property="og:description" content="suds API references
  https://pypi.python.org/pypi/suds https://fedorahosted.org/suds/wiki/Documentation  example code
   import logging logging.basicConfig(level=logging.INFO) logging.getLogger(&#39;suds.client&#39;).setLevel(logging.DEBUG) username = &#39;&#39; password = &#39;&#39; no = 20787 def b64enc(username, password): import base64 base64string = base64.encodestring(&#39;%s:%s&#39; % (username, password)).replace(&#39;\n&#39;, &#39;&#39;) authenticationHeader = {&quot;SOAPAction&quot; : &quot;ActionName&quot;, &quot;Authorization&quot; : &quot;Basic %s&quot; % base64string } return authenticationHeader def xmlout(xmlstr): filename = &#39;%s.xml&#39; % no f = open(filename, &quot;w&quot;) f.write(xmlstr.encode(&#39;utf8&#39;)) def main(): from suds.client import Client wsdl_url = &#39;http://example." />
 <meta property="og:type" content="article" />
@@ -39,18 +39,18 @@
   <!-- RSS autodiscovery --> 
 
   
-<meta itemprop="name" content="Python Soap Client Suds">
-<meta itemprop="description" content="suds API
+<meta itemprop="name" content="A Python SOAP client sample code">
+<meta itemprop="description" content="suds API references
  https://pypi.python.org/pypi/suds https://fedorahosted.org/suds/wiki/Documentation  example code
   import logging logging.basicConfig(level=logging.INFO) logging.getLogger(&#39;suds.client&#39;).setLevel(logging.DEBUG) username = &#39;&#39; password = &#39;&#39; no = 20787 def b64enc(username, password): import base64 base64string = base64.encodestring(&#39;%s:%s&#39; % (username, password)).replace(&#39;\n&#39;, &#39;&#39;) authenticationHeader = {&quot;SOAPAction&quot; : &quot;ActionName&quot;, &quot;Authorization&quot; : &quot;Basic %s&quot; % base64string } return authenticationHeader def xmlout(xmlstr): filename = &#39;%s.xml&#39; % no f = open(filename, &quot;w&quot;) f.write(xmlstr.encode(&#39;utf8&#39;)) def main(): from suds.client import Client wsdl_url = &#39;http://example.">
 
 
 <meta itemprop="dateModified" content="2017-09-11T13:37:20&#43;08:00" />
-<meta itemprop="wordCount" content="96">
+<meta itemprop="wordCount" content="100">
 
 
 
-<meta itemprop="keywords" content="Development,Python," />
+<meta itemprop="keywords" content="Development," />
 
   <link href="https://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet">
   <link rel="stylesheet" href="https://twasa.github.io/css/style.css">
@@ -104,19 +104,23 @@
       
   <article class="post">
     <header class="post-header">
-      <h1 class="title">Python Soap Client Suds</h1>
+      <h1 class="title">A Python SOAP client sample code</h1>
       <div class="meta">
         <time class="pub-time"  datetime="2017-09-11T13:37:20&#43;08:00">
           2017.09.11
         </time>
         <div class="terms">
           
+          <div class="categories">
+            
+              <a class="categories-item" href="https://twasa.github.io/categories/python">Python</a>
+            
+          </div>
+          
           
           <div class="tag">
             
               <a class="tag-item" href="https://twasa.github.io/tags/development">Development</a>
-            
-              <a class="tag-item" href="https://twasa.github.io/tags/python">Python</a>
             
           </div>
           
@@ -125,7 +129,7 @@
     </header>
     <div class="post-body">
       <ul>
-<li><p>suds API</p>
+<li><p>suds API references</p>
 
 <ul>
 <li><a href="https://pypi.python.org/pypi/suds">https://pypi.python.org/pypi/suds</a></li>
@@ -159,7 +163,8 @@ def main():
     wsdl_url = 'http://example.com:6666/portal-ws/ws/PersonalService?wsdl'
     authenticationHeader = b64enc(username, password)
     client = Client(url=wsdl_url, headers=authenticationHeader, retxml=True)
-    #list_of_methods = [method for method in client.wsdl.services[0].ports[0].methods]
+    #list_methods_of_service = [method for method in client.wsdl.services[0].ports[0].methods]
+    #using service.findByNo methods
     response = client.service.findByNo(no)
     xml = response.decode('utf8')
     print xml
@@ -203,7 +208,7 @@ if __name__ == '__main__':
   "mainEntityOfPage": {
     "@type": "NewsArticle",
     "@id": "https://twasa.github.io/post/python-soap-client-suds/",
-    "headline": " suds API https://pypi.python.org/pypi/suds https://fedorahosted.org/suds/wiki/Documentation  example code  im",
+    "headline": " suds API references https://pypi.python.org/pypi/suds https://fedorahosted.org/suds/wiki/Documentation  examp",
     "author": "William Wang",
     "publisher": {
       "@type": "Organization",
@@ -213,12 +218,12 @@ if __name__ == '__main__':
     "image": "",
     "datePublished": "2017-09-11"
   },
-  "headline": " suds API https://pypi.python.org/pypi/suds https://fedorahosted.org/suds/wiki/Documentation  example code  im",
+  "headline": " suds API references https://pypi.python.org/pypi/suds https://fedorahosted.org/suds/wiki/Documentation  examp",
   "alternativeHeadline": "William&#39;s Blog",
   "datePublished": "2017-09-11",
   "dateModified": "2017-09-11",
   "url": "https://twasa.github.io/post/python-soap-client-suds/",
-  "wordCount": "96",
+  "wordCount": "100",
   "author": {
     "@type": "Person",
     "name": "William Wang"
@@ -228,8 +233,8 @@ if __name__ == '__main__':
     "name": "William Wang"
   },
   "image": "",
-  
-  "keywords": "DevelopmentPython",
+  "genre": "Python",
+  "keywords": "Development",
   "description": ""
 }
 </script>
