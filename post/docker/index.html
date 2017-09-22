@@ -40,7 +40,7 @@
 
 
 <meta itemprop="dateModified" content="2017-09-22T10:57:01&#43;08:00" />
-<meta itemprop="wordCount" content="262">
+<meta itemprop="wordCount" content="877">
 
 
 
@@ -169,6 +169,8 @@
 <h2 id="installation">installation</h2>
 
 <ul>
+<li>reference <a href="https://docs.docker.com/engine/installation/">https://docs.docker.com/engine/installation/</a></li>
+
 <li><p>Ubuntu</p>
 
 <pre><code>atp-get update
@@ -187,7 +189,103 @@ yum install docker-io
 </code></pre></li>
 </ul>
 
-<h2 id="command-and-syntax">command and syntax</h2>
+<h2 id="commands-and-syntax">commands and syntax</h2>
+
+<ul>
+<li>Usage:
+```
+docker [OPTIONS] COMMAND [ARG&hellip;]
+docker [ &ndash;help | -v | &ndash;version ]</li>
+</ul>
+
+<p>A self-sufficient runtime for containers.</p>
+
+<p>Options:
+      &ndash;config string      Location of client config files (default &ldquo;/root/.docker&rdquo;)
+  -D, &ndash;debug              Enable debug mode
+      &ndash;help               Print usage
+  -H, &ndash;host value         Daemon socket(s) to connect to (default [])
+  -l, &ndash;log-level string   Set the logging level (&ldquo;debug&rdquo;|&ldquo;info&rdquo;|&ldquo;warn&rdquo;|&ldquo;error&rdquo;|&ldquo;fatal&rdquo;) (default &ldquo;info&rdquo;)
+      &ndash;tls                Use TLS; implied by &ndash;tlsverify
+      &ndash;tlscacert string   Trust certs signed only by this CA (default &ldquo;/root/.docker/ca.pem&rdquo;)
+      &ndash;tlscert string     Path to TLS certificate file (default &ldquo;/root/.docker/cert.pem&rdquo;)
+      &ndash;tlskey string      Path to TLS key file (default &ldquo;/root/.docker/key.pem&rdquo;)
+      &ndash;tlsverify          Use TLS and verify the remote
+  -v, &ndash;version            Print version information and quit</p>
+
+<pre><code>
+- Commands
+
+Command |   Description
+|-|-|
+docker attach | Attach local standard input, output, and error streams to a running container
+docker build |  Build an image from a Dockerfile
+docker checkpoint | Manage checkpoints
+docker commit | Create a new image from a container’s changes
+docker config | Manage Docker configs
+docker container |  Manage containers
+docker cp | Copy files/folders between a container and the local filesystem
+docker create | Create a new container
+docker deploy | Deploy a new stack or update an existing stack
+docker diff |   Inspect changes to files or directories on a container’s filesystem
+docker events | Get real time events from the server
+docker exec |   Run a command in a running container
+docker export | Export a container’s filesystem as a tar archive
+docker history |    Show the history of an image
+docker image |  Manage images
+docker images | List images
+docker import | Import the contents from a tarball to create a filesystem image
+docker info |   Display system-wide information
+docker inspect |    Return low-level information on Docker objects
+docker kill |   Kill one or more running containers
+docker load |   Load an image from a tar archive or STDIN
+docker login |  Log in to a Docker registry
+docker logout | Log out from a Docker registry
+docker logs |   Fetch the logs of a container
+docker network |    Manage networks
+docker node |   Manage Swarm nodes
+docker pause |  Pause all processes within one or more containers
+docker plugin | Manage plugins
+docker port |   List port mappings or a specific mapping for the container
+docker ps | List containers
+docker pull |   Pull an image or a repository from a registry
+docker push |   Push an image or a repository to a registry
+docker rename | Rename a container
+docker restart |    Restart one or more containers
+docker rm | Remove one or more containers
+docker rmi |    Remove one or more images
+docker run |    Run a command in a new container
+docker save |   Save one or more images to a tar archive (streamed to STDOUT by default)
+docker search | Search the Docker Hub for images
+docker secret | Manage Docker secrets
+docker service |    Manage services
+docker stack |  Manage Docker stacks
+docker start |  Start one or more stopped containers
+docker stats |  Display a live stream of container(s) resource usage statistics
+docker stop |   Stop one or more running containers
+docker swarm |  Manage Swarm
+docker system | Manage Docker
+docker tag |    Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+docker top |    Display the running processes of a container
+docker unpause |    Unpause all processes within one or more containers
+docker update | Update configuration of one or more containers
+docker version |    Show the Docker version information
+docker volume | Manage volumes
+docker wait |   Block until one or more containers stop, then print their exit codes
+
+
+### commands examples
+- docker hello world
+</code></pre>
+
+<p>docker run hello-world</p>
+
+<pre><code>
+- check docker version
+</code></pre>
+
+<p>docker &ndash;version
+```</p>
 
     </div>
     <footer class="post-footer">
@@ -234,7 +332,7 @@ yum install docker-io
   "datePublished": "2017-09-22",
   "dateModified": "2017-09-22",
   "url": "https://twasa.github.io/post/docker/",
-  "wordCount": "262",
+  "wordCount": "877",
   "author": {
     "@type": "Person",
     "name": "William Wang"
