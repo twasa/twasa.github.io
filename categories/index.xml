@@ -7,17 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2017, all rights reserved.</copyright>
-    <lastBuildDate>Mon, 11 Sep 2017 15:52:27 +0800</lastBuildDate>
     
 	<atom:link href="https://twasa.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Aws</title>
-      <link>https://twasa.github.io/categories/aws/</link>
+      <title>Cloud</title>
+      <link>https://twasa.github.io/categories/cloud/</link>
       <pubDate>Mon, 11 Sep 2017 15:52:27 +0800</pubDate>
       
-      <guid>https://twasa.github.io/categories/aws/</guid>
+      <guid>https://twasa.github.io/categories/cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Container</title>
+      <link>https://twasa.github.io/categories/container/</link>
+      <pubDate>Fri, 22 Sep 2017 10:57:01 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/categories/container/</guid>
       <description></description>
     </item>
     
@@ -99,6 +107,15 @@
       <pubDate>Mon, 11 Sep 2017 16:46:58 +0800</pubDate>
       
       <guid>https://twasa.github.io/categories/version-control/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Virtualization</title>
+      <link>https://twasa.github.io/categories/virtualization/</link>
+      <pubDate>Fri, 22 Sep 2017 10:57:01 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/categories/virtualization/</guid>
       <description></description>
     </item>
     
