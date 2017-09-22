@@ -40,7 +40,7 @@
 
 
 <meta itemprop="dateModified" content="2017-09-22T10:57:01&#43;08:00" />
-<meta itemprop="wordCount" content="877">
+<meta itemprop="wordCount" content="871">
 
 
 
@@ -192,31 +192,33 @@ yum install docker-io
 <h2 id="commands-and-syntax">commands and syntax</h2>
 
 <ul>
-<li>Usage:
-```
-docker [OPTIONS] COMMAND [ARG&hellip;]
-docker [ &ndash;help | -v | &ndash;version ]</li>
+<li>Usage:</li>
 </ul>
 
-<p>A self-sufficient runtime for containers.</p>
+<pre><code>docker [OPTIONS] COMMAND [ARG...]
+docker [ --help | -v | --version ]
 
-<p>Options:
-      &ndash;config string      Location of client config files (default &ldquo;/root/.docker&rdquo;)
-  -D, &ndash;debug              Enable debug mode
-      &ndash;help               Print usage
-  -H, &ndash;host value         Daemon socket(s) to connect to (default [])
-  -l, &ndash;log-level string   Set the logging level (&ldquo;debug&rdquo;|&ldquo;info&rdquo;|&ldquo;warn&rdquo;|&ldquo;error&rdquo;|&ldquo;fatal&rdquo;) (default &ldquo;info&rdquo;)
-      &ndash;tls                Use TLS; implied by &ndash;tlsverify
-      &ndash;tlscacert string   Trust certs signed only by this CA (default &ldquo;/root/.docker/ca.pem&rdquo;)
-      &ndash;tlscert string     Path to TLS certificate file (default &ldquo;/root/.docker/cert.pem&rdquo;)
-      &ndash;tlskey string      Path to TLS key file (default &ldquo;/root/.docker/key.pem&rdquo;)
-      &ndash;tlsverify          Use TLS and verify the remote
-  -v, &ndash;version            Print version information and quit</p>
+A self-sufficient runtime for containers.
 
-<pre><code>
-- Commands
+Options:
+      --config string      Location of client config files (default &quot;/root/.docker&quot;)
+  -D, --debug              Enable debug mode
+      --help               Print usage
+  -H, --host value         Daemon socket(s) to connect to (default [])
+  -l, --log-level string   Set the logging level (&quot;debug&quot;|&quot;info&quot;|&quot;warn&quot;|&quot;error&quot;|&quot;fatal&quot;) (default &quot;info&quot;)
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default &quot;/root/.docker/ca.pem&quot;)
+      --tlscert string     Path to TLS certificate file (default &quot;/root/.docker/cert.pem&quot;)
+      --tlskey string      Path to TLS key file (default &quot;/root/.docker/key.pem&quot;)
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+</code></pre>
 
-Command |   Description
+<ul>
+<li>Commands</li>
+</ul>
+
+<p>Command |   Description
 |-|-|
 docker attach | Attach local standard input, output, and error streams to a running container
 docker build |  Build an image from a Dockerfile
@@ -271,21 +273,21 @@ docker unpause |    Unpause all processes within one or more containers
 docker update | Update configuration of one or more containers
 docker version |    Show the Docker version information
 docker volume | Manage volumes
-docker wait |   Block until one or more containers stop, then print their exit codes
+docker wait |   Block until one or more containers stop, then print their exit codes</p>
 
+<h3 id="commands-examples">commands examples</h3>
 
-### commands examples
-- docker hello world
-</code></pre>
+<ul>
+<li><p>docker hello world</p>
 
-<p>docker run hello-world</p>
+<pre><code>docker run hello-world
+</code></pre></li>
 
-<pre><code>
-- check docker version
-</code></pre>
+<li><p>check docker version</p>
 
-<p>docker &ndash;version
-```</p>
+<pre><code>docker --version
+</code></pre></li>
+</ul>
 
     </div>
     <footer class="post-footer">
@@ -332,7 +334,7 @@ docker wait |   Block until one or more containers stop, then print their exit c
   "datePublished": "2017-09-22",
   "dateModified": "2017-09-22",
   "url": "https://twasa.github.io/post/docker/",
-  "wordCount": "877",
+  "wordCount": "871",
   "author": {
     "@type": "Person",
     "name": "William Wang"
