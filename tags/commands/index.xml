@@ -21,23 +21,5 @@
       <description> create private key openssl genrsa -out server.key 2048  create Certificate Signing Request openssl req -sha512 -new -key server.key -out server.csr -subj &amp;quot;/C=TW/ST=Taipei/L=Taipei/O=example/OU=Personal/CN=www.example.com&amp;quot;  check csr info openssl req -in server.csr -noout -text  Self-Sign Certificate openssl x509 -sha512 -req -days 3650 -in server.csr -signkey server.key -out server.crt  encrypt private key -a 表示檔案使用 base64 編碼 -salt 加雜湊值，增加安全性 openssl aes-256-cbc -a -salt -in server.key -out server.encrypt.key  </description>
     </item>
     
-    <item>
-      <title>find</title>
-      <link>https://twasa.github.io/post/find/</link>
-      <pubDate>Mon, 11 Sep 2017 11:43:41 +0800</pubDate>
-      
-      <guid>https://twasa.github.io/post/find/</guid>
-      <description>find description  search for files in a directory hierarchy  syntax find [options] [path...] [expression] --newerXY Compares the timestamp of the current file with reference. The reference argument is normally the name of a file (and one of its timestamps is used for the comparison) but it may also be a string describing an absolute time. X and Y are placeholders for other letters, and these letters select which time belonging to how reference is used for the comparison find file modified newer than some daytimes find /var/log -newermt &#39;2016-06-01T00:00:00&#39; -name pattern Base of file name (the path with the leading directories removed) matches shell pattern pattern.</description>
-    </item>
-    
-    <item>
-      <title>Grep</title>
-      <link>https://twasa.github.io/post/grep/</link>
-      <pubDate>Mon, 11 Sep 2017 10:52:53 +0800</pubDate>
-      
-      <guid>https://twasa.github.io/post/grep/</guid>
-      <description>description  prints lines that contain a match for a pattern reference  https://www.gnu.org/software/grep/manual/grep.html   syntax grep [OPTIONS] PATTERN [FILE...] grep multiple patterns OR grep &#39;pattern1\|pattern2\|pattern3&#39; AND grep -E &#39;pattern1.*pattern2.*pattern3&#39; filename -v, --invert-match Invert the sense of matching, to select non-matching lines. (-v is specified by POSIX .) grep -v &#39;unwanted_word&#39; -i, --ignore-case Ignore case distinctions in both the PATTERN and the input files. (-i is specified by POSIX .</description>
-    </item>
-    
   </channel>
 </rss>
