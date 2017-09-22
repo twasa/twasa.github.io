@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+  <title>Docker Memo(drafting) &middot; William&#39;s Blog -  William&#39;s Blog </title>
+  <meta name="generator" content="Hugo 0.26" />
+  <meta name="description" content="William&#39;s Blog"> 
+
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Docker Memo(drafting)"/>
+<meta name="twitter:description" content="Docker Description  is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud Containers vs. virtual machines  Virtual Machine diagram    Container diagram  docker concept  Image : a lightweight, stand-alone, executable package that includes everything needed to run a piece of software, including the code, a runtime, libraries, environment variables, and config files."/>
+
+  <meta property="og:title" content="Docker Memo(drafting)" />
+<meta property="og:description" content="Docker Description  is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud Containers vs. virtual machines  Virtual Machine diagram    Container diagram  docker concept  Image : a lightweight, stand-alone, executable package that includes everything needed to run a piece of software, including the code, a runtime, libraries, environment variables, and config files." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://twasa.github.io/post/docker/" />
+
+
+
+<meta property="article:published_time" content="2017-09-22T10:57:01&#43;08:00"/>
+<meta property="article:modified_time" content="2017-09-22T10:57:01&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- RSS autodiscovery --> 
+
+  
+<meta itemprop="name" content="Docker Memo(drafting)">
+<meta itemprop="description" content="Docker Description  is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud Containers vs. virtual machines  Virtual Machine diagram    Container diagram  docker concept  Image : a lightweight, stand-alone, executable package that includes everything needed to run a piece of software, including the code, a runtime, libraries, environment variables, and config files.">
+
+
+<meta itemprop="dateModified" content="2017-09-22T10:57:01&#43;08:00" />
+<meta itemprop="wordCount" content="224">
+
+
+
+<meta itemprop="keywords" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet">
+  <link rel="stylesheet" href="https://twasa.github.io/css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "name": "William&#39;s Blog",
+  "url": "https://twasa.github.io/post/docker/"
+}
+</script>
+
+</head>
+
+<body>
+  <header class="gheader">
+  <div class="container">
+    <nav class="navbar ">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://twasa.github.io/">
+          <h1 class="brand">William&#39;s Blog</h1>
+        </a>
+
+        <div class="navbar-burger burger" data-target="navMenubd-example">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="navMenubd-example" class="navbar-menu">
+        <div class="navbar-start">
+          
+          <a class="navbar-item" href="https://twasa.github.io/categories/">
+            Categories
+          </a>
+          
+          <a class="navbar-item" href="https://twasa.github.io/tags/">
+            Tags
+          </a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+  <div class="main-content">
+    <div class="container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="title">Docker Memo(drafting)</h1>
+      <div class="meta">
+        <time class="pub-time"  datetime="2017-09-22T10:57:01&#43;08:00">
+          2017.09.22
+        </time>
+        <div class="terms">
+          
+          
+        </div>
+      </div>
+    </header>
+    <div class="post-body">
+      
+
+<h1 id="docker">Docker</h1>
+
+<h2 id="description">Description</h2>
+
+<ul>
+<li>is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud</li>
+<li>Containers vs. virtual machines
+
+<ul>
+<li>Virtual Machine diagram</li>
+</ul></li>
+</ul>
+
+<p><img src="https://www.docker.com/sites/default/files/VM@2x.png" alt="Alt text" title="Virtual Machine" /></p>
+
+<ul>
+<li>Container diagram</li>
+</ul>
+
+<p><img src="https://www.docker.com/sites/default/files/Container@2x.png" alt="Alt text" title="Virtual Machine" /></p>
+
+<h2 id="docker-concept">docker concept</h2>
+
+<ul>
+<li>Image : a lightweight, stand-alone, executable package that includes everything needed to run a piece of software, including the code, a runtime, libraries, environment variables, and config files.</li>
+<li>Container : a runtime instance of an image—what the image becomes in memory when actually executed. It runs completely isolated from the host environment by default, only accessing host files and ports if configured to do so.</li>
+<li>registries : a place to store and distribute Docker images, like Docker Hub</li>
+<li>Repository : a collection of different versions for a single Docker image</li>
+<li>Compose : a tool for defining and running multi-container Docker applications</li>
+<li>Docker Machine : a tool that lets you install Docker Engine on virtual hosts, and manage the hosts with docker-machine commands. You can use Machine to create Docker hosts on your local Mac or Windows box, on your company network, in your data center, or on cloud providers like Azure, AWS, or Digital Ocean.</li>
+</ul>
+
+<h2 id="requirement">Requirement</h2>
+
+<ul>
+<li>64bit environment</li>
+<li>Linux kernel &gt; 3.10</li>
+</ul>
+
+<h2 id="installation">installation</h2>
+
+<ul>
+<li>Ubuntu
+<code>
+atp-get update
+curl -fsSL https://get.docker.com/ | sh
+</code></li>
+<li>CentOS 6
+<code>
+yum install epel
+yum install docker-io
+</code></li>
+<li>CentOS 7
+<code>
+yum install docker
+</code></li>
+</ul>
+
+<h2 id="command-and-syntax">command and syntax</h2>
+
+    </div>
+    <footer class="post-footer">
+      
+      <div class="share">
+        
+      </div>
+
+      <div class="pagenation">
+        <ul class="pagenation-list">
+          
+          <li class="pager previous">
+            <a href="https://twasa.github.io/post/python-timezone-convert/" data-toggle="tooltip" data-placement="top" title="Python Timezone Convert example code">&larr; Previous Post</a>
+          </li>
+          
+          
+        </ul>
+      </div>
+    </footer>
+  </article>
+
+  
+  <article class="related"></article>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": {
+    "@type": "NewsArticle",
+    "@id": "https://twasa.github.io/post/docker/",
+    "headline": " Docker Description  is an open platform for developers and sysadmins to build, ship, and run distributed appl",
+    "author": "William Wang",
+    "publisher": {
+      "@type": "Organization",
+      "name": "William Wang",
+      "logo": ""
+    },
+    "image": "",
+    "datePublished": "2017-09-22"
+  },
+  "headline": " Docker Description  is an open platform for developers and sysadmins to build, ship, and run distributed appl",
+  "alternativeHeadline": "William&#39;s Blog",
+  "datePublished": "2017-09-22",
+  "dateModified": "2017-09-22",
+  "url": "https://twasa.github.io/post/docker/",
+  "wordCount": "224",
+  "author": {
+    "@type": "Person",
+    "name": "William Wang"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "William Wang"
+  },
+  "image": "",
+  
+  
+  "description": ""
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "@id": "https://twasa.github.io/post/docker/",
+  "name": "William Wang"
+}
+</script>
+
+
+    </div>
+  </div>
+
+  <footer class="gfooter">
+  <div class="inner">
+    <div class="container">
+      <p class="copy"><small>Copyright (c) 2017, all rights reserved.</small></p>
+
+      <nav class="footer-nav">
+        <div class="inner">
+          
+        </div>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://twasa.github.io/js/script.js"></script>
+
+</body>
+</html>

@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2017, all rights reserved.</copyright>
-    <lastBuildDate>Mon, 11 Sep 2017 17:49:51 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 22 Sep 2017 10:57:01 +0800</lastBuildDate>
     
 	<atom:link href="https://twasa.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker Memo(drafting)</title>
+      <link>https://twasa.github.io/post/docker/</link>
+      <pubDate>Fri, 22 Sep 2017 10:57:01 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/post/docker/</guid>
+      <description>Docker Description  is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud Containers vs. virtual machines  Virtual Machine diagram    Container diagram  docker concept  Image : a lightweight, stand-alone, executable package that includes everything needed to run a piece of software, including the code, a runtime, libraries, environment variables, and config files.</description>
+    </item>
     
     <item>
       <title>Python Timezone Convert example code</title>
