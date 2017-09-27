@@ -40,7 +40,7 @@
 
 
 <meta itemprop="dateModified" content="2017-09-22T10:57:01&#43;08:00" />
-<meta itemprop="wordCount" content="1545">
+<meta itemprop="wordCount" content="1531">
 
 
 
@@ -563,128 +563,158 @@ CMD [&quot;python&quot;, &quot;app.py&quot;]
 </code></pre>
 
 <ul>
-<li>Create a requirements.txt
-<code>
-Flask
-Redis
-</code></li>
-<li>Create a app.py
-```
-from flask import Flask
-from redis import Redis, RedisError
-import os
-import socket</li>
+<li>Create a requirements.txt</li>
 </ul>
 
-<h1 id="connect-to-redis">Connect to Redis</h1>
+<pre><code>Flask
+Redis
+</code></pre>
 
-<p>redis = Redis(host=&ldquo;redis&rdquo;, db=0, socket_connect_timeout=2, socket_timeout=2)</p>
+<ul>
+<li>Create a app.py</li>
+</ul>
 
-<p>app = Flask(<strong>name</strong>)</p>
+<pre><code>from flask import Flask
+from redis import Redis, RedisError
+import os
+import socket
 
-<p>@app.route(&ldquo;/&rdquo;)
+# Connect to Redis
+redis = Redis(host=&quot;redis&quot;, db=0, socket_connect_timeout=2, socket_timeout=2)
+
+app = Flask(__name__)
+
+@app.route(&quot;/&quot;)
 def hello():
     try:
-        visits = redis.incr(&ldquo;counter&rdquo;)
+        visits = redis.incr(&quot;counter&quot;)
     except RedisError:
-        visits = &ldquo;<i>cannot connect to Redis, counter disabled</i>&ldquo;</p>
+        visits = &quot;&lt;i&gt;cannot connect to Redis, counter disabled&lt;/i&gt;&quot;
 
-<pre><code>html = &quot;&lt;h3&gt;Hello {name}!&lt;/h3&gt;&quot; \
-       &quot;&lt;b&gt;Hostname:&lt;/b&gt; {hostname}&lt;br/&gt;&quot; \
-       &quot;&lt;b&gt;Visits:&lt;/b&gt; {visits}&quot;
-return html.format(name=os.getenv(&quot;NAME&quot;, &quot;world&quot;), hostname=socket.gethostname(), visits=visits)
+    html = &quot;&lt;h3&gt;Hello {name}!&lt;/h3&gt;&quot; \
+           &quot;&lt;b&gt;Hostname:&lt;/b&gt; {hostname}&lt;br/&gt;&quot; \
+           &quot;&lt;b&gt;Visits:&lt;/b&gt; {visits}&quot;
+    return html.format(name=os.getenv(&quot;NAME&quot;, &quot;world&quot;), hostname=socket.gethostname(), visits=visits)
+
+if __name__ == &quot;__main__&quot;:
+    app.run(host='0.0.0.0', port=80)
+
 </code></pre>
 
-<p>if <strong>name</strong> == &ldquo;<strong>main</strong>&ldquo;:
-    app.run(host=&lsquo;0.0.0.0&rsquo;, port=80)</p>
+<ul>
+<li>Build the app</li>
+</ul>
 
-<pre><code>- Build the app
+<pre><code>docker build -t friendlyhello .
 </code></pre>
 
-<p>docker build -t friendlyhello .</p>
+<ul>
+<li>check the docker image</li>
+</ul>
 
-<pre><code>- check the docker image
-</code></pre>
-
-<p>docker images
+<pre><code>docker images
 REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
 friendlyhello           latest              2af32fdfad1d        9 seconds ago       195.4 MB
 docker.io/python        2.7-slim            8b88f06b72d7        8 days ago          183.6 MB
-docker.io/hello-world   latest              05a3bd381fc2        2 weeks ago         1.84 kB</p>
-
-<pre><code>- run the app
+docker.io/hello-world   latest              05a3bd381fc2        2 weeks ago         1.84 kB
 </code></pre>
 
-<p>docker run -p 4000:80 friendlyhello</p>
+<ul>
+<li>run the app</li>
+</ul>
 
-<pre><code>- run the app in the background, in detached mode:
+<pre><code>docker run -p 4000:80 friendlyhello
 </code></pre>
 
-<p>docker run -d -p 4000:80 friendlyhello</p>
+<ul>
+<li>run the app in the background, in detached mode:</li>
+</ul>
 
-<pre><code>- get running container
+<pre><code>docker run -d -p 4000:80 friendlyhello
 </code></pre>
 
-<p>docker ps
-docker container ls #v1.3 or upper only</p>
+<ul>
+<li>get running container</li>
+</ul>
 
-<pre><code>- stop the running container
+<pre><code>docker ps
+docker container ls #v1.3 or upper only
 </code></pre>
 
-<p>docker stop <CONTAINER ID></p>
+<ul>
+<li>stop the running container</li>
+</ul>
 
-<pre><code>- Tag the image
+<pre><code>docker stop &lt;CONTAINER ID&gt;
 </code></pre>
 
-<p>docker tag image username/repository:tag
-docker tag friendlyhello william/get-started:part2</p>
+<ul>
+<li>Tag the image</li>
+</ul>
 
-<pre><code>- Remove one or more images
+<pre><code>docker tag image username/repository:tag
+docker tag friendlyhello william/get-started:part2
 </code></pre>
 
-<p>docker rmi <container id>
-docker image rm <image id></p>
+<ul>
+<li>Remove one or more images</li>
+</ul>
 
-<pre><code>- Publish the image
+<pre><code>docker rmi &lt;container id&gt;
+docker image rm &lt;image id&gt;
 </code></pre>
 
-<p>docker push username/repository:tag</p>
+<ul>
+<li>Publish the image</li>
+</ul>
 
-<pre><code>- Pull and run the image from the remote repository
+<pre><code>docker push username/repository:tag
 </code></pre>
 
-<p>docker run -p 4000:80 username/repository:tag</p>
+<ul>
+<li>Pull and run the image from the remote repository</li>
+</ul>
 
-<pre><code>
-### Using docker-compose for docker stack deploy
-- create a docker-compose.yml tells Docker to do the following:
-- Pull the image we uploaded in step 2 from the registry.
-- Run 2 instances of that image as a service called web, limiting each one to use, at most, 10% of the CPU (across all cores), and 50MB of RAM.
-- Immediately restart containers if one fails.
-- Map port 4000 on the host to web’s port 80.
-- Instruct web’s containers to share port 80 via a load-balanced network called webnet. (Internally, the containers themselves will publish to web’s port 80 at an ephemeral port.)
-- Define the webnet network with the default settings (which is a load-balanced overlay network).
+<pre><code>docker run -p 4000:80 username/repository:tag
 </code></pre>
 
-<p>version: &ldquo;3&rdquo;
+<h3 id="using-docker-compose-for-docker-stack-deploy">Using docker-compose for docker stack deploy</h3>
+
+<ul>
+<li>create a docker-compose.yml tells Docker to do the following:</li>
+<li>Pull the image we uploaded in step 2 from the registry.</li>
+<li>Run 2 instances of that image as a service called web, limiting each one to use, at most, 10% of the CPU (across all cores), and 50MB of RAM.</li>
+<li>Immediately restart containers if one fails.</li>
+<li>Map port 4000 on the host to web’s port 80.</li>
+<li>Instruct web’s containers to share port 80 via a load-balanced network called webnet. (Internally, the containers themselves will publish to web’s port 80 at an ephemeral port.)</li>
+
+<li><p>Define the webnet network with the default settings (which is a load-balanced overlay network).
+```
+version: &ldquo;3&rdquo;
 services:
-  web:
-    # replace username/repo:tag with your name and image details
-    image: william/get-started:part2
-    deploy:
-      replicas: 2
-      resources:
-        limits:
-          cpus: &ldquo;0.1&rdquo;
-          memory: 50M
-      restart_policy:
-        condition: on-failure
-    ports:
-      - &ldquo;4000:80&rdquo;
-    networks:
-      - webnet
+web:</p>
+
+<h1 id="replace-username-repo-tag-with-your-name-and-image-details">replace username/repo:tag with your name and image details</h1>
+
+<p>image: william/get-started:part2
+deploy:
+  replicas: 2
+  resources:
+    limits:
+      cpus: &ldquo;0.1&rdquo;
+      memory: 50M
+  restart_policy:
+    condition: on-failure
+ports:</p>
+
+<ul>
+<li>&ldquo;4000:80&rdquo;
+networks:</li>
+<li>webnet
 networks:
-  webnet:</p>
+webnet:</li>
+</ul></li>
+</ul>
 
 <pre><code>- for load-balance, run swarm init first
 </code></pre>
@@ -803,7 +833,7 @@ sudo cp /tmp/docker-machine /usr/local/bin/docker-machine</p>
   "datePublished": "2017-09-22",
   "dateModified": "2017-09-22",
   "url": "https://twasa.github.io/post/docker/",
-  "wordCount": "1545",
+  "wordCount": "1531",
   "author": {
     "@type": "Person",
     "name": "William Wang"
