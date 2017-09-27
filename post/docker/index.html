@@ -40,7 +40,7 @@
 
 
 <meta itemprop="dateModified" content="2017-09-22T10:57:01&#43;08:00" />
-<meta itemprop="wordCount" content="1104">
+<meta itemprop="wordCount" content="1136">
 
 
 
@@ -632,10 +632,26 @@ docker container ls #v1.3 or upper only</p>
 
 <p>docker stop <CONTAINER ID></p>
 
-<pre><code>- Remove one or more images
+<pre><code>- Tag the image
 </code></pre>
 
-<p>docker image rmi <image id>
+<p>docker tag image username/repository:tag
+docker tag friendlyhello william/get-started:part2</p>
+
+<pre><code>- remove duplicate image
+</code></pre>
+
+<p>docker image rm <image></p>
+
+<pre><code>- Publish the image
+</code></pre>
+
+<p>docker push username/repository:tag</p>
+
+<pre><code>- Pull and run the image from the remote repository
+</code></pre>
+
+<p>docker run -p 4000:80 username/repository:tag
 ```</p>
 
     </div>
@@ -683,7 +699,7 @@ docker container ls #v1.3 or upper only</p>
   "datePublished": "2017-09-22",
   "dateModified": "2017-09-22",
   "url": "https://twasa.github.io/post/docker/",
-  "wordCount": "1104",
+  "wordCount": "1136",
   "author": {
     "@type": "Person",
     "name": "William Wang"
