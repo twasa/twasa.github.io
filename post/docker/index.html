@@ -40,7 +40,7 @@
 
 
 <meta itemprop="dateModified" content="2017-09-22T10:57:01&#43;08:00" />
-<meta itemprop="wordCount" content="1376">
+<meta itemprop="wordCount" content="1428">
 
 
 
@@ -711,8 +711,26 @@ networks:
 <pre><code>- List the tasks
 </code></pre>
 
-<p>docker service ps <service>
+<p>docker service ps <service></p>
+
+<pre><code>- check task information
+</code></pre>
+
+<p>docker inspect &ndash;format=&lsquo;{{.Status.ContainerStatus.ContainerID}}&rsquo; <task or containerid></p>
+
+<pre><code>- Scale the app by changing the replicas value in docker-compose.yml, saving the change, and re-running the docker stack deploy command:
+</code></pre>
+
+<p>docker stack deploy -c docker-compose.yml getstartedlab</p>
+
+<pre><code>- Take down the app and the swarm
+</code></pre>
+
+<p>docker stack rm getstartedlab
+docker swarm leave &ndash;force
 ```</p>
+
+<h3 id="swarm-clusters">Swarm clusters</h3>
 
     </div>
     <footer class="post-footer">
@@ -759,7 +777,7 @@ networks:
   "datePublished": "2017-09-22",
   "dateModified": "2017-09-22",
   "url": "https://twasa.github.io/post/docker/",
-  "wordCount": "1376",
+  "wordCount": "1428",
   "author": {
     "@type": "Person",
     "name": "William Wang"
