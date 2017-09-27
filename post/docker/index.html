@@ -40,7 +40,7 @@
 
 
 <meta itemprop="dateModified" content="2017-09-22T10:57:01&#43;08:00" />
-<meta itemprop="wordCount" content="1071">
+<meta itemprop="wordCount" content="1104">
 
 
 
@@ -185,7 +185,12 @@ yum install docker-io
 
 <li><p>CentOS 7</p>
 
-<pre><code>yum install docker
+<pre><code>yum install -y yum-utils device-mapper-persistent-data lvm2
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum-config-manager --enable docker-ce-edge
+yum install docker-ce
+systemctl enable docker
+systemctl start docker
 </code></pre></li>
 </ul>
 
@@ -619,12 +624,18 @@ docker.io/hello-world   latest              05a3bd381fc2        2 weeks ago     
 <pre><code>- get running container
 </code></pre>
 
-<p>docker ps</p>
+<p>docker ps
+docker container ls #v1.3 or upper only</p>
 
 <pre><code>- stop the running container
 </code></pre>
 
-<p>docker stop CONTAINER_ID
+<p>docker stop <CONTAINER ID></p>
+
+<pre><code>- Remove one or more images
+</code></pre>
+
+<p>docker image rmi <image id>
 ```</p>
 
     </div>
@@ -672,7 +683,7 @@ docker.io/hello-world   latest              05a3bd381fc2        2 weeks ago     
   "datePublished": "2017-09-22",
   "dateModified": "2017-09-22",
   "url": "https://twasa.github.io/post/docker/",
-  "wordCount": "1071",
+  "wordCount": "1104",
   "author": {
     "@type": "Person",
     "name": "William Wang"
