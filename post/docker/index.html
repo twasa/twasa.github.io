@@ -753,20 +753,22 @@ docker swarm leave --force
 <h3 id="install-docker-machine">install docker-machine</h3>
 
 <ul>
-<li>install
-<code>
-curl -L https://github.com/docker/machine/releases/download/v0.12.2/docker-machine-`uname -s`-`uname -m` &gt;/tmp/docker-machine &amp;&amp;
+<li><p>install</p>
+
+<pre><code>curl -L https://github.com/docker/machine/releases/download/v0.12.2/docker-machine-`uname -s`-`uname -m` &gt;/tmp/docker-machine &amp;&amp;
 chmod +x /tmp/docker-machine &amp;&amp;
 sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
-</code></li>
-<li>check version
-<code>
-docker-machine version
-</code></li>
-<li>uninstall
-<code>
-rm $(which docker-machine)
-</code></li>
+</code></pre></li>
+
+<li><p>check version</p>
+
+<pre><code>docker-machine version
+</code></pre></li>
+
+<li><p>uninstall</p>
+
+<pre><code>rm $(which docker-machine)
+</code></pre></li>
 </ul>
 
 <h3 id="swarm-clusters">Swarm clusters</h3>
