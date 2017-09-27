@@ -40,7 +40,7 @@
 
 
 <meta itemprop="dateModified" content="2017-09-22T10:57:01&#43;08:00" />
-<meta itemprop="wordCount" content="1196">
+<meta itemprop="wordCount" content="1376">
 
 
 
@@ -150,14 +150,22 @@
 <h2 id="docker-concept">docker concept</h2>
 
 <ul>
-<li>Image : a lightweight, stand-alone, executable package that includes everything needed to run a piece of software, including the code, a runtime, libraries, environment variables, and config files.</li>
-<li>Container : a runtime instance of an imageâ€”what the image becomes in memory when actually executed. It runs completely isolated from the host environment by default, only accessing host files and ports if configured to do so.</li>
-<li>registries : a place to store and distribute Docker images, like Docker Hub</li>
-<li>Repository : a collection of different versions for a single Docker image</li>
-<li>Docker Machine : a tool that lets you install Docker Engine on virtual hosts, and manage the hosts with docker-machine commands. You can use Machine to create Docker hosts on your local Mac or Windows box, on your company network, in your data center, or on cloud providers like Azure, AWS, or Digital Ocean.</li>
-<li>Dockerfile : a text document that contains all the commands a user could call on the command line to assemble an image. Using docker build users can create an automated build that executes several command-line instructions in succession.</li>
-<li>Compose : a tool for defining and running multi-container Docker applications</li>
-<li>Docker Swarm (1.12.0 or later) : for natively managing a cluster of Docker Engines called a swarm</li>
+<li><p>Image : a lightweight, stand-alone, executable package that includes everything needed to run a piece of software, including the code, a runtime, libraries, environment variables, and config files.</p></li>
+
+<li><p>Container : a runtime instance of an imageâ€”what the image becomes in memory when actually executed. It runs completely isolated from the host environment by default, only accessing host files and ports if configured to do so.</p></li>
+
+<li><p>registries : a place to store and distribute Docker images, like Docker Hub</p></li>
+
+<li><p>Repository : a collection of different versions for a single Docker image</p></li>
+
+<li><p>Dockerfile : a text document that contains all the commands a user could call on the command line to assemble an image. Using docker build users can create an automated build that executes several command-line instructions in succession.</p></li>
+
+<li><p>Docker Machine : a tool that lets you install Docker Engine on virtual hosts, and manage the hosts with docker-machine commands. You can use Machine to create Docker hosts on your local Mac or Windows box, on your company network, in your data center, or on cloud providers like Azure, AWS, or Digital Ocean.</p></li>
+
+<li><p>Compose : a tool for defining and running multi-container Docker applications</p></li>
+
+<li><p>Docker Swarm (1.12.0 or later) : enables you to create a cluster of one or more Docker Engines called a swarm. A swarm consists of one or more nodes: physical or virtual machines running Docker Engine 1.12 or later in swarm mode.
+<img src="https://docs.docker.com/engine/swarm/images/swarm-diagram.png" alt="Alt text" title="Virtual Machine" /></p></li>
 </ul>
 
 <h2 id="requirement">Requirement</h2>
@@ -655,17 +663,23 @@ docker tag friendlyhello william/get-started:part2</p>
 <p>docker run -p 4000:80 username/repository:tag</p>
 
 <pre><code>
-### Using docker-compose
-- create a docker-compose.yml
+### Using docker-compose for docker stack deploy
+- create a docker-compose.yml tells Docker to do the following:
+- Pull the image we uploaded in step 2 from the registry.
+- Run 2 instances of that image as a service called web, limiting each one to use, at most, 10% of the CPU (across all cores), and 50MB of RAM.
+- Immediately restart containers if one fails.
+- Map port 4000 on the host to web’s port 80.
+- Instruct web’s containers to share port 80 via a load-balanced network called webnet. (Internally, the containers themselves will publish to web’s port 80 at an ephemeral port.)
+- Define the webnet network with the default settings (which is a load-balanced overlay network).
 </code></pre>
 
 <p>version: &ldquo;3&rdquo;
 services:
   web:
     # replace username/repo:tag with your name and image details
-    image: username/repository:tag
+    image: william/get-started:part2
     deploy:
-      replicas: 5
+      replicas: 2
       resources:
         limits:
           cpus: &ldquo;0.1&rdquo;
@@ -673,13 +687,32 @@ services:
       restart_policy:
         condition: on-failure
     ports:
-      - &ldquo;80:80&rdquo;
+      - &ldquo;4000:80&rdquo;
     networks:
       - webnet
 networks:
   webnet:</p>
 
-<h2 id="toc_16">```</h2>
+<pre><code>- for load-balance, run swarm init first
+</code></pre>
+
+<p>docker swarm init</p>
+
+<pre><code>- run docker stack
+</code></pre>
+
+<p>docker stack deploy -c docker-compose.yml getstartedlab</p>
+
+<pre><code>- Get the service ID for the one service in our application:
+</code></pre>
+
+<p>docker service ls</p>
+
+<pre><code>- List the tasks
+</code></pre>
+
+<p>docker service ps <service>
+```</p>
 
     </div>
     <footer class="post-footer">
@@ -726,7 +759,7 @@ networks:
   "datePublished": "2017-09-22",
   "dateModified": "2017-09-22",
   "url": "https://twasa.github.io/post/docker/",
-  "wordCount": "1196",
+  "wordCount": "1376",
   "author": {
     "@type": "Person",
     "name": "William Wang"
