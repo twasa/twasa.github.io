@@ -40,7 +40,7 @@
 
 
 <meta itemprop="dateModified" content="2017-09-22T10:57:01&#43;08:00" />
-<meta itemprop="wordCount" content="1531">
+<meta itemprop="wordCount" content="1525">
 
 
 
@@ -687,90 +687,87 @@ docker image rm &lt;image id&gt;
 <li>Immediately restart containers if one fails.</li>
 <li>Map port 4000 on the host to web’s port 80.</li>
 <li>Instruct web’s containers to share port 80 via a load-balanced network called webnet. (Internally, the containers themselves will publish to web’s port 80 at an ephemeral port.)</li>
-
-<li><p>Define the webnet network with the default settings (which is a load-balanced overlay network).
-```
-version: &ldquo;3&rdquo;
-services:
-web:</p>
-
-<h1 id="replace-username-repo-tag-with-your-name-and-image-details">replace username/repo:tag with your name and image details</h1>
-
-<p>image: william/get-started:part2
-deploy:
-  replicas: 2
-  resources:
-    limits:
-      cpus: &ldquo;0.1&rdquo;
-      memory: 50M
-  restart_policy:
-    condition: on-failure
-ports:</p>
-
-<ul>
-<li>&ldquo;4000:80&rdquo;
-networks:</li>
-<li>webnet
-networks:
-webnet:</li>
-</ul></li>
+<li>Define the webnet network with the default settings (which is a load-balanced overlay network).</li>
 </ul>
 
-<pre><code>- for load-balance, run swarm init first
+<pre><code>version: &quot;3&quot;
+services:
+  web:
+    # replace username/repo:tag with your name and image details
+    image: william/get-started:part2
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: &quot;0.1&quot;
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - &quot;4000:80&quot;
+    networks:
+      - webnet
+networks:
+  webnet:
+
 </code></pre>
 
-<p>docker swarm init</p>
+<ul>
+<li><p>for load-balance, run swarm init first</p>
 
-<pre><code>- run docker stack
-</code></pre>
+<pre><code>docker swarm init
+</code></pre></li>
 
-<p>docker stack deploy -c docker-compose.yml getstartedlab</p>
+<li><p>run docker stack</p>
 
-<pre><code>- Get the service ID for the one service in our application:
-</code></pre>
+<pre><code>docker stack deploy -c docker-compose.yml getstartedlab
+</code></pre></li>
 
-<p>docker service ls</p>
+<li><p>Get the service ID for the one service in our application:</p>
 
-<pre><code>- List the tasks
-</code></pre>
+<pre><code>docker service ls
+</code></pre></li>
 
-<p>docker service ps <service></p>
+<li><p>List the tasks</p>
 
-<pre><code>- check task information
-</code></pre>
+<pre><code>docker service ps &lt;service&gt;
+</code></pre></li>
 
-<p>docker inspect &ndash;format=&lsquo;{{.Status.ContainerStatus.ContainerID}}&rsquo; <task or containerid></p>
+<li><p>check task information</p>
 
-<pre><code>- Scale the app by changing the replicas value in docker-compose.yml, saving the change, and re-running the docker stack deploy command:
-</code></pre>
+<pre><code>docker inspect --format='{{.Status.ContainerStatus.ContainerID}}' &lt;task or containerid&gt;
+</code></pre></li>
 
-<p>docker stack deploy -c docker-compose.yml getstartedlab</p>
+<li><p>Scale the app by changing the replicas value in docker-compose.yml, saving the change, and re-running the docker stack deploy command:</p>
 
-<pre><code>- Take down the app and the swarm
-</code></pre>
+<pre><code>docker stack deploy -c docker-compose.yml getstartedlab
+</code></pre></li>
 
-<p>docker stack rm getstartedlab
-docker swarm leave &ndash;force</p>
+<li><p>Take down the app and the swarm</p>
 
-<pre><code>
-### install docker-machine
-- install
-</code></pre>
+<pre><code>docker stack rm getstartedlab
+docker swarm leave --force
+</code></pre></li>
+</ul>
 
-<p>curl -L <a href="https://github.com/docker/machine/releases/download/v0.12.2/docker-machine-`uname">https://github.com/docker/machine/releases/download/v0.12.2/docker-machine-`uname</a> -s<code>-</code>uname -m` &gt;/tmp/docker-machine &amp;&amp;
+<h3 id="install-docker-machine">install docker-machine</h3>
+
+<ul>
+<li>install
+<code>
+curl -L https://github.com/docker/machine/releases/download/v0.12.2/docker-machine-`uname -s`-`uname -m` &gt;/tmp/docker-machine &amp;&amp;
 chmod +x /tmp/docker-machine &amp;&amp;
-sudo cp /tmp/docker-machine /usr/local/bin/docker-machine</p>
-
-<pre><code>- check version
-</code></pre>
-
-<p>docker-machine version</p>
-
-<pre><code>- uninstall
-</code></pre>
-
-<p>rm $(which docker-machine)
-```</p>
+sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
+</code></li>
+<li>check version
+<code>
+docker-machine version
+</code></li>
+<li>uninstall
+<code>
+rm $(which docker-machine)
+</code></li>
+</ul>
 
 <h3 id="swarm-clusters">Swarm clusters</h3>
 
@@ -833,7 +830,7 @@ sudo cp /tmp/docker-machine /usr/local/bin/docker-machine</p>
   "datePublished": "2017-09-22",
   "dateModified": "2017-09-22",
   "url": "https://twasa.github.io/post/docker/",
-  "wordCount": "1531",
+  "wordCount": "1525",
   "author": {
     "@type": "Person",
     "name": "William Wang"
