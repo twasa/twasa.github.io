@@ -40,7 +40,7 @@
 
 
 <meta itemprop="dateModified" content="2017-09-22T10:57:01&#43;08:00" />
-<meta itemprop="wordCount" content="1136">
+<meta itemprop="wordCount" content="1196">
 
 
 
@@ -157,6 +157,7 @@
 <li>Docker Machine : a tool that lets you install Docker Engine on virtual hosts, and manage the hosts with docker-machine commands. You can use Machine to create Docker hosts on your local Mac or Windows box, on your company network, in your data center, or on cloud providers like Azure, AWS, or Digital Ocean.</li>
 <li>Dockerfile : a text document that contains all the commands a user could call on the command line to assemble an image. Using docker build users can create an automated build that executes several command-line instructions in succession.</li>
 <li>Compose : a tool for defining and running multi-container Docker applications</li>
+<li>Docker Swarm (1.12.0 or later) : for natively managing a cluster of Docker Engines called a swarm</li>
 </ul>
 
 <h2 id="requirement">Requirement</h2>
@@ -523,7 +524,7 @@ Options:
 </code></pre></li>
 </ul>
 
-<h3 id="dockerfile">Dockerfile</h3>
+<h3 id="using-dockerfile">Using Dockerfile</h3>
 
 <ul>
 <li>Create your project directory</li>
@@ -651,8 +652,34 @@ docker tag friendlyhello william/get-started:part2</p>
 <pre><code>- Pull and run the image from the remote repository
 </code></pre>
 
-<p>docker run -p 4000:80 username/repository:tag
-```</p>
+<p>docker run -p 4000:80 username/repository:tag</p>
+
+<pre><code>
+### Using docker-compose
+- create a docker-compose.yml
+</code></pre>
+
+<p>version: &ldquo;3&rdquo;
+services:
+  web:
+    # replace username/repo:tag with your name and image details
+    image: username/repository:tag
+    deploy:
+      replicas: 5
+      resources:
+        limits:
+          cpus: &ldquo;0.1&rdquo;
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - &ldquo;80:80&rdquo;
+    networks:
+      - webnet
+networks:
+  webnet:</p>
+
+<h2 id="toc_16">```</h2>
 
     </div>
     <footer class="post-footer">
@@ -699,7 +726,7 @@ docker tag friendlyhello william/get-started:part2</p>
   "datePublished": "2017-09-22",
   "dateModified": "2017-09-22",
   "url": "https://twasa.github.io/post/docker/",
-  "wordCount": "1136",
+  "wordCount": "1196",
   "author": {
     "@type": "Person",
     "name": "William Wang"
