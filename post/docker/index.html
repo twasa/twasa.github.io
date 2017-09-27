@@ -40,7 +40,7 @@
 
 
 <meta itemprop="dateModified" content="2017-09-22T10:57:01&#43;08:00" />
-<meta itemprop="wordCount" content="1428">
+<meta itemprop="wordCount" content="1545">
 
 
 
@@ -537,52 +537,44 @@ Options:
 <ul>
 <li>Create your project directory</li>
 <li>Change directories (cd) into the directory</li>
-
-<li><p>create a file called Dockerfile, sample code as below
-```</p>
-
-<h1 id="use-an-official-python-runtime-as-a-parent-image">Use an official Python runtime as a parent image</h1>
-
-<p>FROM python:2.7-slim</p></li>
+<li>create a file called Dockerfile, sample code as below</li>
 </ul>
 
-<h1 id="set-the-working-directory-to-app">Set the working directory to /app</h1>
+<pre><code># Use an official Python runtime as a parent image
+FROM python:2.7-slim
 
-<p>WORKDIR /app</p>
+# Set the working directory to /app
+WORKDIR /app
 
-<h1 id="copy-the-current-directory-contents-into-the-container-at-app">Copy the current directory contents into the container at /app</h1>
+# Copy the current directory contents into the container at /app
+ADD . /app
 
-<p>ADD . /app</p>
+# Install any needed packages specified in requirements.txt
+RUN pip install -r requirements.txt
 
-<h1 id="install-any-needed-packages-specified-in-requirements-txt">Install any needed packages specified in requirements.txt</h1>
+# Make port 80 available to the world outside this container
+EXPOSE 80
 
-<p>RUN pip install -r requirements.txt</p>
+# Define environment variable
+ENV NAME World
 
-<h1 id="make-port-80-available-to-the-world-outside-this-container">Make port 80 available to the world outside this container</h1>
-
-<p>EXPOSE 80</p>
-
-<h1 id="define-environment-variable">Define environment variable</h1>
-
-<p>ENV NAME World</p>
-
-<h1 id="run-app-py-when-the-container-launches">Run app.py when the container launches</h1>
-
-<p>CMD [&ldquo;python&rdquo;, &ldquo;app.py&rdquo;]</p>
-
-<pre><code>- Create a requirements.txt
+# Run app.py when the container launches
+CMD [&quot;python&quot;, &quot;app.py&quot;]
 </code></pre>
 
-<p>Flask
-Redis</p>
-
-<pre><code>- Create a app.py
-</code></pre>
-
-<p>from flask import Flask
+<ul>
+<li>Create a requirements.txt
+<code>
+Flask
+Redis
+</code></li>
+<li>Create a app.py
+```
+from flask import Flask
 from redis import Redis, RedisError
 import os
-import socket</p>
+import socket</li>
+</ul>
 
 <h1 id="connect-to-redis">Connect to Redis</h1>
 
@@ -647,10 +639,11 @@ docker container ls #v1.3 or upper only</p>
 <p>docker tag image username/repository:tag
 docker tag friendlyhello william/get-started:part2</p>
 
-<pre><code>- remove duplicate image
+<pre><code>- Remove one or more images
 </code></pre>
 
-<p>docker image rm <image></p>
+<p>docker rmi <container id>
+docker image rm <image id></p>
 
 <pre><code>- Publish the image
 </code></pre>
@@ -727,10 +720,43 @@ networks:
 </code></pre>
 
 <p>docker stack rm getstartedlab
-docker swarm leave &ndash;force
+docker swarm leave &ndash;force</p>
+
+<pre><code>
+### install docker-machine
+- install
+</code></pre>
+
+<p>curl -L <a href="https://github.com/docker/machine/releases/download/v0.12.2/docker-machine-`uname">https://github.com/docker/machine/releases/download/v0.12.2/docker-machine-`uname</a> -s<code>-</code>uname -m` &gt;/tmp/docker-machine &amp;&amp;
+chmod +x /tmp/docker-machine &amp;&amp;
+sudo cp /tmp/docker-machine /usr/local/bin/docker-machine</p>
+
+<pre><code>- check version
+</code></pre>
+
+<p>docker-machine version</p>
+
+<pre><code>- uninstall
+</code></pre>
+
+<p>rm $(which docker-machine)
 ```</p>
 
 <h3 id="swarm-clusters">Swarm clusters</h3>
+
+<ul>
+<li><p>TCP port 2376 for secure Docker client communication. This port is required for Docker Machine to work. Docker Machine is used to orchestrate Docker hosts.</p></li>
+
+<li><p>TCP port 2377. This port is used for communication between the nodes of a Docker Swarm or cluster. It only needs to be opened on manager nodes.</p></li>
+
+<li><p>TCP and UDP port 7946 for communication among nodes (container network discovery).</p></li>
+
+<li><p>UDP port 4789 for overlay network traffic (container ingress networking).</p></li>
+
+<li><p>Manager :</p></li>
+
+<li><p>Worker(Node) :</p></li>
+</ul>
 
     </div>
     <footer class="post-footer">
@@ -777,7 +803,7 @@ docker swarm leave &ndash;force
   "datePublished": "2017-09-22",
   "dateModified": "2017-09-22",
   "url": "https://twasa.github.io/post/docker/",
-  "wordCount": "1428",
+  "wordCount": "1545",
   "author": {
     "@type": "Person",
     "name": "William Wang"
