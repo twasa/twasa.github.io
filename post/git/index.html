@@ -9,16 +9,16 @@
   <meta name="description" content="William&#39;s Blog"> 
 
   <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Git"/>
-<meta name="twitter:description" content="Git的基本使用 Config  在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：  git config --global user.name &quot;你的姓名&quot; git config --global user.email &quot;你的@email位址&quot;   加上 &ndash;global 表示是全域的設定。你可以使用 git config &ndash;list 這個指令來看你的 Git 設定內容 Git 也有提供 alias 的功能，例如你可以將 git status 縮寫為 git st，git checkout 縮寫為 git co 等，你只要這樣設定，這樣一來只要打 git st 就等同於打 git status
-git config --global alias.st status  忽略空白
-git config --global apply.whitespace nowarn  Git 預設輸出是沒有顏色的，我們可以讓他在輸出時加上顏色讓我們更容易閱讀
-git config --global color."/>
+<meta name="twitter:description" content="Git的基本使用 Config  在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：
+git config --global user.name &quot;你的姓名&quot; git config --global user.email &quot;你的@email位址&quot;  加上 &ndash;global 表示是全域的設定。你可以使用 git config &ndash;list 這個指令來看你的 Git 設定內容
+ Git 也有提供 alias 的功能，例如你可以將 git status 縮寫為 git st，git checkout 縮寫為 git co 等，你只要這樣設定，這樣一來只要打 git st 就等同於打 git status
+git config --global alias.st status git config --global alias.ck checkout git config --global alias.rst reset HEAD  忽略空白"/>
 
   <meta property="og:title" content="Git" />
-<meta property="og:description" content="Git的基本使用 Config  在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：  git config --global user.name &quot;你的姓名&quot; git config --global user.email &quot;你的@email位址&quot;   加上 &ndash;global 表示是全域的設定。你可以使用 git config &ndash;list 這個指令來看你的 Git 設定內容 Git 也有提供 alias 的功能，例如你可以將 git status 縮寫為 git st，git checkout 縮寫為 git co 等，你只要這樣設定，這樣一來只要打 git st 就等同於打 git status
-git config --global alias.st status  忽略空白
-git config --global apply.whitespace nowarn  Git 預設輸出是沒有顏色的，我們可以讓他在輸出時加上顏色讓我們更容易閱讀
-git config --global color." />
+<meta property="og:description" content="Git的基本使用 Config  在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：
+git config --global user.name &quot;你的姓名&quot; git config --global user.email &quot;你的@email位址&quot;  加上 &ndash;global 表示是全域的設定。你可以使用 git config &ndash;list 這個指令來看你的 Git 設定內容
+ Git 也有提供 alias 的功能，例如你可以將 git status 縮寫為 git st，git checkout 縮寫為 git co 等，你只要這樣設定，這樣一來只要打 git st 就等同於打 git status
+git config --global alias.st status git config --global alias.ck checkout git config --global alias.rst reset HEAD  忽略空白" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://twasa.github.io/post/git/" />
 
@@ -42,14 +42,14 @@ git config --global color." />
 
   
 <meta itemprop="name" content="Git">
-<meta itemprop="description" content="Git的基本使用 Config  在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：  git config --global user.name &quot;你的姓名&quot; git config --global user.email &quot;你的@email位址&quot;   加上 &ndash;global 表示是全域的設定。你可以使用 git config &ndash;list 這個指令來看你的 Git 設定內容 Git 也有提供 alias 的功能，例如你可以將 git status 縮寫為 git st，git checkout 縮寫為 git co 等，你只要這樣設定，這樣一來只要打 git st 就等同於打 git status
-git config --global alias.st status  忽略空白
-git config --global apply.whitespace nowarn  Git 預設輸出是沒有顏色的，我們可以讓他在輸出時加上顏色讓我們更容易閱讀
-git config --global color.">
+<meta itemprop="description" content="Git的基本使用 Config  在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：
+git config --global user.name &quot;你的姓名&quot; git config --global user.email &quot;你的@email位址&quot;  加上 &ndash;global 表示是全域的設定。你可以使用 git config &ndash;list 這個指令來看你的 Git 設定內容
+ Git 也有提供 alias 的功能，例如你可以將 git status 縮寫為 git st，git checkout 縮寫為 git co 等，你只要這樣設定，這樣一來只要打 git st 就等同於打 git status
+git config --global alias.st status git config --global alias.ck checkout git config --global alias.rst reset HEAD  忽略空白">
 
 
 <meta itemprop="dateModified" content="2017-09-11T16:46:58&#43;08:00" />
-<meta itemprop="wordCount" content="199">
+<meta itemprop="wordCount" content="276">
 
 
 
@@ -138,19 +138,19 @@ git config --global color.">
 <h2 id="config">Config</h2>
 
 <ul>
-<li>在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：</li>
-</ul>
+<li><p>在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：</p>
 
 <pre><code>git config --global user.name &quot;你的姓名&quot;
 git config --global user.email &quot;你的@email位址&quot;
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>加上 &ndash;global 表示是全域的設定。你可以使用 git config &ndash;list 這個指令來看你的 Git 設定內容</li>
+<li><p>加上 &ndash;global 表示是全域的設定。你可以使用 git config &ndash;list 這個指令來看你的 Git 設定內容</p></li>
 
 <li><p>Git 也有提供 alias 的功能，例如你可以將 git status 縮寫為 git st，git checkout 縮寫為 git co 等，你只要這樣設定，這樣一來只要打 git st 就等同於打 git status</p>
 
 <pre><code>git config --global alias.st status
+git config --global alias.ck checkout
+git config --global alias.rst reset HEAD
 </code></pre></li>
 
 <li><p>忽略空白</p>
@@ -163,6 +163,16 @@ git config --global user.email &quot;你的@email位址&quot;
 <pre><code>git config --global color.ui true
 </code></pre></li>
 
+<li><p>設定commit的預設編輯器</p>
+
+<pre><code>git config --global core.editor vim
+</code></pre></li>
+
+<li><p>設定merge的比對工具</p>
+
+<pre><code>git config --global merge.tool vimdiff
+</code></pre></li>
+
 <li><p>不希望加入版本控制的追蹤設定: 建立<code>.gitignore</code>檔案，內容</p>
 
 <pre><code>*.swp
@@ -173,121 +183,138 @@ log/*.log
 <h2 id="github-ssh-key-config">github ssh-key config</h2>
 
 <ul>
-<li>create a ssh key</li>
-</ul>
+<li><p>create a ssh key</p>
 
 <pre><code>ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>upload public key to github</li>
-</ul>
+<li><p>upload public key to github</p>
 
-<pre><code>    login to GitHub
-    Account Settings -&gt; SSH Public Keys -&gt; Add another public key
-    cat id_rsa_github.pub # past your public key content
-</code></pre>
+<pre><code>login to GitHub
+Account Settings -&gt; SSH Public Keys -&gt; Add another public key
+cat id_rsa_github.pub # past your public key content
+</code></pre></li>
 
-<ul>
-<li>vi .ssh/config</li>
-</ul>
+<li><p>vi .ssh/config</p>
 
 <pre><code>Identityfile ~/.ssh/your-private-key
-</code></pre>
+</code></pre></li>
+</ul>
 
 <h2 id="基本指令">基本指令</h2>
 
 <ul>
-<li>建立一個新的 Repository</li>
+<li><p>建立一個新的 Repository</p>
+
+<pre><code>git init
+</code></pre></li>
+
+<li><p>Clone(複製)別人的 Repository：</p>
+
+<pre><code>git clone https://xxx@github.com/xxx/xxx.git
+or
+git glone git://xxx@github.com/xxx/xxx.git
+</code></pre></li>
+
+<li><p>檢查目前 Git 的狀態</p>
+
+<pre><code>git status
+</code></pre></li>
+
+<li><p>加檔案</p>
+
+<pre><code>git add
+git add -p #批次加入，可用在開發時有些程式碼功能想加入，有些不想加入時使用
+</code></pre></li>
+
+<li><p>移檔案:</p>
+
+<pre><code>git revert
+</code></pre></li>
+
+<li><p>提交檔案:</p>
+
+<pre><code>git commit
+or
+git commit -m &quot;說明文字&quot;
+</code></pre></li>
+
+<li><p>加檔案並提交</p>
+
+<pre><code>git commit -am &quot;Add test.py to test git function&quot;
+</code></pre></li>
+
+<li><p>查看過去 commit 的紀錄
+```
+git log
+or
+git log &ndash;stat
+or
+git log -p</p></li>
 </ul>
 
-<pre><code> git init
+<p>git reflog</p>
+
+<pre><code>
+- About HEAD
 </code></pre>
 
-<ul>
-<li>Clone(複製)別人的 Repository：</li>
-</ul>
+<p>在Git中，HEAD像是一個指標，指著一個版本
+HEAD^       把指標只到上一個版本
+HEAD^^      把指標只到上一個版本
+HEAD~100    把指標只到上100個版本</p>
 
-<pre><code> git clone https://xxx@github.com/xxx/xxx.git
- or
- git glone git://xxx@github.com/xxx/xxx.git
+<pre><code>
+- 回之前版本
 </code></pre>
 
-<ul>
-<li>檢查目前 Git 的狀態</li>
-</ul>
+<p>git reset &ndash;hard HEAD^</p>
 
-<pre><code> git status
+<p>git reset &ndash;hard <commitId></p>
+
+<pre><code>
+- 放棄修改(git add之前)
 </code></pre>
 
-<ul>
-<li>加檔案</li>
-</ul>
+<p>git checkout &ndash; FILE</p>
 
-<pre><code> git add
+<pre><code>
+- 放棄修改(git add之後)
 </code></pre>
 
-<ul>
-<li>移檔案:</li>
-</ul>
+<p>git reset HEAD FILE
+git checkout &ndash; FILE</p>
 
-<pre><code> git revert
+<pre><code>
+- 放棄修改(git commit之後，尚未push至remote之前都有救)
 </code></pre>
 
-<ul>
-<li>提交檔案:</li>
-</ul>
+<p>git checkout <commitId> <file></p>
 
-<pre><code> git commit
- or
- git commit -m &quot;說明文字&quot;
+<pre><code>
+- 列出既有標籤:
 </code></pre>
 
-<ul>
-<li>加檔案並提交</li>
-</ul>
+<p>git tag -l</p>
 
-<pre><code> git commit -am &quot;Add test.py to test git function&quot;
+<pre><code>
+- 新增標籤 -a 就是標籤名稱，-m 代表該標籤說明
 </code></pre>
 
-<ul>
-<li>查看過去 commit 的紀錄</li>
-</ul>
+<p>git tag -a v1.4 -m &lsquo;my version 1.4&rsquo;</p>
 
-<pre><code> git log
- or
- git log --stat
- or
- git log -p
+<pre><code>
+- 上傳標籤到遠端, git push並不會把標籤上傳到遠端，所以必須透過底下才行 
 </code></pre>
 
-<ul>
-<li>列出既有標籤:</li>
-</ul>
+<p>git push origin v1.5</p>
 
-<pre><code> git tag -l
+<pre><code>
+- 如果在本機端很多標籤，利用 –tags 一次上傳上去
 </code></pre>
 
-<ul>
-<li>新增標籤 -a 就是標籤名稱，-m 代表該標籤說明</li>
-</ul>
-
-<pre><code> git tag -a v1.4 -m 'my version 1.4'
-</code></pre>
-
-<ul>
-<li>上傳標籤到遠端, git push並不會把標籤上傳到遠端，所以必須透過底下才行</li>
-</ul>
-
-<pre><code>git push origin v1.5
-</code></pre>
-
-<ul>
-<li>如果在本機端很多標籤，利用 –tags 一次上傳上去</li>
-</ul>
-
-<pre><code>git push origin --tags
-</code></pre>
+<p>git push origin &ndash;tags
+```</p>
 
     </div>
     <footer class="post-footer">
@@ -323,7 +350,7 @@ log/*.log
   "mainEntityOfPage": {
     "@type": "NewsArticle",
     "@id": "https://twasa.github.io/post/git/",
-    "headline": " Git的基本使用 Config  在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：  git config --global ",
+    "headline": " Git的基本使用 Config  在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：git config --global us",
     "author": "William Wang",
     "publisher": {
       "@type": "Organization",
@@ -333,12 +360,12 @@ log/*.log
     "image": "",
     "datePublished": "2017-09-11"
   },
-  "headline": " Git的基本使用 Config  在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：  git config --global ",
+  "headline": " Git的基本使用 Config  在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：git config --global us",
   "alternativeHeadline": "William&#39;s Blog",
   "datePublished": "2017-09-11",
   "dateModified": "2017-09-11",
   "url": "https://twasa.github.io/post/git/",
-  "wordCount": "199",
+  "wordCount": "276",
   "author": {
     "@type": "Person",
     "name": "William Wang"

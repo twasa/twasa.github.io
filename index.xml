@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2017, all rights reserved.</copyright>
-    <lastBuildDate>Fri, 22 Sep 2017 10:57:01 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 19 Nov 2017 00:16:07 +0800</lastBuildDate>
     
 	<atom:link href="https://twasa.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vscode Sync</title>
+      <link>https://twasa.github.io/post/vscode-sync/</link>
+      <pubDate>Sun, 19 Nov 2017 00:16:07 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/post/vscode-sync/</guid>
+      <description> Visual Studio Code Visual Studio Code is a code editor redefined and optimized for building and debugging modern web and cloud applications. Configuration  &amp;quot;editor.wordWrap&amp;quot;: &amp;quot;off&amp;quot;, &amp;quot;[markdown]&amp;quot;: { &amp;quot;editor.wordWrap&amp;quot;: &amp;quot;off&amp;quot;, &amp;quot;editor.quickSuggestions&amp;quot;: false }, &amp;quot;markdown.extension.preview.autoShowPreviewToSide&amp;quot;: true, &amp;quot;workbench.colorCustomizations&amp;quot;: { &amp;quot;tab.activeBackground&amp;quot;: &amp;quot;#0300aa&amp;quot; }  Extensions  Markdown All in One Settings Sync Copy Relative Path Path Intellisense Markdown table prettifier Microsoft Python extension  </description>
+    </item>
     
     <item>
       <title>Docker Memo(drafting)</title>
@@ -64,10 +73,10 @@ script  prerotate：executed before the log file is rotated postrotate：在做�
       <pubDate>Mon, 11 Sep 2017 16:46:58 +0800</pubDate>
       
       <guid>https://twasa.github.io/post/git/</guid>
-      <description>Git的基本使用 Config  在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：  git config --global user.name &amp;quot;你的姓名&amp;quot; git config --global user.email &amp;quot;你的@email位址&amp;quot;   加上 &amp;ndash;global 表示是全域的設定。你可以使用 git config &amp;ndash;list 這個指令來看你的 Git 設定內容 Git 也有提供 alias 的功能，例如你可以將 git status 縮寫為 git st，git checkout 縮寫為 git co 等，你只要這樣設定，這樣一來只要打 git st 就等同於打 git status
-git config --global alias.st status  忽略空白
-git config --global apply.whitespace nowarn  Git 預設輸出是沒有顏色的，我們可以讓他在輸出時加上顏色讓我們更容易閱讀
-git config --global color.</description>
+      <description>Git的基本使用 Config  在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：
+git config --global user.name &amp;quot;你的姓名&amp;quot; git config --global user.email &amp;quot;你的@email位址&amp;quot;  加上 &amp;ndash;global 表示是全域的設定。你可以使用 git config &amp;ndash;list 這個指令來看你的 Git 設定內容
+ Git 也有提供 alias 的功能，例如你可以將 git status 縮寫為 git st，git checkout 縮寫為 git co 等，你只要這樣設定，這樣一來只要打 git st 就等同於打 git status
+git config --global alias.st status git config --global alias.ck checkout git config --global alias.rst reset HEAD  忽略空白</description>
     </item>
     
     <item>
@@ -278,6 +287,15 @@ Requirements  Python Pip virtualenv Flask : a web development framework Werkzeug
  https://github.com/gohugoio/hugo/releases  Install Hugo
  https://gohugo.io/getting-started/installing/  Create a blog folder
   hugo new site blog   go in to the blog folder and modify config.toml for your github url  baseURL = &amp;quot;https://&amp;lt;your-github-account&amp;gt;.github.io/&amp;quot;   create new page  hugo new about.md   create new post  hugo new post/first.md   install a theme  cd themes git clone https://github.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://twasa.github.io/post/mdadm-rescue/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://twasa.github.io/post/mdadm-rescue/</guid>
+      <description>mdadm --assemble /dev/md6 /dev/sde3 mount iscsiadm history clear exit exit df df cat /proc/mdstat mount mdadm -Sf /dev/md6 mdadm -Af /dev/md6 /dev/sde3 cat /proc/mdstat synospace --map-file -d synocheckshare synocheckiscsitrg synocheckiscsitrg  </description>
     </item>
     
   </channel>

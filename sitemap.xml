@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://twasa.github.io/post/vscode-sync/</loc>
+    <lastmod>2017-11-19T00:16:07+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://twasa.github.io/post/docker/</loc>
     <lastmod>2017-09-22T10:57:01+08:00</lastmod>
   </url>
@@ -138,6 +143,10 @@
   </url>
   
   <url>
+    <loc>https://twasa.github.io/post/mdadm-rescue/</loc>
+  </url>
+  
+  <url>
     <loc>https://twasa.github.io/tags/apache/</loc>
     <lastmod>2017-09-11T15:50:54+08:00</lastmod>
     <priority>0</priority>
@@ -198,7 +207,7 @@
   
   <url>
     <loc>https://twasa.github.io/tags/development/</loc>
-    <lastmod>2017-09-11T17:49:51+08:00</lastmod>
+    <lastmod>2017-11-19T00:16:07+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -270,7 +279,7 @@
   
   <url>
     <loc>https://twasa.github.io/post/</loc>
-    <lastmod>2017-09-22T10:57:01+08:00</lastmod>
+    <lastmod>2017-11-19T00:16:07+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -311,6 +320,12 @@
   </url>
   
   <url>
+    <loc>https://twasa.github.io/categories/tools/</loc>
+    <lastmod>2017-11-19T00:16:07+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://twasa.github.io/categories/version-control/</loc>
     <lastmod>2017-09-11T16:46:58+08:00</lastmod>
     <priority>0</priority>
@@ -336,7 +351,7 @@
   
   <url>
     <loc>https://twasa.github.io/</loc>
-    <lastmod>2017-09-22T10:57:01+08:00</lastmod>
+    <lastmod>2017-11-19T00:16:07+08:00</lastmod>
     <priority>0</priority>
   </url>
   
