@@ -57,12 +57,12 @@
 </ul>
 
 <pre><code>Get-Command
-Get-Command –Name *IP*
-Get-Command –Module ISE –Name *IP*
+Get-Command -Name *IP*
+Get-Command -Module ISE -Name *IP*
 
 Get-Help Get-Process
 Get-Member
-Get-Process | Where-Object {$_.Name –eq &quot;powershell&quot;} #$_ is the current pipeline object
+Get-Process | Where-Object {$_.Name -eq &quot;powershell&quot;} #$_ is the current pipeline object
 </code></pre>
 
 <ul>
