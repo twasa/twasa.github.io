@@ -38,6 +38,24 @@
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
+				<a href="/post/powershell/" rel="bookmark">Powershell</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2018-04-21T17:33:21">April 21, 2018</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			Poweershell PowerShell Core is a cross-platform (Windows, Linux, and macOS) automation and configuration tool/framework that works well with your existing tools and is optimized for dealing with structured data (e.g. JSON, CSV, XML, etc.), REST APIs, and object models. It includes a command-line shell, an associated scripting language and a framework for processing cmdlets.
+cmdlet  get all cmdlet
+Get-Command Get-Command –Name *IP* Get-Command –Module ISE –Name *IP*  Get-Help Get-Process Get-Member Get-Process | Where-Object {$_.
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
 				<a href="/post/vscode-sync/" rel="bookmark">Vscode Sync</a>
 			</h3>
 			<div class="list__meta meta">
@@ -98,23 +116,6 @@
 		</div>
 	</div>
 </article>
-<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/linux-logrotation/" rel="bookmark">Linux Logrotation</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2017-09-11T17:08:34">September 11, 2017</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			 config options rotate count  rotate n  permission  create 0664 USER GROUP  by interval  daily weekly monthly yearly  by size  size 100k size 100M size 100G  archive  compress nocompress  Postrotate postrotate /usr/sbin/apachectl restart &gt; /dev/null endscript
-script  prerotate：executed before the log file is rotated postrotate：在做完 logrotate 之後啟動的指令，例如重新啟動 (kill -1 或 kill -HUP) 某個服務;  postrotate /bin/kill -HUP `cat /var/run/syslogd.pid 2&gt; /dev/null` 2&gt; /dev/null || true endscript }   others  missingok：If the log file is missing, go on to the next one without issu-ing an error message  
-		</div>
-	</div>
-</article>
 
 
 		
@@ -142,11 +143,11 @@ script  prerotate：executed before the log file is rotated postrotate：在做�
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/powershell/">Powershell</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/vscode-sync/">Vscode Sync</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/docker/">Docker Memo(drafting)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/python-timezone-convert/">Python Timezone Convert example code</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/linux-openssl/">openssl</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/linux-logrotation/">Linux Logrotation</a></li>
 		</ul>
 	</div>
 </div>
@@ -165,6 +166,7 @@ script  prerotate：executed before the log file is rotated postrotate：在做�
 			<li class="widget__item"><a class="widget__link" href="/categories/nosql">Nosql</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/python">Python</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/regular-expression">Regular-Expression</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/shell">Shell</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/tools">Tools</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/version-control">Version-Control</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/virtualization">Virtualization</a></li>
@@ -200,9 +202,11 @@ script  prerotate：executed before the log file is rotated postrotate：在做�
 		<a class="widget__link widget__link--taglist" href="/tags/docker" title="docker">docker</a>
 		<a class="widget__link widget__link--taglist" href="/tags/logrotation" title="logrotation">logrotation</a>
 		<a class="widget__link widget__link--taglist" href="/tags/mariadb" title="mariadb">mariadb</a>
+		<a class="widget__link widget__link--taglist" href="/tags/microsoft" title="microsoft">microsoft</a>
 		<a class="widget__link widget__link--taglist" href="/tags/mongodb" title="mongodb">mongodb</a>
 		<a class="widget__link widget__link--taglist" href="/tags/mysql" title="mysql">mysql</a>
 		<a class="widget__link widget__link--taglist" href="/tags/nginx" title="nginx">nginx</a>
+		<a class="widget__link widget__link--taglist" href="/tags/powershell" title="powershell">powershell</a>
 		<a class="widget__link widget__link--taglist" href="/tags/selenium" title="selenium">selenium</a>
 		<a class="widget__link widget__link--taglist" href="/tags/tomcat" title="tomcat">tomcat</a>
 		<a class="widget__link widget__link--taglist" href="/tags/virtualenv" title="virtualenv">virtualenv</a>

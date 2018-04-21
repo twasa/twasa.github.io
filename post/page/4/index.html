@@ -38,6 +38,22 @@
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
+				<a href="/post/cisco-ios-netwrok-cmmmands/" rel="bookmark">Cisco Ios Netwrok Cmmmands</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2017-09-11T13:00:03">September 11, 2017</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			狀態查看  show startup-config show running-config show version show vlan id show ip route show ip nhrp show crypto engine connection active sh run | inc ip route 查看連線的TCP session  show ip sockets detail  查IP流量  conf t interface xxx ip accounting end sh ip accounting 備註, 查完記得no掉, 否則會增加cpu的負擔! conf t interface xxx no ip accounting   基本操作  從User Mode進入Privileged Mode enable 從Privileged Mode進入Global Configuration Mode configure terminal 儲存設定  write or copy running-config startup-config   設定  介面IP設定 interface fastEthernet 0/0 ip address IP位置 子網路遮罩 no shutdown
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
 				<a href="/post/sed/" rel="bookmark">sed</a>
 			</h3>
 			<div class="list__meta meta">
@@ -102,22 +118,6 @@ JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -ser
 		</div>
 	</div>
 </article>
-<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/find/" rel="bookmark">find</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2017-09-11T11:43:41">September 11, 2017</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			find description  search for files in a directory hierarchy  syntax find [options] [path...] [expression] --newerXY Compares the timestamp of the current file with reference. The reference argument is normally the name of a file (and one of its timestamps is used for the comparison) but it may also be a string describing an absolute time. X and Y are placeholders for other letters, and these letters select which time belonging to how reference is used for the comparison find file modified newer than some daytimes find /var/log -newermt '2016-06-01T00:00:00' -name pattern Base of file name (the path with the leading directories removed) matches shell pattern pattern.
-		</div>
-	</div>
-</article>
 
 
 		
@@ -146,11 +146,11 @@ JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -ser
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/powershell/">Powershell</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/vscode-sync/">Vscode Sync</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/docker/">Docker Memo(drafting)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/python-timezone-convert/">Python Timezone Convert example code</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/linux-openssl/">openssl</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/linux-logrotation/">Linux Logrotation</a></li>
 		</ul>
 	</div>
 </div>
@@ -169,6 +169,7 @@ JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -ser
 			<li class="widget__item"><a class="widget__link" href="/categories/nosql">Nosql</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/python">Python</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/regular-expression">Regular-Expression</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/shell">Shell</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/tools">Tools</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/version-control">Version-Control</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/virtualization">Virtualization</a></li>
@@ -204,9 +205,11 @@ JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -ser
 		<a class="widget__link widget__link--taglist" href="/tags/docker" title="docker">docker</a>
 		<a class="widget__link widget__link--taglist" href="/tags/logrotation" title="logrotation">logrotation</a>
 		<a class="widget__link widget__link--taglist" href="/tags/mariadb" title="mariadb">mariadb</a>
+		<a class="widget__link widget__link--taglist" href="/tags/microsoft" title="microsoft">microsoft</a>
 		<a class="widget__link widget__link--taglist" href="/tags/mongodb" title="mongodb">mongodb</a>
 		<a class="widget__link widget__link--taglist" href="/tags/mysql" title="mysql">mysql</a>
 		<a class="widget__link widget__link--taglist" href="/tags/nginx" title="nginx">nginx</a>
+		<a class="widget__link widget__link--taglist" href="/tags/powershell" title="powershell">powershell</a>
 		<a class="widget__link widget__link--taglist" href="/tags/selenium" title="selenium">selenium</a>
 		<a class="widget__link widget__link--taglist" href="/tags/tomcat" title="tomcat">tomcat</a>
 		<a class="widget__link widget__link--taglist" href="/tags/virtualenv" title="virtualenv">virtualenv</a>

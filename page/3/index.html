@@ -35,6 +35,22 @@
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
+				<a href="/post/apache-http-advanced/" rel="bookmark">Apache Http Advanced</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2017-09-11T15:50:54">September 11, 2017</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			http rewrite  syntax  &lt;IfModule mod_rewrite.c&gt; RewriteEngine On #啟用 RewriteBase /路徑 RewriteCond 變數 開關 RewriteCond 變數 條件 [選項] RewriteRule 規則 [選項] &lt;/IfModule&gt; # 開關 on, off # 選項 NC (no case) 不區分大小寫 F (force URL to be forbidden) 禁用URL,返回403HTTP狀態碼。 R[=code] (force redirect) 強制外部重定向 code 預設302, 最好使用301 G (force URL to be gone) 強制URL為GONE，返回410HTTP狀態碼 P (force proxy) 強制使用代理轉發。 N (next round) 重新從第一條規則開始運行重寫過程。 C (chained with next rule) 與下一條規則關聯 AND OR #if ( (A OR B) AND (C OR D) ) RewriteCond A [or] RewriteCond B [or] RewriteCond C RewriteCond D L (last rule) 表明當前規則是最後一條規則，停止分析以後規則的重寫 # 變數 - %{HTTP_HOST} !
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
 				<a href="/post/ansible/" rel="bookmark">Ansible</a>
 			</h3>
 			<div class="list__meta meta">
@@ -103,22 +119,6 @@ c:\packagedemo\package\module01.py c:\packagedemo\package\module03.py c:\package
 		</div>
 	</div>
 </article>
-<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/cisco-ios-netwrok-cmmmands/" rel="bookmark">Cisco Ios Netwrok Cmmmands</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2017-09-11T13:00:03">September 11, 2017</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			狀態查看  show startup-config show running-config show version show vlan id show ip route show ip nhrp show crypto engine connection active sh run | inc ip route 查看連線的TCP session  show ip sockets detail  查IP流量  conf t interface xxx ip accounting end sh ip accounting 備註, 查完記得no掉, 否則會增加cpu的負擔! conf t interface xxx no ip accounting   基本操作  從User Mode進入Privileged Mode enable 從Privileged Mode進入Global Configuration Mode configure terminal 儲存設定  write or copy running-config startup-config   設定  介面IP設定 interface fastEthernet 0/0 ip address IP位置 子網路遮罩 no shutdown
-		</div>
-	</div>
-</article>
 
 		
 
@@ -148,11 +148,11 @@ c:\packagedemo\package\module01.py c:\packagedemo\package\module03.py c:\package
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/powershell/">Powershell</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/vscode-sync/">Vscode Sync</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/docker/">Docker Memo(drafting)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/python-timezone-convert/">Python Timezone Convert example code</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/linux-openssl/">openssl</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/linux-logrotation/">Linux Logrotation</a></li>
 		</ul>
 	</div>
 </div>
@@ -171,6 +171,7 @@ c:\packagedemo\package\module01.py c:\packagedemo\package\module03.py c:\package
 			<li class="widget__item"><a class="widget__link" href="/categories/nosql">Nosql</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/python">Python</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/regular-expression">Regular-Expression</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/shell">Shell</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/tools">Tools</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/version-control">Version-Control</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/virtualization">Virtualization</a></li>
@@ -206,9 +207,11 @@ c:\packagedemo\package\module01.py c:\packagedemo\package\module03.py c:\package
 		<a class="widget__link widget__link--taglist" href="/tags/docker" title="docker">docker</a>
 		<a class="widget__link widget__link--taglist" href="/tags/logrotation" title="logrotation">logrotation</a>
 		<a class="widget__link widget__link--taglist" href="/tags/mariadb" title="mariadb">mariadb</a>
+		<a class="widget__link widget__link--taglist" href="/tags/microsoft" title="microsoft">microsoft</a>
 		<a class="widget__link widget__link--taglist" href="/tags/mongodb" title="mongodb">mongodb</a>
 		<a class="widget__link widget__link--taglist" href="/tags/mysql" title="mysql">mysql</a>
 		<a class="widget__link widget__link--taglist" href="/tags/nginx" title="nginx">nginx</a>
+		<a class="widget__link widget__link--taglist" href="/tags/powershell" title="powershell">powershell</a>
 		<a class="widget__link widget__link--taglist" href="/tags/selenium" title="selenium">selenium</a>
 		<a class="widget__link widget__link--taglist" href="/tags/tomcat" title="tomcat">tomcat</a>
 		<a class="widget__link widget__link--taglist" href="/tags/virtualenv" title="virtualenv">virtualenv</a>
