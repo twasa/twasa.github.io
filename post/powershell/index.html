@@ -53,138 +53,172 @@
 <h2 id="cmdlet">cmdlet</h2>
 
 <ul>
-<li>get all cmdlet
-```
-Get-Command
-Get-Command –Name <em>IP</em>
-Get-Command –Module ISE –Name <em>IP</em></li>
+<li>get all cmdlet</li>
 </ul>
 
-<p>Get-Help Get-Process
+<pre><code>Get-Command
+Get-Command –Name *IP*
+Get-Command –Module ISE –Name *IP*
+
+Get-Help Get-Process
 Get-Member
-Get-Process | Where-Object {$<em>.Name –eq &ldquo;powershell&rdquo;} #$</em> is the current pipeline object</p>
-
-<pre><code>
-- cmdlet combind example: find all file mode = a
+Get-Process | Where-Object {$_.Name –eq &quot;powershell&quot;} #$_ is the current pipeline object
 </code></pre>
 
-<p>Get-ChildItem $env:USERPROFILE -Recurse -Force | Where-Object {$_.Mode -like &ldquo;<em>a</em>&rdquo;}</p>
+<ul>
+<li>cmdlet combind example: find all file mode = a
+<code>
+Get-ChildItem $env:USERPROFILE -Recurse -Force | Where-Object {$_.Mode -like &quot;*a*&quot;}
+</code></li>
+</ul>
 
-<pre><code>
-## Using
-- get powershell profile path
-</code></pre>
+<h2 id="using">Using</h2>
 
-<p>Get-Variable profile | Format-List</p>
+<ul>
+<li><p>get powershell profile path</p>
 
-<pre><code>
-- set alias
-</code></pre>
+<pre><code>Get-Variable profile | Format-List
+</code></pre></li>
 
-<p>Set-Alias ll Get-ChildItem</p>
+<li><p>set alias</p>
 
-<pre><code>
-- define variable
-</code></pre>
+<pre><code>Set-Alias ll Get-ChildItem
+</code></pre></li>
 
-<p>$sourcedir = &ldquo;r:\MYDATA&rdquo; #string
-$tmp1 = $sourcedir -join &lsquo;.rar &lsquo;
-$tmp2 = $tmp1 + &ldquo;.rar&rdquo;
-$rarfile = $tmp2 -split &ldquo; &ldquo;
-$targetpath = &ldquo;e:\&ldquo;, &ldquo;x:\&ldquo;, &ldquo;f:\&ldquo;, &ldquo;y:\&rdquo; #</p>
+<li><p>define variable</p>
 
-<pre><code>
-- get variable type
-</code></pre>
+<pre><code>$sourcedir = &quot;r:\MYDATA&quot; #string
+$tmp1 = $sourcedir -join '.rar '
+$tmp2 = $tmp1 + &quot;.rar&quot;
+$rarfile = $tmp2 -split &quot; &quot;
+$targetpath = &quot;e:\&quot;, &quot;x:\&quot;, &quot;f:\&quot;, &quot;y:\&quot; #
+</code></pre></li>
 
-<p>$variable.GetType().FullName</p>
+<li><p>get variable type</p>
 
-<pre><code>
-- Comparison Operators
+<pre><code>$variable.GetType().FullName
+</code></pre></li>
 
-| Purpose                  | Operator | Example                   |
-|--------------------------|----------|---------------------------|
-| Greater than             | -gt      | 1 -gt 2 (Returns $false)  |
-| Less than                | -lt      | 1 -lt 2 (Returns $true)   |
-| Equals                   | -eq      | 2 -eq 1+1 (Returns $true) |
-| Not equals               | -ne      | 3 -ne 1+1 (Returns $true) |
-| Greater than or equal to | -ge      | 3 -ge 1+1 (Returns $true) |
-| Less than or equal to    | -le      | 2 -le 1+1 (Returns $true) |
+<li><p>Comparison Operators</p></li>
+</ul>
 
-- statements: if else
-</code></pre>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>Operator</th>
+<th>Example</th>
+</tr>
+</thead>
 
-<p>if (Test-Path $item){
-    if ($? -notmatch &ldquo;True&rdquo;){
-        #do something
-    }
+<tbody>
+<tr>
+<td>Greater than</td>
+<td>-gt</td>
+<td>1 -gt 2 (Returns $false)</td>
+</tr>
+
+<tr>
+<td>Less than</td>
+<td>-lt</td>
+<td>1 -lt 2 (Returns $true)</td>
+</tr>
+
+<tr>
+<td>Equals</td>
+<td>-eq</td>
+<td>2 -eq 1+1 (Returns $true)</td>
+</tr>
+
+<tr>
+<td>Not equals</td>
+<td>-ne</td>
+<td>3 -ne 1+1 (Returns $true)</td>
+</tr>
+
+<tr>
+<td>Greater than or equal to</td>
+<td>-ge</td>
+<td>3 -ge 1+1 (Returns $true)</td>
+</tr>
+
+<tr>
+<td>Less than or equal to</td>
+<td>-le</td>
+<td>2 -le 1+1 (Returns $true)</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li><p>statements: if else</p>
+
+<pre><code>if (Test-Path $item){
+if ($? -notmatch &quot;True&quot;){
+    #do something
+}
 }
 Else {
-    #do something
-}</p>
+#do something
+}
+</code></pre></li>
 
-<pre><code>
-- statements: For loop
-</code></pre>
+<li><p>statements: For loop</p>
 
-<p>For ($i=0; $i -le 10; $i++) {
-    &ldquo;10 * $i = &ldquo; + (10 * $i)
-}</p>
+<pre><code>For ($i=0; $i -le 10; $i++) {
+&quot;10 * $i = &quot; + (10 * $i)
+}
+</code></pre></li>
 
-<pre><code>
-- statements: foreach
-</code></pre>
+<li><p>statements: foreach</p>
 
-<p>$items = 1,2,3,4,5
+<pre><code>$items = 1,2,3,4,5
 ForEach ($item in $items){
+#do something
+}    
+</code></pre></li>
+
+<li><p>define function</p></li>
+</ul>
+
+<pre><code>function FunctionNAME {
     #do something
-}</p>
+}
 
-<pre><code>
-
-- define function
-
-</code></pre>
-
-<p>function FunctionNAME {
+function FunctionNAME($parm1){
     #do something
-}</p>
+}
 
-<p>function FunctionNAME($parm1){
+function FunctionNAME([String] $parm1){
     #do something
-}</p>
+}
 
-<p>function FunctionNAME([String] $parm1){
-    #do something
-}</p>
-
-<p>function FunctionNAME([String] $parm1 = &ldquo;hello&rdquo;){
+function FunctionNAME([String] $parm1 = &quot;hello&quot;){
     #do something
     return $parm1
-}</p>
-
-<pre><code>
-
-- call function
+}
 </code></pre>
 
-<p>FunctionNAME
-FunctionNAME &ldquo;test&rdquo;
-FunctionNAME -parm1 &ldquo;echo&rdquo;</p>
+<ul>
+<li><p>call function</p>
 
-<pre><code>
-- prevent external Windows subsystem based EXE, for each command to end before starting the next
-</code></pre>
+<pre><code>FunctionNAME
+FunctionNAME &quot;test&quot;
+FunctionNAME -parm1 &quot;echo&quot;
+</code></pre></li>
 
-<p><path to exe> | Out-Null</p>
+<li><p>prevent external Windows subsystem based EXE, for each command to end before starting the next</p></li>
+</ul>
 
-<p>Start-Process <path to exe> -NoNewWindow -Wait</p>
+<pre><code>&lt;path to exe&gt; | Out-Null
 
-<p>#powershell 2.0
-$job = Start-Job <path to exe>
+Start-Process &lt;path to exe&gt; -NoNewWindow -Wait
+
+#powershell 2.0
+$job = Start-Job &lt;path to exe&gt;
 Wait-Job $job
 Receive-Job $job
-```</p>
+</code></pre>
 
 		</div>
 		
