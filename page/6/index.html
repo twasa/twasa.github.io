@@ -1,258 +1,192 @@
-
 <!DOCTYPE html>
 <html lang="en-us">
-
 <head>
-<meta charset="utf-8" />
-<meta name="author" content="" />
-<meta name="description" content="William&#39;s blog." />
-<meta name="keywords" content="blog, tech" />
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.26" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>William&#39;s Blog</title>
 
-<link rel="canonical" href="https://twasa.github.io/">
-<base href="https://twasa.github.io/" />
-<meta property="og:title" content="William&#39;s Blog" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://twasa.github.io/" />
+<meta name="generator" content="Hugo 0.39" />
 
-
-
-<meta property="og:updated_time" content="2017-09-11T12:24:19&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="William&#39;s Blog"/>
-<meta name="twitter:description" content=""/>
-
-
-
-<meta itemprop="name" content="William&#39;s Blog">
-<meta itemprop="description" content="">
-
-
-
-<link rel="stylesheet" href="css/layout.css" />
-<link rel="stylesheet" href="css/color-dark.css" />
-
-
-
-<title>
-
-
-     William&#39;s Blog 
-
-</title>
-
-<script src="js/highlight.min.js"></script>
-<link rel="stylesheet" href="css/tomorrow-night.min.css" />
-<script>hljs.initHighlightingOnLoad();</script>
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+<link rel="alternate" type="application/rss+xml" title="William&#39;s Blog Feed" href="/index.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/scripts.js"></script>
+<link rel="shortcut icon" href="/favicon.ico">
 
 </head>
+<body class="body body-right-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="/" title="William&#39;s Blog" rel="home">
+						<h1 class="logo__title">William&#39;s Blog</h1>
+						
+					</a>
+				</div>
+			</div>
+			<hr class="divider">
+		</header>
+		<div class="wrapper clearfix">
 
-
-<body>
-<div class="main">
-<header>
-
-<div class="header-bar">
-
-  <nav>
-    <div class="siteTitle">
-      <a href="https://twasa.github.io/">William&#39;s Blog</a>
-    </div> 
-
-    
-    
-    <a class="nav-item" href="https://twasa.github.io/post/"><div class="nav-item-title">Posts</div></a>
-    
-    <a class="nav-item" href="https://twasa.github.io/about/"><div class="nav-item-title">About Hugo</div></a>
-    
-    <a class="nav-item" href="https://twasa.github.io/tags/"><div class="nav-item-title">Tags</div></a>
-    
-
-  </nav>
-</div>
-
-  
-<div class="social-links-header">
-
-  
-
-  
-  <a href="https://github.com/twasa" target="_blank"><div class="social-link">GitHub</div></a>
-  
-
-  
-
-  
-
-  
-
-</div>
-
-
-</header>
-
-
-<main>
-
-
-  
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/my-db/'> MySQL and MariaDB memo</a> </h2>
-    <div class="meta">
-      Sep 11, 2017 - 7 minutes
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/database">#Database</a>
-      </div>
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/mysql">#MySQL</a>
-      </div>
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/mariadb">#MariaDB</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> 第一次安裝完成，設定root的密碼 mysqladmin -u root -p &lsquo;密碼&rsquo; or mysql_secure_installation
-重設root密碼 /etc/init.d/mysql stop mysqld_safe --skip-grant-tables &amp; mysql -u root mysql&gt; use mysql; mysql&gt; UPDATE user SET Password=PASSWORD(&quot;密碼&quot;) WHERE User='root'; mysql&gt; flush privileges; mysql&gt; quit /etc/init.d/mysql stop /etc/init.d/mysql start  連線管理資料庫 mysqladmin -u root -p Enter password: 此時再輸入密碼(建議採用) 修改使用者密碼 方法一 使用有權限或要修改的使用者本身登入mysql mysql&gt; SET PASSWORD FOR '目標使用者'@'主機' = PASSWORD('密碼'); mysql&gt; flush privileges 方法二 使用有權限的使用者登入mysql 修改使用者密碼，只改 root 的密碼，如果沒有用 where ，則表示改全部 user 的密碼 mysql&gt; use mysql; mysql&gt; UPDATE user SET password=password('密碼') where user='root'; mysql&gt; FLUSH PRIVILEGES; 上面是不分主機位址的修改，若要像方法一區分主機的話再加上Host條件，例如 mysql&gt; UPDATE user SET Password=PASSWORD(&quot;密碼&quot;) WHERE User='root' AND Host = 'localhost'; mysql&gt; FLUSH PRIVILEGES; 方法三 同樣利用mysqladmin指令可以修改root或其他使用者密碼，但該使用者必須有SUPER權限 mysqladmin -u 使用者 -p'舊密碼' password '新密碼' 忘記密碼重設 /etc/init. </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='https://twasa.github.io/post/my-db/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
+	<main class="main-content list content" role="main"><article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/flask-quick-start-guide/" rel="bookmark">Flask Quick Start Guide</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2017-09-10T15:47:02">September 10, 2017</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			#Flask Quickstart
+Requirements  Python Pip virtualenv Flask : a web development framework Werkzeug：a toolkit for WSGI Jinja2：renders templates  virtualenv：multiple side-by-side installations of Python  安裝：pip install virtualenv 基本使用方式：  ### 先建立專案資料夾 mkdir myproject cd myproject ### 初始化 virtualenv env ### activate the corresponding environment . venv/bin/activate or venv\scripts\activate ### 這時候再裝Flask pip install Flask ### 回到實際環境 deactivate ### 若因為目錄搬移或更名 需重新locate cd /path/to/your_project_new_dir virtualenv --relocatable your_virtualenv_name  建立第一個app(記得啟動venv), save it as hello.
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/hugo-how-to/" rel="bookmark">Hugo A Fast and Flexible Website Generator</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2017-09-08T19:12:41">September 08, 2017</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			Quick Start Guide  Hugo download
+ https://github.com/gohugoio/hugo/releases  Install Hugo
+ https://gohugo.io/getting-started/installing/  Create a blog folder
+  hugo new site blog   go in to the blog folder and modify config.toml for your github url  baseURL = &quot;https://&lt;your-github-account&gt;.github.io/&quot;   create new page  hugo new about.md   create new post  hugo new post/first.md   install a theme  cd themes git clone https://github.
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/mdadm-rescue/" rel="bookmark"></a>
+			</h3>
+		</header>
+		<div class="list__excerpt">
+			mdadm --assemble /dev/md6 /dev/sde3 mount iscsiadm history clear exit exit df df cat /proc/mdstat mount mdadm -Sf /dev/md6 mdadm -Af /dev/md6 /dev/sde3 cat /proc/mdstat synospace --map-file -d synocheckshare synocheckiscsitrg synocheckiscsitrg  
+		</div>
+	</div>
 </article>
 
+		
 
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/regexp/'> Regexp</a> </h2>
-    <div class="meta">
-      Sep 11, 2017 - 3 minutes
-    </div>
-    
-<div class="tags">
-    
+		
+<div class="pagination clearfix">
+	<a class="pagination__item pagination__item--prev" href="/page/5/">«</a>
+	<span class="pagination__item pagination__item--current">6/6</span>
 </div>
 
-  </header>
+	</main>
 
-  <div class="summary"> Regula Express  reference :     說明及範例 比對不成立之字串     /a/ 含字母 “a” 的字串，例如 “ab”, “bac”, “cba” “xyz”   /a./ 含字母 “a” 以及其後任一個字元的字串，例如 “ab”, “bac”（若要比對.，請使用 .） “a”, “ba”   /^xy/ 以 “xy” 開始的字串，例如 “xyz”, “xyab”（若要比對 ^，請使用 \^） “axy”, “bxy”   /xy$/ 以 “xy” 結尾的字串，例如 “axy”, “abxy”以 “xy” 結尾的字串，例如 “axy”, “abxy” （若要比對 $，請使用 \$） “xya”, “xyb”   [13579] 包含 “1” 或 “3” 或 “5” 或 “7” 或 “9” 的字串，例如：”a3b”, “1xy” “y2k”   [0-9] 含數字之字串 不含數字之字串   [a-z0-9] 含數字或小寫字母之字串 不含數字及小寫字母之字串   [a-zA-Z0-9] 含數字或字母之字串 不含數字及字母之字串   b[aeiou]t “bat”, “bet”, “bit”, “bot”, “but” “bxt”, “bzt”   [^0-9] 不含數字之字串（若要比對 ^，請使用 \^） 含數字之字串   [^aeiouAEIOU] 不含母音之字串（若要比對 ^，請使用 \^） 含母音之字串   [^\^] 不含 “^” 之字串，例如 “xyz”, “abc” “xy^”, “a^bc”       正規表示式的特定字元 說明 等效的正規表示式     \d 數字 [0-9]   \D 非數字 [^0-9]   \w 數字、字母、底線 [a-zA-Z0-9_]   \W 非 \w [^a-zA-Z0-9_]   \s 空白字元 [ \r\t\n\f]   \S 非空白字元 [^ \r\t\n\f]       正規表示式 說明     /a? </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='https://twasa.github.io/post/regexp/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='https://twasa.github.io/post/find/'> find</a> </h2>
-    <div class="meta">
-      Sep 11, 2017 - 1 minutes
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="https://twasa.github.io/tags/linux">#Linux</a>
-      </div>
-    
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+<div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="//google.com/search">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/" />
+	</form>
+</div>
+	
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/vscode-sync/">Vscode Sync</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/docker/">Docker Memo(drafting)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/python-timezone-convert/">Python Timezone Convert example code</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/linux-openssl/">openssl</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/linux-logrotation/">Linux Logrotation</a></li>
+		</ul>
+	</div>
 </div>
 
-  </header>
-
-  <div class="summary"> find description  search for files in a directory hierarchy  syntax find [options] [path...] [expression] --newerXY Compares the timestamp of the current file with reference. The reference argument is normally the name of a file (and one of its timestamps is used for the comparison) but it may also be a string describing an absolute time. X and Y are placeholders for other letters, and these letters select which time belonging to how reference is used for the comparison find file modified newer than some daytimes find /var/log -newermt '2016-06-01T00:00:00' -name pattern Base of file name (the path with the leading directories removed) matches shell pattern pattern. </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='https://twasa.github.io/post/find/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-
-
-<div class="page-nav">
-  <div class="page-prev">
-    
-        <a href="https://twasa.github.io/page/5/" title="Previous page" > &lt;&lt; </a>
-    
-  </div>
-
-  <div class="page-num">
-    6/9
-  </div>
-
-  <div class="page-next">
-    
-    <a href="https://twasa.github.io/page/7/" title="Next page"> >> </a>
-    
-  </div>
-</div> 
-
-
-</main>
-
-  <footer>
-
-  <div class="social-links-footer">
-
-  
-
-  
-  <a href="https://github.com/twasa" target="_blank"><div class="social-link">GitHub</div></a>
-  
-
-  
-
-  
-
-  
-
-  <div class="social-link">
-  <a href="https://twasa.github.io/index.xml" target="_blank">RSS</a>
-  </div>
-
+	
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/cloud">Cloud</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/container">Container</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/database">Database</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/devops">Devops</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/linux">Linux</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/network">Network</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/nosql">Nosql</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/python">Python</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/regular-expression">Regular-Expression</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/tools">Tools</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/version-control">Version-Control</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/virtualization">Virtualization</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/webserver">Webserver</a></li>
+		</ul>
+	</div>
+</div>
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/twasa" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+	</div>
 </div>
 
+	
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/apache" title="apache">apache</a>
+		<a class="widget__link widget__link--taglist" href="/tags/automation" title="automation">automation</a>
+		<a class="widget__link widget__link--taglist" href="/tags/aws" title="aws">aws</a>
+		<a class="widget__link widget__link--taglist" href="/tags/cisco" title="cisco">cisco</a>
+		<a class="widget__link widget__link--taglist" href="/tags/command" title="command">command</a>
+		<a class="widget__link widget__link--taglist" href="/tags/commands" title="commands">commands</a>
+		<a class="widget__link widget__link--taglist" href="/tags/development" title="development">development</a>
+		<a class="widget__link widget__link--taglist" href="/tags/devops" title="devops">devops</a>
+		<a class="widget__link widget__link--taglist" href="/tags/docker" title="docker">docker</a>
+		<a class="widget__link widget__link--taglist" href="/tags/logrotation" title="logrotation">logrotation</a>
+		<a class="widget__link widget__link--taglist" href="/tags/mariadb" title="mariadb">mariadb</a>
+		<a class="widget__link widget__link--taglist" href="/tags/mongodb" title="mongodb">mongodb</a>
+		<a class="widget__link widget__link--taglist" href="/tags/mysql" title="mysql">mysql</a>
+		<a class="widget__link widget__link--taglist" href="/tags/nginx" title="nginx">nginx</a>
+		<a class="widget__link widget__link--taglist" href="/tags/selenium" title="selenium">selenium</a>
+		<a class="widget__link widget__link--taglist" href="/tags/tomcat" title="tomcat">tomcat</a>
+		<a class="widget__link widget__link--taglist" href="/tags/virtualenv" title="virtualenv">virtualenv</a>
+	</div>
+</div>
+</aside>
 
-  <div class="copyright"> Copyright (c) 2017, all rights reserved. </div>
+	</div>
+		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="container container-inner">
+				<p class="footer__copyright">&copy; 2018 William&#39;s Blog. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
+			</div>
+		</footer>
+	</div>
 
-  <div class="poweredby">
-    Powered by <a href="https://gohugo.io/">Hugo</a>.
-  </div>
-
-  </footer>
-
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
+</script>
 </body>
 </html>
-
