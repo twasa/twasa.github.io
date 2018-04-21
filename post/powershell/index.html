@@ -53,136 +53,102 @@
 <h2 id="cmdlet">cmdlet</h2>
 
 <ul>
-<li><p>get all cmdlet</p>
+<li>get all cmdlet
+```
+Get-Command
+Get-Command –Name <em>IP</em>
+Get-Command –Module ISE –Name <em>IP</em></li>
+</ul>
 
-<pre><code>Get-Command
-Get-Command –Name *IP*
-Get-Command –Module ISE –Name *IP*
+<p>Get-Help Get-Process
+Get-Member
+Get-Process | Where-Object {$<em>.Name –eq &ldquo;powershell&rdquo;} #$</em> is the current pipeline object</p>
+
+<pre><code>
+- cmdlet combind example: find all file mode = a
 </code></pre>
 
-<pre><code>Get-Help Get-Process
-Get-Member
-Get-Process | Where-Object {$_.Name –eq &quot;powershell&quot;} #$_ is the current pipeline object
-</code></pre></li>
+<p>Get-ChildItem $env:USERPROFILE -Recurse -Force | Where-Object {$_.Mode -like &ldquo;<em>a</em>&rdquo;}</p>
 
-<li><p>cmdlet combind example: find all file mode = a</p>
+<pre><code>
+## Using
+- get powershell profile path
+</code></pre>
 
-<pre><code>Get-ChildItem $env:USERPROFILE -Recurse -Force | Where-Object {$_.Mode -like &quot;*a*&quot;}
-</code></pre></li>
-</ul>
+<p>Get-Variable profile | Format-List</p>
 
-<h2 id="using">Using</h2>
+<pre><code>
+- set alias
+</code></pre>
 
-<ul>
-<li><p>get powershell profile path</p>
+<p>Set-Alias ll Get-ChildItem</p>
 
-<pre><code>Get-Variable profile | Format-List
-</code></pre></li>
+<pre><code>
+- define variable
+</code></pre>
 
-<li><p>set alias</p>
+<p>$sourcedir = &ldquo;r:\MYDATA&rdquo; #string
+$tmp1 = $sourcedir -join &lsquo;.rar &lsquo;
+$tmp2 = $tmp1 + &ldquo;.rar&rdquo;
+$rarfile = $tmp2 -split &ldquo; &ldquo;
+$targetpath = &ldquo;e:\&ldquo;, &ldquo;x:\&ldquo;, &ldquo;f:\&ldquo;, &ldquo;y:\&rdquo; #</p>
 
-<pre><code>Set-Alias ll Get-ChildItem
-</code></pre></li>
+<pre><code>
+- get variable type
+</code></pre>
 
-<li><p>define variable</p>
+<p>$variable.GetType().FullName</p>
 
-<pre><code>$sourcedir = &quot;r:\MYDATA&quot; #string
-$tmp1 = $sourcedir -join '.rar '
-$tmp2 = $tmp1 + &quot;.rar&quot;
-$rarfile = $tmp2 -split &quot; &quot;
-$targetpath = &quot;e:\&quot;, &quot;x:\&quot;, &quot;f:\&quot;, &quot;y:\&quot; #
-</code></pre></li>
+<pre><code>
+- Comparison Operators
 
-<li><p>get variable type</p>
+| Purpose                  | Operator | Example                   |
+|--------------------------|----------|---------------------------|
+| Greater than             | -gt      | 1 -gt 2 (Returns $false)  |
+| Less than                | -lt      | 1 -lt 2 (Returns $true)   |
+| Equals                   | -eq      | 2 -eq 1+1 (Returns $true) |
+| Not equals               | -ne      | 3 -ne 1+1 (Returns $true) |
+| Greater than or equal to | -ge      | 3 -ge 1+1 (Returns $true) |
+| Less than or equal to    | -le      | 2 -le 1+1 (Returns $true) |
 
-<pre><code>$variable.GetType().FullName
-</code></pre></li>
+- statements: if else
+</code></pre>
 
-<li><p>Comparison Operators</p></li>
-</ul>
-
-<table>
-<thead>
-<tr>
-<th>Purpose</th>
-<th>Operator</th>
-<th>Example</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Greater than</td>
-<td>-gt</td>
-<td>1 -gt 2 (Returns $false)</td>
-</tr>
-
-<tr>
-<td>Less than</td>
-<td>-lt</td>
-<td>1 -lt 2 (Returns $true)</td>
-</tr>
-
-<tr>
-<td>Equals</td>
-<td>-eq</td>
-<td>2 -eq 1+1 (Returns $true)</td>
-</tr>
-
-<tr>
-<td>Not equals</td>
-<td>-ne</td>
-<td>3 -ne 1+1 (Returns $true)</td>
-</tr>
-
-<tr>
-<td>Greater than or equal to</td>
-<td>-ge</td>
-<td>3 -ge 1+1 (Returns $true)</td>
-</tr>
-
-<tr>
-<td>Less than or equal to</td>
-<td>-le</td>
-<td>2 -le 1+1 (Returns $true)</td>
-</tr>
-</tbody>
-</table>
-
-<ul>
-<li><p>statements: if else</p>
-
-<pre><code>if (Test-Path $item){
-if ($? -notmatch &quot;True&quot;){
-    #do something
-}
+<p>if (Test-Path $item){
+    if ($? -notmatch &ldquo;True&rdquo;){
+        #do something
+    }
 }
 Else {
-#do something
-}
-</code></pre></li>
+    #do something
+}</p>
 
-<li><p>statements: For loop</p>
+<pre><code>
+- statements: For loop
+</code></pre>
 
-<pre><code>For ($i=0; $i -le 10; $i++) {
-&quot;10 * $i = &quot; + (10 * $i)
-}
-</code></pre></li>
+<p>For ($i=0; $i -le 10; $i++) {
+    &ldquo;10 * $i = &ldquo; + (10 * $i)
+}</p>
 
-<li><p>statements: foreach</p>
+<pre><code>
+- statements: foreach
+</code></pre>
 
-<pre><code>$items = 1,2,3,4,5
+<p>$items = 1,2,3,4,5
 ForEach ($item in $items){
-#do something
-}    
-</code></pre></li>
+    #do something
+}</p>
 
-<li><p>define function
-```
-function FunctionNAME {
-#do something
-}</p></li>
-</ul>
+<pre><code>
+
+- define function
+
+</code></pre>
+
+<p>function FunctionNAME {
+    #do something
+}</p>
 
 <p>function FunctionNAME($parm1){
     #do something
@@ -198,6 +164,7 @@ function FunctionNAME {
 }</p>
 
 <pre><code>
+
 - call function
 </code></pre>
 
