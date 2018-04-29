@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consul</title>
+
+<meta name="generator" content="Hugo 0.39" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/scripts.js"></script>
+<link rel="shortcut icon" href="/favicon.ico">
+
+</head>
+<body class="body body-right-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="/" title="William&#39;s Blog" rel="home">
+						<h1 class="logo__title">William&#39;s Blog</h1>
+						
+					</a>
+				</div>
+			</div>
+			<hr class="divider">
+		</header>
+		<div class="wrapper clearfix">
+
+<main class="main-content content" role="main" itemprop="mainContentOfPage">
+	<article class="post">
+		<header class="post__header clearfix">
+			<h1 class="post__title">Consul</h1>
+			<p class="post__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="post__meta-date" datetime="2018-04-28T06:24:00">April 28, 2018</time>
+			</p>
+		</header>
+		<div class="post__content clearfix">
+			
+
+<h1 id="consul">Consul</h1>
+
+<h2 id="description">Description</h2>
+
+<p>Consul has multiple components, but as a whole, it is a tool for discovering and configuring services in your infrastructure.</p>
+
+<h2 id="features">Features</h2>
+
+<ul>
+<li>Service Discovery: Clients of Consul can provide a service, such as api or mysql, and other clients can use Consul to discover providers of a given service. Using either DNS or HTTP, applications can easily find the services they depend upon.</li>
+<li>Health Checking: Consul clients can provide any number of health checks, either associated with a given service (&ldquo;is the webserver returning 200 OK&rdquo;), or with the local node (&ldquo;is memory utilization below 90%&rdquo;). This information can be used by an operator to monitor cluster health, and it is used by the service discovery components to route traffic away from unhealthy hosts.</li>
+<li>KV Store: Applications can make use of Consul&rsquo;s hierarchical key/value store for any number of purposes, including dynamic configuration, feature flagging, coordination, leader election, and more. The simple HTTP API makes it easy to use.</li>
+<li>Multi Datacenter: Consul supports multiple datacenters out of the box. This means users of Consul do not have to worry about building additional layers of abstraction to grow to multiple regions.</li>
+</ul>
+
+<h2 id="glossary">Glossary</h2>
+
+<ul>
+<li>Agent - An agent is the long running daemon on every member of the Consul cluster. It is started by running consul agent. The agent is able to run in either client or server mode. Since all nodes must be running an agent, it is simpler to refer to the node as being either a client or server, but there are other instances of the agent. All agents can run the DNS or HTTP interfaces, and are responsible for running checks and keeping services in sync.</li>
+<li>Client - A client is an agent that forwards all RPCs to a server. The client is relatively stateless. The only background activity a client performs is taking part in the LAN gossip pool. This has a minimal resource overhead and consumes only a small amount of network bandwidth.</li>
+<li>Server - A server is an agent with an expanded set of responsibilities including participating in the Raft quorum, maintaining cluster state, responding to RPC queries, exchanging WAN gossip with other datacenters, and forwarding queries to leaders or remote datacenters.</li>
+<li>Datacenter - While the definition of a datacenter seems obvious, there are subtle details that must be considered. For example, in EC2, are multiple availability zones considered to comprise a single datacenter? We define a datacenter to be a networking environment that is private, low latency, and high bandwidth. This excludes communication that would traverse the public internet, but for our purposes multiple availability zones within a single EC2 region would be considered part of a single datacenter.</li>
+<li>Consensus - When used in our documentation we use consensus to mean agreement upon the elected leader as well as agreement on the ordering of transactions. Since these transactions are applied to a finite-state machine, our definition of consensus implies the consistency of a replicated state machine. Consensus is described in more detail on Wikipedia, and our implementation is described here.</li>
+<li>Gossip - Consul is built on top of Serf which provides a full gossip protocol that is used for multiple purposes. Serf provides membership, failure detection, and event broadcast. Our use of these is described more in the gossip documentation. It is enough to know that gossip involves random node-to-node communication, primarily over UDP.</li>
+<li>LAN Gossip - Refers to the LAN gossip pool which contains nodes that are all located on the same local area network or datacenter.</li>
+<li>WAN Gossip - Refers to the WAN gossip pool which contains only servers. These servers are primarily located in different datacenters and typically communicate over the internet or wide area network.</li>
+<li>RPC - Remote Procedure Call. This is a request / response mechanism allowing a client to make a request of a server.</li>
+</ul>
+
+<h2 id="ports">Ports</h2>
+
+<ul>
+<li>Server RPC (Default 8300). This is used by servers to handle incoming requests from other agents. TCP only.</li>
+<li>Serf LAN (Default 8301). This is used to handle gossip in the LAN. Required by all agents. TCP and UDP.</li>
+<li>Serf WAN (Default 8302). This is used by servers to gossip over the WAN to other servers. TCP and UDP.</li>
+<li>CLI RPC (Default 8400). This is used by all agents to handle RPC from the CLI. TCP only.</li>
+<li>HTTP API (Default 8500). This is used by clients to talk to the HTTP API. TCP only.</li>
+<li>DNS Interface (Default 8600). Used to resolve DNS queries. TCP and UDP.</li>
+</ul>
+
+<h2 id="syntax">Syntax</h2>
+
+<ul>
+<li>Usage
+<code>
+consul [--version] [--help] &lt;command&gt; [&lt;args&gt;]
+</code></li>
+</ul>
+
+<h3 id="commands">commands</h3>
+
+<ul>
+<li>version: Prints the Consul version</li>
+<li>agent: Runs a Consul agent</li>
+<li>join: Tell Consul agent to join cluster</li>
+<li>members: Lists the members of a Consul cluster</li>
+<li>reload: Triggers the agent to reload configuration files</li>
+<li>leave: Gracefully leaves the Consul cluster and shuts down</li>
+<li>validate: Validate config files/directories</li>
+<li>info: Provides debugging information for operators.</li>
+</ul>
+
+<h4 id="agent-command-args">agent command args</h4>
+
+<ul>
+<li>datacenter: Datacenter of the agent.</li>
+<li>dev: Starts the agent in development mode.</li>
+<li>data-dir:  Path to a data directory to store agent state.</li>
+<li>config-file: A configuration file to load</li>
+<li>config-dir: Path to a directory to read configuration files from in &lsquo;.json&rsquo;, Can be specified multiple times.</li>
+<li>node: Name of this node. Must be unique in the cluster.</li>
+<li>bind: The address that should be bound to for internal cluster communications. By default, this is &ldquo;0.0.0.0&rdquo;, if there was multi private ip, this args must be config</li>
+<li>http-port: Sets the HTTP API port to listen on.</li>
+<li>dns-port: DNS port to use.</li>
+<li>server: used to control if an agent is in server or client mode. When provided, an agent will act as a Consul server. Each Consul cluster must have at least one server and ideally no more than 5 per datacenter.</li>
+<li>client: The address to which Consul will bind client interfaces, including the HTTP and DNS servers. By default, this is &ldquo;127.0.0.1&rdquo;</li>
+<li>datacenter: controls the datacenter in which the agent is running. If not provided, it defaults to &ldquo;dc1&rdquo;.</li>
+<li>ui: Enables the built-in web UI server and the required HTTP routes. This eliminates the need to maintain the Consul web UI files separately from the binary.</li>
+<li>log-level: Log level of the agent</li>
+<li>bootstrap-expect: hints to the Consul server the number of additional server nodes we are expecting to join.</li>
+<li>enable-script-checks: controls whether health checks that execute scripts are enabled on this agent, and defaults to false so operators must opt-in to allowing these.</li>
+<li>ui: Enables the built-in web UI server and the required HTTP routes. This eliminates the need to maintain the Consul web UI files separately from the binary.</li>
+<li>encrypt: Specifies the secret key to use for encryption of Consul network traffic. This key must be 16-bytes that are Base64-encoded.</li>
+<li>key_file</li>
+<li>cert_file</li>
+<li>ca_file</li>
+<li>retry-join: allows retrying a join if the first attempt fails.
+<code>
+consul agent -retry-join &quot;provider=aws tag_key=... tag_value=...&quot;
+consul agent -retry-join &quot;provider=gce project_name=... tag_value=...&quot;
+consul agent -retry-join &quot;provider=aliyun region=... tag_key=consul tag_value=... access_key_id=... access_key_secret=...&quot;
+</code></li>
+</ul>
+
+<h3 id="create-the-necessary-directory-and-system-structure">Create the Necessary Directory and System Structure</h3>
+
+<ul>
+<li><p>Create the user now by typing:</p>
+
+<pre><code>adduser consul
+</code></pre></li>
+
+<li><p>create the configuration hierarchy</p>
+
+<pre><code>mkdir -p /etc/consul.d/{bootstrap,server,client}
+</code></pre></li>
+
+<li><p>create a location where consul can store persistent data</p>
+
+<pre><code>mkdir ./data
+chown consul:consul ./data
+</code></pre></li>
+</ul>
+
+<h3 id="setting-up-consul-server-cluster">Setting up consul server cluster</h3>
+
+<ul>
+<li>server1 + bootstrap + ui
+```
+consul keygen
+X4SYOinf2pTAcAHRhpj7dA==</li>
+</ul>
+
+<p>consul agent -server -client=0.0.0.0 -bootstrap-expect=3 -datacenter=gcp-asia-east -node=node1 -data-dir=&ldquo;/opt/consul/data&rdquo; -config-dir=&ldquo;./conf&rdquo; -enable-script-checks=true -encrypt=&ldquo;X4SYOinf2pTAcAHRhpj7dA==&rdquo;</p>
+
+<p>or using config file</p>
+
+<p>consul agent -server -config-dir=&ldquo;./conf&rdquo;</p>
+
+<p>#./conf/default.json
+{
+  &ldquo;client&rdquo;: &ldquo;0.0.0.0&rdquo;,
+  &ldquo;ports&rdquo;: {
+      &ldquo;https&rdquo;: 8080
+  }
+  &ldquo;datacenter&rdquo;: &ldquo;gcp-asia-east&rdquo;,
+  &ldquo;data_dir&rdquo;: &ldquo;/opt/consul/data&rdquo;,
+  &ldquo;enable-script-checks&rdquo;: &ldquo;true&rdquo;,
+  &ldquo;log_level&rdquo;: &ldquo;INFO&rdquo;,
+  &ldquo;node_name&rdquo;: &ldquo;mycluster&rdquo;,
+  &ldquo;server&rdquo;: true,
+  &ldquo;encrypt&rdquo;: &ldquo;X4SYOinf2pTAcAHRhpj7dA==&rdquo;,
+  &ldquo;key_file&rdquo;: &ldquo;/etc/pki/tls/private/my.key&rdquo;,
+  &ldquo;cert_file&rdquo;: &ldquo;/etc/pki/tls/certs/my.crt&rdquo;,
+  &ldquo;ca_file&rdquo;: &ldquo;/etc/pki/tls/certs/ca-bundle.crt&rdquo;
+}</p>
+
+<pre><code>
+- in server2 and server 3
+</code></pre>
+
+<p>consul agent -node=node2 -data-dir=&ldquo;/opt/consul/data&rdquo; -config-dir=&ldquo;./conf&rdquo; -enable-script-checks=true -retry-join
+consul agent -node=node3 -data-dir=&ldquo;/opt/consul/data&rdquo; -config-dir=&ldquo;./conf&rdquo; -enable-script-checks=true -retry-join</p>
+
+<pre><code>
+
+## service discovery
+- Defining a Service
+</code></pre>
+
+<p>echo &lsquo;{&ldquo;service&rdquo;: {&ldquo;name&rdquo;: &ldquo;web&rdquo;, &ldquo;tags&rdquo;: [&ldquo;rails&rdquo;], &ldquo;port&rdquo;: 80, &ldquo;interval&rdquo;: &ldquo;10s&rdquo;}}&rsquo; | sudo tee ./conf/web.json</p>
+
+<pre><code>
+- Querying Services
+</code></pre>
+
+<p>dig @127.0.0.1 -p 8600 web.service.consul</p>
+
+<p>;; QUESTION SECTION:
+;web.service.consul.        IN  A</p>
+
+<p>;; ANSWER SECTION:
+web.service.consul. 0   IN  A   172.20.20.11</p>
+
+<p>dig @127.0.0.1 -p 8600 rails.web.service.consul</p>
+
+<p>;; QUESTION SECTION:
+;rails.web.service.consul.      IN  A</p>
+
+<p>;; ANSWER SECTION:
+rails.web.service.consul.   0   IN  A   172.20.20.11</p>
+
+<p>dig @127.0.0.1 -p 8600 web.service.consul SRV</p>
+
+<p>;; QUESTION SECTION:
+;web.service.consul.        IN  SRV</p>
+
+<p>;; ANSWER SECTION:
+web.service.consul. 0   IN  SRV 1 1 80 Armons-MacBook-Air.node.dc1.consul.</p>
+
+<p>;; ADDITIONAL SECTION:
+Armons-MacBook-Air.node.dc1.consul. 0 IN A  172.20.20.11
+```</p>
+
+		</div>
+		
+
+	</article>
+	
+	
+
+	
+</main>
+
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+<div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="//google.com/search">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/" />
+	</form>
+</div>
+	
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/consul/">Consul</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/powershell/">Powershell</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/vscode-sync/">Vscode Sync</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/docker/">Docker Memo(drafting)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/python-timezone-convert/">Python Timezone Convert example code</a></li>
+		</ul>
+	</div>
+</div>
+
+	
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/cloud">Cloud</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/container">Container</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/database">Database</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/devops">Devops</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/linux">Linux</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/network">Network</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/nosql">Nosql</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/python">Python</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/regular-expression">Regular-Expression</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/shell">Shell</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/tools">Tools</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/version-control">Version-Control</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/virtualization">Virtualization</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/webserver">Webserver</a></li>
+		</ul>
+	</div>
+</div>
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/twasa" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+	</div>
+</div>
+
+	
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/apache" title="apache">apache</a>
+		<a class="widget__link widget__link--taglist" href="/tags/automation" title="automation">automation</a>
+		<a class="widget__link widget__link--taglist" href="/tags/aws" title="aws">aws</a>
+		<a class="widget__link widget__link--taglist" href="/tags/cisco" title="cisco">cisco</a>
+		<a class="widget__link widget__link--taglist" href="/tags/command" title="command">command</a>
+		<a class="widget__link widget__link--taglist" href="/tags/commands" title="commands">commands</a>
+		<a class="widget__link widget__link--taglist" href="/tags/development" title="development">development</a>
+		<a class="widget__link widget__link--taglist" href="/tags/devops" title="devops">devops</a>
+		<a class="widget__link widget__link--taglist" href="/tags/docker" title="docker">docker</a>
+		<a class="widget__link widget__link--taglist" href="/tags/logrotation" title="logrotation">logrotation</a>
+		<a class="widget__link widget__link--taglist" href="/tags/mariadb" title="mariadb">mariadb</a>
+		<a class="widget__link widget__link--taglist" href="/tags/microsoft" title="microsoft">microsoft</a>
+		<a class="widget__link widget__link--taglist" href="/tags/mongodb" title="mongodb">mongodb</a>
+		<a class="widget__link widget__link--taglist" href="/tags/mysql" title="mysql">mysql</a>
+		<a class="widget__link widget__link--taglist" href="/tags/nginx" title="nginx">nginx</a>
+		<a class="widget__link widget__link--taglist" href="/tags/powershell" title="powershell">powershell</a>
+		<a class="widget__link widget__link--taglist" href="/tags/selenium" title="selenium">selenium</a>
+		<a class="widget__link widget__link--taglist" href="/tags/tomcat" title="tomcat">tomcat</a>
+		<a class="widget__link widget__link--taglist" href="/tags/virtualenv" title="virtualenv">virtualenv</a>
+	</div>
+</div>
+</aside>
+
+	</div>
+		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="container container-inner">
+				<p class="footer__copyright">&copy; 2018 William&#39;s Blog. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
+			</div>
+		</footer>
+	</div>
+
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
+</script>
+</body>
+</html>

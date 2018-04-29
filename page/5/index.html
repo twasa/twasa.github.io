@@ -35,6 +35,22 @@
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
+				<a href="/post/regexp/" rel="bookmark">Regular Expression</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2017-09-11T11:46:21">September 11, 2017</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			Regula Express  reference :     說明及範例 比對不成立之字串     /a/ 含字母 “a” 的字串，例如 “ab”, “bac”, “cba” “xyz”   /a./ 含字母 “a” 以及其後任一個字元的字串，例如 “ab”, “bac”（若要比對.，請使用 .） “a”, “ba”   /^xy/ 以 “xy” 開始的字串，例如 “xyz”, “xyab”（若要比對 ^，請使用 \^） “axy”, “bxy”   /xy$/ 以 “xy” 結尾的字串，例如 “axy”, “abxy”以 “xy” 結尾的字串，例如 “axy”, “abxy” （若要比對 $，請使用 \$） “xya”, “xyb”   [13579] 包含 “1” 或 “3” 或 “5” 或 “7” 或 “9” 的字串，例如：”a3b”, “1xy” “y2k”   [0-9] 含數字之字串 不含數字之字串   [a-z0-9] 含數字或小寫字母之字串 不含數字及小寫字母之字串   [a-zA-Z0-9] 含數字或字母之字串 不含數字及字母之字串   b[aeiou]t “bat”, “bet”, “bit”, “bot”, “but” “bxt”, “bzt”   [^0-9] 不含數字之字串（若要比對 ^，請使用 \^） 含數字之字串   [^aeiouAEIOU] 不含母音之字串（若要比對 ^，請使用 \^） 含母音之字串   [^\^] 不含 “^” 之字串，例如 “xyz”, “abc” “xy^”, “a^bc”       正規表示式的特定字元 說明 等效的正規表示式     \d 數字 [0-9]   \D 非數字 [^0-9]   \w 數字、字母、底線 [a-zA-Z0-9_]   \W 非 \w [^a-zA-Z0-9_]   \s 空白字元 [ \r\t\n\f]   \S 非空白字元 [^ \r\t\n\f]       正規表示式 說明     /a?
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
 				<a href="/post/find/" rel="bookmark">find</a>
 			</h3>
 			<div class="list__meta meta">
@@ -95,22 +111,6 @@
 		</div>
 	</div>
 </article>
-<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/python-virtualenv/" rel="bookmark">Python Virtualenv</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2017-09-10T17:00:56">September 10, 2017</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			 Virtualenv的好處  可以隔離函數庫需求不同的專案，讓它們不會互相影響。在建立並啟動虛擬環境後，透過 pip 安裝的套件會被放在虛擬環境中，專案就可以擁有一個獨立的環境。 在沒有權限的情況下安裝新套件 不同專案可以使用不同版本的相同套件 套件版本升級時不會影響其他專案  安裝 pip install virtualenv  建立專案資料夾 mkdir myproject cd myproject  初始化 virtualenv 虛擬環境名稱  activate the corresponding environment #linux . 虛擬環境名稱/bin/activate #windows 虛擬環境名稱\scripts\activate  這時候再裝要使用的Python Package pip install XXXX  回到實際環境 deactivate  若因為專案資料夾搬移或更名,請重新locate cd /path/to/your_project_new_dir virtualenv --relocatable your_virtualenv_name  
-		</div>
-	</div>
-</article>
 
 		
 
@@ -140,11 +140,11 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/consul/">Consul</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/powershell/">Powershell</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/vscode-sync/">Vscode Sync</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/docker/">Docker Memo(drafting)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/python-timezone-convert/">Python Timezone Convert example code</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/linux-openssl/">openssl</a></li>
 		</ul>
 	</div>
 </div>

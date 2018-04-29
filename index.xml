@@ -6,10 +6,20 @@
     <description>Recent content on William&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Apr 2018 17:33:21 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 28 Apr 2018 06:24:00 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Consul</title>
+      <link>/post/consul/</link>
+      <pubDate>Sat, 28 Apr 2018 06:24:00 +0800</pubDate>
+      
+      <guid>/post/consul/</guid>
+      <description>Consul Description Consul has multiple components, but as a whole, it is a tool for discovering and configuring services in your infrastructure.
+Features  Service Discovery: Clients of Consul can provide a service, such as api or mysql, and other clients can use Consul to discover providers of a given service. Using either DNS or HTTP, applications can easily find the services they depend upon. Health Checking: Consul clients can provide any number of health checks, either associated with a given service (&amp;ldquo;is the webserver returning 200 OK&amp;rdquo;), or with the local node (&amp;ldquo;is memory utilization below 90%&amp;rdquo;).</description>
+    </item>
     
     <item>
       <title>Powershell</title>

@@ -35,6 +35,22 @@
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
+				<a href="/post/aws-cli/" rel="bookmark">Aws Cli</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2017-09-11T15:52:27">September 11, 2017</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			AWS CLI referneces syntax aws [options] \&lt;command&gt; \&lt;subcommand&gt; [\&lt;subcommand&gt; ...] [parameters] options: --region --profile --filters &quot;Name=instance-state-name,Values=running&quot; --query  create or modify profile aws configure --profile PROFILE aws configure set default.s3.signature_version s3v4 aws configure set profile.your_profile_name.s3.signature_version s3v4  create key pairs aws --profile PROFILE --region REGION ec2 create-key-pair --key-name KEYNAME  create IAM users and permission aws --profile PROFILE iam create-user --user-name USERNAME aws --profile PROFILE iam create-access-key --user-name USERNAME aws --profile PROFILE iam put-user-policy --user-name USERNAME --policy-name POLICYNAME --policy-document file://POLICYDOCUMENT aws --profile PROFILE iam get-server-certificate --server-certificate-name CERTNAME XXXX  SES, SNS - aws --profile PROFILE --region REGION ses verify-email-identity --email-address YOUR@MAIL.
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
 				<a href="/post/apache-http-advanced/" rel="bookmark">Apache Http Advanced</a>
 			</h3>
 			<div class="list__meta meta">
@@ -97,28 +113,6 @@
 		</div>
 	</div>
 </article>
-<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/python-package/" rel="bookmark">Python Package</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2017-09-11T13:21:51">September 11, 2017</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			description  套件 (package) 是 Python 用資料夾組織模組 (module) 檔案的方式  例如我們寫了三個模組 module01.py module02.py module03.py
-三個模組檔案放在 package01資料夾中，package01就是套件名稱 這時package01資料夾需要有額外一個 init.py init.py 可以不需要有任何內容 因為需要這個檔案，直譯器才能辨識package01為套件
-另外寫一個 main.py 來利用 package01 中 module01.py 所定義的class(類別)或function(函數) 注意main.py 必須放在與 package 相同路徑下檔案結構如下
-c:\packagedemo\package\module01.py c:\packagedemo\package\module03.py c:\packagedemo\package\module04.py c:\packagedemo\main.py  在main.py引入套件的部份，XXX可以是module01裡面的class(類別)或function(函數) from package.module01 import XXX
-那麼 init.py 除了讓直譯器識別資料夾為套件之外有什麼作用呢？這裡，我們可以在 init.py 裡提供一個 all 變數，如下 all = [&ldquo;module01&rdquo;, &ldquo;module02&rdquo;, &ldquo;module03&rdquo;];
-當 all 被定義後，寫 from package import *
-才能保證 module01 、 module02 及 module03 三個模組都被引入。
-		</div>
-	</div>
-</article>
 
 		
 
@@ -148,11 +142,11 @@ c:\packagedemo\package\module01.py c:\packagedemo\package\module03.py c:\package
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/consul/">Consul</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/powershell/">Powershell</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/vscode-sync/">Vscode Sync</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/docker/">Docker Memo(drafting)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/python-timezone-convert/">Python Timezone Convert example code</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/linux-openssl/">openssl</a></li>
 		</ul>
 	</div>
 </div>
