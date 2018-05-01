@@ -160,82 +160,86 @@ chown consul:consul ./data
 <h3 id="setting-up-consul-server-cluster">Setting up consul server cluster</h3>
 
 <ul>
-<li>server1 + bootstrap + ui
-```
-consul keygen
-X4SYOinf2pTAcAHRhpj7dA==</li>
+<li>server1 + bootstrap + ui</li>
 </ul>
 
-<p>consul agent -server -client=0.0.0.0 -bootstrap-expect=3 -datacenter=gcp-asia-east -node=node1 -data-dir=&ldquo;/opt/consul/data&rdquo; -config-dir=&ldquo;./conf&rdquo; -enable-script-checks=true -encrypt=&ldquo;X4SYOinf2pTAcAHRhpj7dA==&rdquo;</p>
+<pre><code>consul keygen
+X4SYOinf2pTAcAHRhpj7dA==
 
-<p>or using config file</p>
+consul agent -server -client=0.0.0.0 -bootstrap-expect=3 -datacenter=gcp-asia-east -node=node1 -data-dir=&quot;/opt/consul/data&quot; -config-dir=&quot;./conf&quot; -enable-script-checks=true -encrypt=&quot;X4SYOinf2pTAcAHRhpj7dA==&quot;
 
-<p>consul agent -server -config-dir=&ldquo;./conf&rdquo;</p>
+or using config file
 
-<p>#./conf/default.json
+consul agent -server -config-dir=&quot;./conf&quot;
+
+#./conf/default.json
 {
-  &ldquo;client&rdquo;: &ldquo;0.0.0.0&rdquo;,
-  &ldquo;ports&rdquo;: {
-      &ldquo;https&rdquo;: 8080
+  &quot;client&quot;: &quot;0.0.0.0&quot;,
+  &quot;ports&quot;: {
+      &quot;https&quot;: 8080
   }
-  &ldquo;datacenter&rdquo;: &ldquo;gcp-asia-east&rdquo;,
-  &ldquo;data_dir&rdquo;: &ldquo;/opt/consul/data&rdquo;,
-  &ldquo;enable-script-checks&rdquo;: &ldquo;true&rdquo;,
-  &ldquo;log_level&rdquo;: &ldquo;INFO&rdquo;,
-  &ldquo;node_name&rdquo;: &ldquo;mycluster&rdquo;,
-  &ldquo;server&rdquo;: true,
-  &ldquo;encrypt&rdquo;: &ldquo;X4SYOinf2pTAcAHRhpj7dA==&rdquo;,
-  &ldquo;key_file&rdquo;: &ldquo;/etc/pki/tls/private/my.key&rdquo;,
-  &ldquo;cert_file&rdquo;: &ldquo;/etc/pki/tls/certs/my.crt&rdquo;,
-  &ldquo;ca_file&rdquo;: &ldquo;/etc/pki/tls/certs/ca-bundle.crt&rdquo;
-}</p>
-
-<pre><code>
-- in server2 and server 3
+  &quot;datacenter&quot;: &quot;gcp-asia-east&quot;,
+  &quot;data_dir&quot;: &quot;/opt/consul/data&quot;,
+  &quot;enable-script-checks&quot;: &quot;true&quot;,
+  &quot;log_level&quot;: &quot;INFO&quot;,
+  &quot;node_name&quot;: &quot;mycluster&quot;,
+  &quot;server&quot;: true,
+  &quot;encrypt&quot;: &quot;X4SYOinf2pTAcAHRhpj7dA==&quot;,
+  &quot;key_file&quot;: &quot;/etc/pki/tls/private/my.key&quot;,
+  &quot;cert_file&quot;: &quot;/etc/pki/tls/certs/my.crt&quot;,
+  &quot;ca_file&quot;: &quot;/etc/pki/tls/certs/ca-bundle.crt&quot;
+}
 </code></pre>
 
-<p>consul agent -node=node2 -data-dir=&ldquo;/opt/consul/data&rdquo; -config-dir=&ldquo;./conf&rdquo; -enable-script-checks=true -retry-join
-consul agent -node=node3 -data-dir=&ldquo;/opt/consul/data&rdquo; -config-dir=&ldquo;./conf&rdquo; -enable-script-checks=true -retry-join</p>
+<ul>
+<li>in server2 and server 3
+<code>
+consul agent -node=node2 -data-dir=&quot;/opt/consul/data&quot; -config-dir=&quot;./conf&quot; -enable-script-checks=true -retry-join 
+consul agent -node=node3 -data-dir=&quot;/opt/consul/data&quot; -config-dir=&quot;./conf&quot; -enable-script-checks=true -retry-join 
+</code></li>
+</ul>
 
-<pre><code>
+<h2 id="service-discovery">service discovery</h2>
 
-## service discovery
-- Defining a Service
+<ul>
+<li>Defining a Service</li>
+</ul>
+
+<pre><code>echo '{&quot;service&quot;: {&quot;name&quot;: &quot;web&quot;, &quot;tags&quot;: [&quot;rails&quot;], &quot;port&quot;: 80, &quot;interval&quot;: &quot;10s&quot;}}' | sudo tee ./conf/web.json
+
 </code></pre>
 
-<p>echo &lsquo;{&ldquo;service&rdquo;: {&ldquo;name&rdquo;: &ldquo;web&rdquo;, &ldquo;tags&rdquo;: [&ldquo;rails&rdquo;], &ldquo;port&rdquo;: 80, &ldquo;interval&rdquo;: &ldquo;10s&rdquo;}}&rsquo; | sudo tee ./conf/web.json</p>
+<ul>
+<li>Querying Services</li>
+</ul>
 
-<pre><code>
-- Querying Services
-</code></pre>
+<pre><code>dig @127.0.0.1 -p 8600 web.service.consul
 
-<p>dig @127.0.0.1 -p 8600 web.service.consul</p>
+;; QUESTION SECTION:
+;web.service.consul.        IN  A
 
-<p>;; QUESTION SECTION:
-;web.service.consul.        IN  A</p>
+;; ANSWER SECTION:
+web.service.consul. 0   IN  A   172.20.20.11
 
-<p>;; ANSWER SECTION:
-web.service.consul. 0   IN  A   172.20.20.11</p>
+dig @127.0.0.1 -p 8600 rails.web.service.consul
 
-<p>dig @127.0.0.1 -p 8600 rails.web.service.consul</p>
+;; QUESTION SECTION:
+;rails.web.service.consul.      IN  A
 
-<p>;; QUESTION SECTION:
-;rails.web.service.consul.      IN  A</p>
+;; ANSWER SECTION:
+rails.web.service.consul.   0   IN  A   172.20.20.11
 
-<p>;; ANSWER SECTION:
-rails.web.service.consul.   0   IN  A   172.20.20.11</p>
+dig @127.0.0.1 -p 8600 web.service.consul SRV
 
-<p>dig @127.0.0.1 -p 8600 web.service.consul SRV</p>
+;; QUESTION SECTION:
+;web.service.consul.        IN  SRV
 
-<p>;; QUESTION SECTION:
-;web.service.consul.        IN  SRV</p>
+;; ANSWER SECTION:
+web.service.consul. 0   IN  SRV 1 1 80 Armons-MacBook-Air.node.dc1.consul.
 
-<p>;; ANSWER SECTION:
-web.service.consul. 0   IN  SRV 1 1 80 Armons-MacBook-Air.node.dc1.consul.</p>
-
-<p>;; ADDITIONAL SECTION:
+;; ADDITIONAL SECTION:
 Armons-MacBook-Air.node.dc1.consul. 0 IN A  172.20.20.11
-```</p>
+</code></pre>
 
 		</div>
 		
