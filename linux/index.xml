@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on William&#39;s blog</title>
-    <link>https://blog.twasa.cf/categories/linux/</link>
-    <description>Recent content in Linux on William&#39;s blog</description>
+    <title>Linuxes on William&#39;s blog</title>
+    <link>https://blog.twasa.cf/linux/</link>
+    <description>Recent content in Linuxes on William&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Mon, 11 Sep 2017 17:12:29 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.twasa.cf/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.twasa.cf/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -42,6 +42,15 @@ example modify CentOS linux hostname sed -i &#39;s/HOSTNAME\=.*/HOSTNAME\=NEWHOS
     </item>
     
     <item>
+      <title>Regular Expression</title>
+      <link>https://blog.twasa.cf/linux/regexp/</link>
+      <pubDate>Mon, 11 Sep 2017 11:46:21 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/linux/regexp/</guid>
+      <description>Regula Express  reference :     說明及範例 比對不成立之字串     /a/ 含字母 “a” 的字串，例如 “ab”, “bac”, “cba” “xyz”   /a./ 含字母 “a” 以及其後任一個字元的字串，例如 “ab”, “bac”（若要比對.，請使用 .） “a”, “ba”   /^xy/ 以 “xy” 開始的字串，例如 “xyz”, “xyab”（若要比對 ^，請使用 \^） “axy”, “bxy”   /xy$/ 以 “xy” 結尾的字串，例如 “axy”, “abxy”以 “xy” 結尾的字串，例如 “axy”, “abxy” （若要比對 $，請使用 \$） “xya”, “xyb”   [13579] 包含 “1” 或 “3” 或 “5” 或 “7” 或 “9” 的字串，例如：”a3b”, “1xy” “y2k”   [0-9] 含數字之字串 不含數字之字串   [a-z0-9] 含數字或小寫字母之字串 不含數字及小寫字母之字串   [a-zA-Z0-9] 含數字或字母之字串 不含數字及字母之字串   b[aeiou]t “bat”, “bet”, “bit”, “bot”, “but” “bxt”, “bzt”   [^0-9] 不含數字之字串（若要比對 ^，請使用 \^） 含數字之字串   [^aeiouAEIOU] 不含母音之字串（若要比對 ^，請使用 \^） 含母音之字串   [^\^] 不含 “^” 之字串，例如 “xyz”, “abc” “xy^”, “a^bc”       正規表示式的特定字元 說明 等效的正規表示式     \d 數字 [0-9]   \D 非數字 [^0-9]   \w 數字、字母、底線 [a-zA-Z0-9_]   \W 非 \w [^a-zA-Z0-9_]   \s 空白字元 [ \r\t\n\f]   \S 非空白字元 [^ \r\t\n\f]       正規表示式 說明     /a?</description>
+    </item>
+    
+    <item>
       <title>find</title>
       <link>https://blog.twasa.cf/linux/find/</link>
       <pubDate>Mon, 11 Sep 2017 11:43:41 +0800</pubDate>
@@ -66,15 +75,6 @@ example modify CentOS linux hostname sed -i &#39;s/HOSTNAME\=.*/HOSTNAME\=NEWHOS
       
       <guid>https://blog.twasa.cf/linux/grep/</guid>
       <description>description  prints lines that contain a match for a pattern reference  https://www.gnu.org/software/grep/manual/grep.html   syntax grep [OPTIONS] PATTERN [FILE...] grep multiple patterns OR grep &#39;pattern1\|pattern2\|pattern3&#39; AND grep -E &#39;pattern1.*pattern2.*pattern3&#39; filename -v, --invert-match Invert the sense of matching, to select non-matching lines. (-v is specified by POSIX .) grep -v &#39;unwanted_word&#39; -i, --ignore-case Ignore case distinctions in both the PATTERN and the input files. (-i is specified by POSIX .</description>
-    </item>
-    
-    <item>
-      <title>CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP</title>
-      <link>https://blog.twasa.cf/post/lnmp/</link>
-      <pubDate>Mon, 11 Sep 2017 10:14:51 +0800</pubDate>
-      
-      <guid>https://blog.twasa.cf/post/lnmp/</guid>
-      <description>Build a Linux, Nginx, MariaDB, PHP environment in CentOS 7 install rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm yum install nginx php php-fpm mariadb mariadb-server  firewalld for http, https access only firewall-cmd --zone=public --list-all firewall-cmd --permanent --zone=public --add-service=http firewall-cmd --permanent --zone=public --add-service=https firewall-cmd --reload firewall-cmd --zone=public --list-all  Nginx config basic config, edit /etc/nginx/nginx.conf user nginx; worker_processes 2; #by your cpu error_log /var/log/nginx/error.log warn; pid /var/run/nginx.pid; events { worker_connections 1024; } http { include /etc/nginx/mime.</description>
     </item>
     
   </channel>

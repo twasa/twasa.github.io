@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Development on William&#39;s blog</title>
-    <link>https://blog.twasa.cf/tags/development/</link>
-    <description>Recent content in Development on William&#39;s blog</description>
+    <title>Programings on William&#39;s blog</title>
+    <link>https://blog.twasa.cf/programing/</link>
+    <description>Recent content in Programings on William&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 19 Nov 2017 00:16:07 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.twasa.cf/tags/development/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.twasa.cf/programing/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -27,27 +27,6 @@
       
       <guid>https://blog.twasa.cf/programing/python/python-timezone-convert/</guid>
       <description>Requirement  Python python-dateutil  example code from datetime import datetime from dateutil import tz # METHOD Auto-detect zones: #from_zone = tz.tzutc() #to_zone = tz.tzlocal() from_zone = raw_input(&amp;quot;From Timezone: &amp;quot;) to_zone = raw_input(&amp;quot;To Timezone: &amp;quot;) from_zone = tz.gettz(from_zone) to_zone = tz.gettz(to_zone) def datainput(): # utc = datetime.utcnow() year = raw_input(&amp;quot;Year (A.D.): &amp;quot;) month = raw_input(&amp;quot;Month: &amp;quot;) day = raw_input(&amp;quot;day: &amp;quot;) hour = raw_input(&amp;quot;hour: &amp;quot;) minute = raw_input(&amp;quot;minute: &amp;quot;) datetimestring = year + &#39;-&#39; + month + &#39;-&#39; + day + &#39; &#39; + hour + &#39;:&#39; + minute + &#39;:00&#39; return datetimestring dtstr = datainput() utc = datetime.</description>
-    </item>
-    
-    <item>
-      <title>Jupyterhub</title>
-      <link>https://blog.twasa.cf/post/jupyterhub/</link>
-      <pubDate>Mon, 11 Sep 2017 17:05:01 +0800</pubDate>
-      
-      <guid>https://blog.twasa.cf/post/jupyterhub/</guid>
-      <description>JupyterHub on CentOS 7 requirement  a Linux/Unix based system Python 3.4 or greater wget pip npm  install  yum search python3 yum -y install python3X yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel npm npm install -g configurable-http-proxy wget https://bootstrap.pypa.io/get-pip.py python3.X get-pip.py yum -y install python-devel python3X-devel pip3 install jupyterhub ipython[notebook]  startup  jupyterhub &amp;ndash;ip 0.0.0.0 &amp;ndash;port 8443 &amp;ndash;ssl-key my_ssl.key &amp;ndash;ssl-cert my_ssl.</description>
-    </item>
-    
-    <item>
-      <title>Git</title>
-      <link>https://blog.twasa.cf/post/git/</link>
-      <pubDate>Mon, 11 Sep 2017 16:46:58 +0800</pubDate>
-      
-      <guid>https://blog.twasa.cf/post/git/</guid>
-      <description>Git的基本使用 Config  在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：
-git config --global user.name &amp;quot;你的姓名&amp;quot; git config --global user.email &amp;quot;你的@email位址&amp;quot;  加上 &amp;ndash;global 表示是全域的設定。你可以使用 git config &amp;ndash;list 這個指令來看你的 Git 設定內容
- Git 也有提供 alias 的功能，例如你可以將 git status 縮寫為 git st，git checkout 縮寫為 git co 等，你只要這樣設定，這樣一來只要打 git st 就等同於打 git status
-git config --global alias.st status git config --global alias.ck checkout git config --global alias.rst reset HEAD  忽略空白</description>
     </item>
     
     <item>
@@ -101,16 +80,6 @@ c:\packagedemo\package\module01.py c:\packagedemo\package\module03.py c:\package
       
       <guid>https://blog.twasa.cf/programing/python/python-html-entity/</guid>
       <description>–– coding: utf-8 – #decode import HTMLParser h = HTMLParser.HTMLParser() print h.unescape(&#39;&amp;amp;#35377;&amp;amp;#21151;&amp;amp;#33995;&#39;) 許功蓋 #encode a = u&#39;許功蓋&#39; a.encode(&#39;ascii&#39;, &#39;xmlcharrefreplace&#39;) &#39;&amp;amp;#35377;&amp;amp;#21151;&amp;amp;#33995;&#39;  </description>
-    </item>
-    
-    <item>
-      <title>Flask Quick Start Guide</title>
-      <link>https://blog.twasa.cf/post/flask-quick-start-guide/</link>
-      <pubDate>Sun, 10 Sep 2017 15:47:02 +0800</pubDate>
-      
-      <guid>https://blog.twasa.cf/post/flask-quick-start-guide/</guid>
-      <description>#Flask Quickstart
-Requirements  Python Pip virtualenv Flask : a web development framework Werkzeug：a toolkit for WSGI Jinja2：renders templates  virtualenv：multiple side-by-side installations of Python  安裝：pip install virtualenv 基本使用方式：  ### 先建立專案資料夾 mkdir myproject cd myproject ### 初始化 virtualenv env ### activate the corresponding environment . venv/bin/activate or venv\scripts\activate ### 這時候再裝Flask pip install Flask ### 回到實際環境 deactivate ### 若因為目錄搬移或更名 需重新locate cd /path/to/your_project_new_dir virtualenv --relocatable your_virtualenv_name  建立第一個app(記得啟動venv), save it as hello.</description>
     </item>
     
   </channel>
