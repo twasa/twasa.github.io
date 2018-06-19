@@ -1,50 +1,954 @@
 <!DOCTYPE html>
-<html lang="en-us">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP</title>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.39" />
+    <meta name="description" content="William&#39;s blog">
+<meta name="author" content="Mathieu Cornic">
 
-<meta name="generator" content="Hugo 0.39" />
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <title>CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP :: William&#39;s blog</title>
+    
+    
+    <link href="/css/nucleus.css?1529428069" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1529428069" rel="stylesheet">
+    <link href="/css/hybrid.css?1529428069" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1529428069" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1529428069" rel="stylesheet">
+    <link href="/css/auto-complete.css?1529428069" rel="stylesheet">
+    <link href="/css/theme.css?1529428069" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1529428069" rel="stylesheet">
+    
 
-<link rel="dns-prefetch" href="//fonts.googleapis.com" />
-<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <script src="/js/jquery-2.x.min.js?1529428069"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/post/lnmp/">
+    <nav id="sidebar" class="showVisitedLinks">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
-<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
-<script type="text/javascript" src="/js/scripts.js"></script>
-<link rel="shortcut icon" href="/favicon.ico">
 
-</head>
-<body class="body body-right-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
-	<div class="container container-outer">
-		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
-			<div class="container container-inner clearfix">
-				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
-					<a class="logo__link" href="/" title="William&#39;s Blog" rel="home">
-						<h1 class="logo__title">William&#39;s Blog</h1>
-						
-					</a>
-				</div>
-			</div>
-			<hr class="divider">
-		</header>
-		<div class="wrapper clearfix">
 
-<main class="main-content content" role="main" itemprop="mainContentOfPage">
-	<article class="post">
-		<header class="post__header clearfix">
-			<h1 class="post__title">CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP</h1>
-			<p class="post__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="post__meta-date" datetime="2017-09-11T10:14:51">September 11, 2017</time>
-				<span class="post__meta-categories meta-categories">
-					<svg class="icon icon-category" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-					<a class="meta-categories__link" href="/categories/linux" rel="category">Linux</a>, <a class="meta-categories__link" href="/categories/webserver" rel="category">Webserver</a></span>
-			</p>
-		</header>
-		<div class="post__content clearfix">
-			
+  <div id="header-wrapper">
+    <div id="header">
+      
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1529428069"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1529428069"></script>
+<script type="text/javascript">
+    
+        var baseurl = '\/';
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1529428069"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/post/" title="Posts" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/post/">
+          Posts
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/consul/" title="Consul" class="dd-item ">
+        <a href="/post/consul/">
+        Consul
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/powershell/" title="Powershell" class="dd-item ">
+        <a href="/post/powershell/">
+        Powershell
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/docker/" title="Docker Memo(drafting)" class="dd-item ">
+        <a href="/post/docker/">
+        Docker Memo(drafting)
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/jupyterhub/" title="Jupyterhub" class="dd-item ">
+        <a href="/post/jupyterhub/">
+        Jupyterhub
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/git/" title="Git" class="dd-item ">
+        <a href="/post/git/">
+        Git
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/aws-cli/" title="Aws Cli" class="dd-item ">
+        <a href="/post/aws-cli/">
+        Aws Cli
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/apache-http-advanced/" title="Apache Http Advanced" class="dd-item ">
+        <a href="/post/apache-http-advanced/">
+        Apache Http Advanced
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/cisco-ios-netwrok-cmmmands/" title="Cisco Ios Netwrok Cmmmands" class="dd-item ">
+        <a href="/post/cisco-ios-netwrok-cmmmands/">
+        Cisco Ios Netwrok Cmmmands
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/apache-tomcat/" title="Apache Tomcat" class="dd-item ">
+        <a href="/post/apache-tomcat/">
+        Apache Tomcat
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/lnmp/" title="CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP" class="dd-item active">
+        <a href="/post/lnmp/">
+        CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/flask-quick-start-guide/" title="Flask Quick Start Guide" class="dd-item ">
+        <a href="/post/flask-quick-start-guide/">
+        Flask Quick Start Guide
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/hugo-how-to/" title="Hugo A Fast and Flexible Website Generator" class="dd-item ">
+        <a href="/post/hugo-how-to/">
+        Hugo A Fast and Flexible Website Generator
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/mdadm-rescue/" title="" class="dd-item ">
+        <a href="/post/mdadm-rescue/">
+        
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/programing/" title="Programings" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/programing/">
+          Programings
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/tools/vscode-sync/" title="Vscode Sync" class="dd-item ">
+        <a href="/programing/tools/vscode-sync/">
+        Vscode Sync
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-timezone-convert/" title="Python Timezone Convert example code" class="dd-item ">
+        <a href="/programing/python/python-timezone-convert/">
+        Python Timezone Convert example code
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-web-automation-test/" title="Python Web Automation Test" class="dd-item ">
+        <a href="/programing/python/python-web-automation-test/">
+        Python Web Automation Test
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-soap-client-suds/" title="A Python SOAP client sample code" class="dd-item ">
+        <a href="/programing/python/python-soap-client-suds/">
+        A Python SOAP client sample code
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-package/" title="Python Package" class="dd-item ">
+        <a href="/programing/python/python-package/">
+        Python Package
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-virtualenv/" title="Python Virtualenv" class="dd-item ">
+        <a href="/programing/python/python-virtualenv/">
+        Python Virtualenv
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-html-entity/" title="Python HTML Entity decode and encode" class="dd-item ">
+        <a href="/programing/python/python-html-entity/">
+        Python HTML Entity decode and encode
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/linux/" title="Linuxes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/linux/">
+          Linuxes
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/openssl/" title="openssl" class="dd-item ">
+        <a href="/linux/openssl/">
+        openssl
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/logrotation/" title="Linux Logrotation" class="dd-item ">
+        <a href="/linux/logrotation/">
+        Linux Logrotation
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/sed/" title="sed" class="dd-item ">
+        <a href="/linux/sed/">
+        sed
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/regexp/" title="Regular Expression" class="dd-item ">
+        <a href="/linux/regexp/">
+        Regular Expression
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/find/" title="find" class="dd-item ">
+        <a href="/linux/find/">
+        find
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/xargs/" title="xargs" class="dd-item ">
+        <a href="/linux/xargs/">
+        xargs
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/grep/" title="Grep" class="dd-item ">
+        <a href="/linux/grep/">
+        Grep
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/db/" title="DBs" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/db/">
+          DBs
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/db/mongodb/" title="Mongodb basic" class="dd-item ">
+        <a href="/db/mongodb/">
+        Mongodb basic
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/db/my-db/" title="MySQL and MariaDB memo" class="dd-item ">
+        <a href="/db/my-db/">
+        MySQL and MariaDB memo
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/devops/" title="DevOps" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/devops/">
+          DevOps
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/ansible/" title="Ansible" class="dd-item ">
+        <a href="/devops/ansible/">
+        Ansible
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/twasa"><i class='fa fa-fw fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://blog.twasa.cf/showcase"><i class='fa fa-fw fa-camera'></i> Showcases</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://gohugo.io/"><i class='fa fa-fw fa-bookmark'></i> Hugo Documentation</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+       
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fa fa-fw fa-history"></i> Clear History</a></li>         
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fa fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://blog.twasa.cfpost/LNMP.md" target="blank">
+                      <i class="fa fa-code-fork"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>About</a> > <a href='/post/'>Posts</a> > CentOS7 Linux+Nginx+MariaDB+PHP
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li><a href="#build-a-linux-nginx-mariadb-php-environment-in-centos-7">Build a Linux, Nginx, MariaDB, PHP environment in CentOS 7</a>
+<ul>
+<li><a href="#install">install</a></li>
+<li><a href="#firewalld-for-http-https-access-only">firewalld for http, https access only</a></li>
+<li><a href="#nginx-config">Nginx config</a>
+<ul>
+<li><a href="#basic-config-edit-etc-nginx-nginx-conf">basic config, edit /etc/nginx/nginx.conf</a></li>
+<li><a href="#config-for-pass-the-php-scripts-to-fastcgi-server-php-fpm-using-file-socket-in-etc-nginx-conf-d-default-conf">config for pass the PHP scripts to FastCGI server php-fpm using file socket in /etc/nginx/conf.d/default.conf</a></li>
+</ul></li>
+<li><a href="#php-config-in-etc-php-ini">PHP config in /etc/php.ini</a></li>
+<li><a href="#php-fpm-config-in-etc-php-fpm-d-www-conf">PHP-FPM config in /etc/php-fpm.d/www.conf</a></li>
+<li><a href="#mariadb-config">MariaDB config</a></li>
+<li><a href="#verify">Verify</a>
+<ul>
+<li><a href="#create-usr-share-nginx-html-info-php">create /usr/share/nginx/html/info.php</a></li>
+</ul></li>
+<li><a href="#web-permission-for-nginx">web permission for nginx</a></li>
+<li><a href="#selinux">selinux</a>
+<ul>
+<li><a href="#visit-http-伺服器ip-or-fqdn-info-php-to-verify">visit http://伺服器IP_or_FQDN/info.php to Verify</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP</h1>
+          
+
+        
+
+
+
 
 <h1 id="build-a-linux-nginx-mariadb-php-environment-in-centos-7">Build a Linux, Nginx, MariaDB, PHP environment in CentOS 7</h1>
 
@@ -168,122 +1072,644 @@ phpinfo();
 
 <h3 id="visit-http-伺服器ip-or-fqdn-info-php-to-verify">visit http://伺服器IP_or_FQDN/info.php to Verify</h3>
 
-		</div>
-		
-<div class="post__tags tags clearfix">
-	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
-	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link" href="/tags/nginx/" rel="tag">Nginx</a></li>
-	</ul>
-</div>
 
-	</article>
+<footer class=" footline" >
 	
-	
+</footer>
 
-	
-</main>
 
-<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
-	
-<div class="widget-search widget">
-	<form class="widget-search__form" role="search" method="get" action="//google.com/search">
-		<label>
-			<span class="screen-reader-text">Search for:</span>
-			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
-		</label>
-		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="/" />
-	</form>
-</div>
-	
-<div class="widget-recent widget">
-	<h4 class="widget__title">Recent Posts</h4>
-	<div class="widget__content">
-		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/post/consul/">Consul</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/powershell/">Powershell</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/vscode-sync/">Vscode Sync</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/docker/">Docker Memo(drafting)</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/python-timezone-convert/">Python Timezone Convert example code</a></li>
-		</ul>
-	</div>
-</div>
+        
+        </div> 
+        
 
-	
-<div class="widget-categories widget">
-	<h4 class="widget__title">Categories</h4>
-	<div class="widget__content">
-		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/categories/cloud">Cloud</a></li>
-			<li class="widget__item"><a class="widget__link" href="/categories/container">Container</a></li>
-			<li class="widget__item"><a class="widget__link" href="/categories/database">Database</a></li>
-			<li class="widget__item"><a class="widget__link" href="/categories/devops">Devops</a></li>
-			<li class="widget__item"><a class="widget__link" href="/categories/linux">Linux</a></li>
-			<li class="widget__item"><a class="widget__link" href="/categories/network">Network</a></li>
-			<li class="widget__item"><a class="widget__link" href="/categories/nosql">Nosql</a></li>
-			<li class="widget__item"><a class="widget__link" href="/categories/python">Python</a></li>
-			<li class="widget__item"><a class="widget__link" href="/categories/regular-expression">Regular-Expression</a></li>
-			<li class="widget__item"><a class="widget__link" href="/categories/shell">Shell</a></li>
-			<li class="widget__item"><a class="widget__link" href="/categories/tools">Tools</a></li>
-			<li class="widget__item"><a class="widget__link" href="/categories/version-control">Version-Control</a></li>
-			<li class="widget__item"><a class="widget__link" href="/categories/virtualization">Virtualization</a></li>
-			<li class="widget__item"><a class="widget__link" href="/categories/webserver">Webserver</a></li>
-		</ul>
-	</div>
-</div>
-	
-<div class="widget-social widget">
-	<h4 class="widget-social__title widget__title">Social</h4>
-	<div class="widget-social__content widget__content">
-		<div class="widget-social__item widget__item">
-			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/twasa" target="_blank">
-				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
-				<span>GitHub</span>
-			</a>
-		</div>
-	</div>
-</div>
+      </div>
 
-	
-<div class="widget-taglist widget">
-	<h4 class="widget__title">Tags</h4>
-	<div class="widget__content">
-		<a class="widget__link widget__link--taglist" href="/tags/apache" title="apache">apache</a>
-		<a class="widget__link widget__link--taglist" href="/tags/automation" title="automation">automation</a>
-		<a class="widget__link widget__link--taglist" href="/tags/aws" title="aws">aws</a>
-		<a class="widget__link widget__link--taglist" href="/tags/cisco" title="cisco">cisco</a>
-		<a class="widget__link widget__link--taglist" href="/tags/command" title="command">command</a>
-		<a class="widget__link widget__link--taglist" href="/tags/commands" title="commands">commands</a>
-		<a class="widget__link widget__link--taglist" href="/tags/development" title="development">development</a>
-		<a class="widget__link widget__link--taglist" href="/tags/devops" title="devops">devops</a>
-		<a class="widget__link widget__link--taglist" href="/tags/docker" title="docker">docker</a>
-		<a class="widget__link widget__link--taglist" href="/tags/logrotation" title="logrotation">logrotation</a>
-		<a class="widget__link widget__link--taglist" href="/tags/mariadb" title="mariadb">mariadb</a>
-		<a class="widget__link widget__link--taglist" href="/tags/microsoft" title="microsoft">microsoft</a>
-		<a class="widget__link widget__link--taglist" href="/tags/mongodb" title="mongodb">mongodb</a>
-		<a class="widget__link widget__link--taglist" href="/tags/mysql" title="mysql">mysql</a>
-		<a class="widget__link widget__link--taglist" href="/tags/nginx" title="nginx">nginx</a>
-		<a class="widget__link widget__link--taglist" href="/tags/powershell" title="powershell">powershell</a>
-		<a class="widget__link widget__link--taglist" href="/tags/selenium" title="selenium">selenium</a>
-		<a class="widget__link widget__link--taglist" href="/tags/tomcat" title="tomcat">tomcat</a>
-		<a class="widget__link widget__link--taglist" href="/tags/virtualenv" title="virtualenv">virtualenv</a>
-	</div>
-</div>
-</aside>
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
 
-	</div>
-		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
-			<div class="container container-inner">
-				<p class="footer__copyright">&copy; 2018 William&#39;s Blog. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
-			</div>
-		</footer>
-	</div>
+                    
+                    
+                        
+                    
+                    
 
-<script>
-	var navigation = responsiveNav(".menu", {
-		navClass: "menu--collapse",
-	});
-</script>
-</body>
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/post/apache-tomcat/" title="Apache Tomcat"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/post/flask-quick-start-guide/" title="Flask Quick Start Guide" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1529428069"></script>
+    <script src="/js/perfect-scrollbar.min.js?1529428069"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1529428069"></script>
+    <script src="/js/jquery.sticky.js?1529428069"></script>
+    <script src="/js/featherlight.min.js?1529428069"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1529428069"></script>
+    <script src="/js/highlight.pack.js?1529428069"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1529428069"></script>
+    <script src="/js/learn.js?1529428069"></script>
+    <script src="/js/hugo-learn.js?1529428069"></script>
+
+    <link href="/mermaid/mermaid.css?1529428069" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1529428069"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
 </html>
+
