@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>HTTPS certificates for your Synology NAS using acme.sh and cloudflare dns API</title>
+      <link>https://blog.twasa.cf/post/wildcard_ssl_in_synology_nas/</link>
+      <pubDate>Thu, 05 Jul 2018 02:25:04 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/post/wildcard_ssl_in_synology_nas/</guid>
+      <description>How to install and auto update Let&amp;rsquo;s encrypt wildcard certs on Synology NAS requirements  Synology ssh enabled and sudo permission Cloudflare API key  Installation of acme.sh $ sudo -i $ wget https://github.com/Neilpang/acme.sh/archive/master.tar.gz $ tar xvf master.tar.gz $ cd acme.sh-master/ $ ./acme.sh --install --nocron --home /usr/local/share/acme.sh --accountemail &amp;quot;email@example.com&amp;quot;  Configuring DNS For CloudFlare, we will set two environment variables that acme.sh (specifically, the dns_cf script from the dnsapi subdirectory) will read to set the DNS record.</description>
+    </item>
+    
+    <item>
       <title>Consul</title>
       <link>https://blog.twasa.cf/post/consul/</link>
       <pubDate>Sat, 28 Apr 2018 06:24:00 +0800</pubDate>
@@ -247,7 +256,7 @@ JAVA_OPTS=&amp;quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true 
     </item>
     
     <item>
-      <title>CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP</title>
+      <title>CentOS 7 Linux&#43;Nginx&#43;MariaDB&#43;PHP</title>
       <link>https://blog.twasa.cf/post/lnmp/</link>
       <pubDate>Mon, 11 Sep 2017 10:14:51 +0800</pubDate>
       

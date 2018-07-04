@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.twasa.cf/post/wildcard_ssl_in_synology_nas/</loc>
+    <lastmod>2018-07-05T02:25:04+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.twasa.cf/post/consul/</loc>
     <lastmod>2018-04-28T06:24:00+08:00</lastmod>
   </url>
@@ -313,7 +318,7 @@
   
   <url>
     <loc>https://blog.twasa.cf/post/</loc>
-    <lastmod>2018-04-28T06:24:00+08:00</lastmod>
+    <lastmod>2018-07-05T02:25:04+08:00</lastmod>
     <priority>0</priority>
   </url>
   

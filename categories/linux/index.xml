@@ -69,7 +69,7 @@ example modify CentOS linux hostname sed -i &#39;s/HOSTNAME\=.*/HOSTNAME\=NEWHOS
     </item>
     
     <item>
-      <title>CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP</title>
+      <title>CentOS 7 Linux&#43;Nginx&#43;MariaDB&#43;PHP</title>
       <link>https://blog.twasa.cf/post/lnmp/</link>
       <pubDate>Mon, 11 Sep 2017 10:14:51 +0800</pubDate>
       
