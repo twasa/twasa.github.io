@@ -12,19 +12,19 @@
     <title>Ansible :: William&#39;s blog</title>
     
     
-    <link href="/css/nucleus.css?1530844152" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1530844152" rel="stylesheet">
-    <link href="/css/hybrid.css?1530844152" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1530844152" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1530844152" rel="stylesheet">
-    <link href="/css/auto-complete.css?1530844152" rel="stylesheet">
-    <link href="/css/theme.css?1530844152" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1530844152" rel="stylesheet">
+    <link href="/css/nucleus.css?1530849062" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1530849062" rel="stylesheet">
+    <link href="/css/hybrid.css?1530849062" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1530849062" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1530849062" rel="stylesheet">
+    <link href="/css/auto-complete.css?1530849062" rel="stylesheet">
+    <link href="/css/theme.css?1530849062" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1530849062" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1530844152" rel="stylesheet">
+      <link href="/css/theme-blue.css?1530849062" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1530844152"></script>
+    <script src="/js/jquery-2.x.min.js?1530849062"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -50,14 +50,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1530844152"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1530844152"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1530849062"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1530849062"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1530844152"></script>
+<script type="text/javascript" src="/js/search.js?1530849062"></script>
 
     
   </div>
@@ -932,6 +932,7 @@
 <li><a href="#requirement">Requirement</a></li>
 <li><a href="#glossary">Glossary</a></li>
 <li><a href="#ssh-connection-issue">SSH connection issue</a></li>
+<li><a href="#speed-up-ansible">Speed Up Ansible</a></li>
 <li><a href="#module">module</a>
 <ul>
 <li><a href="#module-name-and-arguments">module_name and arguments</a></li>
@@ -1013,7 +1014,7 @@
 <li>Roles: 是一種分類 &amp; 重用的概念，透過將 vars, tasks, files, templates, handler … 等等根據不同的目的(例如：web server、db server)，規劃後至於獨立目錄中，後續便可以利用 include 的概念來使用。</li>
 </ul></li>
 <li>Galayx:  是一個搜尋、分享與下載 roles的網站</li>
-<li>facts: 實際上是ansible的setup module功能，用來取得Managed Node的系統變數資訊</li>
+<li>facts: 實際上是ansible的setup module功能，用來取得Managed Node的系統資訊</li>
 </ul>
 
 <h1 id="ssh-connection-issue">SSH connection issue</h1>
@@ -1033,7 +1034,73 @@ ServerAliveInterval 120
 ServerAliveCountMax 5
 ControlMaster auto
 ControlPath ~/.ssh/sockets/%r@%h-%p
-ControlPersist 1200
+ControlPersist 1m
+</code></pre>
+
+<h1 id="speed-up-ansible">Speed Up Ansible</h1>
+
+<ul>
+<li>SSH multiplexing</li>
+</ul>
+
+<pre><code class="language-cfg">[ssh_connection]
+ssh_args = -o ControlMaster=auto -o ControlPersist=60s
+</code></pre>
+
+<ul>
+<li>Pipelining</li>
+</ul>
+
+<p>[ssh_connection]
+pipelining = true</p>
+
+<ul>
+<li>UseDNS</li>
+</ul>
+
+<p>UseDNS is an SSH-server setting (/etc/ssh/sshd_config file) which forces a server to check a client&rsquo;s PTR-record upon connection. It may cause connection delays especially with slow DNS servers on the server side. In modern Linux distribution, this setting is turned off by default, which is correct.</p>
+
+<ul>
+<li>PreferredAuthentications</li>
+</ul>
+
+<p>It is an SSH-client setting which informs server about preferred authentication methods. By default Ansible uses:</p>
+
+<pre><code class="language-cfg">-o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey
+</code></pre>
+
+<p>So if GSSAPIAuthenticationis enabled on the server (at the time of writing this it is turned on in RHEL EC2 AMI) it will be tried as the first option, forcing the client and server to make PTR-record lookups. But in most cases, we want to use only public key auth. We can force Ansible to do so by changing ansible.cfg:</p>
+
+<pre><code class="language-cfg">[ssh_connection]
+ssh_args = -o ControlMaster=auto -o ControlPersist=60s -o PreferredAuthentications=publickey
+</code></pre>
+
+<ul>
+<li>Facts Gathering</li>
+</ul>
+
+<pre><code class="language-cfg">gather_facts: no
+</code></pre>
+
+<ul>
+<li>Fork</li>
+</ul>
+
+<p>The default value is 5, which is quite conservative. You can experiment with this setting depending on your local CPU and network bandwidth resources.</p>
+
+<pre><code class="language-cfg">[defaults]
+forks = 20
+</code></pre>
+
+<ul>
+<li>Poll Interval</li>
+</ul>
+
+<p>When module is executed on remote host, Ansible starts to poll for its result. The lower is interval between poll attempts, the higher is CPU load on Ansible control host. But we want to have CPU available for greater forks number (see above). You can tweak poll interval in  ansible.cfg:
+If you run &ldquo;slow&rdquo; jobs (like backups) on multiple hosts, you may want to increase the interval to 0.05   to use less CPU.</p>
+
+<pre><code class="language-cfg">[defaults]
+internal_poll_interval = 0.001
 </code></pre>
 
 <h1 id="module">module</h1>
@@ -1942,20 +2009,20 @@ ansible_become_pass: 'YOUR_SUDO_PASSWORD'
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1530844152"></script>
-    <script src="/js/perfect-scrollbar.min.js?1530844152"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1530844152"></script>
-    <script src="/js/jquery.sticky.js?1530844152"></script>
-    <script src="/js/featherlight.min.js?1530844152"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1530844152"></script>
-    <script src="/js/highlight.pack.js?1530844152"></script>
+    <script src="/js/clipboard.min.js?1530849062"></script>
+    <script src="/js/perfect-scrollbar.min.js?1530849062"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1530849062"></script>
+    <script src="/js/jquery.sticky.js?1530849062"></script>
+    <script src="/js/featherlight.min.js?1530849062"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1530849062"></script>
+    <script src="/js/highlight.pack.js?1530849062"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1530844152"></script>
-    <script src="/js/learn.js?1530844152"></script>
-    <script src="/js/hugo-learn.js?1530844152"></script>
+    <script src="/js/modernizr.custom.71422.js?1530849062"></script>
+    <script src="/js/learn.js?1530849062"></script>
+    <script src="/js/hugo-learn.js?1530849062"></script>
 
-    <link href="/mermaid/mermaid.css?1530844152" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1530844152"></script>
+    <link href="/mermaid/mermaid.css?1530849062" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1530849062"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
