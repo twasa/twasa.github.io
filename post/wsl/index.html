@@ -12,19 +12,19 @@
     <title>Windows Subsystem for Linux install and configuration :: William&#39;s blog</title>
     
     
-    <link href="/css/nucleus.css?1531317015" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1531317015" rel="stylesheet">
-    <link href="/css/hybrid.css?1531317015" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1531317015" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1531317015" rel="stylesheet">
-    <link href="/css/auto-complete.css?1531317015" rel="stylesheet">
-    <link href="/css/theme.css?1531317015" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1531317015" rel="stylesheet">
+    <link href="/css/nucleus.css?1531318204" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1531318204" rel="stylesheet">
+    <link href="/css/hybrid.css?1531318204" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1531318204" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1531318204" rel="stylesheet">
+    <link href="/css/auto-complete.css?1531318204" rel="stylesheet">
+    <link href="/css/theme.css?1531318204" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1531318204" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1531317015" rel="stylesheet">
+      <link href="/css/theme-blue.css?1531318204" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1531317015"></script>
+    <script src="/js/jquery-2.x.min.js?1531318204"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -50,14 +50,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1531317015"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1531317015"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1531318204"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1531318204"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1531317015"></script>
+<script type="text/javascript" src="/js/search.js?1531318204"></script>
 
     
   </div>
@@ -955,7 +955,6 @@
 <li><a href="#install-powerlinesymbols">install PowerlineSymbols</a></li>
 <li><a href="#subsystem-linux-install-zsh-oh-my-zsh-theme-and-configurations">Subsystem Linux install zsh, oh-my-zsh, theme and configurations</a></li>
 <li><a href="#cmder-configurations">cmder configurations</a></li>
-<li><a href="#result">Result</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -985,7 +984,7 @@
 <ul>
 <li>Windows 10 Anniversary Update build 14316 or later!</li>
 <li>Administrator permission</li>
-<li>cmder(Options, for good color schema and powerline fonts support)</li>
+<li>cmder(Optional, for good color schema and powerline fonts support)</li>
 </ul>
 
 <h2 id="install-subsystem-linux-using-powershell">Install Subsystem Linux using powershell</h2>
@@ -1063,6 +1062,15 @@ source $ZSH/oh-my-zsh.sh
 <h2 id="cmder-configurations">cmder configurations</h2>
 
 <ul>
+<li>Install font on windows</li>
+</ul>
+
+<p><a href="https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/DejaVuSansMono/Regular/complete/DejaVu%20Sans%20Mono%20Nerd%20Font%20Complete.ttf">https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/DejaVuSansMono/Regular/complete/DejaVu%20Sans%20Mono%20Nerd%20Font%20Complete.ttf</a></p>
+
+<ul>
+<li><p>config cmder</p>
+
+<ul>
 <li><p>Main console font: DejaVuSansMono Nerd Font</p></li>
 
 <li><p>Alternative font: DejaVuSansMono Nerd Font</p></li>
@@ -1070,25 +1078,27 @@ source $ZSH/oh-my-zsh.sh
 <li><p>Add a Tsks WSL in Startup &gt; Tasks</p></li>
 
 <li><p>WSL task parameters</p></li>
+</ul></li>
 </ul>
 
-<pre><code class="language-txt">-icon &quot;%USERPROFILE%\AppData\Local\lxss\bash.ico&quot;
+<pre><code class="language-txt">  -icon &quot;%USERPROFILE%\AppData\Local\lxss\bash.ico&quot;
 </code></pre>
 
 <ul>
 <li>WSL task commands</li>
 </ul>
 
-<pre><code class="language-txt">set &quot;PATH=%ConEmuBaseDirShort%\wsl;%PATH%&quot; &amp; %ConEmuBaseDirShort%\conemu-cyg-64.exe --wsl -cur_console:pm -t zsh -l
+<pre><code class="language-txt">  set &quot;PATH=%ConEmuBaseDirShort%\wsl;%PATH%&quot; &amp;   %ConEmuBaseDirShort%\conemu-cyg-64.exe --wsl -cur_console:pm   -t zsh -l
 </code></pre>
 
 <ul>
-<li>Startup Specified named task: {WSL}</li>
+<li><p>Startup Specified named task: {WSL}</p></li>
+
+<li><p>close and re-open cmder</p></li>
+
+<li><p>Result
+<img src="/img/oh-my-zsh.png" alt="Example image" /></p></li>
 </ul>
-
-<h2 id="result">Result</h2>
-
-<p><img src="/img/oh-my-zsh.png" alt="Example image" /></p>
 
 
 <footer class=" footline" >
@@ -1738,20 +1748,20 @@ source $ZSH/oh-my-zsh.sh
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1531317015"></script>
-    <script src="/js/perfect-scrollbar.min.js?1531317015"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1531317015"></script>
-    <script src="/js/jquery.sticky.js?1531317015"></script>
-    <script src="/js/featherlight.min.js?1531317015"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1531317015"></script>
-    <script src="/js/highlight.pack.js?1531317015"></script>
+    <script src="/js/clipboard.min.js?1531318204"></script>
+    <script src="/js/perfect-scrollbar.min.js?1531318204"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1531318204"></script>
+    <script src="/js/jquery.sticky.js?1531318204"></script>
+    <script src="/js/featherlight.min.js?1531318204"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1531318204"></script>
+    <script src="/js/highlight.pack.js?1531318204"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1531317015"></script>
-    <script src="/js/learn.js?1531317015"></script>
-    <script src="/js/hugo-learn.js?1531317015"></script>
+    <script src="/js/modernizr.custom.71422.js?1531318204"></script>
+    <script src="/js/learn.js?1531318204"></script>
+    <script src="/js/hugo-learn.js?1531318204"></script>
 
-    <link href="/mermaid/mermaid.css?1531317015" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1531317015"></script>
+    <link href="/mermaid/mermaid.css?1531318204" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1531318204"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
