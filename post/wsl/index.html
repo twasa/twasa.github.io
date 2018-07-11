@@ -9,22 +9,22 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-    <title>Commands :: William&#39;s blog</title>
+    <title>Windows Subsystem for Linux install and configuration :: William&#39;s blog</title>
     
     
-    <link href="/css/nucleus.css?1531316337" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1531316337" rel="stylesheet">
-    <link href="/css/hybrid.css?1531316337" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1531316337" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1531316337" rel="stylesheet">
-    <link href="/css/auto-complete.css?1531316337" rel="stylesheet">
-    <link href="/css/theme.css?1531316337" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1531316337" rel="stylesheet">
+    <link href="/css/nucleus.css?1531316336" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1531316336" rel="stylesheet">
+    <link href="/css/hybrid.css?1531316336" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1531316336" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1531316336" rel="stylesheet">
+    <link href="/css/auto-complete.css?1531316336" rel="stylesheet">
+    <link href="/css/theme.css?1531316336" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1531316336" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1531316337" rel="stylesheet">
+      <link href="/css/theme-blue.css?1531316336" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1531316337"></script>
+    <script src="/js/jquery-2.x.min.js?1531316336"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/tags/commands/">
+  <body class="" data-url="/post/wsl/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -50,14 +50,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1531316337"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1531316337"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1531316336"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1531316336"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1531316337"></script>
+<script type="text/javascript" src="/js/search.js?1531316336"></script>
 
     
   </div>
@@ -74,8 +74,8 @@
   
     
     <li data-nav-id="/post/" title="Posts" class="dd-item 
+        parent
         
-        active
         
         ">
       <a href="/post/">
@@ -100,7 +100,7 @@
  
   
     
-      <li data-nav-id="/post/wsl/" title="Windows Subsystem for Linux install and configuration" class="dd-item ">
+      <li data-nav-id="/post/wsl/" title="Windows Subsystem for Linux install and configuration" class="dd-item active">
         <a href="/post/wsl/">
         Windows Subsystem for Linux install and configuration
         <i class="fa fa-check read-icon"></i>
@@ -394,7 +394,7 @@
     
     <li data-nav-id="/programing/" title="Programings" class="dd-item 
         
-        active
+        
         
         ">
       <a href="/programing/">
@@ -561,7 +561,7 @@
     
     <li data-nav-id="/linux/" title="Linuxes" class="dd-item 
         
-        active
+        
         
         ">
       <a href="/linux/">
@@ -728,7 +728,7 @@
     
     <li data-nav-id="/db/" title="DBs" class="dd-item 
         
-        active
+        
         
         ">
       <a href="/db/">
@@ -800,7 +800,7 @@
     
     <li data-nav-id="/devops/" title="DevOps" class="dd-item 
         
-        active
+        
         
         ">
       <a href="/devops/">
@@ -900,6 +900,17 @@
               <div>
                 <div id="top-bar">
                 
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://blog.twasa.cfpost/wsl.md" target="blank">
+                      <i class="fa fa-code-fork"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
                 
                 <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
                     <span id="sidebar-toggle-span">
@@ -914,7 +925,19 @@
                     
           
           
-            Commands
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>About</a> > <a href='/post/'>Posts</a> > Windows Subsystem for Linux install and configuration
+          
+         
+          
+         
           
            
                   </span>
@@ -922,7 +945,20 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li><a href="#introduction-windows-subsystem-for-linux-and-beautiful-shell">Introduction Windows Subsystem for Linux and Beautiful shell</a>
+<ul>
+<li><a href="#required">Required</a></li>
+<li><a href="#install-subsystem-linux-using-powershell">Install Subsystem Linux using powershell</a></li>
+<li><a href="#install-fontconfg-on-ubuntu">install fontconfg on Ubuntu</a></li>
+<li><a href="#install-powerlinesymbols">install PowerlineSymbols</a></li>
+<li><a href="#subsystem-linux-install-zsh-oh-my-zsh-theme-and-configurations">Subsystem Linux install zsh, oh-my-zsh, theme and configurations</a></li>
+<li><a href="#cmder-configurations">cmder configurations</a></li>
+<li><a href="#result">Result</a></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -934,7 +970,7 @@
         
         <div id="body-inner">
           
-            <h1>Commands</h1>
+            <h1>Windows Subsystem for Linux install and configuration</h1>
           
 
         
@@ -942,9 +978,123 @@
 
 
 
+<h1 id="introduction-windows-subsystem-for-linux-and-beautiful-shell">Introduction Windows Subsystem for Linux and Beautiful shell</h1>
+
+<h2 id="required">Required</h2>
+
+<ul>
+<li>Windows 10 Anniversary Update build 14316 or later!</li>
+<li>Administrator permission</li>
+<li>cmder(Options, for good color schema and powerline fonts support)</li>
+</ul>
+
+<h2 id="install-subsystem-linux-using-powershell">Install Subsystem Linux using powershell</h2>
+
+<ul>
+<li>Install Subsystem</li>
+</ul>
+
+<pre><code class="language-powershell">powershell -command Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+</code></pre>
+
+<ul>
+<li>Install Ubuntu from Microsoft Store</li>
+</ul>
+
+<h2 id="install-fontconfg-on-ubuntu">install fontconfg on Ubuntu</h2>
+
+<pre><code class="language-shell">apt-get install fontconfig
+</code></pre>
+
+<h2 id="install-powerlinesymbols">install PowerlineSymbols</h2>
+
+<pre><code class="language-shell">wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+mkdir -p  ~/.local/share/fonts/
+mkdir -p ~/.config/fontconfig/conf.d/
+mv PowerlineSymbols.otf ~/.local/share/fonts/
+fc-cache -vf ~/.local/share/fonts/
+mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+</code></pre>
+
+<h2 id="subsystem-linux-install-zsh-oh-my-zsh-theme-and-configurations">Subsystem Linux install zsh, oh-my-zsh, theme and configurations</h2>
+
+<ul>
+<li>install zsh</li>
+</ul>
+
+<pre><code class="language-shell">apt install zsh
+</code></pre>
+
+<ul>
+<li>install oh-my-zsh</li>
+</ul>
+
+<pre><code class="language-shell">sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;
+</code></pre>
+
+<ul>
+<li>install oh-my-zsh theme: Powerlevel9k</li>
+</ul>
+
+<pre><code class="language-shell">git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+</code></pre>
+
+<ul>
+<li>oh-my-zsh configurations in ~/.zshrc</li>
+</ul>
+
+<pre><code class="language-txt">export ZSH=&quot;/home/william/.oh-my-zsh&quot;
+
+ZSH_THEME=&quot;powerlevel9k/powerlevel9k&quot;
+POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable vcs vi_mode)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status)
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+
+
+plugins=(
+  git
+)
+
+source $ZSH/oh-my-zsh.sh
+</code></pre>
+
+<h2 id="cmder-configurations">cmder configurations</h2>
+
+<ul>
+<li><p>Main console font: DejaVuSansMono Nerd Font</p></li>
+
+<li><p>Alternative font: DejaVuSansMono Nerd Font</p></li>
+
+<li><p>Add a Tsks WSL in Startup &gt; Tasks</p></li>
+
+<li><p>WSL task parameters</p></li>
+</ul>
+
+<pre><code class="language-txt">-icon &quot;%USERPROFILE%\AppData\Local\lxss\bash.ico&quot;
+</code></pre>
+
+<ul>
+<li>WSL task commands</li>
+</ul>
+
+<pre><code class="language-txt">set &quot;PATH=%ConEmuBaseDirShort%\wsl;%PATH%&quot; &amp; %ConEmuBaseDirShort%\conemu-cyg-64.exe --wsl -cur_console:pm -t zsh -l
+</code></pre>
+
+<ul>
+<li>Startup Specified named task: {WSL}</li>
+</ul>
+
+<h2 id="result">Result</h2>
+
+<p><img src="/static/oh-my-zsh.png" alt="Example image" /></p>
+
+
 <footer class=" footline" >
 	
 </footer>
+
 
         
         </div> 
@@ -977,8 +1127,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -992,6 +1140,26 @@
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1099,150 +1267,6 @@
                     
             
         
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
                         
             
@@ -1532,6 +1556,134 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1574,8 +1726,10 @@
 
 
         
+            <a class="nav nav-prev" href="/post/" title="Posts"> <i class="fa fa-chevron-left"></i></a>
         
-            <a class="nav nav-next" href="/post/" title="Posts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+            <a class="nav nav-next" href="/post/wildcard_ssl_in_synology_nas/" title="How to install and auto update Let&#39;s encrypt wildcard certs on Synology NAS with cloudflare DNS API" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -1584,20 +1738,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1531316337"></script>
-    <script src="/js/perfect-scrollbar.min.js?1531316337"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1531316337"></script>
-    <script src="/js/jquery.sticky.js?1531316337"></script>
-    <script src="/js/featherlight.min.js?1531316337"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1531316337"></script>
-    <script src="/js/highlight.pack.js?1531316337"></script>
+    <script src="/js/clipboard.min.js?1531316336"></script>
+    <script src="/js/perfect-scrollbar.min.js?1531316336"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1531316336"></script>
+    <script src="/js/jquery.sticky.js?1531316336"></script>
+    <script src="/js/featherlight.min.js?1531316336"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1531316336"></script>
+    <script src="/js/highlight.pack.js?1531316336"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1531316337"></script>
-    <script src="/js/learn.js?1531316337"></script>
-    <script src="/js/hugo-learn.js?1531316337"></script>
+    <script src="/js/modernizr.custom.71422.js?1531316336"></script>
+    <script src="/js/learn.js?1531316336"></script>
+    <script src="/js/hugo-learn.js?1531316336"></script>
 
-    <link href="/mermaid/mermaid.css?1531316337" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1531316337"></script>
+    <link href="/mermaid/mermaid.css?1531316336" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1531316336"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
@@ -1605,3 +1759,4 @@
 
   </body>
 </html>
+
