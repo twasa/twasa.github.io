@@ -12,19 +12,19 @@
     <title>MySQL and MariaDB memo :: William&#39;s blog</title>
     
     
-    <link href="/css/nucleus.css?1531396817" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1531396817" rel="stylesheet">
-    <link href="/css/hybrid.css?1531396817" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1531396817" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1531396817" rel="stylesheet">
-    <link href="/css/auto-complete.css?1531396817" rel="stylesheet">
-    <link href="/css/theme.css?1531396817" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1531396817" rel="stylesheet">
+    <link href="/css/nucleus.css?1531839179" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1531839179" rel="stylesheet">
+    <link href="/css/hybrid.css?1531839179" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1531839179" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1531839179" rel="stylesheet">
+    <link href="/css/auto-complete.css?1531839179" rel="stylesheet">
+    <link href="/css/theme.css?1531839179" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1531839179" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1531396817" rel="stylesheet">
+      <link href="/css/theme-blue.css?1531839179" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1531396817"></script>
+    <script src="/js/jquery-2.x.min.js?1531839179"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -50,14 +50,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1531396817"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1531396817"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1531839179"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1531839179"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1531396817"></script>
+<script type="text/javascript" src="/js/search.js?1531839179"></script>
 
     
   </div>
@@ -100,9 +100,9 @@
  
   
     
-      <li data-nav-id="/post/wsl/" title="Windows Subsystem for Linux install and configuration" class="dd-item ">
+      <li data-nav-id="/post/wsl/" title="WSL &#43; zsh &#43; oh-my-zsh &#43; powerlevel9k &#43; cmder" class="dd-item ">
         <a href="/post/wsl/">
-        Windows Subsystem for Linux install and configuration
+        WSL &#43; zsh &#43; oh-my-zsh &#43; powerlevel9k &#43; cmder
         <i class="fa fa-check read-icon"></i>
         </a>
     </li>
@@ -933,7 +933,7 @@
             
           
           
-            <a href='/'>About</a> > <a href='/db/'>DBs</a> > MySQL and MariaDB memo
+            <a href='/'>About Hugo</a> > <a href='/db/'>DBs</a> > MySQL and MariaDB memo
           
          
           
@@ -947,7 +947,7 @@
     <div class="wrapper">
 <nav id="TableOfContents">
 <ul>
-<li>
+<li><a href="#mariadb">MariaDB</a>
 <ul>
 <li><a href="#第一次安裝完成-設定root的密碼">第一次安裝完成，設定root的密碼</a></li>
 <li><a href="#重設root密碼">重設root密碼</a></li>
@@ -1012,6 +1012,8 @@
 
 
 
+<h1 id="mariadb">MariaDB</h1>
+
 <h2 id="第一次安裝完成-設定root的密碼">第一次安裝完成，設定root的密碼</h2>
 
 <p>mysqladmin -u root -p &lsquo;密碼&rsquo;
@@ -1020,7 +1022,7 @@ mysql_secure_installation</p>
 
 <h2 id="重設root密碼">重設root密碼</h2>
 
-<pre><code>/etc/init.d/mysql stop
+<pre><code class="language-shell">/etc/init.d/mysql stop
 mysqld_safe --skip-grant-tables &amp;
 mysql -u root
 mysql&gt; use mysql;
@@ -1033,7 +1035,7 @@ mysql&gt; quit
 
 <h2 id="連線管理資料庫">連線管理資料庫</h2>
 
-<pre><code>mysqladmin -u root -p
+<pre><code class="language-shell">mysqladmin -u root -p
 Enter password:  此時再輸入密碼(建議採用)
 
 修改使用者密碼
@@ -1067,7 +1069,7 @@ mysql -u root
 
 <h2 id="新增root可遠端存取-表示任何ip或只接輸入ip">新增root可遠端存取 %表示任何IP或只接輸入IP</h2>
 
-<pre><code>mysql&gt; GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '密碼' WITH GRANT OPTION;
+<pre><code class="language-shell">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '密碼' WITH GRANT OPTION;
 mysql&gt; FLUSH PRIVILEGES;
 
 資料庫(DateBase)十五種權限
@@ -1082,12 +1084,12 @@ SELECT INSERT UPDATE
 
 <h2 id="查詢現有user">查詢現有User</h2>
 
-<pre><code>select user from mysql.user;
+<pre><code class="language-shell">select user from mysql.user;
 </code></pre>
 
 <h2 id="查詢mysql-對-此帳號-開放-grant-哪些權限">查詢MySQL 對 此帳號 開放(GRANT)哪些權限</h2>
 
-<pre><code>查詢 某 User 的權限
+<pre><code class="language-shell">查詢 某 User 的權限
 
 SELECT User,Host FROM mysql.user; # 秀出系統現在有哪些 user
 SHOW GRANTS FOR username@localhost; # 會秀出開此 username 時下的 Grant 語法, 也可用此來做帳號備份.
@@ -1104,25 +1106,25 @@ SHOW GRANTS FOR CURRENT_USER();
 
 <h2 id="修改">修改</h2>
 
-<pre><code>mysql&gt; update db set Host='202.54.10.20' where Db='webdb';
+<pre><code class="language-shell">mysql&gt; update db set Host='202.54.10.20' where Db='webdb';
 mysql&gt; update user set Host='202.54.10.20' where user='webadmin';
 </code></pre>
 
 <h2 id="刪除">刪除</h2>
 
-<pre><code>mysql&gt; DELETE FROM mysql.user WHERE User = 'root' AND Host = '%';
+<pre><code class="language-shell">mysql&gt; DELETE FROM mysql.user WHERE User = 'root' AND Host = '%';
 mysql&gt; FLUSH PRIVILEGES;
 </code></pre>
 
 <h2 id="刪除空帳號">刪除空帳號</h2>
 
-<pre><code>mysql&gt; DELETE FROM user WHERE User = '';
+<pre><code class="language-shell">mysql&gt; DELETE FROM user WHERE User = '';
 mysql&gt; FLUSH PRIVILEGES;
 </code></pre>
 
 <h2 id="建立新帳號">建立新帳號</h2>
 
-<pre><code>GRANT SELECT,INSERT,UPDATE ON datab_name.* TO user@host IDENTIFIED BY 'passwd';
+<pre><code class="language-shell">GRANT SELECT,INSERT,UPDATE ON datab_name.* TO user@host IDENTIFIED BY 'passwd';
 GRANT ALL ON *.* TO root@'10.99.1.%' IDENTIFIED BY '密碼';
 
 mysql&gt; GRANT 權限 ON 資料庫或資料表 TO 使用者 IDENTIFIED BY '密碼';
@@ -1136,13 +1138,13 @@ mysql&gt; GRANT 權限 ON 資料庫或資料表 TO 使用者 IDENTIFIED BY '密�
 
 <h2 id="範例-把-db35-這個資料庫-含其下的所有資料表-授權給-s35-從-localhost-上來">範例 把 db35 這個資料庫(含其下的所有資料表)，授權給 s35，從 localhost 上來</h2>
 
-<pre><code>mysql&gt; GRANT all ON bugdb.* TO bug@'localhost' IDENTIFIED BY '密碼';
+<pre><code class="language-shell">mysql&gt; GRANT all ON bugdb.* TO bug@'localhost' IDENTIFIED BY '密碼';
 mysql -h host -u user -p
 </code></pre>
 
 <h2 id="安全性設定-為資料庫-資料表-前面的-表示帳號-可改成ip比如140-92-25-1">安全性設定(*.*為資料庫.資料表, @前面的*表示帳號, %可改成IP比如140.92.25.1)</h2>
 
-<pre><code>GRANT ALL PRIVILEGES ON *.* TO '*'@'%' IDENTIFIED BY '密碼' WITH GRANT OPTION;
+<pre><code class="language-shell">GRANT ALL PRIVILEGES ON *.* TO '*'@'%' IDENTIFIED BY '密碼' WITH GRANT OPTION;
 mysql&gt; FLUSH PRIVILEGES;   （最後一定要強迫更新權限）
 
 Permissible Privileges for GRANT and REVOKE
@@ -1181,7 +1183,7 @@ USAGE    Synonym for “no privileges”
 
 <h2 id="顯示目前有幾個資料庫">顯示目前有幾個資料庫</h2>
 
-<pre><code>mysql&gt; SHOW DATABASES;
+<pre><code class="language-shell">mysql&gt; SHOW DATABASES;
 +--------------------+
 | Database           |
 +--------------------+
@@ -1195,12 +1197,12 @@ USAGE    Synonym for “no privileges”
 
 <h2 id="列出該資料庫所有資料表名稱">列出該資料庫所有資料表名稱</h2>
 
-<pre><code>mysql&gt; SHOW TABLES FROM 資料庫名 [LIKE ...];
+<pre><code class="language-shell">mysql&gt; SHOW TABLES FROM 資料庫名 [LIKE ...];
 </code></pre>
 
 <h2 id="列出該資料表所有欄位名稱">列出該資料表所有欄位名稱</h2>
 
-<pre><code>mysql&gt; SHOW COLUMNS FROM table_name [LIKE ...];
+<pre><code class="language-shell">mysql&gt; SHOW COLUMNS FROM table_name [LIKE ...];
 mysql&gt; SHOW COLUMNS FROM table_name FROM db_name  [LIKE ...];
 mysql&gt; SHOW FIELDS FROM table_name [LIKE ...];
 mysql&gt; DESCRIBE table_name ;
@@ -1209,7 +1211,7 @@ mysql&gt; EXPLAIN table_name ;
 
 <h2 id="查詢資料庫大小">查詢資料庫大小</h2>
 
-<pre><code>SELECT table_schema &quot;DB Name&quot;, Round(Sum(data_length + index_length) / 1024 / 1024, 1) &quot;DB Size in MB&quot; FROM information_schema.tables GROUP BY table_schema;
+<pre><code class="language-shell">SELECT table_schema &quot;DB Name&quot;, Round(Sum(data_length + index_length) / 1024 / 1024, 1) &quot;DB Size in MB&quot; FROM information_schema.tables GROUP BY table_schema;
 +--------------------+---------------+
 | DB Name            | DB Size in MB |
 +--------------------+---------------+
@@ -1221,7 +1223,7 @@ mysql&gt; EXPLAIN table_name ;
 
 <h2 id="查詢mysql-variables">查詢MySQL VARIABLES</h2>
 
-<pre><code>mysql&gt; SHOW VARIABLES LIKE '%log_bin%';
+<pre><code class="language-shell">mysql&gt; SHOW VARIABLES LIKE '%log_bin%';
 +---------------------------------+-------------------------------------------------+
 | Variable_name                   | Value                                           |
 +---------------------------------+-------------------------------------------------+
@@ -1236,22 +1238,22 @@ mysql&gt; EXPLAIN table_name ;
 
 <h2 id="建立資料庫">建立資料庫;</h2>
 
-<pre><code>CREATE DATABASE 資料庫名;
+<pre><code class="language-shell">CREATE DATABASE 資料庫名;
 </code></pre>
 
 <h2 id="使用資料庫">使用資料庫</h2>
 
-<pre><code>USE 資料庫名;
+<pre><code class="language-shell">USE 資料庫名;
 </code></pre>
 
 <h2 id="刪除資料庫-drop-database-資料庫名">刪除資料庫 DROP DATABASE 資料庫名;</h2>
 
-<pre><code>DROP DATABASE [IF EXISTS] 資料庫名;
+<pre><code class="language-shell">DROP DATABASE [IF EXISTS] 資料庫名;
 </code></pre>
 
 <h2 id="建立資料表-create-table-資料表名-欄位1-資料型態-欄位2-資料型態">建立資料表 CREATE TABLE 資料表名 (欄位1 資料型態, 欄位2 資料型態, &hellip;&hellip;);</h2>
 
-<pre><code>CREATE TABLE 資料表名 (autono INT NOT NULL AUTO_INCREMENT PRIMARY KEY, RACKID varchar(10), RACKLEVEL varchar(10), KVMID varchar(10), CUSERY varchar(20), SERVERENAME varchar(50), SERVERCNAME varchar(50), SERVERTYPE varchar(50), OSTYPE varchar(50), IPADDRESS varchar(20), SERVICEINFO varchar(50), CPUTYPE varchar(50), RAM varchar(20), STORAGE varchar(20), CRID varchar(50), FNTYPE varchar(20));
+<pre><code class="language-shell">CREATE TABLE 資料表名 (autono INT NOT NULL AUTO_INCREMENT PRIMARY KEY, RACKID varchar(10), RACKLEVEL varchar(10), KVMID varchar(10), CUSERY varchar(20), SERVERENAME varchar(50), SERVERCNAME varchar(50), SERVERTYPE varchar(50), OSTYPE varchar(50), IPADDRESS varchar(20), SERVICEINFO varchar(50), CPUTYPE varchar(50), RAM varchar(20), STORAGE varchar(20), CRID varchar(50), FNTYPE varchar(20));
 
 資料結構(type):
 資料型態     說明
@@ -1292,27 +1294,27 @@ SET     一個SET最多能有64個成員。
 
 <h2 id="顯示表格">顯示表格</h2>
 
-<pre><code>SHOW TABLES;
+<pre><code class="language-shell">SHOW TABLES;
 </code></pre>
 
 <h2 id="刪除資料表-drop-table-資料表名">刪除資料表 DROP TABLE 資料表名;</h2>
 
-<pre><code>DROP TABLE [IF EXISTS] tbl_name [, tbl_name,...]
+<pre><code class="language-shell">DROP TABLE [IF EXISTS] tbl_name [, tbl_name,...]
 </code></pre>
 
 <h2 id="顯示表格結構">顯示表格結構</h2>
 
-<pre><code>DESCRIBE infolist;
+<pre><code class="language-shell">DESCRIBE infolist;
 </code></pre>
 
 <h2 id="新增資料">新增資料</h2>
 
-<pre><code>INSERT INTO infolist (RACKID,RACKLEVEL,KVMID,CUSERY,SERVERENAME,SERVERCNAME,SERVERTYPE,OSTYPE,IPADDRESS,SERVICEINFO,CPUTYPE,RAM,STORAGE,CRID,FNTYPE) VALUES ('1','1','1','test','demo center','DynaManager-90','ASUS RS500-E6','CAKE v3.0.16 Alpha Final','140.92.25.6','Virtualization(DAS)','Intel(R) Xeon(R) CPU E5620  @ 2.40GH *2','24G','DAS 1TB','S/N:134IH11','DeSSerT');
+<pre><code class="language-shell">INSERT INTO infolist (RACKID,RACKLEVEL,KVMID,CUSERY,SERVERENAME,SERVERCNAME,SERVERTYPE,OSTYPE,IPADDRESS,SERVICEINFO,CPUTYPE,RAM,STORAGE,CRID,FNTYPE) VALUES ('1','1','1','test','demo center','DynaManager-90','ASUS RS500-E6','CAKE v3.0.16 Alpha Final','140.92.25.6','Virtualization(DAS)','Intel(R) Xeon(R) CPU E5620  @ 2.40GH *2','24G','DAS 1TB','S/N:134IH11','DeSSerT');
 </code></pre>
 
 <h2 id="using-system-variables">Using System Variables</h2>
 
-<pre><code>SHOW VARIABLES;
+<pre><code class="language-shell">SHOW VARIABLES;
 SHOW VARIABLES LIKE 'wait_timeout';
 SHOW VARIABLES LIKE 'interactive_timeout';
 SHOW VARIABLES LIKE 'connect_timeout';
@@ -1320,67 +1322,67 @@ SHOW VARIABLES LIKE 'connect_timeout';
 
 <h2 id="備份某個資料庫">備份某個資料庫</h2>
 
-<pre><code>mysqldump -u root -p -h 主機 資料庫名 &gt; 資料庫備份檔名
+<pre><code class="language-shell">mysqldump -u root -p -h 主機 資料庫名 &gt; 資料庫備份檔名
 </code></pre>
 
 <h2 id="備份all資料庫">備份all資料庫</h2>
 
-<pre><code>mysqldump -u root -p -h 主機 --all-databases
+<pre><code class="language-shell">mysqldump -u root -p -h 主機 --all-databases
 </code></pre>
 
 <h2 id="同時備份多個mysql資料庫">同時備份多個MySQL資料庫</h2>
 
-<pre><code>mysqldump -u root -p -h 主機 –databases 資料庫名1 資料庫名2 資料庫名3 &gt; 資料庫備份檔名
+<pre><code class="language-shell">mysqldump -u root -p -h 主機 –databases 資料庫名1 資料庫名2 資料庫名3 &gt; 資料庫備份檔名
 </code></pre>
 
 <h2 id="備份mysql資料庫為帶刪除表的格式-能夠讓該備份覆蓋已有資料庫而不需要手動刪除原有資料庫">備份MySQL資料庫為帶刪除表的格式,能夠讓該備份覆蓋已有資料庫而不需要手動刪除原有資料庫.</h2>
 
-<pre><code>mysqldump -h 主機 -u root -p -–add-drop-table 資料庫名 &gt; 資料庫備份檔名
+<pre><code class="language-shell">mysqldump -h 主機 -u root -p -–add-drop-table 資料庫名 &gt; 資料庫備份檔名
 </code></pre>
 
 <h2 id="僅備份資料庫結構">僅備份資料庫結構</h2>
 
-<pre><code>mysqldump -h 主機 -u root -p --no-data -–databases databasename1 databasename2 databasename3 &gt; structurebackupfile.sql
+<pre><code class="language-shell">mysqldump -h 主機 -u root -p --no-data -–databases databasename1 databasename2 databasename3 &gt; structurebackupfile.sql
 </code></pre>
 
 <h2 id="備份mysql資料庫某個-些-表">備份MySQL資料庫某個(些)表</h2>
 
-<pre><code>mysqldump -h 主機 -u root -p 資料庫名 specific_table1 specific_table2 &gt; backupfile.sql
+<pre><code class="language-shell">mysqldump -h 主機 -u root -p 資料庫名 specific_table1 specific_table2 &gt; backupfile.sql
 </code></pre>
 
 <h2 id="刪除資料庫的所有tables-drop-remove-tables">刪除資料庫的所有TABLES(DROP remove tables)</h2>
 
-<pre><code>mysql -h 主機 -u root -p -Nse 'show tables' 資料庫名 | while read table; do mysql -u root -p -e &quot;drop table $table&quot; 資料庫名; done
+<pre><code class="language-shell">mysql -h 主機 -u root -p -Nse 'show tables' 資料庫名 | while read table; do mysql -u root -p -e &quot;drop table $table&quot; 資料庫名; done
 </code></pre>
 
 <h2 id="清空資料庫的所有tables-truncate-empty-tables">清空資料庫的所有TABLES(Truncate empty tables)</h2>
 
-<pre><code>mysql -h 主機 -u root -p -Nse 'SHOW TABLES' 資料庫名 | while read table; do mysql -u root -p -e &quot;truncate table $table&quot; 資料庫名; done
+<pre><code class="language-shell">mysql -h 主機 -u root -p -Nse 'SHOW TABLES' 資料庫名 | while read table; do mysql -u root -p -e &quot;truncate table $table&quot; 資料庫名; done
 </code></pre>
 
 <h2 id="復原一個資料庫-需先建好資料庫">復原一個資料庫 (需先建好資料庫)</h2>
 
-<pre><code>mysql -u root -p -h 主機 資料庫名 &lt; 資料庫備份檔
+<pre><code class="language-shell">mysql -u root -p -h 主機 資料庫名 &lt; 資料庫備份檔
 </code></pre>
 
 <h2 id="還原壓縮的mysql資料庫">還原壓縮的MySQL資料庫</h2>
 
-<pre><code>gunzip &lt; 資料庫備份檔名.sql.gz | mysql -h 主機 -u root -p 資料庫名
+<pre><code class="language-shell">gunzip &lt; 資料庫備份檔名.sql.gz | mysql -h 主機 -u root -p 資料庫名
 </code></pre>
 
 <h2 id="將資料庫轉移到新伺服器">將資料庫轉移到新伺服器</h2>
 
-<pre><code>mysqldump -u -p databasename | mysql –host=*.*.*.* -C databasename
+<pre><code class="language-shell">mysqldump -u -p databasename | mysql –host=*.*.*.* -C databasename
 </code></pre>
 
 <h2 id="if-you-want-to-see-only-a-specific-variable-you-can-use-this-command-obviously-you-d-want-to-replace-the-max-connect-errors-in-that-command-with-the-variable-that-you-re-looking-for">If you want to see only a specific variable, you can use this command. Obviously you’d want to replace the max_connect_errors in that command with the variable that you’re looking for.</h2>
 
-<pre><code>SHOW VARIABLES LIKE '%max_connect_errors%';
+<pre><code class="language-shell">SHOW VARIABLES LIKE '%max_connect_errors%';
 </code></pre>
 
 <h2 id="if-you-want-to-change-the-current-state-of-a-variable-you-can-do-so-easily-with-a-command-similar-to-this-one">If you want to change the current state of a variable, you can do so easily with a command similar to this one:</h2>
 
-<pre><code>SET GLOBAL max_connect_errors=10000;
+<pre><code class="language-shell">SET GLOBAL max_connect_errors=10000;
 Mysql&gt; FLUSH HOSTS;
 
 mysqlbinlog –start-datetime=&quot;2016-03-01 00:00:00&quot; –stop-datetime=&quot;2016-03-16 00:00:00&quot; -d bid mysql-bin.0001* &gt; /root/replay.sql
@@ -1388,7 +1390,7 @@ mysqlbinlog –start-datetime=&quot;2016-03-01 00:00:00&quot; –stop-datetime=&
 
 <h2 id="tips">tips</h2>
 
-<pre><code>You need to use the -p flag to send a password. And it's tricky because you must have no space between -p and the password.
+<pre><code class="language-shell">You need to use the -p flag to send a password. And it's tricky because you must have no space between -p and the password.
 
 $ mysql -h &quot;server-name&quot; -u &quot;root&quot; &quot;-pXXXXXXXX&quot; &quot;database-name&quot; &lt; &quot;filename.sql&quot;
 
@@ -1417,7 +1419,7 @@ $ mysql -h &quot;server-name&quot; &quot;database-name&quot; &lt; &quot;filename
 
 <h2 id="slow-query">slow query</h2>
 
-<pre><code>查看Server設定 ：show variables ;
+<pre><code class="language-shell">查看Server設定 ：show variables ;
 
 其中兩個參數，一個是slow_launch_time，一個是long_query_time。
 slow_launch_time跟slow query log沒有任何關係, 它代表的是thread create的一個門檻值，long_query_time才是正確的。
@@ -2086,20 +2088,20 @@ select sleep(2);
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1531396817"></script>
-    <script src="/js/perfect-scrollbar.min.js?1531396817"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1531396817"></script>
-    <script src="/js/jquery.sticky.js?1531396817"></script>
-    <script src="/js/featherlight.min.js?1531396817"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1531396817"></script>
-    <script src="/js/highlight.pack.js?1531396817"></script>
+    <script src="/js/clipboard.min.js?1531839179"></script>
+    <script src="/js/perfect-scrollbar.min.js?1531839179"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1531839179"></script>
+    <script src="/js/jquery.sticky.js?1531839179"></script>
+    <script src="/js/featherlight.min.js?1531839179"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1531839179"></script>
+    <script src="/js/highlight.pack.js?1531839179"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1531396817"></script>
-    <script src="/js/learn.js?1531396817"></script>
-    <script src="/js/hugo-learn.js?1531396817"></script>
+    <script src="/js/modernizr.custom.71422.js?1531839179"></script>
+    <script src="/js/learn.js?1531839179"></script>
+    <script src="/js/hugo-learn.js?1531839179"></script>
 
-    <link href="/mermaid/mermaid.css?1531396817" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1531396817"></script>
+    <link href="/mermaid/mermaid.css?1531839179" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1531839179"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

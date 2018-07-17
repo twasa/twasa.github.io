@@ -12,19 +12,19 @@
     <title>Mongodb basic :: William&#39;s blog</title>
     
     
-    <link href="/css/nucleus.css?1531396817" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1531396817" rel="stylesheet">
-    <link href="/css/hybrid.css?1531396817" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1531396817" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1531396817" rel="stylesheet">
-    <link href="/css/auto-complete.css?1531396817" rel="stylesheet">
-    <link href="/css/theme.css?1531396817" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1531396817" rel="stylesheet">
+    <link href="/css/nucleus.css?1531839179" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1531839179" rel="stylesheet">
+    <link href="/css/hybrid.css?1531839179" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1531839179" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1531839179" rel="stylesheet">
+    <link href="/css/auto-complete.css?1531839179" rel="stylesheet">
+    <link href="/css/theme.css?1531839179" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1531839179" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1531396817" rel="stylesheet">
+      <link href="/css/theme-blue.css?1531839179" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1531396817"></script>
+    <script src="/js/jquery-2.x.min.js?1531839179"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -50,14 +50,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1531396817"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1531396817"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1531839179"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1531839179"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1531396817"></script>
+<script type="text/javascript" src="/js/search.js?1531839179"></script>
 
     
   </div>
@@ -100,9 +100,9 @@
  
   
     
-      <li data-nav-id="/post/wsl/" title="Windows Subsystem for Linux install and configuration" class="dd-item ">
+      <li data-nav-id="/post/wsl/" title="WSL &#43; zsh &#43; oh-my-zsh &#43; powerlevel9k &#43; cmder" class="dd-item ">
         <a href="/post/wsl/">
-        Windows Subsystem for Linux install and configuration
+        WSL &#43; zsh &#43; oh-my-zsh &#43; powerlevel9k &#43; cmder
         <i class="fa fa-check read-icon"></i>
         </a>
     </li>
@@ -933,7 +933,7 @@
             
           
           
-            <a href='/'>About</a> > <a href='/db/'>DBs</a> > Mongodb basic
+            <a href='/'>About Hugo</a> > <a href='/db/'>DBs</a> > Mongodb basic
           
          
           
@@ -1007,7 +1007,7 @@
 <li>Create a /etc/yum.repos.d/mongodb-org-3.4.repo</li>
 </ul>
 
-<pre><code>[mongodb-org-3.4]
+<pre><code class="language-txt">[mongodb-org-3.4]
 name=MongoDB Repository
 baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.4/x86_64/
 gpgcheck=1
@@ -1019,76 +1019,76 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
 <li>yum</li>
 </ul>
 
-<pre><code>yum install -y mongodb-org
+<pre><code class="language-shell">yum install -y mongodb-org
 </code></pre>
 
 <h2 id="config">config</h2>
 
 <ul>
-<li><p>default path /etc/mongod.</p>
+<li>default path /etc/mongod.</li>
+</ul>
 
-<pre><code># security
+<pre><code class="language-txt"># security
 db.createUser(
-{
- user: &quot;帳號&quot;,
- pwd: &quot;密碼&quot;,
- roles: [ { role: &quot;userAdminAnyDatabase&quot;, db: &quot;admin&quot; } ]
-}
+   {
+     user: &quot;帳號&quot;,
+     pwd: &quot;密碼&quot;,
+     roles: [ { role: &quot;userAdminAnyDatabase&quot;, db: &quot;admin&quot; } ]
+   }
 )
 security.authorization : enabled
-</code></pre></li>
-</ul>
+</code></pre>
 
 <h2 id="selinux">selinux</h2>
 
-<pre><code>semanage port -a -t mongod_port_t -p tcp 27017
+<pre><code class="language-txt">semanage port -a -t mongod_port_t -p tcp 27017
 </code></pre>
 
 <h2 id="shell">shell</h2>
 
 <h3 id="connection">connection</h3>
 
-<pre><code>mongo --port 27017 -u &quot;unitadmin&quot; -p &quot;xyz123&quot; --authenticationDatabase &quot;test&quot;
+<pre><code class="language-txt">mongo --port 27017 -u &quot;unitadmin&quot; -p &quot;xyz123&quot; --authenticationDatabase &quot;test&quot;
 </code></pre>
 
 <h3 id="list-current-using-db">list current using db</h3>
 
-<pre><code>db
+<pre><code class="language-txt">db
 </code></pre>
 
 <h3 id="列出資料庫清單">列出資料庫清單</h3>
 
-<pre><code>show dbs
+<pre><code class="language-txt">show dbs
 </code></pre>
 
 <h3 id="切換資料庫">切換資料庫</h3>
 
-<pre><code>use 資料庫名稱
+<pre><code class="language-txt">use 資料庫名稱
 </code></pre>
 
 <h3 id="驗證">驗證</h3>
 
-<pre><code>db.auth('account', 'password')
+<pre><code class="language-txt">db.auth('account', 'password')
 </code></pre>
 
 <h3 id="顯示協助訊息">顯示協助訊息</h3>
 
-<pre><code>help
+<pre><code class="language-txt">help
 </code></pre>
 
 <h3 id="列出資料表">列出資料表</h3>
 
-<pre><code>show collections
+<pre><code class="language-txt">show collections
 </code></pre>
 
 <h3 id="列出collection-資料筆數">列出collection 資料筆數</h3>
 
-<pre><code>db.products.count()
+<pre><code class="language-txt">db.products.count()
 </code></pre>
 
 <h3 id="crud">CRUD</h3>
 
-<pre><code>example:
+<pre><code class="language-txt">example:
 db.collectionname.find(
   {name: &quot;william&quot;},    #query
   {Name:1, address:1}   #projection
@@ -1103,19 +1103,19 @@ db.collectionname.find(
 
 <h3 id="離開mongo-shell">離開mongo Shell</h3>
 
-<pre><code>exit
+<pre><code class="language-txt">exit
 </code></pre>
 
 <h3 id="直接執行">直接執行</h3>
 
-<pre><code>mongo 資料庫名稱 --eval &quot;語法&quot;
+<pre><code class="language-shell">mongo 資料庫名稱 --eval &quot;語法&quot;
 mongo test --eval &quot;db.egame.findOne()&quot;
 mongo test --eval 'db.egame.remove({&quot;createDateTime&quot; : {$lt : ISODate(&quot;2017-06-10T13:56:00.001Z&quot;)}})'
 </code></pre>
 
 <h3 id="使用js-file帶入語法">使用js file帶入語法</h3>
 
-<pre><code>mongo &lt; script.js
+<pre><code class="language-txt">mongo &lt; script.js
 //script.js 內容
 db.mycollection.findOne()
 db.getCollectionNames().forEach(function(collection) {
@@ -1127,12 +1127,12 @@ db.getCollectionNames().forEach(function(collection) {
 
 <h3 id="show-accounts">show accounts</h3>
 
-<pre><code>show users
+<pre><code class="language-txt">show users
 </code></pre>
 
 <h3 id="create-account-for-db-backup">create account for db backup</h3>
 
-<pre><code>use 要備份的資料庫名稱
+<pre><code class="language-txt">use 要備份的資料庫名稱
 db.createUser(
   {
     user: &quot;帳號&quot;,
@@ -1144,7 +1144,7 @@ db.createUser(
 
 <h3 id="for-db-only-account">for db only account</h3>
 
-<pre><code>use 資料庫名稱
+<pre><code class="language-txt">use 資料庫名稱
 db.createUser({
   user: &quot;帳號&quot;,
   pwd: &quot;密碼&quot;,
@@ -1181,7 +1181,7 @@ db.removeUser(帳號)
 
 <h2 id="enable-on-config-file">enable on config file</h2>
 
-<pre><code>security:
+<pre><code class="language-yaml">security:
   authorization: enabled # 前面要空白,不然服務會無法啟動
 </code></pre>
 
@@ -1214,7 +1214,7 @@ db.removeUser(帳號)
 <li>backup</li>
 </ul>
 
-<pre><code>mongodump --gzip --archive=backup-file-name --db db-name --collection collection-name -q &quot;&quot;
+<pre><code class="language-shell">mongodump --gzip --archive=backup-file-name --db db-name --collection collection-name -q &quot;&quot;
 mongodump -d 資料庫名稱 -c egame -q '{&quot;createDateTime&quot;:{$gte:ISODate(&quot;2017-06-11T00:00:00.000Z&quot;)}}' --gzip --archive=/tmp/backup.tgz
 
 --out filename
@@ -1232,7 +1232,7 @@ query.json 內容
 <li>restore</li>
 </ul>
 
-<pre><code>mongorestore --db db-name --collection collection-name filename
+<pre><code class="language-shell">mongorestore --db db-name --collection collection-name filename
 mongorestore --archive=filename --gzip
 </code></pre>
 
@@ -1242,7 +1242,7 @@ mongorestore --archive=filename --gzip
 <li>refernece <a href="https://docs.mongodb.com/manual/reference/built-in-roles/">https://docs.mongodb.com/manual/reference/built-in-roles/</a></li>
 </ul>
 
-<pre><code>read：允許帳號讀取指定資料庫
+<pre><code class="language-txt">read：允許帳號讀取指定資料庫
 readWrite：允許帳號讀寫指定資料庫
 backup,retore:允許備份、還原，在db.createUser()方法中roles里面的db必須是admin資料庫，不然會錯誤
 dbAdmin：允許帳號在指定資料庫中執行管理函數，如索引建立、删除，查看統計或訪問system.profile
@@ -1257,7 +1257,7 @@ root：只在admin資料庫中可用。等於最高權限帳號
 
 <h2 id="remove">remove</h2>
 
-<pre><code>yum erase $(rpm -qa | grep mongodb-org)
+<pre><code class="language-shell">yum erase $(rpm -qa | grep mongodb-org)
 rm -r /var/log/mongodb
 rm -r /var/lib/mongo
 </code></pre>
@@ -1913,20 +1913,20 @@ rm -r /var/lib/mongo
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1531396817"></script>
-    <script src="/js/perfect-scrollbar.min.js?1531396817"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1531396817"></script>
-    <script src="/js/jquery.sticky.js?1531396817"></script>
-    <script src="/js/featherlight.min.js?1531396817"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1531396817"></script>
-    <script src="/js/highlight.pack.js?1531396817"></script>
+    <script src="/js/clipboard.min.js?1531839179"></script>
+    <script src="/js/perfect-scrollbar.min.js?1531839179"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1531839179"></script>
+    <script src="/js/jquery.sticky.js?1531839179"></script>
+    <script src="/js/featherlight.min.js?1531839179"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1531839179"></script>
+    <script src="/js/highlight.pack.js?1531839179"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1531396817"></script>
-    <script src="/js/learn.js?1531396817"></script>
-    <script src="/js/hugo-learn.js?1531396817"></script>
+    <script src="/js/modernizr.custom.71422.js?1531839179"></script>
+    <script src="/js/learn.js?1531839179"></script>
+    <script src="/js/hugo-learn.js?1531839179"></script>
 
-    <link href="/mermaid/mermaid.css?1531396817" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1531396817"></script>
+    <link href="/mermaid/mermaid.css?1531839179" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1531839179"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
