@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on William&#39;s blog</title>
+    <title>post on William&#39;s blog</title>
     <link>https://blog.twasa.cf/post/</link>
-    <description>Recent content in Posts on William&#39;s blog</description>
+    <description>Recent content in post on William&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 08 Jul 2018 23:00:24 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 11 Sep 2017 02:31:16 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.twasa.cf/post/index.xml" rel="self" type="application/rss+xml" />
     

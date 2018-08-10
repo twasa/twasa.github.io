@@ -148,6 +148,26 @@
   </url>
   
   <url>
+    <loc>https://blog.twasa.cf/devops/</loc>
+    <lastmod>2017-09-11T02:31:16+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.twasa.cf/linux/</loc>
+    <lastmod>2017-09-11T02:31:16+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.twasa.cf/programing/</loc>
+    <lastmod>2017-09-11T02:31:16+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.twasa.cf/post/</loc>
+    <lastmod>2017-09-11T02:31:16+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.twasa.cf/programing/python/python-virtualenv/</loc>
     <lastmod>2017-09-10T17:00:56+08:00</lastmod>
   </url>
@@ -231,12 +251,6 @@
   </url>
   
   <url>
-    <loc>https://blog.twasa.cf/devops/</loc>
-    <lastmod>2017-09-11T15:48:07+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.twasa.cf/tags/development/</loc>
     <lastmod>2017-11-19T00:16:07+08:00</lastmod>
     <priority>0</priority>
@@ -262,12 +276,6 @@
   
   <url>
     <loc>https://blog.twasa.cf/categories/linux/</loc>
-    <lastmod>2017-09-11T17:12:29+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.twasa.cf/linux/</loc>
     <lastmod>2017-09-11T17:12:29+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -321,20 +329,8 @@
   </url>
   
   <url>
-    <loc>https://blog.twasa.cf/post/</loc>
-    <lastmod>2018-07-08T23:00:24+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.twasa.cf/tags/powershell/</loc>
     <lastmod>2018-04-21T17:33:21+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.twasa.cf/programing/</loc>
-    <lastmod>2017-11-19T00:16:07+08:00</lastmod>
     <priority>0</priority>
   </url>
   

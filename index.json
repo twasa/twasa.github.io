@@ -200,7 +200,35 @@
 	"title": "DBs",
 	"tags": [],
 	"description": "",
-	"content": " DBs 各種資料庫的文件\n"
+	"content": "各種資料庫的文件\n"
+},
+{
+	"uri": "https://blog.twasa.cf/devops/",
+	"title": "DevOps",
+	"tags": [],
+	"description": "",
+	"content": "DevOps 相關的工具與文件\n"
+},
+{
+	"uri": "https://blog.twasa.cf/linux/",
+	"title": "Linux",
+	"tags": [],
+	"description": "",
+	"content": "Linux的一些常用指令\n"
+},
+{
+	"uri": "https://blog.twasa.cf/programing/",
+	"title": "Programing",
+	"tags": [],
+	"description": "",
+	"content": "一些簡單的Python程式碼與範例\n"
+},
+{
+	"uri": "https://blog.twasa.cf/post/",
+	"title": "post",
+	"tags": [],
+	"description": "",
+	"content": "尚未歸類的文件\n"
 },
 {
 	"uri": "https://blog.twasa.cf/programing/python/python-virtualenv/",
@@ -308,13 +336,6 @@
 	"content": ""
 },
 {
-	"uri": "https://blog.twasa.cf/devops/",
-	"title": "DevOps",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
 	"uri": "https://blog.twasa.cf/tags/development/",
 	"title": "Development",
 	"tags": [],
@@ -345,13 +366,6 @@
 {
 	"uri": "https://blog.twasa.cf/categories/linux/",
 	"title": "Linux",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://blog.twasa.cf/linux/",
-	"title": "Linuxes",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -413,22 +427,8 @@
 	"content": ""
 },
 {
-	"uri": "https://blog.twasa.cf/post/",
-	"title": "Posts",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
 	"uri": "https://blog.twasa.cf/tags/powershell/",
 	"title": "Powershell",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://blog.twasa.cf/programing/",
-	"title": "Programings",
 	"tags": [],
 	"description": "",
 	"content": ""
