@@ -12,19 +12,19 @@
     <title>Linux Logrotation :: William&#39;s blog</title>
     
     
-    <link href="/css/nucleus.css?1533917717" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1533917717" rel="stylesheet">
-    <link href="/css/hybrid.css?1533917717" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1533917717" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1533917717" rel="stylesheet">
-    <link href="/css/auto-complete.css?1533917717" rel="stylesheet">
-    <link href="/css/theme.css?1533917717" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1533917717" rel="stylesheet">
+    <link href="/css/nucleus.css?1533918478" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1533918478" rel="stylesheet">
+    <link href="/css/hybrid.css?1533918478" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1533918478" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1533918478" rel="stylesheet">
+    <link href="/css/auto-complete.css?1533918478" rel="stylesheet">
+    <link href="/css/theme.css?1533918478" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1533918478" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1533917717" rel="stylesheet">
+      <link href="/css/theme-blue.css?1533918478" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1533917717"></script>
+    <script src="/js/jquery-2.x.min.js?1533918478"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -50,14 +50,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1533917717"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1533917717"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1533918478"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1533918478"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1533917717"></script>
+<script type="text/javascript" src="/js/search.js?1533918478"></script>
 
     
   </div>
@@ -1019,22 +1019,23 @@
 
 <h2 id="postrotate">Postrotate</h2>
 
-<p>postrotate
+<pre><code class="language-conf">postrotate
     /usr/sbin/apachectl restart &gt; /dev/null
-endscript</p>
+endscript
+</code></pre>
 
 <h2 id="script">script</h2>
 
 <ul>
 <li>prerotate：executed before the log file is rotated</li>
-<li>postrotate：在做完 logrotate 之後啟動的指令，例如重新啟動 (kill -1 或 kill -HUP) 某個服務;
-<code>
-postrotate
-    /bin/kill -HUP `cat /var/run/syslogd.pid 2&gt; /dev/null` 2&gt; /dev/null || true
+<li>postrotate：在做完 logrotate 之後啟動的指令，例如重新啟動 (kill -1 或 kill -HUP) 某個服務;</li>
+</ul>
+
+<pre><code class="language-conf">postrotate
+        /bin/kill -HUP `cat /var/run/syslogd.pid 2&gt; /dev/null` 2&gt; /dev/null || true
 endscript
 }
-</code></li>
-</ul>
+</code></pre>
 
 <h2 id="others">others</h2>
 
@@ -1696,20 +1697,20 @@ endscript
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1533917717"></script>
-    <script src="/js/perfect-scrollbar.min.js?1533917717"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1533917717"></script>
-    <script src="/js/jquery.sticky.js?1533917717"></script>
-    <script src="/js/featherlight.min.js?1533917717"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1533917717"></script>
-    <script src="/js/highlight.pack.js?1533917717"></script>
+    <script src="/js/clipboard.min.js?1533918478"></script>
+    <script src="/js/perfect-scrollbar.min.js?1533918478"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1533918478"></script>
+    <script src="/js/jquery.sticky.js?1533918478"></script>
+    <script src="/js/featherlight.min.js?1533918478"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1533918478"></script>
+    <script src="/js/highlight.pack.js?1533918478"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1533917717"></script>
-    <script src="/js/learn.js?1533917717"></script>
-    <script src="/js/hugo-learn.js?1533917717"></script>
+    <script src="/js/modernizr.custom.71422.js?1533918478"></script>
+    <script src="/js/learn.js?1533918478"></script>
+    <script src="/js/hugo-learn.js?1533918478"></script>
 
-    <link href="/mermaid/mermaid.css?1533917717" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1533917717"></script>
+    <link href="/mermaid/mermaid.css?1533918478" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1533918478"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -17,7 +17,7 @@
       <pubDate>Mon, 11 Sep 2017 17:12:29 +0800</pubDate>
       
       <guid>https://blog.twasa.cf/linux/openssl/</guid>
-      <description> create private key openssl genrsa -out server.key 2048  create Certificate Signing Request openssl req -sha512 -new -key server.key -out server.csr -subj &amp;quot;/C=TW/ST=Taipei/L=Taipei/O=example/OU=Personal/CN=www.example.com&amp;quot;  check csr info openssl req -in server.csr -noout -text  Self-Sign Certificate openssl x509 -sha512 -req -days 3650 -in server.csr -signkey server.key -out server.crt  encrypt private key -a 表示檔案使用 base64 編碼 -salt 加雜湊值，增加安全性 openssl aes-256-cbc -a -salt -in server.key -out server.encrypt.key  </description>
+      <description> openssl create private key openssl genrsa -out server.key 2048  create Certificate Signing Request openssl req -sha512 -new -key server.key -out server.csr -subj &amp;quot;/C=TW/ST=Taipei/L=Taipei/O=example/OU=Personal/CN=www.example.com&amp;quot;  check csr info openssl req -in server.csr -noout -text  Self-Sign Certificate openssl x509 -sha512 -req -days 3650 -in server.csr -signkey server.key -out server.crt  encrypt private key # -a 表示檔案使用 base64 編碼 # -salt 加雜湊值，增加安全性 openssl aes-256-cbc -a -salt -in server.key -out server.encrypt.key  </description>
     </item>
     
     <item>
@@ -26,8 +26,7 @@
       <pubDate>Mon, 11 Sep 2017 17:08:34 +0800</pubDate>
       
       <guid>https://blog.twasa.cf/linux/logrotation/</guid>
-      <description> config options rotate count  rotate n  permission  create 0664 USER GROUP  by interval  daily weekly monthly yearly  by size  size 100k size 100M size 100G  archive  compress nocompress  Postrotate postrotate /usr/sbin/apachectl restart &amp;gt; /dev/null endscript
-script  prerotate：executed before the log file is rotated postrotate：在做完 logrotate 之後啟動的指令，例如重新啟動 (kill -1 或 kill -HUP) 某個服務;  postrotate /bin/kill -HUP `cat /var/run/syslogd.pid 2&amp;gt; /dev/null` 2&amp;gt; /dev/null || true endscript }   others  missingok：If the log file is missing, go on to the next one without issu-ing an error message  </description>
+      <description>config options rotate count  rotate n  permission  create 0664 USER GROUP  by interval  daily weekly monthly yearly  by size  size 100k size 100M size 100G  archive  compress nocompress  Postrotate postrotate /usr/sbin/apachectl restart &amp;gt; /dev/null endscript  script  prerotate：executed before the log file is rotated postrotate：在做完 logrotate 之後啟動的指令，例如重新啟動 (kill -1 或 kill -HUP) 某個服務;  postrotate /bin/kill -HUP `cat /var/run/syslogd.</description>
     </item>
     
     <item>
@@ -65,7 +64,8 @@ example modify CentOS linux hostname sed -i &#39;s/HOSTNAME\=.*/HOSTNAME\=NEWHOS
       <pubDate>Mon, 11 Sep 2017 10:52:53 +0800</pubDate>
       
       <guid>https://blog.twasa.cf/linux/grep/</guid>
-      <description>description  prints lines that contain a match for a pattern reference  https://www.gnu.org/software/grep/manual/grep.html   syntax grep [OPTIONS] PATTERN [FILE...] grep multiple patterns OR grep &#39;pattern1\|pattern2\|pattern3&#39; AND grep -E &#39;pattern1.*pattern2.*pattern3&#39; filename -v, --invert-match Invert the sense of matching, to select non-matching lines. (-v is specified by POSIX .) grep -v &#39;unwanted_word&#39; -i, --ignore-case Ignore case distinctions in both the PATTERN and the input files. (-i is specified by POSIX .</description>
+      <description>description  prints lines that contain a match for a pattern reference  https://www.gnu.org/software/grep/manual/grep.html
+syntax grep [OPTIONS] PATTERN [FILE...]   grep multiple patterns  #OR grep &#39;pattern1\|pattern2\|pattern3&#39; #AND grep -E &#39;pattern1.*pattern2.*pattern3&#39; filename  -v, --invert-match Invert the sense of matching, to select non-matching lines. (-v is specified by POSIX .) grep -v &#39;unwanted_word&#39; -i, --ignore-case Ignore case distinctions in both the PATTERN and the input files. (-i is specified by POSIX .</description>
     </item>
     
     <item>

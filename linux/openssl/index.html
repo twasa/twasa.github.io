@@ -12,19 +12,19 @@
     <title>openssl :: William&#39;s blog</title>
     
     
-    <link href="/css/nucleus.css?1533917717" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1533917717" rel="stylesheet">
-    <link href="/css/hybrid.css?1533917717" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1533917717" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1533917717" rel="stylesheet">
-    <link href="/css/auto-complete.css?1533917717" rel="stylesheet">
-    <link href="/css/theme.css?1533917717" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1533917717" rel="stylesheet">
+    <link href="/css/nucleus.css?1533918478" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1533918478" rel="stylesheet">
+    <link href="/css/hybrid.css?1533918478" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1533918478" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1533918478" rel="stylesheet">
+    <link href="/css/auto-complete.css?1533918478" rel="stylesheet">
+    <link href="/css/theme.css?1533918478" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1533918478" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1533917717" rel="stylesheet">
+      <link href="/css/theme-blue.css?1533918478" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1533917717"></script>
+    <script src="/js/jquery-2.x.min.js?1533918478"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -50,14 +50,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1533917717"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1533917717"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1533918478"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1533918478"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1533917717"></script>
+<script type="text/javascript" src="/js/search.js?1533918478"></script>
 
     
   </div>
@@ -947,15 +947,13 @@
     <div class="wrapper">
 <nav id="TableOfContents">
 <ul>
-<li>
+<li><a href="#openssl">openssl</a>
 <ul>
 <li><a href="#create-private-key">create private key</a></li>
 <li><a href="#create-certificate-signing-request">create Certificate Signing Request</a></li>
 <li><a href="#check-csr-info">check csr info</a></li>
 <li><a href="#self-sign-certificate">Self-Sign Certificate</a></li>
 <li><a href="#encrypt-private-key">encrypt private key</a></li>
-<li><a href="#a-表示檔案使用-base64-編碼">-a 表示檔案使用 base64 編碼</a></li>
-<li><a href="#salt-加雜湊值-增加安全性">-salt 加雜湊值，增加安全性</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -978,33 +976,33 @@
 
 
 
+<h1 id="openssl">openssl</h1>
+
 <h2 id="create-private-key">create private key</h2>
 
-<pre><code>openssl genrsa -out server.key 2048
+<pre><code class="language-shell">openssl genrsa -out server.key 2048
 </code></pre>
 
 <h2 id="create-certificate-signing-request">create Certificate Signing Request</h2>
 
-<pre><code>openssl req -sha512 -new -key server.key -out server.csr -subj &quot;/C=TW/ST=Taipei/L=Taipei/O=example/OU=Personal/CN=www.example.com&quot;
+<pre><code class="language-shell">openssl req -sha512 -new -key server.key -out server.csr -subj &quot;/C=TW/ST=Taipei/L=Taipei/O=example/OU=Personal/CN=www.example.com&quot;
 </code></pre>
 
 <h2 id="check-csr-info">check csr info</h2>
 
-<pre><code>openssl req -in server.csr -noout -text
+<pre><code class="language-shell">openssl req -in server.csr -noout -text
 </code></pre>
 
 <h2 id="self-sign-certificate">Self-Sign Certificate</h2>
 
-<pre><code>openssl x509 -sha512 -req -days 3650 -in server.csr -signkey server.key -out server.crt
+<pre><code class="language-shell">openssl x509 -sha512 -req -days 3650 -in server.csr -signkey server.key -out server.crt
 </code></pre>
 
 <h2 id="encrypt-private-key">encrypt private key</h2>
 
-<h2 id="a-表示檔案使用-base64-編碼">-a 表示檔案使用 base64 編碼</h2>
-
-<h2 id="salt-加雜湊值-增加安全性">-salt 加雜湊值，增加安全性</h2>
-
-<pre><code>openssl aes-256-cbc -a -salt -in server.key -out server.encrypt.key
+<pre><code class="language-shell"># -a 表示檔案使用 base64 編碼
+# -salt 加雜湊值，增加安全性
+openssl aes-256-cbc -a -salt -in server.key -out server.encrypt.key
 </code></pre>
 
 
@@ -1658,20 +1656,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1533917717"></script>
-    <script src="/js/perfect-scrollbar.min.js?1533917717"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1533917717"></script>
-    <script src="/js/jquery.sticky.js?1533917717"></script>
-    <script src="/js/featherlight.min.js?1533917717"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1533917717"></script>
-    <script src="/js/highlight.pack.js?1533917717"></script>
+    <script src="/js/clipboard.min.js?1533918478"></script>
+    <script src="/js/perfect-scrollbar.min.js?1533918478"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1533918478"></script>
+    <script src="/js/jquery.sticky.js?1533918478"></script>
+    <script src="/js/featherlight.min.js?1533918478"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1533918478"></script>
+    <script src="/js/highlight.pack.js?1533918478"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1533917717"></script>
-    <script src="/js/learn.js?1533917717"></script>
-    <script src="/js/hugo-learn.js?1533917717"></script>
+    <script src="/js/modernizr.custom.71422.js?1533918478"></script>
+    <script src="/js/learn.js?1533918478"></script>
+    <script src="/js/hugo-learn.js?1533918478"></script>
 
-    <link href="/mermaid/mermaid.css?1533917717" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1533917717"></script>
+    <link href="/mermaid/mermaid.css?1533918478" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1533918478"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

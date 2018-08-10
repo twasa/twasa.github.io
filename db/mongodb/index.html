@@ -12,19 +12,19 @@
     <title>Mongodb basic :: William&#39;s blog</title>
     
     
-    <link href="/css/nucleus.css?1533917717" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1533917717" rel="stylesheet">
-    <link href="/css/hybrid.css?1533917717" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1533917717" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1533917717" rel="stylesheet">
-    <link href="/css/auto-complete.css?1533917717" rel="stylesheet">
-    <link href="/css/theme.css?1533917717" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1533917717" rel="stylesheet">
+    <link href="/css/nucleus.css?1533918478" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1533918478" rel="stylesheet">
+    <link href="/css/hybrid.css?1533918478" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1533918478" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1533918478" rel="stylesheet">
+    <link href="/css/auto-complete.css?1533918478" rel="stylesheet">
+    <link href="/css/theme.css?1533918478" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1533918478" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1533917717" rel="stylesheet">
+      <link href="/css/theme-blue.css?1533918478" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1533917717"></script>
+    <script src="/js/jquery-2.x.min.js?1533918478"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -50,14 +50,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1533917717"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1533917717"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1533918478"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1533918478"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1533917717"></script>
+<script type="text/javascript" src="/js/search.js?1533918478"></script>
 
     
   </div>
@@ -947,7 +947,7 @@
     <div class="wrapper">
 <nav id="TableOfContents">
 <ul>
-<li>
+<li><a href="#monbodb">MonboDB</a>
 <ul>
 <li><a href="#install">install</a></li>
 <li><a href="#config">config</a></li>
@@ -963,7 +963,7 @@
 <li><a href="#列出資料表">列出資料表</a></li>
 <li><a href="#列出collection-資料筆數">列出collection 資料筆數</a></li>
 <li><a href="#crud">CRUD</a></li>
-<li><a href="#mongo-dbname-eval-db-dropdatabase-移除-database-或者下面這種方式">mongo <dbname> &ndash;eval &ldquo;db.dropDatabase()&rdquo; 移除 database。 或者下面這種方式：</a></li>
+<li><a href="#mongo-db-name-eval-db-dropdatabase-移除-database-或者下面這種方式">mongo {{ DB_NAME }} &ndash;eval &ldquo;db.dropDatabase()&rdquo; 移除 database。 或者下面這種方式：</a></li>
 <li><a href="#離開mongo-shell">離開mongo Shell</a></li>
 <li><a href="#直接執行">直接執行</a></li>
 <li><a href="#使用js-file帶入語法">使用js file帶入語法</a></li>
@@ -1000,6 +1000,8 @@
 
 
 
+
+<h1 id="monbodb">MonboDB</h1>
 
 <h2 id="install">install</h2>
 
@@ -1048,74 +1050,74 @@ security.authorization : enabled
 
 <h3 id="connection">connection</h3>
 
-<pre><code class="language-txt">mongo --port 27017 -u &quot;unitadmin&quot; -p &quot;xyz123&quot; --authenticationDatabase &quot;test&quot;
+<pre><code class="language-shell">mongo --port 27017 -u &quot;unitadmin&quot; -p &quot;xyz123&quot; --authenticationDatabase &quot;test&quot;
 </code></pre>
 
 <h3 id="list-current-using-db">list current using db</h3>
 
-<pre><code class="language-txt">db
+<pre><code class="language-shell">db
 </code></pre>
 
 <h3 id="列出資料庫清單">列出資料庫清單</h3>
 
-<pre><code class="language-txt">show dbs
+<pre><code class="language-shell">show dbs
 </code></pre>
 
 <h3 id="切換資料庫">切換資料庫</h3>
 
-<pre><code class="language-txt">use 資料庫名稱
+<pre><code class="language-shell">use 資料庫名稱
 </code></pre>
 
 <h3 id="驗證">驗證</h3>
 
-<pre><code class="language-txt">db.auth('account', 'password')
+<pre><code class="language-shell">db.auth('account', 'password')
 </code></pre>
 
 <h3 id="顯示協助訊息">顯示協助訊息</h3>
 
-<pre><code class="language-txt">help
+<pre><code class="language-shell">help
 </code></pre>
 
 <h3 id="列出資料表">列出資料表</h3>
 
-<pre><code class="language-txt">show collections
+<pre><code class="language-shell">show collections
 </code></pre>
 
 <h3 id="列出collection-資料筆數">列出collection 資料筆數</h3>
 
-<pre><code class="language-txt">db.products.count()
+<pre><code class="language-shell">db.products.count()
 </code></pre>
 
 <h3 id="crud">CRUD</h3>
 
-<pre><code class="language-txt">example:
+<pre><code class="language-shell">example:
 db.collectionname.find(
   {name: &quot;william&quot;},    #query
   {Name:1, address:1}   #projection
   ).limit(5)            #modifier
 </code></pre>
 
-<h3 id="mongo-dbname-eval-db-dropdatabase-移除-database-或者下面這種方式">mongo <dbname> &ndash;eval &ldquo;db.dropDatabase()&rdquo; 移除 database。 或者下面這種方式：</h3>
+<h3 id="mongo-db-name-eval-db-dropdatabase-移除-database-或者下面這種方式">mongo {{ DB_NAME }} &ndash;eval &ldquo;db.dropDatabase()&rdquo; 移除 database。 或者下面這種方式：</h3>
 
-<pre><code>&gt; use mydb;
+<pre><code class="language-shell">&gt; use mydb;
 &gt; db.dropDatabase();
 </code></pre>
 
 <h3 id="離開mongo-shell">離開mongo Shell</h3>
 
-<pre><code class="language-txt">exit
+<pre><code class="language-shell">exit
 </code></pre>
 
 <h3 id="直接執行">直接執行</h3>
 
-<pre><code class="language-shell">mongo 資料庫名稱 --eval &quot;語法&quot;
+<pre><code class="language-shell">mongo {{ DB_NAME }} --eval &quot;語法&quot;
 mongo test --eval &quot;db.egame.findOne()&quot;
 mongo test --eval 'db.egame.remove({&quot;createDateTime&quot; : {$lt : ISODate(&quot;2017-06-10T13:56:00.001Z&quot;)}})'
 </code></pre>
 
 <h3 id="使用js-file帶入語法">使用js file帶入語法</h3>
 
-<pre><code class="language-txt">mongo &lt; script.js
+<pre><code class="language-shell">mongo &lt; script.js
 //script.js 內容
 db.mycollection.findOne()
 db.getCollectionNames().forEach(function(collection) {
@@ -1127,12 +1129,12 @@ db.getCollectionNames().forEach(function(collection) {
 
 <h3 id="show-accounts">show accounts</h3>
 
-<pre><code class="language-txt">show users
+<pre><code class="language-shell">show users
 </code></pre>
 
 <h3 id="create-account-for-db-backup">create account for db backup</h3>
 
-<pre><code class="language-txt">use 要備份的資料庫名稱
+<pre><code class="language-shell">use 要備份的資料庫名稱
 db.createUser(
   {
     user: &quot;帳號&quot;,
@@ -1144,7 +1146,7 @@ db.createUser(
 
 <h3 id="for-db-only-account">for db only account</h3>
 
-<pre><code class="language-txt">use 資料庫名稱
+<pre><code class="language-shell">use 資料庫名稱
 db.createUser({
   user: &quot;帳號&quot;,
   pwd: &quot;密碼&quot;,
@@ -1182,7 +1184,7 @@ db.removeUser(帳號)
 <h2 id="enable-on-config-file">enable on config file</h2>
 
 <pre><code class="language-yaml">security:
-  authorization: enabled # 前面要空白,不然服務會無法啟動
+  authorization: enabled
 </code></pre>
 
 <h2 id="compare-with-relational-database">compare with relational database</h2>
@@ -1910,20 +1912,20 @@ rm -r /var/lib/mongo
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1533917717"></script>
-    <script src="/js/perfect-scrollbar.min.js?1533917717"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1533917717"></script>
-    <script src="/js/jquery.sticky.js?1533917717"></script>
-    <script src="/js/featherlight.min.js?1533917717"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1533917717"></script>
-    <script src="/js/highlight.pack.js?1533917717"></script>
+    <script src="/js/clipboard.min.js?1533918478"></script>
+    <script src="/js/perfect-scrollbar.min.js?1533918478"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1533918478"></script>
+    <script src="/js/jquery.sticky.js?1533918478"></script>
+    <script src="/js/featherlight.min.js?1533918478"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1533918478"></script>
+    <script src="/js/highlight.pack.js?1533918478"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1533917717"></script>
-    <script src="/js/learn.js?1533917717"></script>
-    <script src="/js/hugo-learn.js?1533917717"></script>
+    <script src="/js/modernizr.custom.71422.js?1533918478"></script>
+    <script src="/js/learn.js?1533918478"></script>
+    <script src="/js/hugo-learn.js?1533918478"></script>
 
-    <link href="/mermaid/mermaid.css?1533917717" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1533917717"></script>
+    <link href="/mermaid/mermaid.css?1533918478" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1533918478"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

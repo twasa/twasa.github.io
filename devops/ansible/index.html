@@ -12,19 +12,19 @@
     <title>Ansible :: William&#39;s blog</title>
     
     
-    <link href="/css/nucleus.css?1533917717" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1533917717" rel="stylesheet">
-    <link href="/css/hybrid.css?1533917717" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1533917717" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1533917717" rel="stylesheet">
-    <link href="/css/auto-complete.css?1533917717" rel="stylesheet">
-    <link href="/css/theme.css?1533917717" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1533917717" rel="stylesheet">
+    <link href="/css/nucleus.css?1533918478" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1533918478" rel="stylesheet">
+    <link href="/css/hybrid.css?1533918478" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1533918478" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1533918478" rel="stylesheet">
+    <link href="/css/auto-complete.css?1533918478" rel="stylesheet">
+    <link href="/css/theme.css?1533918478" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1533918478" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1533917717" rel="stylesheet">
+      <link href="/css/theme-blue.css?1533918478" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1533917717"></script>
+    <script src="/js/jquery-2.x.min.js?1533918478"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -50,14 +50,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1533917717"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1533917717"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1533918478"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1533918478"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1533917717"></script>
+<script type="text/javascript" src="/js/search.js?1533918478"></script>
 
     
   </div>
@@ -947,11 +947,13 @@
     <div class="wrapper">
 <nav id="TableOfContents">
 <ul>
-<li><a href="#concept">Concept</a></li>
+<li><a href="#concept">Concept</a>
+<ul>
 <li><a href="#requirement">Requirement</a></li>
 <li><a href="#glossary">Glossary</a></li>
 <li><a href="#ssh-connection-issue">SSH connection issue</a></li>
 <li><a href="#speed-up-ansible">Speed Up Ansible</a></li>
+</ul></li>
 <li><a href="#module">module</a>
 <ul>
 <li><a href="#module-name-and-arguments">module_name and arguments</a></li>
@@ -974,7 +976,6 @@
 <li><a href="#delegation-rolling-updates-and-local-actions">Delegation, Rolling Updates, and Local Actions</a></li>
 </ul></li>
 <li><a href="#ansible-playbook-with-sudo-and-vaults">ansible-playbook with sudo and vaults</a></li>
-<li><a href="#yaml">```yaml</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -1004,14 +1005,14 @@
 <li>管理方式：<strong>push-based</strong> Ansible manages machines in an <strong>agent-less</strong> manner. Ansible by default manages machines <strong>over the SSH protocol</strong>. Because OpenSSH is one of the most peer-reviewed open source components, security exposure is greatly reduced.</li>
 </ul>
 
-<h1 id="requirement">Requirement</h1>
+<h2 id="requirement">Requirement</h2>
 
 <ul>
 <li>Control Machine: SSH client and Linux system</li>
 <li>Managed Node: Python 2.5+ and SSH service, or windows supprt winrm</li>
 </ul>
 
-<h1 id="glossary">Glossary</h1>
+<h2 id="glossary">Glossary</h2>
 
 <ul>
 <li>Control Machine</li>
@@ -1036,7 +1037,7 @@
 <li>facts: 實際上是ansible的setup module功能，用來取得Managed Node的系統資訊</li>
 </ul>
 
-<h1 id="ssh-connection-issue">SSH connection issue</h1>
+<h2 id="ssh-connection-issue">SSH connection issue</h2>
 
 <ul>
 <li>關閉SSH key host 檢查：在ansible.cfg內 host_key_checking = False</li>
@@ -1056,7 +1057,7 @@ ControlPath ~/.ssh/sockets/%r@%h-%p
 ControlPersist 1m
 </code></pre>
 
-<h1 id="speed-up-ansible">Speed Up Ansible</h1>
+<h2 id="speed-up-ansible">Speed Up Ansible</h2>
 
 <ul>
 <li>SSH multiplexing</li>
@@ -1365,23 +1366,21 @@ ansible_become_pass='{{ ansible_become_pass }}'
 </code></pre>
 
 <ul>
-<li><p>play</p>
+<li>play</li>
+</ul>
 
-<h2 id="yaml">```yaml</h2>
+<pre><code class="language-yaml">  ---
+  - hosts: all
+    gather_facts: no
+    tasks:
+    - name: restart sshd service
+      shell: /etc/init.d/sshd restart
+    - name: check sshd status
+</code></pre>
 
 <ul>
-<li>hosts: all
-gather_facts: no
-tasks:</li>
-<li>name: restart sshd service
-shell: /etc/init.d/sshd restart</li>
-<li>name: check sshd status
-```</li>
-</ul></li>
-
-<li><p>vaults</p></li>
-
-<li><p>ansible-vault edit YOUR-VAULT-FILE</p></li>
+<li>vaults</li>
+<li>ansible-vault edit YOUR-VAULT-FILE</li>
 </ul>
 
 <pre><code class="language-txt">ansible_ssh_user: YOUR_USER_NAME
@@ -2047,20 +2046,20 @@ ansible_become_pass: 'YOUR_SUDO_PASSWORD'
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1533917717"></script>
-    <script src="/js/perfect-scrollbar.min.js?1533917717"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1533917717"></script>
-    <script src="/js/jquery.sticky.js?1533917717"></script>
-    <script src="/js/featherlight.min.js?1533917717"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1533917717"></script>
-    <script src="/js/highlight.pack.js?1533917717"></script>
+    <script src="/js/clipboard.min.js?1533918478"></script>
+    <script src="/js/perfect-scrollbar.min.js?1533918478"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1533918478"></script>
+    <script src="/js/jquery.sticky.js?1533918478"></script>
+    <script src="/js/featherlight.min.js?1533918478"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1533918478"></script>
+    <script src="/js/highlight.pack.js?1533918478"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1533917717"></script>
-    <script src="/js/learn.js?1533917717"></script>
-    <script src="/js/hugo-learn.js?1533917717"></script>
+    <script src="/js/modernizr.custom.71422.js?1533918478"></script>
+    <script src="/js/learn.js?1533918478"></script>
+    <script src="/js/hugo-learn.js?1533918478"></script>
 
-    <link href="/mermaid/mermaid.css?1533917717" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1533917717"></script>
+    <link href="/mermaid/mermaid.css?1533918478" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1533918478"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
