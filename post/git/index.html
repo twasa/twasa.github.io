@@ -12,19 +12,19 @@
     <title>Git :: William&#39;s blog</title>
     
     
-    <link href="/css/nucleus.css?1533915504" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1533915504" rel="stylesheet">
-    <link href="/css/hybrid.css?1533915504" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1533915504" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1533915504" rel="stylesheet">
-    <link href="/css/auto-complete.css?1533915504" rel="stylesheet">
-    <link href="/css/theme.css?1533915504" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1533915504" rel="stylesheet">
+    <link href="/css/nucleus.css?1533917202" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1533917202" rel="stylesheet">
+    <link href="/css/hybrid.css?1533917202" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1533917202" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1533917202" rel="stylesheet">
+    <link href="/css/auto-complete.css?1533917202" rel="stylesheet">
+    <link href="/css/theme.css?1533917202" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1533917202" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1533915504" rel="stylesheet">
+      <link href="/css/theme-blue.css?1533917202" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1533915504"></script>
+    <script src="/js/jquery-2.x.min.js?1533917202"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -50,14 +50,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1533915504"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1533915504"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1533917202"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1533917202"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1533915504"></script>
+<script type="text/javascript" src="/js/search.js?1533917202"></script>
 
     
   </div>
@@ -726,6 +726,59 @@
  
   
     
+    <li data-nav-id="/devops/" title="DevOps" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/devops/">
+          DevOps
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/ansible/" title="Ansible" class="dd-item ">
+        <a href="/devops/ansible/">
+        Ansible
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
     <li data-nav-id="/db/" title="DBs" class="dd-item 
         
         
@@ -775,59 +828,6 @@
       <li data-nav-id="/db/my-db/" title="MySQL and MariaDB memo" class="dd-item ">
         <a href="/db/my-db/">
         MySQL and MariaDB memo
-        <i class="fa fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-          
-          
-
-
- 
-  
-    
-    <li data-nav-id="/devops/" title="DevOps" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/devops/">
-          DevOps
-          
-            <i class="fa fa-check read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/devops/ansible/" title="Ansible" class="dd-item ">
-        <a href="/devops/ansible/">
-        Ansible
         <i class="fa fa-check read-icon"></i>
         </a>
     </li>
@@ -979,183 +979,221 @@
 <h2 id="config">Config</h2>
 
 <ul>
-<li><p>在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：</p>
+<li>在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：</li>
+</ul>
 
-<pre><code>git config --global user.name &quot;你的姓名&quot;
+<pre><code class="language-shell">git config --global user.name &quot;你的姓名&quot;
 git config --global user.email &quot;你的@email位址&quot;
-</code></pre></li>
+</code></pre>
 
-<li><p>加上 &ndash;global 表示是全域的設定。你可以使用 git config &ndash;list 這個指令來看你的 Git 設定內容</p></li>
+<ul>
+<li>加上 &ndash;global 表示是全域的設定。你可以使用 git config &ndash;list 這個指令來看你的 Git 設定內容</li>
+<li>Git 也有提供 alias 的功能，例如你可以將 git status 縮寫為 git st，git checkout 縮寫為 git co 等，你只要這樣設定，這樣一來只要打 git st 就等同於打 git status</li>
+</ul>
 
-<li><p>Git 也有提供 alias 的功能，例如你可以將 git status 縮寫為 git st，git checkout 縮寫為 git co 等，你只要這樣設定，這樣一來只要打 git st 就等同於打 git status</p>
-
-<pre><code>git config --global alias.st status
+<pre><code class="language-shell">git config --global alias.st status
 git config --global alias.ck checkout
 git config --global alias.rst reset HEAD
-</code></pre></li>
+</code></pre>
 
-<li><p>忽略空白</p>
-
-<pre><code>git config --global apply.whitespace nowarn
-</code></pre></li>
-
-<li><p>Git 預設輸出是沒有顏色的，我們可以讓他在輸出時加上顏色讓我們更容易閱讀</p>
-
-<pre><code>git config --global color.ui true
-</code></pre></li>
-
-<li><p>設定commit的預設編輯器</p>
-
-<pre><code>git config --global core.editor vim
-</code></pre></li>
-
-<li><p>設定merge的比對工具</p>
-
-<pre><code>git config --global merge.tool vimdiff
-</code></pre></li>
-
-<li><p>不希望加入版本控制的追蹤設定: 建立<code>.gitignore</code>檔案，內容</p>
-
-<pre><code>*.swp
-log/*.log
-</code></pre></li>
+<ul>
+<li>忽略空白</li>
 </ul>
+
+<pre><code class="language-shell">git config --global apply.whitespace nowarn
+</code></pre>
+
+<ul>
+<li>Git 預設輸出是沒有顏色的，我們可以讓他在輸出時加上顏色讓我們更容易閱讀</li>
+</ul>
+
+<pre><code class="language-shell">git config --global color.ui true
+</code></pre>
+
+<ul>
+<li>設定commit的預設編輯器</li>
+</ul>
+
+<pre><code class="language-shell">git config --global core.editor vim
+</code></pre>
+
+<ul>
+<li>設定merge的比對工具</li>
+</ul>
+
+<pre><code class="language-shell">git config --global merge.tool vimdiff
+</code></pre>
+
+<ul>
+<li>不希望加入版本控制的追蹤設定: 建立<code>.gitignore</code>檔案，內容</li>
+</ul>
+
+<pre><code class="language-shell">*.swp
+log/*.log
+</code></pre>
 
 <h2 id="github-ssh-key-config">github ssh-key config</h2>
 
 <ul>
-<li><p>create a ssh key</p>
-
-<pre><code>ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;
-</code></pre></li>
-
-<li><p>upload public key to github</p>
-
-<pre><code>login to GitHub
-Account Settings -&gt; SSH Public Keys -&gt; Add another public key
-cat id_rsa_github.pub # past your public key content
-</code></pre></li>
-
-<li><p>vi .ssh/config</p>
-
-<pre><code>Identityfile ~/.ssh/your-private-key
-</code></pre></li>
+<li>create a ssh key</li>
 </ul>
+
+<pre><code class="language-shell">ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;
+</code></pre>
+
+<ul>
+<li>upload public key to github</li>
+</ul>
+
+<pre><code class="language-shell">    login to GitHub
+    Account Settings -&gt; SSH Public Keys -&gt; Add another public key
+    cat id_rsa_github.pub # past your public key content
+</code></pre>
+
+<ul>
+<li>vi .ssh/config</li>
+</ul>
+
+<pre><code class="language-shell">Identityfile ~/.ssh/your-private-key
+</code></pre>
 
 <h2 id="基本指令">基本指令</h2>
 
 <ul>
-<li><p>建立一個新的 Repository</p>
-
-<pre><code>git init
-</code></pre></li>
-
-<li><p>Clone(複製)別人的 Repository：</p>
-
-<pre><code>git clone https://xxx@github.com/xxx/xxx.git
-or
-git glone git://xxx@github.com/xxx/xxx.git
-</code></pre></li>
-
-<li><p>檢查目前 Git 的狀態</p>
-
-<pre><code>git status
-</code></pre></li>
-
-<li><p>加檔案</p>
-
-<pre><code>git add
-git add -p #批次加入，可用在開發時有些程式碼功能想加入，有些不想加入時使用
-</code></pre></li>
-
-<li><p>移檔案:</p>
-
-<pre><code>git revert
-</code></pre></li>
-
-<li><p>提交檔案:</p>
-
-<pre><code>git commit
-or
-git commit -m &quot;說明文字&quot;
-</code></pre></li>
-
-<li><p>加檔案並提交</p>
-
-<pre><code>git commit -am &quot;Add test.py to test git function&quot;
-</code></pre></li>
-
-<li><p>查看過去 commit 的紀錄
-```
-git log
-or
-git log &ndash;stat
-or
-git log -p</p></li>
+<li>建立一個新的 Repository</li>
 </ul>
 
-<p>git reflog</p>
-
-<pre><code>
-- About HEAD
+<pre><code class="language-shell">git init
 </code></pre>
 
-<p>在Git中，HEAD像是一個指標，指著一個版本
+<ul>
+<li>Clone(複製)別人的 Repository：</li>
+</ul>
+
+<pre><code class="language-shell">git clone https://xxx@github.com/xxx/xxx.git
+or
+git glone git://xxx@github.com/xxx/xxx.git
+</code></pre>
+
+<ul>
+<li>檢查目前 Git 的狀態</li>
+</ul>
+
+<pre><code class="language-shell">git status
+</code></pre>
+
+<ul>
+<li>加檔案</li>
+</ul>
+
+<pre><code class="language-shell">git add &lt;FILE&gt;
+git add -p #批次加入，可用在開發時有些程式碼功能想加入，有些不想加入時使用
+</code></pre>
+
+<ul>
+<li>移檔案:</li>
+</ul>
+
+<pre><code class="language-shell">git revert
+</code></pre>
+
+<ul>
+<li>提交檔案:</li>
+</ul>
+
+<pre><code class="language-shell">git commit
+or
+git commit -m &quot;說明文字&quot;
+</code></pre>
+
+<ul>
+<li>加檔案並提交</li>
+</ul>
+
+<pre><code class="language-shell">git commit -am &quot;Add test.py to test git function&quot;
+</code></pre>
+
+<ul>
+<li>查看過去 commit 的紀錄</li>
+</ul>
+
+<pre><code class="language-shell">git log
+or
+git log --stat
+or
+git log -p
+
+git reflog
+</code></pre>
+
+<ul>
+<li>About HEAD</li>
+</ul>
+
+<pre><code class="language-shell">在Git中，HEAD像是一個指標，指著一個版本
 HEAD^       把指標只到上一個版本
 HEAD^^      把指標只到上一個版本
-HEAD~100    把指標只到上100個版本</p>
-
-<pre><code>
-- 回之前版本
+HEAD~100    把指標只到上100個版本
 </code></pre>
 
-<p>git reset &ndash;hard HEAD^</p>
+<ul>
+<li>回之前版本</li>
+</ul>
 
-<p>git reset &ndash;hard <commitId></p>
+<pre><code class="language-shell">git reset --hard HEAD^
 
-<pre><code>
-- 放棄修改(git add之前)
+git reset --hard &lt;commitId&gt;
 </code></pre>
 
-<p>git checkout &ndash; FILE</p>
+<ul>
+<li>放棄修改(git add之前)</li>
+</ul>
 
-<pre><code>
-- 放棄修改(git add之後)
+<pre><code class="language-shell">git checkout -- FILE
 </code></pre>
 
-<p>git reset HEAD FILE
-git checkout &ndash; FILE</p>
+<ul>
+<li>放棄修改(git add之後)</li>
+</ul>
 
-<pre><code>
-- 放棄修改(git commit之後，尚未push至remote之前都有救)
+<pre><code class="language-shell">git reset HEAD FILE
+git checkout -- FILE
 </code></pre>
 
-<p>git checkout <commitId> <file></p>
+<ul>
+<li>放棄修改(git commit之後，尚未push至remote之前都有救)</li>
+</ul>
 
-<pre><code>
-- 列出既有標籤:
+<pre><code class="language-shell">git checkout &lt;commitId&gt; &lt;file&gt;
 </code></pre>
 
-<p>git tag -l</p>
+<ul>
+<li>列出既有標籤:</li>
+</ul>
 
-<pre><code>
-- 新增標籤 -a 就是標籤名稱，-m 代表該標籤說明
+<pre><code class="language-shell">git tag -l
 </code></pre>
 
-<p>git tag -a v1.4 -m &lsquo;my version 1.4&rsquo;</p>
+<ul>
+<li>新增標籤 -a 就是標籤名稱，-m 代表該標籤說明</li>
+</ul>
 
-<pre><code>
-- 上傳標籤到遠端, git push並不會把標籤上傳到遠端，所以必須透過底下才行 
+<pre><code class="language-shell">git tag -a v1.4 -m 'my version 1.4'
 </code></pre>
 
-<p>git push origin v1.5</p>
+<ul>
+<li>上傳標籤到遠端, git push並不會把標籤上傳到遠端，所以必須透過底下才行</li>
+</ul>
 
-<pre><code>
-- 如果在本機端很多標籤，利用 –tags 一次上傳上去
+<pre><code class="language-shell">git push origin v1.5
 </code></pre>
 
-<p>git push origin &ndash;tags
-```</p>
+<ul>
+<li>如果在本機端很多標籤，利用 –tags 一次上傳上去</li>
+</ul>
+
+<pre><code class="language-shell">git push origin --tags
+</code></pre>
 
 
 <footer class=" footline" >
@@ -1738,22 +1776,6 @@ git checkout &ndash; FILE</p>
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1769,6 +1791,22 @@ git checkout &ndash; FILE</p>
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -1808,20 +1846,20 @@ git checkout &ndash; FILE</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1533915504"></script>
-    <script src="/js/perfect-scrollbar.min.js?1533915504"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1533915504"></script>
-    <script src="/js/jquery.sticky.js?1533915504"></script>
-    <script src="/js/featherlight.min.js?1533915504"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1533915504"></script>
-    <script src="/js/highlight.pack.js?1533915504"></script>
+    <script src="/js/clipboard.min.js?1533917202"></script>
+    <script src="/js/perfect-scrollbar.min.js?1533917202"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1533917202"></script>
+    <script src="/js/jquery.sticky.js?1533917202"></script>
+    <script src="/js/featherlight.min.js?1533917202"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1533917202"></script>
+    <script src="/js/highlight.pack.js?1533917202"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1533915504"></script>
-    <script src="/js/learn.js?1533915504"></script>
-    <script src="/js/hugo-learn.js?1533915504"></script>
+    <script src="/js/modernizr.custom.71422.js?1533917202"></script>
+    <script src="/js/learn.js?1533917202"></script>
+    <script src="/js/hugo-learn.js?1533917202"></script>
 
-    <link href="/mermaid/mermaid.css?1533915504" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1533915504"></script>
+    <link href="/mermaid/mermaid.css?1533917202" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1533917202"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -143,6 +143,11 @@
   </url>
   
   <url>
+    <loc>https://blog.twasa.cf/db/</loc>
+    <lastmod>2017-09-11T02:31:16+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.twasa.cf/programing/python/python-virtualenv/</loc>
     <lastmod>2017-09-10T17:00:56+08:00</lastmod>
   </url>
@@ -216,12 +221,6 @@
   <url>
     <loc>https://blog.twasa.cf/categories/container/</loc>
     <lastmod>2017-09-22T10:57:01+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.twasa.cf/db/</loc>
-    <lastmod>2017-09-11T15:54:35+08:00</lastmod>
     <priority>0</priority>
   </url>
   

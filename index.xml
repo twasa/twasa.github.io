@@ -111,10 +111,7 @@ script  prerotate：executed before the log file is rotated postrotate：在做�
       <pubDate>Mon, 11 Sep 2017 16:46:58 +0800</pubDate>
       
       <guid>https://blog.twasa.cf/post/git/</guid>
-      <description>Git的基本使用 Config  在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：
-git config --global user.name &amp;quot;你的姓名&amp;quot; git config --global user.email &amp;quot;你的@email位址&amp;quot;  加上 &amp;ndash;global 表示是全域的設定。你可以使用 git config &amp;ndash;list 這個指令來看你的 Git 設定內容
- Git 也有提供 alias 的功能，例如你可以將 git status 縮寫為 git st，git checkout 縮寫為 git co 等，你只要這樣設定，這樣一來只要打 git st 就等同於打 git status
-git config --global alias.st status git config --global alias.ck checkout git config --global alias.rst reset HEAD  忽略空白</description>
+      <description>Git的基本使用 Config  在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：  git config --global user.name &amp;quot;你的姓名&amp;quot; git config --global user.email &amp;quot;你的@email位址&amp;quot;   加上 &amp;ndash;global 表示是全域的設定。你可以使用 git config &amp;ndash;list 這個指令來看你的 Git 設定內容 Git 也有提供 alias 的功能，例如你可以將 git status 縮寫為 git st，git checkout 縮寫為 git co 等，你只要這樣設定，這樣一來只要打 git st 就等同於打 git status  git config --global alias.st status git config --global alias.ck checkout git config --global alias.rst reset HEAD   忽略空白  git config --global apply.</description>
     </item>
     
     <item>
