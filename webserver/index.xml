@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Apache on William&#39;s blog</title>
-    <link>https://blog.twasa.cf/tags/apache/</link>
-    <description>Recent content in Apache on William&#39;s blog</description>
+    <title>Webservers on William&#39;s blog</title>
+    <link>https://blog.twasa.cf/webserver/</link>
+    <description>Recent content in Webservers on William&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Mon, 11 Sep 2017 15:50:54 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.twasa.cf/tags/apache/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.twasa.cf/webserver/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

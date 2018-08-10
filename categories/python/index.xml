@@ -84,10 +84,10 @@ c:\packagedemo\package\module01.py c:\packagedemo\package\module03.py c:\package
     
     <item>
       <title>Flask Quick Start Guide</title>
-      <link>https://blog.twasa.cf/post/flask-quick-start-guide/</link>
+      <link>https://blog.twasa.cf/programing/python/flask-quick-start-guide/</link>
       <pubDate>Sun, 10 Sep 2017 15:47:02 +0800</pubDate>
       
-      <guid>https://blog.twasa.cf/post/flask-quick-start-guide/</guid>
+      <guid>https://blog.twasa.cf/programing/python/flask-quick-start-guide/</guid>
       <description>#Flask Quickstart
 Requirements  Python Pip virtualenv Flask : a web development framework Werkzeug：a toolkit for WSGI Jinja2：renders templates  virtualenv：multiple side-by-side installations of Python  安裝：pip install virtualenv 基本使用方式：  ### 先建立專案資料夾 mkdir myproject cd myproject ### 初始化 virtualenv env ### activate the corresponding environment . venv/bin/activate or venv\scripts\activate ### 這時候再裝Flask pip install Flask ### 回到實際環境 deactivate ### 若因為目錄搬移或更名 需重新locate cd /path/to/your_project_new_dir virtualenv --relocatable your_virtualenv_name  建立第一個app(記得啟動venv), save it as hello.</description>
     </item>

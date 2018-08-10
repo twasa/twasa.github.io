@@ -68,7 +68,7 @@
   </url>
   
   <url>
-    <loc>https://blog.twasa.cf/post/apache-http-advanced/</loc>
+    <loc>https://blog.twasa.cf/webserver/apache-http-advanced/</loc>
     <lastmod>2017-09-11T15:50:54+08:00</lastmod>
   </url>
   
@@ -103,7 +103,7 @@
   </url>
   
   <url>
-    <loc>https://blog.twasa.cf/post/apache-tomcat/</loc>
+    <loc>https://blog.twasa.cf/webserver/apache-tomcat/</loc>
     <lastmod>2017-09-11T12:34:25+08:00</lastmod>
   </url>
   
@@ -178,7 +178,7 @@
   </url>
   
   <url>
-    <loc>https://blog.twasa.cf/post/flask-quick-start-guide/</loc>
+    <loc>https://blog.twasa.cf/programing/python/flask-quick-start-guide/</loc>
     <lastmod>2017-09-10T15:47:02+08:00</lastmod>
   </url>
   
@@ -257,13 +257,13 @@
   </url>
   
   <url>
-    <loc>https://blog.twasa.cf/tags/devops/</loc>
+    <loc>https://blog.twasa.cf/categories/devops/</loc>
     <lastmod>2017-09-11T15:48:07+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.twasa.cf/categories/devops/</loc>
+    <loc>https://blog.twasa.cf/tags/devops/</loc>
     <lastmod>2017-09-11T15:48:07+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -396,6 +396,12 @@
   
   <url>
     <loc>https://blog.twasa.cf/categories/webserver/</loc>
+    <lastmod>2017-09-11T15:50:54+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.twasa.cf/webserver/</loc>
     <lastmod>2017-09-11T15:50:54+08:00</lastmod>
     <priority>0</priority>
   </url>

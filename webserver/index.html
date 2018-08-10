@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-    <title> :: William&#39;s blog</title>
+    <title>Webservers :: William&#39;s blog</title>
     
     
     <link href="/css/nucleus.css?1533918664" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/post/mdadm-rescue/">
+  <body class="" data-url="/webserver/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -74,8 +74,8 @@
   
     
     <li data-nav-id="/webserver/" title="Webservers" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/webserver/">
@@ -624,7 +624,7 @@
   
     
     <li data-nav-id="/post/" title="post" class="dd-item 
-        parent
+        
         
         
         ">
@@ -859,7 +859,7 @@
  
   
     
-      <li data-nav-id="/post/mdadm-rescue/" title="" class="dd-item active">
+      <li data-nav-id="/post/mdadm-rescue/" title="" class="dd-item ">
         <a href="/post/mdadm-rescue/">
         
         <i class="fa fa-check read-icon"></i>
@@ -937,13 +937,6 @@
                   
                   
                   
-                  <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://blog.twasa.cfpost/mdadm-rescue.md" target="blank">
-                      <i class="fa fa-code-fork"></i>
-                      <span id="top-github-link-text">Edit this page</span>
-                    </a>
-                  </div>
-                  
                 
                 
                 <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
@@ -963,13 +956,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/'>About me</a> > <a href='/post/'>post</a> > 
-          
-         
+            <a href='/'>About me</a> > Webservers
           
          
           
@@ -991,37 +978,17 @@
         
         <div id="body-inner">
           
-            <h1></h1>
+            <h1>Webservers</h1>
           
 
         
 
 
-<pre><code>mdadm --assemble /dev/md6 /dev/sde3
-mount
-iscsiadm
-history 
-clear
-exit
-exit
-df
-df
-cat /proc/mdstat 
-mount
-mdadm -Sf /dev/md6
-mdadm -Af /dev/md6 /dev/sde3
-cat /proc/mdstat 
-synospace --map-file -d
-synocheckshare 
-synocheckiscsitrg
-synocheckiscsitrg 
-</code></pre>
 
 
 <footer class=" footline" >
 	
 </footer>
-
 
         
         </div> 
@@ -1054,8 +1021,6 @@ synocheckiscsitrg
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -1069,6 +1034,9 @@ synocheckiscsitrg
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1457,7 +1425,6 @@ synocheckiscsitrg
             
                 
                     
-                    
                 
                 
 
@@ -1470,9 +1437,6 @@ synocheckiscsitrg
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1650,7 +1614,6 @@ synocheckiscsitrg
             
                 
                     
-                    
                 
                 
 
@@ -1672,10 +1635,10 @@ synocheckiscsitrg
 
 
         
-            <a class="nav nav-prev" href="/post/hugo-how-to/" title="Hugo A Fast and Flexible Website Generator"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/" title="About me"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/post/wsl/" title="WSL &#43; zsh &#43; oh-my-zsh &#43; powerlevel9k &#43; cmder" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/webserver/apache-http-advanced/" title="Apache Http Advanced" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -1705,4 +1668,3 @@ synocheckiscsitrg
 
   </body>
 </html>
-
