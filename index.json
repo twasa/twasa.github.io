@@ -11,7 +11,7 @@
 	"title": "How to install and auto update Let&#39;s encrypt wildcard certs on Synology NAS with cloudflare DNS API",
 	"tags": [],
 	"description": "",
-	"content": " requirements  Synology ssh enabled and sudo permission Cloudflare API key  Installation of acme.sh $ sudo -i $ wget https://github.com/Neilpang/acme.sh/archive/master.tar.gz $ tar xvf master.tar.gz $ cd acme.sh-master/ $ ./acme.sh --install --nocron --home /usr/local/share/acme.sh --accountemail \u0026quot;email@example.com\u0026quot;  Configuring DNS For CloudFlare, we will set two environment variables that acme.sh (specifically, the dns_cf script from the dnsapi subdirectory) will read to set the DNS record.\nexport CF_Key=\u0026quot;MY_SECRET_KEY_SUCH_SECRET\u0026quot; export CF_Email=\u0026quot;email@example.com\u0026quot;  Creating the certificate $ cd /usr/local/share/acme.sh $ export CERT_DOMAIN=\u0026quot;your-domain.tld\u0026quot; $ export CERT_DNS=\u0026quot;dns_cf\u0026quot; $ ./acme.sh --issue -d \u0026quot;$CERT_DOMAIN\u0026quot; --dns \u0026quot;$CERT_DNS\u0026quot; \\ --certpath /usr/syno/etc/certificate/system/default/cert.pem \\ --keypath /usr/syno/etc/certificate/system/default/privkey.pem \\ --fullchainpath /usr/syno/etc/certificate/system/default/fullchain.pem \\ --reloadcmd \u0026quot;/usr/syno/sbin/synoservicectl --reload nginx\u0026quot; \\ --dnssleep 20  Configuring Certificate Renewal by /etc/crontab 0 10 2 * * root /usr/local/share/acme.sh/acme.sh --cron --home /usr/local/share/acme.sh/  "
+	"content": " requirements  Synology ssh enabled and sudo permission Cloudflare API key  Installation of acme.sh sudo -i wget https://github.com/Neilpang/acme.sh/archive/master.tar.gz tar xvf master.tar.gz cd acme.sh-master/ ./acme.sh --install --nocron --home /usr/local/share/acme.sh --accountemail \u0026quot;email@example.com\u0026quot;  Configuring DNS For CloudFlare, we will set two environment variables that acme.sh (specifically, the dns_cf script from the dnsapi subdirectory) will read to set the DNS record.\nexport CF_Key=\u0026quot;MY_SECRET_KEY_SUCH_SECRET\u0026quot; export CF_Email=\u0026quot;email@example.com\u0026quot;  Creating the certificate $ cd /usr/local/share/acme.sh $ export CERT_DOMAIN=\u0026quot;your-domain.tld\u0026quot; $ export CERT_DNS=\u0026quot;dns_cf\u0026quot; $ ./acme.sh --issue -d \u0026quot;$CERT_DOMAIN\u0026quot; --dns \u0026quot;$CERT_DNS\u0026quot; \\ --certpath /usr/syno/etc/certificate/system/default/cert.pem \\ --keypath /usr/syno/etc/certificate/system/default/privkey.pem \\ --fullchainpath /usr/syno/etc/certificate/system/default/fullchain.pem \\ --reloadcmd \u0026quot;/usr/syno/sbin/synoservicectl --reload nginx\u0026quot; \\ --dnssleep 20 \\ --config-home \u0026quot;/path/to/save/acmeconfigs/\u0026quot;  Configuring Certificate Renewal by /etc/crontab 0 10 2 * * root /usr/local/share/acme.sh/acme.sh --cron --home /path/to/save/acmeconfigs/  "
 },
 {
 	"uri": "https://blog.twasa.cf/post/consul/",
@@ -343,14 +343,14 @@
 	"content": ""
 },
 {
-	"uri": "https://blog.twasa.cf/categories/devops/",
+	"uri": "https://blog.twasa.cf/tags/devops/",
 	"title": "Devops",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://blog.twasa.cf/tags/devops/",
+	"uri": "https://blog.twasa.cf/categories/devops/",
 	"title": "Devops",
 	"tags": [],
 	"description": "",

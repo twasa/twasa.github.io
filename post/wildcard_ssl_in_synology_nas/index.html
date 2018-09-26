@@ -12,19 +12,19 @@
     <title>How to install and auto update Let&#39;s encrypt wildcard certs on Synology NAS with cloudflare DNS API :: William&#39;s blog</title>
     
     
-    <link href="/css/nucleus.css?1533918664" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1533918664" rel="stylesheet">
-    <link href="/css/hybrid.css?1533918664" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1533918664" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1533918664" rel="stylesheet">
-    <link href="/css/auto-complete.css?1533918664" rel="stylesheet">
-    <link href="/css/theme.css?1533918664" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1533918664" rel="stylesheet">
+    <link href="/css/nucleus.css?1537984110" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1537984110" rel="stylesheet">
+    <link href="/css/hybrid.css?1537984110" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1537984110" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1537984110" rel="stylesheet">
+    <link href="/css/auto-complete.css?1537984110" rel="stylesheet">
+    <link href="/css/theme.css?1537984110" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1537984110" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1533918664" rel="stylesheet">
+      <link href="/css/theme-blue.css?1537984110" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1533918664"></script>
+    <script src="/js/jquery-2.x.min.js?1537984110"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -50,14 +50,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1533918664"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1533918664"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1537984110"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1537984110"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1533918664"></script>
+<script type="text/javascript" src="/js/search.js?1537984110"></script>
 
     
   </div>
@@ -1019,24 +1019,24 @@
 
 <h2 id="installation-of-acme-sh">Installation of acme.sh</h2>
 
-<pre><code>$ sudo -i
-$ wget https://github.com/Neilpang/acme.sh/archive/master.tar.gz
-$ tar xvf master.tar.gz
-$ cd acme.sh-master/
-$ ./acme.sh --install --nocron --home /usr/local/share/acme.sh --accountemail &quot;email@example.com&quot;
+<pre><code class="language-shell">sudo -i
+wget https://github.com/Neilpang/acme.sh/archive/master.tar.gz
+tar xvf master.tar.gz
+cd acme.sh-master/
+./acme.sh --install --nocron --home /usr/local/share/acme.sh --accountemail &quot;email@example.com&quot;
 </code></pre>
 
 <h2 id="configuring-dns">Configuring DNS</h2>
 
 <p>For CloudFlare, we will set two environment variables that acme.sh (specifically, the dns_cf script from the dnsapi subdirectory) will read to set the DNS record.</p>
 
-<pre><code>export CF_Key=&quot;MY_SECRET_KEY_SUCH_SECRET&quot;
+<pre><code class="language-shell">export CF_Key=&quot;MY_SECRET_KEY_SUCH_SECRET&quot;
 export CF_Email=&quot;email@example.com&quot;
 </code></pre>
 
 <h2 id="creating-the-certificate">Creating the certificate</h2>
 
-<pre><code>$ cd /usr/local/share/acme.sh
+<pre><code class="language-shell">$ cd /usr/local/share/acme.sh
 $ export CERT_DOMAIN=&quot;your-domain.tld&quot;
 $ export CERT_DNS=&quot;dns_cf&quot;
 $ ./acme.sh --issue -d &quot;$CERT_DOMAIN&quot; --dns &quot;$CERT_DNS&quot; \
@@ -1044,12 +1044,13 @@ $ ./acme.sh --issue -d &quot;$CERT_DOMAIN&quot; --dns &quot;$CERT_DNS&quot; \
       --keypath /usr/syno/etc/certificate/system/default/privkey.pem \
       --fullchainpath /usr/syno/etc/certificate/system/default/fullchain.pem \
       --reloadcmd &quot;/usr/syno/sbin/synoservicectl --reload nginx&quot; \
-      --dnssleep 20
+      --dnssleep 20 \
+      --config-home &quot;/path/to/save/acmeconfigs/&quot;
 </code></pre>
 
 <h2 id="configuring-certificate-renewal-by-etc-crontab">Configuring Certificate Renewal by /etc/crontab</h2>
 
-<pre><code>0    10    2    *    *    root    /usr/local/share/acme.sh/acme.sh --cron --home /usr/local/share/acme.sh/
+<pre><code class="language-conf">0    10    2    *    *    root    /usr/local/share/acme.sh/acme.sh --cron --home /path/to/save/acmeconfigs/
 </code></pre>
 
 
@@ -1722,20 +1723,20 @@ $ ./acme.sh --issue -d &quot;$CERT_DOMAIN&quot; --dns &quot;$CERT_DNS&quot; \
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1533918664"></script>
-    <script src="/js/perfect-scrollbar.min.js?1533918664"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1533918664"></script>
-    <script src="/js/jquery.sticky.js?1533918664"></script>
-    <script src="/js/featherlight.min.js?1533918664"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1533918664"></script>
-    <script src="/js/highlight.pack.js?1533918664"></script>
+    <script src="/js/clipboard.min.js?1537984110"></script>
+    <script src="/js/perfect-scrollbar.min.js?1537984110"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1537984110"></script>
+    <script src="/js/jquery.sticky.js?1537984110"></script>
+    <script src="/js/featherlight.min.js?1537984110"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1537984110"></script>
+    <script src="/js/highlight.pack.js?1537984110"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1533918664"></script>
-    <script src="/js/learn.js?1533918664"></script>
-    <script src="/js/hugo-learn.js?1533918664"></script>
+    <script src="/js/modernizr.custom.71422.js?1537984110"></script>
+    <script src="/js/learn.js?1537984110"></script>
+    <script src="/js/hugo-learn.js?1537984110"></script>
 
-    <link href="/mermaid/mermaid.css?1533918664" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1533918664"></script>
+    <link href="/mermaid/mermaid.css?1537984110" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1537984110"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
