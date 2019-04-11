@@ -2,114 +2,114 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>post on William&#39;s blog</title>
-    <link>https://blog.twasa.cf/post/</link>
+    <link>https://twasa.ml/post/</link>
     <description>Recent content in post on William&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Mon, 11 Sep 2017 02:31:16 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.twasa.cf/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://twasa.ml/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>WSL &#43; zsh &#43; oh-my-zsh &#43; powerlevel9k &#43; cmder</title>
-      <link>https://blog.twasa.cf/post/wsl/</link>
+      <link>https://twasa.ml/post/wsl/</link>
       <pubDate>Sun, 08 Jul 2018 23:00:24 +0800</pubDate>
       
-      <guid>https://blog.twasa.cf/post/wsl/</guid>
+      <guid>https://twasa.ml/post/wsl/</guid>
       <description>Introduction install Windows Subsystem for Linux and Beautiful shell Required  Windows 10 Anniversary Update build 14316 or later! Administrator permission cmder(Optional, for good color schema and powerline fonts support)  Install Subsystem Linux using powershell  Install Subsystem  powershell -command Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux   Install Ubuntu from Microsoft Store  install fontconfg on Ubuntu apt-get install fontconfig  install PowerlineSymbols wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf mkdir -p ~/.</description>
     </item>
     
     <item>
       <title>How to install and auto update Let&#39;s encrypt wildcard certs on Synology NAS with cloudflare DNS API</title>
-      <link>https://blog.twasa.cf/post/wildcard_ssl_in_synology_nas/</link>
+      <link>https://twasa.ml/post/wildcard_ssl_in_synology_nas/</link>
       <pubDate>Thu, 05 Jul 2018 02:25:04 +0800</pubDate>
       
-      <guid>https://blog.twasa.cf/post/wildcard_ssl_in_synology_nas/</guid>
+      <guid>https://twasa.ml/post/wildcard_ssl_in_synology_nas/</guid>
       <description>requirements  Synology ssh enabled and sudo permission Cloudflare API key  Installation of acme.sh sudo -i wget https://github.com/Neilpang/acme.sh/archive/master.tar.gz tar xvf master.tar.gz cd acme.sh-master/ ./acme.sh --install --nocron --home /usr/local/share/acme.sh --accountemail &amp;quot;email@example.com&amp;quot;  Configuring DNS For CloudFlare, we will set two environment variables that acme.sh (specifically, the dns_cf script from the dnsapi subdirectory) will read to set the DNS record.
 export CF_Key=&amp;quot;MY_SECRET_KEY_SUCH_SECRET&amp;quot; export CF_Email=&amp;quot;email@example.com&amp;quot;  Creating the certificate $ cd /usr/local/share/acme.</description>
     </item>
     
     <item>
       <title>Consul</title>
-      <link>https://blog.twasa.cf/post/consul/</link>
+      <link>https://twasa.ml/post/consul/</link>
       <pubDate>Sat, 28 Apr 2018 06:24:00 +0800</pubDate>
       
-      <guid>https://blog.twasa.cf/post/consul/</guid>
+      <guid>https://twasa.ml/post/consul/</guid>
       <description>Consul Description Consul has multiple components, but as a whole, it is a tool for discovering and configuring services in your infrastructure.
 Features  Service Discovery: Clients of Consul can provide a service, such as api or mysql, and other clients can use Consul to discover providers of a given service. Using either DNS or HTTP, applications can easily find the services they depend upon. Health Checking: Consul clients can provide any number of health checks, either associated with a given service (&amp;ldquo;is the webserver returning 200 OK&amp;rdquo;), or with the local node (&amp;ldquo;is memory utilization below 90%&amp;rdquo;).</description>
     </item>
     
     <item>
       <title>Powershell</title>
-      <link>https://blog.twasa.cf/post/powershell/</link>
+      <link>https://twasa.ml/post/powershell/</link>
       <pubDate>Sat, 21 Apr 2018 17:33:21 +0800</pubDate>
       
-      <guid>https://blog.twasa.cf/post/powershell/</guid>
+      <guid>https://twasa.ml/post/powershell/</guid>
       <description>Powershell PowerShell Core is a cross-platform (Windows, Linux, and macOS) automation and configuration tool/framework that works well with your existing tools and is optimized for dealing with structured data (e.g. JSON, CSV, XML, etc.), REST APIs, and object models. It includes a command-line shell, an associated scripting language and a framework for processing cmdlets.
 cmdlet  get all cmdlet  Get-Command Get-Command -Name *IP* Get-Command -Module ISE -Name *IP* Get-Help Get-Process Get-Member Get-Process | Where-Object {$_.</description>
     </item>
     
     <item>
       <title>Docker Memo(drafting)</title>
-      <link>https://blog.twasa.cf/post/docker/</link>
+      <link>https://twasa.ml/post/docker/</link>
       <pubDate>Fri, 22 Sep 2017 10:57:01 +0800</pubDate>
       
-      <guid>https://blog.twasa.cf/post/docker/</guid>
+      <guid>https://twasa.ml/post/docker/</guid>
       <description>Docker Description  is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud Containers vs. virtual machines  Virtual Machine diagram    Container diagram  docker concept  Image : a lightweight, stand-alone, executable package that includes everything needed to run a piece of software, including the code, a runtime, libraries, environment variables, and config files.</description>
     </item>
     
     <item>
       <title>Jupyterhub</title>
-      <link>https://blog.twasa.cf/post/jupyterhub/</link>
+      <link>https://twasa.ml/post/jupyterhub/</link>
       <pubDate>Mon, 11 Sep 2017 17:05:01 +0800</pubDate>
       
-      <guid>https://blog.twasa.cf/post/jupyterhub/</guid>
+      <guid>https://twasa.ml/post/jupyterhub/</guid>
       <description>JupyterHub on CentOS 7 requirement  a Linux/Unix based system Python 3.4 or greater wget pip npm  install  yum search python3 yum -y install python3X yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel npm npm install -g configurable-http-proxy wget https://bootstrap.pypa.io/get-pip.py python3.X get-pip.py yum -y install python-devel python3X-devel pip3 install jupyterhub ipython[notebook]  startup  jupyterhub &amp;ndash;ip 0.0.0.0 &amp;ndash;port 8443 &amp;ndash;ssl-key my_ssl.key &amp;ndash;ssl-cert my_ssl.</description>
     </item>
     
     <item>
       <title>Git</title>
-      <link>https://blog.twasa.cf/post/git/</link>
+      <link>https://twasa.ml/post/git/</link>
       <pubDate>Mon, 11 Sep 2017 16:46:58 +0800</pubDate>
       
-      <guid>https://blog.twasa.cf/post/git/</guid>
+      <guid>https://twasa.ml/post/git/</guid>
       <description>Git的基本使用 Config  在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：  git config --global user.name &amp;quot;你的姓名&amp;quot; git config --global user.email &amp;quot;你的@email位址&amp;quot;   加上 &amp;ndash;global 表示是全域的設定。你可以使用 git config &amp;ndash;list 這個指令來看你的 Git 設定內容 Git 也有提供 alias 的功能，例如你可以將 git status 縮寫為 git st，git checkout 縮寫為 git co 等，你只要這樣設定，這樣一來只要打 git st 就等同於打 git status  git config --global alias.st status git config --global alias.ck checkout git config --global alias.rst reset HEAD   忽略空白  git config --global apply.</description>
     </item>
     
     <item>
       <title>Aws Cli</title>
-      <link>https://blog.twasa.cf/post/aws-cli/</link>
+      <link>https://twasa.ml/post/aws-cli/</link>
       <pubDate>Mon, 11 Sep 2017 15:52:27 +0800</pubDate>
       
-      <guid>https://blog.twasa.cf/post/aws-cli/</guid>
+      <guid>https://twasa.ml/post/aws-cli/</guid>
       <description>AWS CLI referneces syntax aws [options] \&amp;lt;command&amp;gt; \&amp;lt;subcommand&amp;gt; [\&amp;lt;subcommand&amp;gt; ...] [parameters] options: --region --profile --filters &amp;quot;Name=instance-state-name,Values=running&amp;quot; --query  create or modify profile aws configure --profile PROFILE aws configure set default.s3.signature_version s3v4 aws configure set profile.your_profile_name.s3.signature_version s3v4  create key pairs aws --profile PROFILE --region REGION ec2 create-key-pair --key-name KEYNAME  create IAM users and permission aws --profile PROFILE iam create-user --user-name USERNAME aws --profile PROFILE iam create-access-key --user-name USERNAME aws --profile PROFILE iam put-user-policy --user-name USERNAME --policy-name POLICYNAME --policy-document file://POLICYDOCUMENT aws --profile PROFILE iam get-server-certificate --server-certificate-name CERTNAME XXXX  SES, SNS - aws --profile PROFILE --region REGION ses verify-email-identity --email-address YOUR@MAIL.</description>
     </item>
     
     <item>
       <title>Cisco Ios Netwrok Cmmmands</title>
-      <link>https://blog.twasa.cf/post/cisco-ios-netwrok-cmmmands/</link>
+      <link>https://twasa.ml/post/cisco-ios-netwrok-cmmmands/</link>
       <pubDate>Mon, 11 Sep 2017 13:00:03 +0800</pubDate>
       
-      <guid>https://blog.twasa.cf/post/cisco-ios-netwrok-cmmmands/</guid>
+      <guid>https://twasa.ml/post/cisco-ios-netwrok-cmmmands/</guid>
       <description>狀態查看  show startup-config show running-config show version show vlan id show ip route show ip nhrp show crypto engine connection active sh run | inc ip route 查看連線的TCP session  show ip sockets detail  查IP流量  conf t interface xxx ip accounting end sh ip accounting 備註, 查完記得no掉, 否則會增加cpu的負擔! conf t interface xxx no ip accounting   基本操作  從User Mode進入Privileged Mode enable 從Privileged Mode進入Global Configuration Mode configure terminal 儲存設定  write or copy running-config startup-config   設定  介面IP設定 interface fastEthernet 0/0 ip address IP位置 子網路遮罩 no shutdown</description>
     </item>
     
     <item>
       <title>CentOS 7 Linux&#43;Nginx&#43;MariaDB&#43;PHP</title>
-      <link>https://blog.twasa.cf/post/lnmp/</link>
+      <link>https://twasa.ml/post/lnmp/</link>
       <pubDate>Mon, 11 Sep 2017 10:14:51 +0800</pubDate>
       
-      <guid>https://blog.twasa.cf/post/lnmp/</guid>
+      <guid>https://twasa.ml/post/lnmp/</guid>
       <description>Build a Linux, Nginx, MariaDB, PHP environment in CentOS 7 install rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm yum install nginx php php-fpm mariadb mariadb-server  firewalld for http, https access only firewall-cmd --zone=public --list-all firewall-cmd --permanent --zone=public --add-service=http firewall-cmd --permanent --zone=public --add-service=https firewall-cmd --reload firewall-cmd --zone=public --list-all  Nginx config basic config, edit /etc/nginx/nginx.conf user nginx; worker_processes 2; #by your cpu error_log /var/log/nginx/error.log warn; pid /var/run/nginx.pid; events { worker_connections 1024; } http { include /etc/nginx/mime.</description>
     </item>
     
     <item>
       <title>Hugo A Fast and Flexible Website Generator</title>
-      <link>https://blog.twasa.cf/post/hugo-how-to/</link>
+      <link>https://twasa.ml/post/hugo-how-to/</link>
       <pubDate>Fri, 08 Sep 2017 19:12:41 +0800</pubDate>
       
-      <guid>https://blog.twasa.cf/post/hugo-how-to/</guid>
+      <guid>https://twasa.ml/post/hugo-how-to/</guid>
       <description>Quick Start Guide  Hugo download
  https://github.com/gohugoio/hugo/releases  Install Hugo
  https://gohugo.io/getting-started/installing/  Create a blog folder
@@ -118,10 +118,10 @@ cmdlet  get all cmdlet  Get-Command Get-Command -Name *IP* Get-Command -Module I
     
     <item>
       <title></title>
-      <link>https://blog.twasa.cf/post/mdadm-rescue/</link>
+      <link>https://twasa.ml/post/mdadm-rescue/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.twasa.cf/post/mdadm-rescue/</guid>
+      <guid>https://twasa.ml/post/mdadm-rescue/</guid>
       <description>mdadm --assemble /dev/md6 /dev/sde3 mount iscsiadm history clear exit exit df df cat /proc/mdstat mount mdadm -Sf /dev/md6 mdadm -Af /dev/md6 /dev/sde3 cat /proc/mdstat synospace --map-file -d synocheckshare synocheckiscsitrg synocheckiscsitrg  </description>
     </item>
     
