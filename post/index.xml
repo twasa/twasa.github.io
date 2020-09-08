@@ -21,7 +21,7 @@
     </item>
     
     <item>
-      <title>How to install and auto update Let&#39;s encrypt wildcard certs on Synology NAS with cloudflare DNS API</title>
+      <title>How to install and auto update Let&#39;s encrypt wildcard certs on Synology NAS with Route53 DNS</title>
       <link>https://twasa.ml/post/wildcard_ssl_in_synology_nas/</link>
       <pubDate>Thu, 05 Jul 2018 02:25:04 +0800</pubDate>
       

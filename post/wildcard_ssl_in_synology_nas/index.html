@@ -9,22 +9,22 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-    <title>How to install and auto update Let&#39;s encrypt wildcard certs on Synology NAS with cloudflare DNS API :: William&#39;s blog</title>
+    <title>How to install and auto update Let&#39;s encrypt wildcard certs on Synology NAS with Route53 DNS :: William&#39;s blog</title>
     
     
-    <link href="/css/nucleus.css?1599593260" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1599593260" rel="stylesheet">
-    <link href="/css/hybrid.css?1599593260" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1599593260" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1599593260" rel="stylesheet">
-    <link href="/css/auto-complete.css?1599593260" rel="stylesheet">
-    <link href="/css/theme.css?1599593260" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1599593260" rel="stylesheet">
+    <link href="/css/nucleus.css?1599593435" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1599593435" rel="stylesheet">
+    <link href="/css/hybrid.css?1599593435" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1599593435" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1599593435" rel="stylesheet">
+    <link href="/css/auto-complete.css?1599593435" rel="stylesheet">
+    <link href="/css/theme.css?1599593435" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1599593435" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1599593260" rel="stylesheet">
+      <link href="/css/theme-blue.css?1599593435" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1599593260"></script>
+    <script src="/js/jquery-2.x.min.js?1599593435"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -50,14 +50,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1599593260"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1599593260"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1599593435"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1599593435"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1599593260"></script>
+<script type="text/javascript" src="/js/search.js?1599593435"></script>
 
     
   </div>
@@ -669,9 +669,9 @@
  
   
     
-      <li data-nav-id="/post/wildcard_ssl_in_synology_nas/" title="How to install and auto update Let&#39;s encrypt wildcard certs on Synology NAS with cloudflare DNS API" class="dd-item active">
+      <li data-nav-id="/post/wildcard_ssl_in_synology_nas/" title="How to install and auto update Let&#39;s encrypt wildcard certs on Synology NAS with Route53 DNS" class="dd-item active">
         <a href="/post/wildcard_ssl_in_synology_nas/">
-        How to install and auto update Let&#39;s encrypt wildcard certs on Synology NAS with cloudflare DNS API
+        How to install and auto update Let&#39;s encrypt wildcard certs on Synology NAS with Route53 DNS
         <i class="fa fa-check read-icon"></i>
         </a>
     </li>
@@ -967,7 +967,7 @@
             
           
           
-            <a href='/'>About me</a> > <a href='/post/'>post</a> > How to install and auto update Let's encrypt wildcard certs on Synology NAS with cloudflare DNS API
+            <a href='/'>About me</a> > <a href='/post/'>post</a> > How to install and auto update Let's encrypt wildcard certs on Synology NAS with Route53 DNS
           
          
           
@@ -1002,7 +1002,7 @@
         
         <div id="body-inner">
           
-            <h1>How to install and auto update Let&#39;s encrypt wildcard certs on Synology NAS with cloudflare DNS API</h1>
+            <h1>How to install and auto update Let&#39;s encrypt wildcard certs on Synology NAS with Route53 DNS</h1>
           
 
         
@@ -1724,20 +1724,20 @@ $ ./acme.sh --issue -d &quot;$CERT_DOMAIN&quot; --dns &quot;$CERT_DNS&quot; \
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1599593260"></script>
-    <script src="/js/perfect-scrollbar.min.js?1599593260"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1599593260"></script>
-    <script src="/js/jquery.sticky.js?1599593260"></script>
-    <script src="/js/featherlight.min.js?1599593260"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1599593260"></script>
-    <script src="/js/highlight.pack.js?1599593260"></script>
+    <script src="/js/clipboard.min.js?1599593435"></script>
+    <script src="/js/perfect-scrollbar.min.js?1599593435"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1599593435"></script>
+    <script src="/js/jquery.sticky.js?1599593435"></script>
+    <script src="/js/featherlight.min.js?1599593435"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1599593435"></script>
+    <script src="/js/highlight.pack.js?1599593435"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1599593260"></script>
-    <script src="/js/learn.js?1599593260"></script>
-    <script src="/js/hugo-learn.js?1599593260"></script>
+    <script src="/js/modernizr.custom.71422.js?1599593435"></script>
+    <script src="/js/learn.js?1599593435"></script>
+    <script src="/js/hugo-learn.js?1599593435"></script>
 
-    <link href="/mermaid/mermaid.css?1599593260" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1599593260"></script>
+    <link href="/mermaid/mermaid.css?1599593435" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1599593435"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
