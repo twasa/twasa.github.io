@@ -12,19 +12,19 @@
     <title>How to install and auto update Let&#39;s encrypt wildcard certs on Synology NAS with cloudflare DNS API :: William&#39;s blog</title>
     
     
-    <link href="/css/nucleus.css?1554995296" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1554995296" rel="stylesheet">
-    <link href="/css/hybrid.css?1554995296" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1554995296" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1554995296" rel="stylesheet">
-    <link href="/css/auto-complete.css?1554995296" rel="stylesheet">
-    <link href="/css/theme.css?1554995296" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1554995296" rel="stylesheet">
+    <link href="/css/nucleus.css?1599593260" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1599593260" rel="stylesheet">
+    <link href="/css/hybrid.css?1599593260" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1599593260" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1599593260" rel="stylesheet">
+    <link href="/css/auto-complete.css?1599593260" rel="stylesheet">
+    <link href="/css/theme.css?1599593260" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1599593260" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1554995296" rel="stylesheet">
+      <link href="/css/theme-blue.css?1599593260" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1554995296"></script>
+    <script src="/js/jquery-2.x.min.js?1599593260"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -50,14 +50,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1554995296"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1554995296"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1599593260"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1599593260"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1554995296"></script>
+<script type="text/javascript" src="/js/search.js?1599593260"></script>
 
     
   </div>
@@ -1030,21 +1030,21 @@ cd acme.sh-master/
 
 <p>For CloudFlare, we will set two environment variables that acme.sh (specifically, the dns_cf script from the dnsapi subdirectory) will read to set the DNS record.</p>
 
-<pre><code class="language-shell">export CF_Key=&quot;MY_SECRET_KEY_SUCH_SECRET&quot;
-export CF_Email=&quot;email@example.com&quot;
+<pre><code class="language-shell">export AWS_ACCESS_KEY_ID=&quot;AWS_ACCESS_KEY_ID&quot;
+export AWS_SECRET_ACCESS_KEY=&quot;AWS_SECRET_ACCESS_KEY&quot;
 </code></pre>
 
 <h2 id="creating-the-certificate">Creating the certificate</h2>
 
 <pre><code class="language-shell">$ cd /usr/local/share/acme.sh
 $ export CERT_DOMAIN=&quot;your-domain.tld&quot;
-$ export CERT_DNS=&quot;dns_cf&quot;
+$ export CERT_DNS=&quot;dns_aws&quot;
 $ ./acme.sh --issue -d &quot;$CERT_DOMAIN&quot; --dns &quot;$CERT_DNS&quot; \
       --certpath /usr/syno/etc/certificate/system/default/cert.pem \
       --keypath /usr/syno/etc/certificate/system/default/privkey.pem \
       --fullchainpath /usr/syno/etc/certificate/system/default/fullchain.pem \
       --capath /usr/syno/etc/certificate/system/default/chain.pem \
-      --reloadcmd &quot;cp -a /usr/syno/etc/certificate/system/default/* `find /usr/syno/etc/certificate/_archive/ -maxdepth 1 -mindepth 1 -type d` &amp;&amp; /usr/syno/sbin/synoservicectl --reload nginx&quot; \
+      --reloadcmd &quot;cp -a /usr/syno/etc/certificate/system/default/* `find /usr/syno/etc/certificate/_archive/ -maxdepth 1 -mindepth 1 -type d` &amp;&amp; /usr/syno/sbin/synoservicectl --reload nginx &amp;&amp; /usr/syno/sbin/synoservicecfg --reload httpd-sys&quot; \
       --dnssleep 20 \
       --config-home &quot;/path/to/save/acmeconfigs/&quot;
 </code></pre>
@@ -1724,20 +1724,20 @@ $ ./acme.sh --issue -d &quot;$CERT_DOMAIN&quot; --dns &quot;$CERT_DNS&quot; \
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1554995296"></script>
-    <script src="/js/perfect-scrollbar.min.js?1554995296"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1554995296"></script>
-    <script src="/js/jquery.sticky.js?1554995296"></script>
-    <script src="/js/featherlight.min.js?1554995296"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1554995296"></script>
-    <script src="/js/highlight.pack.js?1554995296"></script>
+    <script src="/js/clipboard.min.js?1599593260"></script>
+    <script src="/js/perfect-scrollbar.min.js?1599593260"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1599593260"></script>
+    <script src="/js/jquery.sticky.js?1599593260"></script>
+    <script src="/js/featherlight.min.js?1599593260"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1599593260"></script>
+    <script src="/js/highlight.pack.js?1599593260"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1554995296"></script>
-    <script src="/js/learn.js?1554995296"></script>
-    <script src="/js/hugo-learn.js?1554995296"></script>
+    <script src="/js/modernizr.custom.71422.js?1599593260"></script>
+    <script src="/js/learn.js?1599593260"></script>
+    <script src="/js/hugo-learn.js?1599593260"></script>
 
-    <link href="/mermaid/mermaid.css?1554995296" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1554995296"></script>
+    <link href="/mermaid/mermaid.css?1599593260" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1599593260"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
